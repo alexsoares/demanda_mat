@@ -1,0 +1,59 @@
+<div id="conteudo">
+<div id="topo">
+<center><br/><h1>Cadastro de Crianças</h1></center>
+</div>
+<fieldset>
+<p>
+  <b>Região: </b>
+  <%=h @crianca.regiao_id %>
+  <%= Regiao.find_by_id(@crianca.regiao_id).nome %><br />
+  <b>Nome:</b>
+  <%=h @crianca.nome %><br />
+  <b>Nascimento:   </b>  
+  <%=h @crianca.nascimento.strftime("%d/%m/%y")%> <br />
+  <b>Grupo Alocado:</b>  
+  <%=h @crianca.grupo.nome + ' - ' %>
+  <%=h @crianca.grupo.descricao	%> <br />
+  <b>Endereço:      </b>  
+  <%=h @crianca.endereco%> <br />
+  <b>Número:        </b>  
+  <%=h @crianca.numero%> <br />
+  <b>Complemento:   </b>  
+  <%=h @crianca.complemento%> <br />
+  <b>Bairro:        </b>  
+  <%=h @crianca.bairro%> <br />
+  <b>Telefone 1:    </b>  
+  <%=h @crianca.tel1%> <br />
+  <b>Telefone 2:    </b>    
+  <%=h @crianca.tel2%> <br />
+  <b>Celular:       </b>  
+  <%=h @crianca.celular%> <br />
+  <b>Responsável:   </b>  
+  <%=h @crianca.responsavel%> <br />
+  <b>Parentesco:    </b>  
+  <%=h @crianca.parentesco%> <br />
+  <b>Trabalha:      </b>  
+  <%=h @crianca.verifica_trabalha%> <br />
+  <b>Local Trabalho:</b>  
+  <%=h @crianca.local_trabalho%> <br />
+  <b>Opção 1:       </b>
+  <%= Unidade.find_by_id(@crianca.option1).nome %><br />
+  <b>Opção 2:       </b>
+  <%= Unidade.find_by_id(@crianca.option2).nome %><br />	
+  <b>Opção 3:       </b>
+  <%= Unidade.find_by_id(@crianca.option3).nome %><br />	
+  <b>Opção 4:       </b> 
+  <%= Unidade.find_by_id(@crianca.option4).nome %><br />
+  <b>Matriculado :     </b>  
+  <%=h @crianca.verifica_matricula%> <br />
+  <b>Un.Matriculada:</b>
+  <%=h @crianca.onde_matricula %> <br />
+
+  <b>Status:        </b>
+  <%=h @crianca.status%> <br />
+</p>
+</fieldset>
+
+</div>
+<%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
+<%= link_to 'Voltar', criancas_path %>

@@ -1,0 +1,13 @@
+class CreateCriancas < ActiveRecord::Migration
+  def self.up
+    create_table :criancas do |t|
+      t.string :nome
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :criancas
+  end
+end

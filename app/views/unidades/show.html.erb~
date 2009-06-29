@@ -1,0 +1,18 @@
+<p>
+  <b>Nome:</b>
+<td><%=h @unidade.nome %></td>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <td><%=h @unidade.tipo %></td>
+</p>
+
+<p>
+  <b>Localização</b>
+  <td><%=h @unidade.regiao.nome %></td>
+</p>
+
+
+<%= link_to 'Alterar', edit_unidade_path(@unidade) %> |
+<%= link_to 'Voltar', unidades_path %>

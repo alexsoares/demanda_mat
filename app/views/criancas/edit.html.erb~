@@ -1,0 +1,115 @@
+<div id="topo">
+<br/>
+<h1><center>Alteração do Cadastro de Crianças</center></h1>
+</div>
+<% form_for(@crianca) do |f| %>  
+<%= f.error_messages %>  
+
+<script>
+  $(document).ready(function()
+    {
+      $("#dropdownbutton").click(function () 
+        {
+          $("#menu").slideToggle("slow");
+        });
+    });
+</script>
+
+
+<p>
+   <div id="conteudo">
+   <fieldset>
+   <p>
+    <th>Unidade</th>  
+    <%= f.collection_select :unidade_id, @unidades, :id, :nome %> <br />
+   </p>
+
+   <p>
+    <th>Região</th>  
+    <%= f.collection_select :regiao_id, @regiaos, :id, :nome %> <br />
+   </p>
+
+   <p>
+    <th>Nome         </th>
+    <%= f.text_field :nome %><br />
+   </p> 
+    <p>
+    <th>Nascimento   </th>  
+    <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30))%><br />
+    </p>
+    <p>
+    <th>Grupo Alocado</th>  
+    <%= f.collection_select :grupo_id, @grupos, :id, :nome %> <br />
+    </p>
+    <p>
+    <th>Endereço      </th>  
+    <%= f.text_field :endereco %><br />
+    </p>
+    <p>
+    <th>Número        </th>  
+    <%= f.text_field :numero %><br />
+    </p>
+    <p>
+    <th>Complemento   </th>  
+    <%= f.text_field :complemento %><br />
+    </p>
+    <p>
+    <th>Bairro        </th>  
+    <%= f.text_field :bairro %><br />
+    </p>
+    <p>
+    <th>Telefone 1    </th>  
+    <%= f.text_field :tel1 %><br />
+    </p>
+    <p>
+    <th>Telefone 2    </th>    
+    <%= f.text_field :tel2 %><br />
+    </p>
+    <p>
+    <th>Celular       </th>  
+    <%= f.text_field :celular %><br />
+    </p>    
+    <p>
+    <th>Responsável   </th>  
+    <%= f.text_field :responsavel %><br />
+    </p>
+    <p>  
+    <th>Parentesco    </th>  
+    <%= f.text_field :parentesco %><br />
+    </p>
+    <p>    
+    <th>Trabalha      </th>  
+    <%= f.check_box :trabalha %>     <th>SIM</th>
+    </p>
+    <p>
+    <th>Local Trabalho</th>  
+
+
+    <%= f.text_field :local_trabalho %><br />
+    </p>
+    <p>
+    <th>Opção 1       </th>
+    <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <th>Opção 2       </th>
+    <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <th>Opção 3       </th>
+    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <th>Opção 4       </th> 
+    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    </p>
+    <p>
+    <th>Matriculado     </th>  
+    <%= f.check_box :matricula %><th>SIM</th><br />
+    <th>Un.Matriculada</th>
+    <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    </p>
+    </fieldset>
+    <fieldset>
+       <%= f.submit "Atualizar" %>
+    </fieldset>
+    </div>
+</p>
+
+<%= link_to 'Exibir', @crianca %> |
+<%= link_to 'Voltar', criancas_path %>
+<% end %>

@@ -1,0 +1,73 @@
+<div id="topo">
+<center><h1><br /><br />Relatório de Criancas</h1></center>
+</div>
+
+<div id="conteudo">
+<fieldset>
+<table border=1>
+    <tr>
+    <center><th>Região</th></center>
+    <th>Unidade</th>
+    <center><th>Nome</th></center>
+    <th>Data de Nascimento</th>
+    <th>Grupo</th>
+    <th>Endereço</th>
+    <th>Numero</th>
+    <th>Complemento</th>
+    <th>Bairro</th>
+    <th>Fone1</th>
+    <th>Fone2</th>
+    <th>Celular</th>
+    <th>Responsável</th>
+    <th>Trabalha</th>
+    <th>Local de Trabalho</th>
+    <th>Opção 1</th>
+    <th>Opção 2</th>
+    <th>Opção 3</th>    
+    <th>Opção 4</th>
+    <th>Matricula</th>
+    <th>Unidade Matricula</th>
+    <th>Status</th>  
+    </tr>
+
+<% for crianca in @criancas %>
+  <tr>
+    <p><td><center><%= Regiao.find_by_id(crianca.regiao).nome %></center></td></p>
+    <p><td><center><%= Unidade.find_by_id(crianca.unidade_id).nome.capitalize	 %></center></td></p>
+    <p><td><center><%=h crianca.nome %></center></td></p>
+    <p><td><center><%=h crianca.nascimento %></center></td></p>
+    <p><td><center><%= Grupo.find_by_id(crianca.grupo_id).nome.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.endereco %></center></td></p>
+    <p><td><center><%=h crianca.numero %></center></td></p>
+    <p><td><center><%=h crianca.complemento %></center></td></p>
+    <p><td><center><%=h crianca.bairro %></center></td></p>
+    <p><td><center><%=h crianca.tel1 %></center></td></p>
+    <p><td><center><%=h crianca.tel2 %></center></td></p>
+    <p><td><center><%=h crianca.celular %></center></td></p>
+    <p><td><center><%=h crianca.parentesco %></center></td></p>
+    <p><td><center><%=h crianca.verifica_trabalha %></center></td></p>
+    <p><td><center><%=h crianca.local_trabalho %></center></td></p>
+    <p><td><center><%= Unidade.find_by_id(crianca.option1).nome.capitalize %></center></td></p>
+    <p><td><center><%= Unidade.find_by_id(crianca.option2).nome.capitalize %></center></td></p>
+    <p><td><center><%= Unidade.find_by_id(crianca.option3).nome.capitalize %></center></td></p>
+    <p><td><center><%= Unidade.find_by_id(crianca.option4).nome.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.verifica_matricula.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.onde_matricula.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.conf_status.capitalize %></center></td></p>
+
+    <td><%= link_to 'Exibir', crianca %></td>
+    <td><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+    <td><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
+  </tr>
+
+<% end %>
+</table>
+</fieldset>
+</div>
+<br />
+
+<%= link_to 'Cadastrar Criança', new_crianca_path %>
+
+
+
+

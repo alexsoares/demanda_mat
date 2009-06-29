@@ -1,0 +1,105 @@
+<script src="/javascripts/jquery.js" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui.js" type="text/javascript"></script>
+<script src="/javascripts/jrails.js" type="text/javascript"></script>
+
+<script>
+  $(document).ready(function()
+    {
+      $("#dropdownbutton").click(function () 
+        {
+          $("#menu").slideToggle("slow");
+        });
+    });
+</script>
+<div id="conteudo">
+<div id="topo">
+<center><br/><h1>Cadastro de Criança</h1></center>
+</div>
+
+<% form_for(@crianca) do |f| %>  
+<%= f.error_messages %>  
+
+<p>
+  <fieldset>
+  <p>
+    <%= f.label :unidade, 'Unidade' %><br />
+    <%= f.collection_select :unidade_id, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
+  </p>
+  <p>
+    <%= f.label :regiao, 'Região' %><br />
+    <%= f.collection_select :regiao_id, @regiaos, :id, :nome, :include_blank => '---Selecione---' %>
+    <%= observe_field :crianca_regiao_id,
+    :update => "regiao",
+    :with => :crianca_regiao_id,
+    :url => { :action => 'regiao_unidade' } %>
+  </p>
+  </fieldset>
+
+
+  <fieldset>
+    <th>Nome         </th>
+    <%= f.text_field :nome %><br />
+    <th>Nascimento   </th>  
+
+    <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><br />
+    <th>Grupo Alocado</th>  
+    <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %> <br />
+    <th>Endereço      </th>  
+    <%= f.text_field :endereco %><br />
+    <th>Número        </th>  
+    <%= f.text_field :numero %><br />
+    <th>Complemento   </th>  
+    <%= f.text_field :complemento %><br />
+    <th>Bairro        </th>  
+    <%= f.text_field :bairro %><br />
+    <th>Telefone 1    </th>  
+    <%= f.text_field :tel1 %><br />
+    <th>Telefone 2    </th>    
+    <%= f.text_field :tel2 %><br />
+  </fieldset>
+  <fieldset>
+    <th>Celular       </th>  
+    <%= f.text_field :celular %><br />
+    <th>Responsável   </th>  
+    <%= f.check_box :responsavel %><br />
+    <th>Parentesco    </th>  
+    <%= f.text_field :parentesco %><br />
+    <th>Trabalha?       </th>  
+    <a href="#" id="dropdownbutton"><%= f.check_box :trabalha %></a><th>SIM</th><br />
+       <ul id="menu" style="display:none">
+         <th>Local Trabalho</th>  
+         <%= f.text_field :local_trabalho %><br />
+       </ul>   
+  </fieldset>
+  <fieldset>
+  
+<div id='regiao'>
+  <p>
+    <%= f.label :option1, 'Opção 1' %><br />
+    <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
+  </p>
+  <p>
+    <%= f.label :option2, 'Opção 2' %><br />
+    <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
+  </p>
+  <p>
+    <%= f.label :option3, 'Opção 3' %><br />
+    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
+  </p>
+  <p>
+    <%= f.label :option4, 'Opção 4' %><br />
+    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
+  </p>
+  </div>
+  </fieldset>
+
+</p>
+  <fieldset>
+  <p>
+    <%= f.submit "Cadastrar" %>
+  </p>
+  </fieldset>
+</div>
+
+<%= link_to 'Voltar', criancas_path %>
+<% end %>
