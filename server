@@ -231,4 +231,49 @@ Rendering criancas/index
   [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
   [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 2) LIMIT 1[0m
   [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 3) LIMIT 1[0m
-  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FR
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 4) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRegiao Load (0.3ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) [0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 26) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 13) LIMIT 1[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 31) LIMIT 1[0m
+  [4;36;1mRegiao Load (0.2ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 9) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.3ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 34) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 26) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 33) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 26) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+Completed in 190ms (View: 103, DB: 57) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-06-29 12:56:26) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 182ms (View: 146, DB: 6) | 200 OK [http://localhost/criancas/new]
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A                                                                        ^C** INT signal received.
+Exiting
+]0;seduc@seduc-deskt
