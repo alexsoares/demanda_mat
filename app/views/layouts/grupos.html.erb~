@@ -6,7 +6,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Grupos: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
-  <%= stylesheet_link_tag 'demanda1' %>
+  <%= stylesheet_link_tag 'teste' %>
 </head>
 <body>
 

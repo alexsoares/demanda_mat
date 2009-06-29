@@ -1,7 +1,11 @@
-<center><h1>Relatório de Grupos</h1></center>
-
-<table>
+<div id="conteudo">
+<div id="topo">
+<center>
+<br/><h1>Relatório de Grupos</h1>
+</center>
+</div>
 <fieldset>
+<table border=1>
   <tr>
      <th>Nome</th>
      <th>Descricão</th>
@@ -15,9 +19,8 @@
     <td><%= link_to 'Apagar', grupo, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
-</fieldset>
 </table>
-
+</fieldset>
 <br />
 
 <%= link_to 'Cadastrar Grupo', new_grupo_path %>
