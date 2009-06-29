@@ -1,5 +1,9 @@
+<div id="topo">
+<br/>
 <h1>Cadastro de Unidades</h1>
-
+</div>
+<fieldset>
+<table>
 <% form_for(@unidade) do |f| %>
   <%= f.error_messages %>
 
@@ -30,5 +34,7 @@
     <%= f.submit "Cadastrar" %>
   </p>
 <% end %>
+</table>
+</div>
 
 <%= link_to 'Voltar', unidades_path %>

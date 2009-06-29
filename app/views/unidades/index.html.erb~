@@ -1,4 +1,8 @@
+<div id="topo">
+<br/>
 <h1>Relatório de Unidades</h1>
+</div>
+<fieldset>
 <table>
   <tr>
     <th>Nome</th>
@@ -9,7 +13,7 @@
 <% for unidade in @unidades %>
   <tr>
     <td><center><%=h unidade.nome %></center></td>
-    <td><center><%=h Unidade.nome_tipo %></center></td>
+    <td><center><%=h unidade.nome_tipo %></center></td>
     <td><center><%=h unidade.regiao.nome %></center></td>        
 
     <td><%= link_to 'Exbir', unidade %></td>
@@ -18,7 +22,8 @@
   </tr>
 <% end %>
 </table>
+</fieldset>
 
 <br />
 
-<%= link_to 'Cadastrar', new_unidade_path %>
+<%= link_to 'Cadastrar Unidade', new_unidade_path %>

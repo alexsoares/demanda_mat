@@ -1,5 +1,8 @@
+<div id="topo">
+<br/>
 <h1>Alteração de Unidades</h1>
-
+</div>
+<fieldset>
 <% form_for(@unidade) do |f| %>
   <%= f.error_messages %>
 
@@ -32,6 +35,6 @@
     <%= f.submit "Atualizar" %>
   </p>
 <% end %>
-
+</fieldset>
 <%= link_to 'Exibir', @unidade %> |
 <%= link_to 'Voltar', unidades_path %>
