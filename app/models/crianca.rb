@@ -2,6 +2,15 @@ class Crianca < ActiveRecord::Base
   belongs_to :unidade
   belongs_to :grupo
   belongs_to :regiao
+  validates_presence_of :regiao_id, :message => ' - Escolha uma Região'
+  validates_presence_of :nome, :message => ' - O nome da Criança é obrigatório'
+  validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
+  validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
+
+  def check_tel1
+    self.tel1.empty?
+  end
+
 
 
   def trabalha?
@@ -12,14 +21,6 @@ class Crianca < ActiveRecord::Base
     end
   end
 
-  def regiao_unidade
-   @unidades = Unidade.find_by_regiao_id(params[:crianca_regiao_id])
-   render :update do |page|  
-      page.replace_html 'regiao', :partial => 'regiao_unidade'
-#     page.replace_html "unidade", :inline => "<%= select "unidade", "id", @unidades %>"
-   end  
-
-  end
 
   def verifica_trabalha
     if trabalha == true then

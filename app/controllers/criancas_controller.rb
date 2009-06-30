@@ -100,6 +100,17 @@ class CriancasController < ApplicationController
     @unidades =  Unidade.find(:all, :order => "nome")
   end
 
+
+# Exemplo Arthur
+#  def region_units
+
+#    @units = Unit.find :all, :conditions => {:region_id => params[:child_region_id]}
+#    render :update do |page|
+#      page.replace_html 'region', :partial => 'region_units'
+#    end
+#  end
+
+
 # Criando validação por regiao
 
 #  def reg_unidade
@@ -124,6 +135,15 @@ class CriancasController < ApplicationController
 
 #  end
 
+  def regiao_unidade
+    @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:cr_id]}
+    render :update do |page|
+    page.replace_html 'regiao', :partial => 'regiao_unidade'
+   end
+
+    
+    
+  end
 
 
 end
