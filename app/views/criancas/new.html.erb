@@ -21,27 +21,26 @@
 
 <p>
   <fieldset>
+   <h3>Dados da Inscrição</h3>
   <p>
-    <%= f.label :unidade, 'Unidade' %><br />
+    <%= f.label :unidade, 'Unidade da Inscrição' %><br />
     <%= f.collection_select :unidade_id, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
 
 
 	<p>
-    <%= f.label :regiao, 'Região' %><br />
+    <%= f.label :regiao, 'Região de Preferência' %><br />
     <%= f.collection_select :regiao_id, @regiaos, :id, :nome, :include_blank => '---Selecione---' %>
     <%= observe_field :cr_id,
     :with => :cr_id,
     :url => { :action => 'regiao_unidade' } %>  
   </p>
 </fieldset>
-
-
-  <fieldset>
-    <th>Nome         </th>
+<fieldset>
+ <h3>Dados da Criança</h3>
+  <th>Nome         </th>
     <%= f.text_field :nome %><br />
     <th>Nascimento   </th>  
-
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><br />
     <th>Grupo Alocado</th>  
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %> <br />
@@ -57,9 +56,7 @@
     <%= f.text_field :tel1 %><br />
     <th>Telefone 2    </th>    
     <%= f.text_field :tel2 %><br />
-  </fieldset>
-  <fieldset>
-    <th>Celular       </th>  
+    <th>Celular       </th>
     <%= f.text_field :celular %><br />
     <th>Responsável   </th>  
     <%= f.check_box :responsavel %><br />
@@ -75,6 +72,7 @@
   <fieldset>
   
 <div id='regiao'>
+  <h3>Preferências</h3>
   <p>
     <%= f.label :option1, 'Opção 1' %><br />
     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
