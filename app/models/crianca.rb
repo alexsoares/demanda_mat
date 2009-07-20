@@ -3,6 +3,7 @@ class Crianca < ActiveRecord::Base
   belongs_to :grupo
   belongs_to :regiao
   validates_presence_of :regiao_id, :message => ' - Escolha uma Região'
+  validates_presence_of :grupo_id, :message => ' - Escolha uma classificação'
   validates_presence_of :nome, :message => ' - O nome da Criança é obrigatório'
   validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
