@@ -22,6 +22,7 @@
 <p>
   <fieldset>
    <h3>Dados da Inscrição</h3>
+
   <p>
     <%= f.label :unidade, 'Unidade da Inscrição' %><br />
     <%= f.collection_select :unidade_id, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
@@ -31,9 +32,9 @@
 	<p>
     <%= f.label :regiao, 'Região de Preferência' %><br />
     <%= f.collection_select :regiao_id, @regiaos, :id, :nome, :include_blank => '---Selecione---' %>
-    <%= observe_field :cr_id,
-    :with => :cr_id,
-    :url => { :action => 'regiao_unidade' } %>  
+    <%= observe_field '#crianca_regiao_id',
+    :with => :crianca_regiao_id,
+    :url => { :action => 'rg' } %>  
   </p>
 </fieldset>
 <fieldset>
@@ -42,9 +43,20 @@
     <%= f.text_field :nome %><br />
     <th>Nascimento   </th>  
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><br />
+
+
+
     <th>Grupo Alocado</th>  
-    <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %> <br />
-    <th>Endereço      </th>  
+    <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>       <div id='descricao'>         </div>
+     <%= observe_field("crianca_grupo_id",
+        :url => {:action => 'grupo_crianca'},
+        :with =>"crianca_grupo_id",
+        :on => "blur",
+        :update => "descricao")%>
+
+ <div id='descricao'>         </div>
+
+   <th>Endereço      </th>
     <%= f.text_field :endereco %><br />
     <th>Número        </th>  
     <%= f.text_field :numero %><br />
@@ -71,7 +83,7 @@
   </fieldset>
   <fieldset>
   
-<div id='regiao'>
+<div id='region'>
   <h3>Preferências</h3>
   <p>
     <%= f.label :option1, 'Opção 1' %><br />

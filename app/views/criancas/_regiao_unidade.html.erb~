@@ -1,17 +1,18 @@
+<h3>Preferências</h3>
   <p>
-    <%= f.label :option1, 'Opção 1' %><br />
+    <%= label :option1, 'Opção 1' %><br />
 
-    <%= f.collection_select :option1, @unidade, :id, :nome, :include_blank => '---Selecione---' %>
+    <%= collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
   <p>
-    <%= f.label :option2, 'Opção 2' %><br />
-    <%= f.collection_select :option2, @unidade, :id, :nome, :include_blank => '---Selecione---' %>
+    <%= label :option2, 'Opção 2' %><br />
+    <%= collection_select :option2, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
   <p>
-    <%= f.label :option3, 'Opção 3' %><br />
-    <%= f.collection_select :option3, @unidade, :id, :nome, :include_blank => '---Selecione---' %>
+    <%= label :option3, 'Opção 3' %><br />
+    <%= collection_select :option3, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
   <p>
-    <%= f.label :option4, ' Opção 4' %><br />
-    <%= f.collection_select :option4, @unidade, :id, :nome, :include_blank => '---Selecione---' %>
+    <%= label :option4, 'Opção 4' %><br />
+    <%= collection_select :option4, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
