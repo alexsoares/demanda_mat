@@ -49,9 +49,9 @@ class Crianca < ActiveRecord::Base
 
   def conf_status
     if status == 0 then
-      @conf_status = 'MATRICULADO'
-    else
       @conf_status = 'AGUARDANDO'
+    else
+      @conf_status = 'MATRICULADO'
     end
     
   end
@@ -63,16 +63,11 @@ class Crianca < ActiveRecord::Base
     end
   end
 
+  def onde_classifica
+    @classif = Grupo.find_by_id(grupo_id).descricao
+  end
+
+
 end
 
-#   @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
-#    render :update do |page|
-#      page.replace_html 'regiao', :partial => 'reg_unidades'
-#    end
-
-
-#    @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
-#    render :update do |page|
-#      page.replace_html 'regiao', :partial => 'regiao_unidade'
-#    end
 
