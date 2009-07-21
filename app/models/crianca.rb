@@ -67,6 +67,39 @@ class Crianca < ActiveRecord::Base
     @classif = Grupo.find_by_id(grupo_id).descricao
   end
 
+  def opcao1
+    if option1 == 0 then
+       @opcao1 = 'Não Realizada'
+    else
+       @opcao1 = Unidade.find_by_id(option1).nome
+    end
+  end  
+
+  def opcao2
+    if option2 == 0 then
+       @opcao2 = 'Não Realizada'
+    else
+       @opcao2 = Unidade.find_by_id(option2).nome
+    end
+  end
+
+  def opcao3
+    if option3 == 0 then
+       @opcao3 = 'Não Realizada'
+    else
+       @opcao3 = Unidade.find_by_id(option3).nome
+    end
+  end
+
+  def opcao4
+    if option4 == 0 then
+       @opcao4 = 'Não Realizada'
+    else
+       @opcao4 = Unidade.find_by_id(option4).nome
+    end
+  end
+
+
 
 
 end

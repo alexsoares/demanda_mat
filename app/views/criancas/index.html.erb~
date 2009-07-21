@@ -2,9 +2,9 @@
 <center><h1><br /><br />Relatório de Criancas</h1></center>
 </div>
 
-
+<div id="conteudo">
 <fieldset>
-<table border=1>
+<table border="1"
     <tr>
     <center><th>Região</th></center>
     <th>Unidade</th>
@@ -63,6 +63,7 @@
 <% end %>
 </table>
 </fieldset>
+</div>
 <br />
 
 <%= link_to 'Cadastrar Criança', new_crianca_path %>

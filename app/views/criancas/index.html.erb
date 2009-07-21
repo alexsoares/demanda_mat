@@ -47,10 +47,10 @@
     <p><td><center><%=h crianca.parentesco %></center></td></p>
     <p><td><center><%=h crianca.verifica_trabalha %></center></td></p>
     <p><td><center><%=h crianca.local_trabalho %></center></td></p>
-    <p><td><center><%= Unidade.find_by_id(crianca.option1).nome.capitalize %></center></td></p>
-    <p><td><center><%= Unidade.find_by_id(crianca.option2).nome.capitalize %></center></td></p>
-    <p><td><center><%= Unidade.find_by_id(crianca.option3).nome.capitalize %></center></td></p>
-    <p><td><center><%= Unidade.find_by_id(crianca.option4).nome.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.opcao1.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.opcao2.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.opcao3.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.opcao4.capitalize %></center></td></p>
     <p><td><center><%=h crianca.verifica_matricula.capitalize %></center></td></p>
     <p><td><center><%=h crianca.onde_matricula.capitalize %></center></td></p>
     <p><td><center><%=h crianca.conf_status.capitalize %></center></td></p>

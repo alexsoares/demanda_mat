@@ -156,7 +156,7 @@ class CriancasController < ApplicationController
   def rg
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
     render :update do |page|
-     page.replace_html '#regiao', :partial => 'regiao_unidade'
+     page.replace_html '#region', :partial => 'regiao_unidade'
     end
   end
 

@@ -155,8 +155,15 @@ class CriancasController < ApplicationController
 
   def rg
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
-    render :update do |page|
-     page.replace_html '#region', :partial => 'regiao_unidade'
+    @u = Unidade.count :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
+    if @u == 2 then
+     render :update do |page|
+      page.replace_html '#region', :partial => 'region_units'
+     end
+    else
+     render :update do |page|
+      page.replace_html '#region', :partial => 'regiao_unidade'
+     end
     end
   end
 

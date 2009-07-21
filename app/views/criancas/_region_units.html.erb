@@ -1,0 +1,11 @@
+<h3>Preferências</h3>
+  <p>
+    <%= label :option1, 'Opção 1' %><br />
+
+    <%= collection_select :crianca, :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
+  </p>
+  <p>
+    <%= label :option2, 'Opção 2' %><br />
+    <%= collection_select :crianca, :option2, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
+  </p>
+
