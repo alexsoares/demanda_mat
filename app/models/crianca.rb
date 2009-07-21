@@ -68,6 +68,7 @@ class Crianca < ActiveRecord::Base
   end
 
 
+
 end
 
 
