@@ -1,10 +1,9 @@
 <div id="conteudo">
 <div id="topo">
-<center>
   <br/>
   <h1>Alteração de Grupos</h1>
-</center>
 </div>
+<p>
 <% form_for(@grupo) do |f| %>
   <%= f.error_messages %>
 
@@ -23,8 +22,8 @@
 <fieldset>
     <%= f.submit "Atualizar" %>
 </fieldset>
-  </p>
-
+</p>
+<>/p
 
 <%= link_to 'Exbir', @grupo %> |
 <%= link_to 'Voltar', grupos_path %>

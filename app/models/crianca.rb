@@ -8,13 +8,7 @@ class Crianca < ActiveRecord::Base
   validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
 
-
-  def teste
-    if self.matricula then
-    else  
-       self.unidade_matricula = nil
-    end
-  end
+ 
 
   def check_tel1
     self.tel1.empty?

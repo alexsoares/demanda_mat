@@ -8,11 +8,10 @@ class Crianca < ActiveRecord::Base
   validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
 
-
   def teste
     if self.matricula then
     else  
-       self.unidade_matricula = nil
+       return self.unidade_matricula = 15
     end
   end
 
@@ -84,25 +83,25 @@ class Crianca < ActiveRecord::Base
 
   def opcao2
     if option2 == 0 or option2 == nil then
-       @opcao2 = 'Não Realizada'
+       return 'Não Realizada'
     else
-       @opcao2 = Unidade.find_by_id(option2).nome
+       return Unidade.find_by_id(option2).nome
     end
   end
 
   def opcao3
     if option3 == 0 or option3 == nil then
-       @opcao3 = 'Não Realizada'
+       return 'Não Realizada'
     else
-       @opcao3 = Unidade.find_by_id(option3).nome
+       return Unidade.find_by_id(option3).nome
     end
   end
 
   def opcao4
     if option4 == 0 or option4 == nil then
-       @opcao4 = 'Não Realizada'
+       return 'Não Realizada'
     else
-       @opcao4 = Unidade.find_by_id(option4).nome
+       return Unidade.find_by_id(option4).nome
     end
   end
 
