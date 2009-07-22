@@ -103,40 +103,6 @@ class CriancasController < ApplicationController
   end
 
 
-# Exemplo Arthur
-#  def region_units
-
-#    @units = Unit.find :all, :conditions => {:region_id => params[:child_region_id]}
-#    render :update do |page|
-#      page.replace_html 'region', :partial => 'region_units'
-#    end
-#  end
-
-
-# Criando validação por regiao
-
-#  def reg_unidade
-
-#    @unidades = Unidade.find :all, :conditions => ["regiao_id =","%#{params[:q]}%"]
-#    @unidades = Unidade.paginate :page => params[:page], :conditions => ["regiao_id =","%#{params[:q]}%"]
-#    respond_to do |format|
-#      format.html # index.html.erb
-#      format.xml  { render :xml => @unidades }
-#      format.js
-#    end
-
-
-
-#  def regiao_unidades
-#   @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
-#    render :update do |page|
-#      page.replace_html 'regiao', :partial => 'reg_unidades'
-#    end
-#  end
-
-
-#  end
-
   def regiao_unidade
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:cr_id]}
     render :update do |page|

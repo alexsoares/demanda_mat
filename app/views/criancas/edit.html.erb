@@ -24,7 +24,7 @@
 <p>
 
    <fieldset>
-   <h3>Dados da Inscrição</h3>
+  <legend><font size=4>Dados da Inscrição</font></legend>
    <p>
     <th>Unidade</th>  
     <%= f.collection_select :unidade_id, @unidades, :id, :nome %> <br />
@@ -39,8 +39,11 @@
     <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
   </p>
    </fieldset>
+  <br/>
+
+
    <fieldset>
- <h3>Dados da Criança</h3>
+   <legend><font size=4>Dados da Criança</font></legend>
    <p>
     <th>Nome         </th>
     <%= f.text_field :nome %><br />
@@ -61,7 +64,6 @@
         :with =>"crianca_grupo_id",
         :on => "blur",
         :update => "onde_classifica")%>
-     
     </p>
     <p>
     <th>Endereço      </th>  
@@ -110,8 +112,11 @@
 
 </fieldset>
 <div id="region">
+<br/>
+
+
  <fieldset>
-  <h3>Preferências</h3>
+  <legend><font size=4>Preferências</font></legend>
     <p>
     <th>Opção 1       </th>
     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />       
@@ -122,16 +127,25 @@
     <th>Opção 4       </th> 
     <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />       
     </p>
-</div>
+     </div>
+ </fieldset>
+ <br/>
+  <fieldset>
+  <legend><font size=4>Dados da Inscrição</font></legend>
+
     <p>
     <th>Matriculado     </th>  
     <%= f.check_box :matricula %><th>SIM</th><br />
     <th>Un.Matriculada</th>
     <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />
     </p>
-    </fieldset>
+ </fieldset>
+<br/>
+
     <fieldset>
+      <p>
        <%= f.submit "Atualizar" %>
+      </p>
     </fieldset>
 
 </p>

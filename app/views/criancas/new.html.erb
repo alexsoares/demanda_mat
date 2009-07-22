@@ -22,7 +22,8 @@
 
 <p>
   <fieldset>
-   <h3>Dados da Inscrição</h3>
+  <legend><font size=4>Dados da Inscrição</font></legend>
+
 
   <p>
     <%= f.label :unidade, 'Unidade da Inscrição' %><br />
@@ -40,15 +41,14 @@
     <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
   </p>
 </fieldset>
+<br/>
+
 <fieldset>
- <h3>Dados da Criança</h3>
+   <legend><font size=4>Dados da Criança</font></legend>
   <th>Nome         </th>
     <%= f.text_field :nome %><br />
     <th>Nascimento   </th>  
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><br />
-
-
-
     <th>Classificação</th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  
      <%= observe_field("crianca_grupo_id",
@@ -57,7 +57,6 @@
         :on => "blur",
         :update => "descricao")%>
      <div id='descricao'>         </div>
-
    <th>Endereço      </th>
     <%= f.text_field :endereco %><br />
     <th>Número        </th>  
@@ -83,11 +82,11 @@
          <%= f.text_field :local_trabalho %><br />
        </ul>   
   </fieldset>
+ <br/>
+
   <fieldset>
-
-
-<div id='region'>
-  <h3>Preferências</h3>
+  <div id='region'>
+  <legend><font size=4>Preferências</font></legend>
   <p>
     <%= f.label :option1, 'Opção 1' %><br />
     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
@@ -109,6 +108,7 @@
 
 
   <fieldset>
+ 
   <p>
     <%= f.submit "Cadastrar" %>
   </p>
