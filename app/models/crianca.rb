@@ -8,10 +8,11 @@ class Crianca < ActiveRecord::Base
   validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
 
+
+
   def check_tel1
     self.tel1.empty?
   end
-
 
 
   def trabalha?
@@ -56,7 +57,7 @@ class Crianca < ActiveRecord::Base
     
   end
   def onde_matricula
-    if unidade_matricula == 0 then
+    if unidade_matricula == 0 or unidade_matricula == nil then
       @unmats = ''
     else
       @unmats = Unidade.find_by_id(unidade_matricula).nome
@@ -68,7 +69,7 @@ class Crianca < ActiveRecord::Base
   end
 
   def opcao1
-    if option1 == 0 then
+    if option1 == 0 or option1 == nil then
        @opcao1 = 'Não Realizada'
     else
        @opcao1 = Unidade.find_by_id(option1).nome
@@ -76,7 +77,7 @@ class Crianca < ActiveRecord::Base
   end  
 
   def opcao2
-    if option2 == 0 then
+    if option2 == 0 or option2 == nil then
        @opcao2 = 'Não Realizada'
     else
        @opcao2 = Unidade.find_by_id(option2).nome
@@ -84,7 +85,7 @@ class Crianca < ActiveRecord::Base
   end
 
   def opcao3
-    if option3 == 0 then
+    if option3 == 0 or option3 == nil then
        @opcao3 = 'Não Realizada'
     else
        @opcao3 = Unidade.find_by_id(option3).nome
@@ -92,7 +93,7 @@ class Crianca < ActiveRecord::Base
   end
 
   def opcao4
-    if option4 == 0 then
+    if option4 == 0 or option4 == nil then
        @opcao4 = 'Não Realizada'
     else
        @opcao4 = Unidade.find_by_id(option4).nome

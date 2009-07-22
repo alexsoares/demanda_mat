@@ -2,6 +2,7 @@ class CriancasController < ApplicationController
   before_filter :load_grupos
   before_filter :load_regiaos
   before_filter :load_unidades
+  before_filter :load_opcao
 # GET /criancas
   # GET /criancas.xml
   def index
@@ -100,6 +101,14 @@ class CriancasController < ApplicationController
     @unidades =  Unidade.find(:all, :order => "nome")
   end
 
+  def load_opcao
+    @verify = Crianca.find(:all, :conditions => {:option3 => params[0]})
+    if @verify.count != 0 then
+           render :update do |page|
+           page.replace_html 'region', :partial => 'region_units'
+           end
+    end
+  end
 
 # Exemplo Arthur
 #  def region_units
@@ -167,5 +176,4 @@ class CriancasController < ApplicationController
     end
   end
   
-
 end

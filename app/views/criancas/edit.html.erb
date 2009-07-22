@@ -109,9 +109,9 @@
     </p>
 
 </fieldset>
+<div id="region">
  <fieldset>
   <h3>Preferências</h3>
-
     <p>
     <th>Opção 1       </th>
     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />       
@@ -122,6 +122,7 @@
     <th>Opção 4       </th> 
     <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />       
     </p>
+</div>
     <p>
     <th>Matriculado     </th>  
     <%= f.check_box :matricula %><th>SIM</th><br />

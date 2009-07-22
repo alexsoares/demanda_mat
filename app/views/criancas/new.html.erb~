@@ -13,6 +13,7 @@
 </script>
 <div id="conteudo">
 <div id="topo">
+  <br/>
   <h1>Cadastro de Crianças</h1>
 </div>
 
@@ -83,7 +84,8 @@
        </ul>   
   </fieldset>
   <fieldset>
-  
+  <%=check_box("employees", "skills", {}, "Java", "Java")%>
+
 <div id='region'>
   <h3>Preferências</h3>
   <p>

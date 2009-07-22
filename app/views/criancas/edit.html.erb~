@@ -111,31 +111,22 @@
 </fieldset>
  <fieldset>
   <h3>Preferências</h3>
-
     <p>
     <th>Opção 1       </th>
     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />       
     <th>Opção 2       </th>
     <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '' %> <br />       
     <th>Opção 3       </th>
-    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '0' %> <br />       
     <th>Opção 4       </th> 
-    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '0' %> <br />       
     </p>
     <p>
     <th>Matriculado     </th>  
     <%= f.check_box :matricula %><th>SIM</th><br />
-       <%= observe_field("crianca_unidade_id",
-        :url => {:action => 'matricula'},
-        :with =>"crianca_unidade_id",
-        :on => "blur",
-        :update => "onde_classifica")%>
-    
-    <div id="mat">
     <th>Un.Matriculada</th>
     <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />
     </p>
-    </div>
     </fieldset>
     <fieldset>
        <%= f.submit "Atualizar" %>
