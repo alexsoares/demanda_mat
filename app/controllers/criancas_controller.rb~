@@ -2,7 +2,8 @@ class CriancasController < ApplicationController
   before_filter :load_grupos
   before_filter :load_regiaos
   before_filter :load_unidades
-  before_filter :load_opcao
+  before_filter :load_edit_crianca
+
 # GET /criancas
   # GET /criancas.xml
   def index
@@ -101,13 +102,8 @@ class CriancasController < ApplicationController
     @unidades =  Unidade.find(:all, :order => "nome")
   end
 
-  def load_opcao
-    @verify = Crianca.find(:all, :conditions => {:option3 => params[0]})
-    if @verify.count != 0 then
-           render :update do |page|
-           page.replace_html 'region', :partial => 'region_units'
-           end
-    end
+  def load_edit_crianca
+        @uni = Unidade.find (:all, :conditions => {:id => crianca.unidade_matricula}, :order => "option1")
   end
 
 # Exemplo Arthur

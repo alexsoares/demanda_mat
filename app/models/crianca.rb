@@ -9,6 +9,12 @@ class Crianca < ActiveRecord::Base
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
 
 
+  def teste
+    if self.matricula then
+    else  
+       self.unidade_matricula = nil
+    end
+  end
 
   def check_tel1
     self.tel1.empty?
@@ -26,17 +32,17 @@ class Crianca < ActiveRecord::Base
 
   def verifica_trabalha
     if trabalha == true then
-       @vtrabalha = 'SIM'
+       return 'SIM'
     else
-       @vtrabalha = 'NÃO'
+       return 'NÃO'
     end
   end
 
   def verifica_matricula
     if matricula == '1' then
-      @vmatriculado = 'SIM'
+      return 'SIM'
     else
-      @vmatriculado = 'NÃO'
+      return 'NÃO'
     end
   end
 
@@ -50,53 +56,53 @@ class Crianca < ActiveRecord::Base
 
   def conf_status
     if status == 0 then
-      @conf_status = 'AGUARDANDO'
+      return 'AGUARDANDO'
     else
-      @conf_status = 'MATRICULADO'
+      return 'MATRICULADO'
     end
     
   end
   def onde_matricula
     if unidade_matricula == 0 or unidade_matricula == nil then
-      @unmats = ''
+      return ''
     else
-      @unmats = Unidade.find_by_id(unidade_matricula).nome
+      return Unidade.find_by_id(unidade_matricula).nome
     end
   end
 
   def onde_classifica
-    @classif = Grupo.find_by_id(grupo_id).descricao
+    return Grupo.find_by_id(grupo_id).descricao
   end
 
   def opcao1
     if option1 == 0 or option1 == nil then
-       @opcao1 = 'Não Realizada'
+       return 'Não Realizada'
     else
-       @opcao1 = Unidade.find_by_id(option1).nome
+       return Unidade.find_by_id(option1).nome
     end
   end  
 
   def opcao2
     if option2 == 0 or option2 == nil then
-       @opcao2 = 'Não Realizada'
+       return 'Não Realizada'
     else
-       @opcao2 = Unidade.find_by_id(option2).nome
+       return Unidade.find_by_id(option2).nome
     end
   end
 
   def opcao3
     if option3 == 0 or option3 == nil then
-       @opcao3 = 'Não Realizada'
+       return 'Não Realizada'
     else
-       @opcao3 = Unidade.find_by_id(option3).nome
+       return Unidade.find_by_id(option3).nome
     end
   end
 
   def opcao4
     if option4 == 0 or option4 == nil then
-       @opcao4 = 'Não Realizada'
+       return 'Não Realizada'
     else
-       @opcao4 = Unidade.find_by_id(option4).nome
+       return Unidade.find_by_id(option4).nome
     end
   end
 

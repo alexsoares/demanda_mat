@@ -3,6 +3,7 @@ class CriancasController < ApplicationController
   before_filter :load_regiaos
   before_filter :load_unidades
 
+
 # GET /criancas
   # GET /criancas.xml
   def index
@@ -100,6 +101,7 @@ class CriancasController < ApplicationController
   def load_unidades
     @unidades =  Unidade.find(:all, :order => "nome")
   end
+
 
 # Exemplo Arthur
 #  def region_units

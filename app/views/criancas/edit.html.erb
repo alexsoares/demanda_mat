@@ -96,8 +96,8 @@
     <%= f.text_field :responsavel %><br />
     </p>
     <p>  
-    <th>Parentesco    </th>  
-    <%= f.text_field :parentesco %><br />
+    <%= f.label :parentesco %>
+    <%= f.select :parentesco, GRAU, :selected => 1%>
     </p>
     <p>    
     <th>Trabalha      </th>  

@@ -96,8 +96,8 @@
     <%= f.text_field :responsavel %><br />
     </p>
     <p>  
-    <th>Parentesco    </th>  
-    <%= f.text_field :parentesco %><br />
+    <%= f.label :parentesco %><br />
+    <%= f.select :parentesco, GRAU, :selected => 1%>
     </p>
     <p>    
     <th>Trabalha      </th>  
@@ -109,6 +109,7 @@
     </p>
 
 </fieldset>
+<div id="region">
  <fieldset>
   <h3>Preferências</h3>
     <p>
@@ -117,10 +118,11 @@
     <th>Opção 2       </th>
     <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '' %> <br />       
     <th>Opção 3       </th>
-    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '0' %> <br />       
+    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '' %> <br />       
     <th>Opção 4       </th> 
-    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '0' %> <br />       
+    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />       
     </p>
+</div>
     <p>
     <th>Matriculado     </th>  
     <%= f.check_box :matricula %><th>SIM</th><br />

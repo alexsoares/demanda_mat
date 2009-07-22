@@ -74,8 +74,8 @@
     <%= f.text_field :celular %><br />
     <th>Responsável   </th>  
     <%= f.check_box :responsavel %><br />
-    <th>Parentesco    </th>  
-    <%= f.text_field :parentesco %><br />
+    <%= f.label :parentesco %><br />
+    <%= f.select :parentesco, GRAU, :selected => 1%>
     <th>Trabalha?       </th>  
     <a href="#" id="dropdownbutton"><%= f.check_box :trabalha %></a><th>SIM</th><br />
        <ul id="menu" style="display:none">
@@ -84,7 +84,7 @@
        </ul>   
   </fieldset>
   <fieldset>
-  <%=check_box("employees", "skills", {}, "Java", "Java")%>
+
 
 <div id='region'>
   <h3>Preferências</h3>
