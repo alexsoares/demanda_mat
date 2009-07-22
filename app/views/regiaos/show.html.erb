@@ -1,9 +1,15 @@
+<div id="conteudo">
+<div id ="topo">
+<br />
 <h1>Cadastro da Região</h1>
+</div>
 <p>
+ <fieldset>
   <b>Nome:</b>
   <%=h @regiao.nome %>
+ </fieldset>
 </p>
-
 
 <%= link_to 'Alterar', edit_regiao_path(@regiao) %> |
 <%= link_to 'Voltar', regiaos_path %>
+</div>

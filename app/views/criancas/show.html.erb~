@@ -3,6 +3,7 @@
 <center><br/><h1>Cadastro de Crianças</h1></center>
 </div>
 <fieldset>
+
 <p>
   <b>Região: </b>
   <%=h @crianca.regiao_id %>
@@ -11,7 +12,7 @@
   <%=h @crianca.nome %><br />
   <b>Nascimento:   </b>  
   <%=h @crianca.nascimento.strftime("%d/%m/%y")%> <br />
-  <b>Grupo Alocado:</b>  
+  <b>Classificação:</b>
   <%=h @crianca.grupo.nome + ' - ' %>
   <%=h @crianca.grupo.descricao	%> <br />
   <b>Endereço:      </b>  
@@ -37,20 +38,19 @@
   <b>Local Trabalho:</b>  
   <%=h @crianca.local_trabalho%> <br />
   <b>Opção 1:       </b>
-  <%= Unidade.find_by_id(@crianca.option1).nome %><br />
+  <%= opcao1.nome %><br />
   <b>Opção 2:       </b>
-  <%= Unidade.find_by_id(@crianca.option2).nome %><br />	
+  <%= opcao2.nome %><br />	
   <b>Opção 3:       </b>
-  <%= Unidade.find_by_id(@crianca.option3).nome %><br />	
+  <%= opcao3.nome %><br />	
   <b>Opção 4:       </b> 
-  <%= Unidade.find_by_id(@crianca.option4).nome %><br />
+  <%= opcao4.nome %><br />
   <b>Matriculado :     </b>  
   <%=h @crianca.verifica_matricula%> <br />
   <b>Un.Matriculada:</b>
-  <%=h @crianca.onde_matricula %> <br />
-
-  <b>Status:        </b>
-  <%=h @crianca.status%> <br />
+ <%=h @crianca.onde_matricula %> <br />
+  <b>Status: </b>
+  <%=h @crianca.conf_status	%> <br />
 </p>
 </fieldset>
 

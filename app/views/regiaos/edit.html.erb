@@ -1,16 +1,25 @@
-<h1>Alteração da Região</h1>
+<div id="conteudo">
+   <div id ="topo">
+    <br/>
+    <h1>Alteração da Região</h1>
+   </div>
 
-<% form_for(@regiao) do |f| %>
-  <%= f.error_messages %>
+   <% form_for(@regiao) do |f| %>
+     <%= f.error_messages %>
+       <p>
+        <fieldset>
+         <%= f.label :nome, 'Nome' %><br />
+         <%= f.text_field :nome %>
+        </fieldset>
+       </p>
+       <p>
+         <fieldset>  
+           <%= f.submit "Atualizar" %>
+         </fieldset>
+       </p>
+     
+   <% end %>
 
-  <p>
-    <%= f.label :nome, 'Nome' %><br />
-    <%= f.text_field :nome %>
-  </p>
-  <p>
-    <%= f.submit "Atualizar" %>
-  </p>
-<% end %>
-
-<%= link_to 'Exibir', @regiao %> |
-<%= link_to 'Voltar', regiaos_path %>
+   <%= link_to 'Exibir', @regiao %> |
+   <%= link_to 'Voltar', regiaos_path %>
+</div>

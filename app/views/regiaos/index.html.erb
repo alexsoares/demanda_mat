@@ -1,20 +1,30 @@
-<h1>Relatório de Regiões</h1>
+<div id="conteudo">
+  <div id="topo">
+    <br />
+    <h1>Relatório de Regiões</h1>
+  </div>
+  <p>
+   <fieldset>
+    <table>
+     
+      <tr>
+        <th>Nome</th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Nome</th>
-  </tr>
-
-<% for regiao in @regiaos %>
-  <tr>
-    <td><%=h regiao.nome %></td>
-    <td><%= link_to 'Exibir', regiao %></td>
-    <td><%= link_to 'Alterar', edit_regiao_path(regiao) %></td>
-    <td><%= link_to 'Apagar', regiao, :confirm => 'Tem certeza?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'Cadastrar', new_regiao_path %>
+      <% for regiao in @regiaos %>
+       <tr>
+        <td><%=h regiao.nome %></td>
+        <td><%= link_to 'Exibir', regiao %></td>
+        <td><%= link_to 'Alterar', edit_regiao_path(regiao) %></td>
+        <td><%= link_to 'Apagar', regiao, :confirm => 'Tem certeza?', :method => :delete %></td>
+       </tr>
+      <% end %>
+    </table>
+   </fieldset>
+  </p>
+  <p>
+    <fieldset>
+     <%= link_to 'Cadastrar', new_regiao_path %>
+    </fieldset>
+  </p>
+</div>

@@ -38,13 +38,13 @@
   <b>Local Trabalho:</b>  
   <%=h @crianca.local_trabalho%> <br />
   <b>Opção 1:       </b>
-  <%= Unidade.find_by_id(@crianca.option1).nome %><br />
+  <%= @crianca.opcao1 %><br />
   <b>Opção 2:       </b>
-  <%= Unidade.find_by_id(@crianca.option2).nome %><br />	
+  <%= @crianca.opcao2 %><br />	
   <b>Opção 3:       </b>
-  <%= Unidade.find_by_id(@crianca.option3).nome %><br />	
+  <%= @crianca.opcao3 %><br />	
   <b>Opção 4:       </b> 
-  <%= Unidade.find_by_id(@crianca.option4).nome %><br />
+  <%= @crianca.opcao4 %><br />
   <b>Matriculado :     </b>  
   <%=h @crianca.verifica_matricula%> <br />
   <b>Un.Matriculada:</b>

@@ -1,3 +1,8 @@
+<script src="/javascripts/jquery.js" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui.js" type="text/javascript"></script>
+<script src="/javascripts/jrails.js" type="text/javascript"></script>
+
+<div id="conteudo">
 <div id="topo">
 <br/>
 <h1><center>Alteração do Cadastro de Crianças</center></h1>
@@ -17,8 +22,9 @@
 
 
 <p>
-   <div id="conteudo">
+
    <fieldset>
+   <h3>Dados da Inscrição</h3>
    <p>
     <th>Unidade</th>  
     <%= f.collection_select :unidade_id, @unidades, :id, :nome %> <br />
@@ -28,7 +34,13 @@
     <th>Região</th>  
     <%= f.collection_select :regiao_id, @regiaos, :id, :nome %> <br />
    </p>
-
+   <p>
+    <%= f.label :created_at, 'Cadastrado em:' %><br />
+    <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
+  </p>
+   </fieldset>
+   <fieldset>
+ <h3>Dados da Criança</h3>
    <p>
     <th>Nome         </th>
     <%= f.text_field :nome %><br />
@@ -38,8 +50,18 @@
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30))%><br />
     </p>
     <p>
-    <th>Grupo Alocado</th>  
+    <th>Classificação</th>
+
     <%= f.collection_select :grupo_id, @grupos, :id, :nome %> <br />
+    <div id="onde_classifica">
+    <%=h @crianca.onde_classifica%>
+    </div>
+   <%= observe_field("crianca_grupo_id",
+        :url => {:action => 'grupo_crianca'},
+        :with =>"crianca_grupo_id",
+        :on => "blur",
+        :update => "onde_classifica")%>
+     
     </p>
     <p>
     <th>Endereço      </th>  
@@ -83,10 +105,13 @@
     </p>
     <p>
     <th>Local Trabalho</th>  
-
-
     <%= f.text_field :local_trabalho %><br />
     </p>
+
+</fieldset>
+ <fieldset>
+  <h3>Preferências</h3>
+
     <p>
     <th>Opção 1       </th>
     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />       
@@ -100,15 +125,24 @@
     <p>
     <th>Matriculado     </th>  
     <%= f.check_box :matricula %><th>SIM</th><br />
+       <%= observe_field("crianca_unidade_id",
+        :url => {:action => 'matricula'},
+        :with =>"crianca_unidade_id",
+        :on => "blur",
+        :update => "onde_classifica")%>
+    
+    <div id="mat">
     <th>Un.Matriculada</th>
-    <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />
     </p>
+    </div>
     </fieldset>
     <fieldset>
        <%= f.submit "Atualizar" %>
     </fieldset>
-    </div>
+
 </p>
+</div>
 
 <%= link_to 'Exibir', @crianca %> |
 <%= link_to 'Voltar', criancas_path %>

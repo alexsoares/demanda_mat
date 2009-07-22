@@ -1,11 +1,16 @@
-<h1>Cadastro de Regiões</h1>
-
-<% form_for(@regiao) do |f| %>
+<div id='conteudo'>
+  <div id="topo">
+    <br />
+       <h1>Cadastro de Regiões</h1>
+  </div>
+ <% form_for(@regiao) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :nome %><br />
+   <fieldset> 
+    <%= f.label :nome, 'Nome' %><br />
     <%= f.text_field :nome %>
+   </fieldset>
   </p>
   <p>
     <%= f.submit "Cadastrar" %>
@@ -13,3 +18,4 @@
 <% end %>
 
 <%= link_to 'Voltar', regiaos_path %>
+</div>

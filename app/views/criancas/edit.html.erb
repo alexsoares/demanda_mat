@@ -105,8 +105,6 @@
     </p>
     <p>
     <th>Local Trabalho</th>  
-
-
     <%= f.text_field :local_trabalho %><br />
     </p>
 
@@ -128,8 +126,7 @@
     <th>Matriculado     </th>  
     <%= f.check_box :matricula %><th>SIM</th><br />
     <th>Un.Matriculada</th>
-
-  <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />
+    <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />
     </p>
     </fieldset>
     <fieldset>

@@ -12,7 +12,9 @@
     });
 </script>
 <div id="conteudo">
-
+<div id="topo">
+  <h1>Cadastro de Crianças</h1>
+</div>
 
 <% form_for(@crianca) do |f| %>  
 <%= f.error_messages %>  
