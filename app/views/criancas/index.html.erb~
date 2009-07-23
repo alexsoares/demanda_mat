@@ -32,28 +32,28 @@
 
 <% for crianca in @criancas %>
   <tr>
-    <p><td><center><%= Regiao.find_by_id(crianca.regiao).nome %></center></td></p>
-    <p><td><center><%= Unidade.find_by_id(crianca.unidade_id).nome.capitalize	 %></center></td></p>
+    <p><td><center><%= Regiao.find_by_id(crianca.regiao).nome..upcase %></center></td></p>
+    <p><td><center><%= Unidade.find_by_id(crianca.unidade_id).nome.upcase %></center></td></p>
     <p><td><center><%=h crianca.nome %></center></td></p>
     <p><td><center><%=h crianca.nascimento %></center></td></p>
-    <p><td><center><%= Grupo.find_by_id(crianca.grupo_id).nome.capitalize %></center></td></p>
-    <p><td><center><%=h crianca.endereco %></center></td></p>
+    <p><td><center><%= Grupo.find_by_id(crianca.grupo_id).nome.upcase %></center></td></p>
+    <p><td><center><%=h crianca.endereco.upcase %></center></td></p>
     <p><td><center><%=h crianca.numero %></center></td></p>
-    <p><td><center><%=h crianca.complemento %></center></td></p>
-    <p><td><center><%=h crianca.bairro %></center></td></p>
+    <p><td><center><%=h crianca.complemento.upcase %></center></td></p>
+    <p><td><center><%=h crianca.bairro.upcase %></center></td></p>
     <p><td><center><%=h crianca.tel1 %></center></td></p>
     <p><td><center><%=h crianca.tel2 %></center></td></p>
     <p><td><center><%=h crianca.celular %></center></td></p>
     <p><td><center><%=h crianca.parentesco %></center></td></p>
     <p><td><center><%=h crianca.verifica_trabalha %></center></td></p>
-    <p><td><center><%=h crianca.local_trabalho %></center></td></p>
-    <p><td><center><%=h opcao1.capitalize %></center></td></p>
-    <p><td><center><%=h opcao2.capitalize %></center></td></p>
-    <p><td><center><%=h opcao3.capitalize %></center></td></p>
-    <p><td><center><%=h opcao4.capitalize %></center></td></p>
-    <p><td><center><%=h crianca.verifica_matricula.capitalize %></center></td></p>
-    <p><td><center><%=h crianca.onde_matricula.capitalize %></center></td></p>
-    <p><td><center><%=h crianca.conf_status.capitalize %></center></td></p>
+    <p><td><center><%=h crianca.local_trabalho.upcase %></center></td></p>
+    <p><td><center><%=h crianca.opcao1.upcase %></center></td></p>
+    <p><td><center><%=h crianca.opcao2.upcase %></center></td></p>
+    <p><td><center><%=h crianca.opcao3.upcase %></center></td></p>
+    <p><td><center><%=h crianca.opcao4.upcase %></center></td></p>
+    <p><td><center><%=h crianca.verifica_matricula.upcase %></center></td></p>
+    <p><td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+    <p><td><center><%=h crianca.conf_status.upcase %></center></td></p>
 
     <td><%= link_to 'Exibir', crianca %></td>
     <td><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>

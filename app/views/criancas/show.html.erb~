@@ -7,7 +7,7 @@
 <p>
   <b>Região: </b>
   <%=h @crianca.regiao_id %>
-  <%= Regiao.find_by_id(@crianca.regiao_id).nome %><br />
+  <%= + ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
   <b>Nome:</b>
   <%=h @crianca.nome %><br />
   <b>Nascimento:   </b>  
@@ -38,13 +38,13 @@
   <b>Local Trabalho:</b>  
   <%=h @crianca.local_trabalho%> <br />
   <b>Opção 1:       </b>
-  <%= opcao1.nome %><br />
+  <%= @crianca.opcao1 %><br />
   <b>Opção 2:       </b>
-  <%= opcao2.nome %><br />	
+  <%= @crianca.opcao2 %><br />	
   <b>Opção 3:       </b>
-  <%= opcao3.nome %><br />	
+  <%= @crianca.opcao3 %><br />	
   <b>Opção 4:       </b> 
-  <%= opcao4.nome %><br />
+  <%= @crianca.opcao4 %><br />
   <b>Matriculado :     </b>  
   <%=h @crianca.verifica_matricula%> <br />
   <b>Un.Matriculada:</b>

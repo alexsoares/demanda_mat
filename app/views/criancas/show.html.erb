@@ -7,7 +7,7 @@
 <p>
   <b>Região: </b>
   <%=h @crianca.regiao_id %>
-  <%= Regiao.find_by_id(@crianca.regiao_id).nome %><br />
+  <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
   <b>Nome:</b>
   <%=h @crianca.nome %><br />
   <b>Nascimento:   </b>  

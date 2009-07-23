@@ -41,7 +41,7 @@ class Crianca < ActiveRecord::Base
   end
 
   def verifica_matricula
-    if matricula == '1' then
+    if matricula == 1 then
       return 'SIM'
     else
       return 'NÃO'
@@ -49,7 +49,7 @@ class Crianca < ActiveRecord::Base
   end
 
   def status
-    if matricula == '1' then
+    if matricula == 1 then
       @status = 1
     else
       @status = 0
