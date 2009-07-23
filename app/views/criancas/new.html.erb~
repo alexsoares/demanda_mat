@@ -22,7 +22,8 @@
 
 <p>
   <fieldset>
-   <h3>Dados da Inscrição</h3>
+  <legend><font size=4>Dados da Inscrição</font></legend>
+
 
   <p>
     <%= f.label :unidade, 'Unidade da Inscrição' %><br />
@@ -40,14 +41,34 @@
     <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
   </p>
 </fieldset>
+<br/>
+
 <fieldset>
- <h3>Dados da Criança</h3>
+   <legend><font size=4>Dados da Criança</font></legend>
   <th>Nome         </th>
     <%= f.text_field :nome %><br />
-    <th>Nascimento   </th>  
-    <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><br />
+    <%= observe_field :crianca_nome,
+    :with => :crianca_nome,
+    :url => { :action => 'mesmo_nome' } %>
+    <div id='nome_aviso' class='aviso'>
+    </div>
 
-
+    <%= f.label :nascimento, 'Data de nascimento' %><br />  
+    <%= f.date_select(:nascimento, :order => [:day, :month, :year]) %>
+    <%= observe_field :crianca_nascimento_1i,
+    :update => :birthday_warning,
+    :with => "'ano='+escape($('crianca_nascimento_1i').value) + '&mes=' + escape($('crianca_birthday_2i').value) +'&dia=' + escape($('crianca_nascimento_3i').value) + '&nome=' + escape($('crianca_nome').value)",
+    :url => { :action => 'same_birthday' } %>
+    <%= observe_field :crianca_nascimento_2i,
+    :update => :birthday_warning,
+    :with => "'ano='+escape($('child_birthday_1i').value) + '&mes=' + escape($('child_birthday_2i').value) +'&dia=' + escape($('child_birthday_3i').value) + '&nome=' + escape($('child_name').value)",
+    :url => { :action => 'same_birthday' } %> 
+    <%= observe_field :crianca_nascimento_3i,
+    :update => :birthday_warning,
+    :with => "'ano='+escape($('child_birthday_1i').value) + '&mes=' + escape($('child_birthday_2i').value) +'&dia=' + escape($('child_birthday_3i').value) + '&nome=' + escape($('child_name').value)",
+    :url => { :action => 'same_birthday' } %>
+    <div id='birthday_warning' class='aviso'>
+    </div>
 
     <th>Classificação</th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  
@@ -57,7 +78,6 @@
         :on => "blur",
         :update => "descricao")%>
      <div id='descricao'>         </div>
-
    <th>Endereço      </th>
     <%= f.text_field :endereco %><br />
     <th>Número        </th>  
@@ -75,7 +95,7 @@
     <th>Responsável   </th>  
     <%= f.check_box :responsavel %><br />
     <%= f.label :parentesco %><br />
-    <%= f.select :parentesco, GRAU, :selected => 1%>
+    <%= f.select :parentesco, GRAU, :selected => 1%><br/>
     <th>Trabalha?       </th>  
     <a href="#" id="dropdownbutton"><%= f.check_box :trabalha %></a><th>SIM</th><br />
        <ul id="menu" style="display:none">
@@ -83,11 +103,11 @@
          <%= f.text_field :local_trabalho %><br />
        </ul>   
   </fieldset>
+ <br/>
+
   <fieldset>
-
-
-<div id='region'>
-  <h3>Preferências</h3>
+  <div id='region'>
+  <legend><font size=4>Preferências</font></legend>
   <p>
     <%= f.label :option1, 'Opção 1' %><br />
     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
@@ -109,9 +129,11 @@
 
 
   <fieldset>
+   <div id='Certeza'>  
   <p>
     <%= f.submit "Cadastrar" %>
   </p>
+  </div>
   </fieldset>
 </div>
 

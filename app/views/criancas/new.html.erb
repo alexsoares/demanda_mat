@@ -47,8 +47,15 @@
    <legend><font size=4>Dados da Criança</font></legend>
   <th>Nome         </th>
     <%= f.text_field :nome %><br />
-    <th>Nascimento   </th>  
-    <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><br />
+    <%= observe_field :crianca_nome,
+    :with => :crianca_nome,
+    :url => { :action => 'mesmo_nome' } %>
+    <div id='nome_aviso' class='aviso'>
+    </div>
+
+    <%= f.label :nascimento, 'Data de nascimento' %><br />  
+    <%= f.date_select(:nascimento, :order => [:day, :month, :year]) %>
+
     <th>Classificação</th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  
      <%= observe_field("crianca_grupo_id",
@@ -108,10 +115,11 @@
 
 
   <fieldset>
- 
+   <div id='Certeza'>  
   <p>
     <%= f.submit "Cadastrar" %>
   </p>
+  </div>
   </fieldset>
 </div>
 

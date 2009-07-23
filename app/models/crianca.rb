@@ -2,18 +2,26 @@ class Crianca < ActiveRecord::Base
   belongs_to :unidade
   belongs_to :grupo
   belongs_to :regiao
+
   validates_presence_of :regiao_id, :message => ' - Escolha uma Região'
   validates_presence_of :grupo_id, :message => ' - Escolha uma classificação'
   validates_presence_of :nome, :message => ' - O nome da Criança é obrigatório'
   validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
-
+  validates_numericality_of :celular, :only_integer => true, :message =>  ' - Não é um número'
+  validates_presence_of :option1, :message => ' - Ao menos 1 opção deve ser preenchida' 
  
+  named_scope :by_nome, lambda {|nome| { :conditions => { :nome => nome }}}
+  named_scope :by_nascimento, lambda {|datanascimento| { :conditions => { :nascimento => datanascimento }}}
 
   def check_tel1
     self.tel1.empty?
   end
 
+  def check_opcao
+    self.option2.empty?
+
+  end
 
   def trabalha?
     if self.trabalha then
