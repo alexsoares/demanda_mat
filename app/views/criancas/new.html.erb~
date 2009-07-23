@@ -54,21 +54,7 @@
     </div>
 
     <%= f.label :nascimento, 'Data de nascimento' %><br />  
-    <%= f.date_select(:nascimento, :order => [:day, :month, :year]) %>
-    <%= observe_field :crianca_nascimento_1i,
-    :update => :birthday_warning,
-    :with => "'ano='+escape($('crianca_nascimento_1i').value) + '&mes=' + escape($('crianca_birthday_2i').value) +'&dia=' + escape($('crianca_nascimento_3i').value) + '&nome=' + escape($('crianca_nome').value)",
-    :url => { :action => 'same_birthday' } %>
-    <%= observe_field :crianca_nascimento_2i,
-    :update => :birthday_warning,
-    :with => "'ano='+escape($('child_birthday_1i').value) + '&mes=' + escape($('child_birthday_2i').value) +'&dia=' + escape($('child_birthday_3i').value) + '&nome=' + escape($('child_name').value)",
-    :url => { :action => 'same_birthday' } %> 
-    <%= observe_field :crianca_nascimento_3i,
-    :update => :birthday_warning,
-    :with => "'ano='+escape($('child_birthday_1i').value) + '&mes=' + escape($('child_birthday_2i').value) +'&dia=' + escape($('child_birthday_3i').value) + '&nome=' + escape($('child_name').value)",
-    :url => { :action => 'same_birthday' } %>
-    <div id='birthday_warning' class='aviso'>
-    </div>
+    <%= f.date_select(:nascimento, :order => [:day, :month, :year]) %><BR />
 
     <th>Classificação</th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  

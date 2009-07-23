@@ -2,7 +2,7 @@ class CreateGrupos < ActiveRecord::Migration
   def self.up
     create_table :grupos do |t|
       t.string :nome, :limit => 50
-      t.string :descricao, :limit => 50, :default => 0
+      t.string :descricao, :limit => 50
       t.timestamps
     end
     Grupo.create :nome => "Berçário I"

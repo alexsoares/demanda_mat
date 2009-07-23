@@ -54,7 +54,7 @@
     </div>
 
     <%= f.label :nascimento, 'Data de nascimento' %><br />  
-    <%= f.date_select(:nascimento, :order => [:day, :month, :year]) %>
+    <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><BR />
 
     <th>Classificação</th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  
