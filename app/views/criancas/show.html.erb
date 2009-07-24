@@ -2,8 +2,9 @@
 <div id="topo">
 <center><br/><h1>Cadastro de Crianças</h1></center>
 </div>
+<br />
 <fieldset>
-
+  <legend><font size=4>Dados da Criança</font></legend>
 <p>
   <b>Nome:</b>
       <%=h @crianca.nome %><br />
@@ -25,13 +26,24 @@
       <%=h @crianca.tel2%> <br />
   <b>Celular:       </b>
       <%=h @crianca.celular%> <br />
+ </fieldset>
+<br />
+ <fieldset>
+ <legend><font size=4>Acompanhante</font></legend>
+  <p>
   <b>Responsável:   </b>
      <%=h @crianca.nome_responsavel%> <br />
   <b>Trabalha:      </b>
      <%=h @crianca.verifica_trabalha%> <br />
   <b>Local Trabalho:</b>
      <%=h @crianca.local_trabalho%> <br />
-  <b>Região onde fez a matricula: </b>
+    </p>
+  </fieldset>
+  <br />
+  <fieldset>
+   <legend><font size=4>Dados da Inscrição</font></legend>
+ <p>
+ <b>Região onde fez a matricula: </b>
      <%=h @crianca.regiao_id %>
      <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
   <b>Matrícula - Opção 1:       </b>
@@ -49,7 +61,7 @@
   <b>Un.Matriculada:</b>
     <%=h @crianca.onde_matricula %> <br />
  
-</p>
+ </p>
 </fieldset>
 
 </div>

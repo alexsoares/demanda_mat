@@ -6,16 +6,18 @@
 <fieldset>
 <table>
   <tr>
+    <th>Localização</th>
     <th>Nome</th>
     <th>Tipo de Ensino</th>
-    <th>Região localizada</th>
+
   </tr>
 
 <% for unidade in @unidades %>
   <tr>
+    <td><center><%=h unidade.regiao.nome %></center></td>
     <td><center><%=h unidade.nome %></center></td>
     <td><center><%=h unidade.nome_tipo %></center></td>
-    <td><center><%=h unidade.regiao.nome %></center></td>        
+      
 
     <td><%= link_to 'Exbir', unidade %></td>
     <td><%= link_to 'Alterar', edit_unidade_path(unidade) %></td>
