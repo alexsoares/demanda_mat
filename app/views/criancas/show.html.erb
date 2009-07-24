@@ -5,52 +5,50 @@
 <fieldset>
 
 <p>
-  <b>Região: </b>
-  <%=h @crianca.regiao_id %>
-  <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
   <b>Nome:</b>
-  <%=h @crianca.nome %><br />
-  <b>Nascimento:   </b>  
-  <%=h @crianca.nascimento.strftime("%d/%m/%y")%> <br />
+      <%=h @crianca.nome %><br />
+  <b>Nascimento:   </b>
+      <%=h @crianca.nascimento.strftime("%d/%m/%y")%> <br />
   <b>Classificação:</b>
-  <%=h @crianca.grupo.nome + ' - ' %>
-  <%=h @crianca.grupo.descricao	%> <br />
-  <b>Endereço:      </b>  
-  <%=h @crianca.endereco%> <br />
-  <b>Número:        </b>  
-  <%=h @crianca.numero%> <br />
-  <b>Complemento:   </b>  
-  <%=h @crianca.complemento%> <br />
-  <b>Bairro:        </b>  
-  <%=h @crianca.bairro%> <br />
-  <b>Telefone 1:    </b>  
-  <%=h @crianca.tel1%> <br />
-  <b>Telefone 2:    </b>    
-  <%=h @crianca.tel2%> <br />
-  <b>Celular:       </b>  
-  <%=h @crianca.celular%> <br />
-  <b>Responsável:   </b>  
-  <%=h @crianca.responsavel%> <br />
-  <b>Parentesco:    </b>  
-  <%=h @crianca.parentesco%> <br />
-  <b>Trabalha:      </b>  
-  <%=h @crianca.verifica_trabalha%> <br />
-  <b>Local Trabalho:</b>  
-  <%=h @crianca.local_trabalho%> <br />
-  <b>Opção 1:       </b>
-  <%= @crianca.opcao1 %><br />
-  <b>Opção 2:       </b>
-  <%= @crianca.opcao2 %><br />	
-  <b>Opção 3:       </b>
-  <%= @crianca.opcao3 %><br />	
-  <b>Opção 4:       </b> 
-  <%= @crianca.opcao4 %><br />
-  <b>Matriculado :     </b>  
-  <%=h @crianca.verifica_matricula%> <br />
-  <b>Un.Matriculada:</b>
- <%=h @crianca.onde_matricula %> <br />
+      <%=h @crianca.grupo.nome + ' - ' %>
+      <%=h @crianca.grupo.descricao	%> <br />
+  <b>Endereço:      </b>
+      <%=h @crianca.endereco%> 
+      <%=h @crianca.numero%> <br />
+  <b>Complemento:   </b>
+      <%=h @crianca.complemento%> <br />
+  <b>Bairro:        </b>
+      <%=h @crianca.bairro%> <br />
+  <b>Telefone 1:    </b>
+      <%=h @crianca.tel1%> <br />
+  <b>Telefone 2:    </b>
+      <%=h @crianca.tel2%> <br />
+  <b>Celular:       </b>
+      <%=h @crianca.celular%> <br />
+  <b>Responsável:   </b>
+     <%=h @crianca.parentesco%> <br />
+  <b>Trabalha:      </b>
+     <%=h @crianca.verifica_trabalha%> <br />
+  <b>Local Trabalho:</b>
+     <%=h @crianca.local_trabalho%> <br />
+  <b>Região onde fez a matricula: </b>
+     <%=h @crianca.regiao_id %>
+     <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
+  <b>Matrícula - Opção 1:       </b>
+     <%= @crianca.opcao1 %><br />
+  <b>Matrícula - Opção 2:       </b>
+     <%= @crianca.opcao2 %><br />
+  <b>Matrícula - Opção 3:       </b>
+     <%= @crianca.opcao3 %><br />
+  <b>Matrícula - Opção 4:       </b>
+     <%= @crianca.opcao4 %><br />
   <b>Status: </b>
-  <%=h @crianca.conf_status	%> <br />
+     <%=h @crianca.conf_status	%> <br />
+  <b>Matriculado :     </b>  
+     <%=h @crianca.verifica_matricula%> <br />
+  <b>Un.Matriculada:</b>
+    <%=h @crianca.onde_matricula %> <br />
+ 
 </p>
 </fieldset>
 

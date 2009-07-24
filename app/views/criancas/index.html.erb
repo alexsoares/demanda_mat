@@ -3,40 +3,36 @@
 </div>
 
 <div id="conteudo">
-<fieldset>
-<table border="1"
+
+<table border="4" cellpadding="2" cellspacing="2" width="100%">
     <tr>
-    <center><th>Região</th></center>
-    <th>Unidade</th>
     <center><th>Nome</th></center>
-    <th>Data de Nascimento</th>
-    <th>Grupo</th>
+    <th>Data Nascimento</th>
     <th>Endereço</th>
-    <th>Numero</th>
-    <th>Complemento</th>
+    <th>N.</th>
+    <th>Compl</th>
     <th>Bairro</th>
     <th>Fone1</th>
     <th>Fone2</th>
     <th>Celular</th>
-    <th>Responsável</th>
+    <th>Resp</th>
     <th>Trabalha</th>
     <th>Local de Trabalho</th>
+    <center><th>Onde fez matrícula</th></center>
+    <center><th>Regiao de preferência</th></center>
     <th>Opção 1</th>
     <th>Opção 2</th>
-    <th>Opção 3</th>    
+    <th>Opção 3</th>
     <th>Opção 4</th>
-    <th>Matricula</th>
+    <th>Classificação</th>
+    <th>Status</th>
     <th>Unidade Matricula</th>
-    <th>Status</th>  
-    </tr>
+  </tr>
 
 <% for crianca in @criancas %>
   <tr>
-    <p><td><center><%= Regiao.find_by_id(crianca.regiao).nome.upcase %></center></td></p>
-    <p><td><center><%= Unidade.find_by_id(crianca.unidade_id).nome.upcase %></center></td></p>
-    <p><td><center><%=h crianca.nome %></center></td></p>
-    <p><td><center><%=h crianca.nascimento %></center></td></p>
-    <p><td><center><%= Grupo.find_by_id(crianca.grupo_id).nome.upcase %></center></td></p>
+    <p><td><center><%=h crianca.nome.upcase %></center></td></p>
+    <p><td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td></p>
     <p><td><center><%=h crianca.endereco.upcase %></center></td></p>
     <p><td><center><%=h crianca.numero %></center></td></p>
     <p><td><center><%=h crianca.complemento.upcase %></center></td></p>
@@ -47,22 +43,25 @@
     <p><td><center><%=h crianca.parentesco %></center></td></p>
     <p><td><center><%=h crianca.verifica_trabalha %></center></td></p>
     <p><td><center><%=h crianca.local_trabalho.upcase %></center></td></p>
+    <p><td><center><%= Unidade.find_by_id(crianca.unidade_id).nome.upcase %></center></td></p>
+    <p><td><center><%= Regiao.find_by_id(crianca.regiao).nome.upcase %></center></td></p>
     <p><td><center><%=h crianca.opcao1.upcase %></center></td></p>
     <p><td><center><%=h crianca.opcao2.upcase %></center></td></p>
     <p><td><center><%=h crianca.opcao3.upcase %></center></td></p>
     <p><td><center><%=h crianca.opcao4.upcase %></center></td></p>
-    <p><td><center><%=h crianca.verifica_matricula.upcase %></center></td></p>
-    <p><td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+    <p><td><center><%= Grupo.find_by_id(crianca.grupo_id).nome.upcase %></center></td></p>
     <p><td><center><%=h crianca.conf_status.upcase %></center></td></p>
-
+    <p><td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+  </tr>
+  <tr>
     <td><%= link_to 'Exibir', crianca %></td>
     <td><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
     <td><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
-  </tr>
+ </tr>
+    
 
 <% end %>
 </table>
-</fieldset>
 </div>
 <br />
 
