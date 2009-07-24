@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20090616132325) do
     t.string   "tel1"
     t.string   "tel2"
     t.string   "celular"
-    t.string   "responsavel"
-    t.integer  "parentesco"
+    t.integer  "responsavel"
+    t.string   "nome_responsavel",  :limit => 30
+    t.string   "parentesco",                      :default => "0"
     t.boolean  "trabalha"
     t.string   "local_trabalho"
     t.integer  "option1",                         :default => 0

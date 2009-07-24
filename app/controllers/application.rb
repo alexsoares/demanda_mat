@@ -13,4 +13,4 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
 end
-GRAU = {'Mãe' => 1, 'Pai' => 2, 'Avó' => 3, 'Avô' => 4, 'Tia' => 5, 'Tio' => 6, 'Irmã' => 7, 'Irmão' => 8, 'Tutor' => 9, 'Outros' => 10}
+GRAU = {'Mãe' => 'Mãe', 'Pai' => 'Pai', 'Avó' => 'Avó', 'Avô' => 'Avô', 'Tia' => 'Tia', 'Tio' => 'Tio', 'Irmã' => 'Irmã', 'Irmão' => 'Irmão', 'Tutor' => 'Tutor', 'Outros' => 'Outros'}

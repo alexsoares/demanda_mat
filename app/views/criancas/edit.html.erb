@@ -94,12 +94,15 @@
     <%= f.text_field :celular %><br />
     </p>    
     <p>
-    <th>Responsável   </th>  
-    <%= f.text_field :responsavel %><br />
+    <th>Responsável</th>
+    <%= f.check_box :responsavel %><br />
+    </p>
+    <th>Nome Responsável   </th>  
+    <%= f.text_field :nome_responsavel %><br />
     </p>
     <p>  
     <%= f.label :parentesco %>
-    <%= f.select :parentesco, GRAU, :selected => 1%>
+    <%= f.select :parentesco, GRAU %>
     </p>
     <p>    
     <th>Trabalha      </th>  

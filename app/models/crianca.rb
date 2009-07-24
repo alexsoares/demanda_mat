@@ -8,9 +8,12 @@ class Crianca < ActiveRecord::Base
   validates_presence_of :nome, :message => ' - O nome da Criança é obrigatório'
   validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
-  validates_numericality_of :celular, :only_integer => true, :message =>  ' - Não é um número'
+  validates_numericality_of :celular, :if => :check_tel1 , :only_integer => true, :message =>  ' - Não é um número'
   validates_presence_of :option1, :message => ' - Ao menos 1 opção deve ser preenchida' 
- 
+  validates_numericality_of :tel1, :only_integer => true, :message =>  ' - Não é um número'
+
+
+
   named_scope :by_nome, lambda {|nome| { :conditions => { :nome => nome }}}
   named_scope :by_nascimento, lambda {|datanascimento| { :conditions => { :nascimento => datanascimento }}}
 
