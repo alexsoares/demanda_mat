@@ -5,7 +5,7 @@
 <div id="conteudo">
 <div id="topo">
 <br/>
-<h1><center>Alteração do Cadastro de Crianças</center></h1>
+<h1>Alteração do Cadastro de Crianças</h1>
 </div>
 <% form_for(@crianca) do |f| %>  
 <%= f.error_messages %>  
@@ -97,13 +97,14 @@
    </fieldset>
   <br />
 
-  <fieldset>
+  <fieldset>>
    <legend><font size=4>Acompanhante</font></legend>
     <p>
     <th>Responsável</th>
     <%= f.check_box :responsavel %><br />
     </p>
-    <th>Nome Responsável   </th>  
+    <p>
+    <th>Nome Responsável   </th>
     <%= f.text_field :nome_responsavel %><br />
     </p>
     <p>  
@@ -122,22 +123,23 @@
   </fieldset>
 <div id="region">
 <br/>
-
-
  <fieldset>
-  <legend><font size=4>Preferências</font></legend>
+    <legend><font size=4>Preferências</font></legend>
     <p>
     <th>Opção 1       </th>
-    <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />
     <th>Opção 2       </th>
-    <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '' %> <br />
     <th>Opção 3       </th>
-    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '' %> <br />       
-    <th>Opção 4       </th> 
-    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />       
+    <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '' %> <br />
+    <th>Opção 4       </th>
+    <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />
     </p>
-     </div>
- </fieldset>
+ </fieldset>>
+</div>
+
+
+ 
  <br/>
   <fieldset>
   <legend><font size=4>Dados da Inscrição</font></legend>

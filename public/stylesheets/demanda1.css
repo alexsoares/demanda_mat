@@ -19,11 +19,6 @@ float:left;
 #conteudo {
 margin:25px;
 }
-.novo {
-padding-left:20px;
-background:url(../images/mais.png) 3px center no-repeat;
-font-weight:bold;
-}
 
 #nome_aviso {
 font: bold;
