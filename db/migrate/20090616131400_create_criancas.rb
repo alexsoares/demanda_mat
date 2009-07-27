@@ -2,6 +2,7 @@ class CreateCriancas < ActiveRecord::Migration
   def self.up
     create_table :criancas do |t|
       t.string :nome, :limit => 30
+      t.string :mae, :limit => 30
       t.references :unidade
       t.references :regiao
       t.date :nascimento
@@ -24,10 +25,11 @@ class CreateCriancas < ActiveRecord::Migration
       t.integer :option4, :default => 0
       t.integer :matricula, :default => 0
       t.integer :unidade_matricula, :default => 0 
-      t.integer :status, :default => 0 
+      t.integer :status, :default => 0
 
       t.timestamps
     end
+
   end
 
   def self.down
