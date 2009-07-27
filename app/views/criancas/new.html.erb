@@ -47,6 +47,9 @@
     <%= f.label :nascimento, 'Data de nascimento' %><br />  
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><BR />
 
+<th>Nome da Mãe</th>
+    <%= f.text_field :mae %><br />
+
     <th>Classificação</th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  
      <%= observe_field("crianca_grupo_id",

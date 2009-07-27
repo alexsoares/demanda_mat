@@ -13,6 +13,7 @@ ActiveRecord::Schema.define(:version => 20090616132325) do
 
   create_table "criancas", :force => true do |t|
     t.string   "nome",              :limit => 30
+    t.string   "mae",               :limit => 30
     t.integer  "unidade_id"
     t.integer  "regiao_id"
     t.date     "nascimento"

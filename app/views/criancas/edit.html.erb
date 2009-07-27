@@ -53,8 +53,11 @@
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30))%><br />
     </p>
     <p>
+     <th>Nome da Mãe</th>
+    <%= f.text_field :mae %><br />
+    </p>
+    <p>
     <th>Classificação</th>
-
     <%= f.collection_select :grupo_id, @grupos, :id, :nome %> <br />
     <div id="onde_classifica">
     <%=h @crianca.onde_classifica%>
@@ -97,7 +100,7 @@
    </fieldset>
   <br />
 
-  <fieldset>>
+  <fieldset>
    <legend><font size=4>Acompanhante</font></legend>
     <p>
     <th>Responsável</th>
