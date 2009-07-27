@@ -4,12 +4,11 @@
 <h1>Relatório de Unidades</h1>
 </div>
 <fieldset>
-<table>
+<table >
   <tr>
     <th>Localização</th>
     <th>Nome</th>
     <th>Tipo de Ensino</th>
-
   </tr>
 
 <% for unidade in @unidades %>
@@ -17,12 +16,13 @@
     <td><center><%=h unidade.regiao.nome %></center></td>
     <td><center><%=h unidade.nome %></center></td>
     <td><center><%=h unidade.nome_tipo %></center></td>
-      
 
+    
     <td><%= link_to 'Exbir', unidade %></td>
     <td><%= link_to 'Alterar', edit_unidade_path(unidade) %></td>
     <td><%= link_to 'Apagar', unidade, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
+
 <% end %>
 </table>
 </fieldset>
