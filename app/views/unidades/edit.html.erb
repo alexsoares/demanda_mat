@@ -2,6 +2,7 @@
 <br/>
 <h1>Alteração de Unidades</h1>
 </div>
+<br/>
 <fieldset>
 <% form_for(@unidade) do |f| %>
   <%= f.error_messages %>
@@ -30,11 +31,13 @@
     <%= f.collection_select :regiao_id, @regiaos, :id, :nome %>
   </p>
 
-
-  <p>
+</fieldset>
+<p>
     <%= f.submit "Atualizar" %>
   </p>
 <% end %>
-</fieldset>
+
+<br/>
+
 <%= link_to 'Exibir', @unidade %> |
 <%= link_to 'Voltar', unidades_path %>

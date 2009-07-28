@@ -5,7 +5,6 @@
 <br />
 <fieldset>
   <legend><font size=4>Dados da Criança</font></legend>
-<p>
   <b>Nome:</b>
       <%=h @crianca.nome %><br />
   <b>Nascimento:   </b>
@@ -17,8 +16,7 @@
       <%=h @crianca.grupo.descricao	%> <br />
   <b>Endereço:      </b>
       <%=h @crianca.endereco%> 
-      <%=h @crianca.numero%> <br />
-  <b>Complemento:   </b>
+      <%=h @crianca.numero%>  - 
       <%=h @crianca.complemento%> <br />
   <b>Bairro:        </b>
       <%=h @crianca.bairro%> <br />
@@ -27,29 +25,34 @@
   <b>Telefone 2:    </b>
       <%=h @crianca.tel2%> <br />
   <b>Celular:       </b>
-      <%=h @crianca.celular%> <br />
+      <%=h @crianca.celular%> 
  </fieldset>
 <br />
  <fieldset>
  <legend><font size=4>Acompanhante</font></legend>
-  <p>
-  <b>Responsável:   </b>
+   <b>Responsável:   </b>
      <%=h @crianca.nome_responsavel%> <br />
+  <b>Parentesco:   </b>
+    <%=h @crianca.parentesco %><br/>
   <b>Trabalha:      </b>
-     <%=h @crianca.verifica_trabalha%> <br />
+     <%=h @crianca.verifica_trabalha%>    -
   <b>Local Trabalho:</b>
-     <%=h @crianca.local_trabalho%> <br />
-    </p>
+     <%=h @crianca.local_trabalho%> 
+ 
   </fieldset>
   <br />
   <fieldset>
-   <legend><font size=4>Dados da Inscrição</font></legend>
- <p>
- <b>Região onde fez a matricula: </b>
+  <legend><font size=4>Dados da Inscrição</font></legend>
+  <b>Unidade onde fez a matricula:      </b>
+     <%=h @crianca.unidade_id %>
+     <%= ' - ' + Unidade.find_by_id(@crianca.unidade_id).nome %><br />
+ <b>Data da Inscrição:       </b>
+     <%=h @crianca.created_at.strftime("%d/%m/%y")%> <br />
+          <b>Região de preferência: </b>
      <%=h @crianca.regiao_id %>
      <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
   <b>Matrícula - Opção 1:       </b>
-     <%= @crianca.opcao1 %><br />
+    <%= @crianca.opcao1 %><br />
   <b>Matrícula - Opção 2:       </b>
      <%= @crianca.opcao2 %><br />
   <b>Matrícula - Opção 3:       </b>
@@ -59,11 +62,11 @@
   <b>Status: </b>
      <%=h @crianca.conf_status	%> <br />
   <b>Matriculado :     </b>  
-     <%=h @crianca.verifica_matricula%> <br />
-  <b>Un.Matriculada:</b>
-    <%=h @crianca.onde_matricula %> <br />
+     <%=h @crianca.verifica_matricula%> - 
+  <b>Un.Matriculada:</b
+>
+    <%=h @crianca.onde_matricula %> 
  
- </p>
 </fieldset>
 <br/>
 <center><input type="button" value="Imprimir" onclick=javascript:window.print()> </center>

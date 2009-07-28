@@ -1,4 +1,10 @@
+<div id="conteudo">
+<div id="topo">
+<center><br/><h1>Cadastro de Unidades</h1></center>
+</div>
+<br />
 <p>
+<fieldset>
   <b>Nome:</b>
 <td><%=h @unidade.nome %></td>
 </p>
@@ -12,7 +18,8 @@
   <b>Localização</b>
   <td><%=h @unidade.regiao.nome %></td>
 </p>
-
-
+</fieldset>
+<br/>
+<center><input type="button" value="Imprimir" onclick=javascript:window.print()> </center>
 <%= link_to 'Alterar', edit_unidade_path(@unidade) %> |
 <%= link_to 'Voltar', unidades_path %>

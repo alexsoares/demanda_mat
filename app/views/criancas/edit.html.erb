@@ -138,15 +138,13 @@
     <th>Opção 4       </th>
     <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />
     </p>
- </fieldset>>
+ </fieldset>
 </div>
-
 
  
  <br/>
   <fieldset>
   <legend><font size=4>Dados da Inscrição</font></legend>
-
     <p>
     <th>Matriculado     </th>  
     <%= f.check_box :matricula %><th>SIM</th><br />
@@ -156,14 +154,15 @@
  </fieldset>
 <br/>
 
-    <fieldset>
+
       <p>
        <%= f.submit "Atualizar" %>
       </p>
-    </fieldset>
+
 
  </p>
 </div>
+
 
 <%= link_to 'Exibir', @crianca %> |
 <%= link_to 'Voltar', criancas_path %>
