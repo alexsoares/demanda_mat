@@ -7,16 +7,18 @@
   <br/>
   <h1>Cadastro de Crianças</h1>
 </div>
+ 
 
 <% form_for(@crianca) do |f| %>  
 <%= f.error_messages %>  
 
 <p>
   <fieldset>
+  
   <legend><font size=4>Dados da Inscrição</font></legend>
-
-
-  <p>
+   <table border="1" width="120%" text-align=left>
+ <td>
+ <p>
     <%= f.label :unidade, 'Unidade da Inscrição' %><br />
     <%= f.collection_select :unidade_id, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
@@ -31,12 +33,22 @@
     <%= f.label :created_at, 'Cadastrado em:' %><br />
     <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
   </p>
+  </td>
+
+  <td>
+ <div id="mensagem">
+   OBS: UTILIZE SOMENTE LETRAS MAIÚSCULAS SEM ACENTUAÇÂO
+ </div>
+  </td>
+   </table>
 </fieldset>
 <br/>
+
 
 <fieldset>
    <legend><font size=4>Dados da Criança</font></legend>
   <th>Nome         </th>
+
 
   <%= f.text_field :nome %><br />
     <%= observe_field :crianca_nome,

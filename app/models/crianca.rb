@@ -3,15 +3,20 @@ class Crianca < ActiveRecord::Base
   belongs_to :grupo
   belongs_to :regiao
 
-  validates_presence_of :regiao_id, :message => ' - Escolha uma Região'
-  validates_presence_of :grupo_id, :message => ' - Escolha uma classificação'
-  validates_presence_of :nome, :message => ' - O nome da Criança é obrigatório'
-  validates_presence_of :responsavel, :message => ' - O nome do Responsável é obrigatório'
-  validates_presence_of :celular, :if => :check_tel1, :message => ' - É necessário um Telefone Fixo ou Celular'
-  validates_numericality_of :celular, :if => :check_tel1 , :only_integer => true, :message =>  ' - Não é um número'
-  validates_presence_of :option1, :message => ' - Ao menos 1 opção deve ser preenchida' 
-  validates_numericality_of :tel1, :only_integer => true, :message =>  ' - Não é um número'
-
+  validates_presence_of :regiao_id, :message => ' - ESCOLHA UMA REGIÃO'
+  validates_presence_of :grupo_id, :message => ' - ESCOLHA UMA CLASSIFICAÇÃO'
+  validates_presence_of :nome, :message => ' -  NOME DA CRIANÇA É OBRIGATÓRIO'
+  validates_presence_of :responsavel, :message => ' - NOME DO RESPONSÁVEL É OBRIGATÓRIO'
+  validates_presence_of :celular, :if => :check_tel1, :message => ' - É NECESSÁRIO UM TELEFONE FIXO OU CELULAR'
+  validates_numericality_of :celular, :if => :check_tel1 , :only_integer => true, :message =>  ' - NÃO É UM NÚMERO'
+  validates_presence_of :option1, :message => ' - ESCOLHA PELO MENOS UMA OPÇÃO'
+  validates_numericality_of :tel1, :only_integer => true, :message =>  ' - NÃO É NÚMERO'
+  validates_format_of :nome, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
+  validates_format_of :mae, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
+  validates_format_of :endereco, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
+  validates_format_of :complemento, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
+  validates_format_of :nome_responsavel, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
+  validates_format_of :local_trabalho, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
 
 
   named_scope :by_nome, lambda {|nome| { :conditions => { :nome => nome }}}
