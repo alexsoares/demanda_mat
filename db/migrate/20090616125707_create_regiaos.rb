@@ -5,13 +5,13 @@ class CreateRegiaos < ActiveRecord::Migration
 
       t.timestamps
     end
-    Regiao.create :nome => "São Jerônimo"
-    Regiao.create :nome => "Cidade Jardim"
-    Regiao.create :nome => "São Vito"
-    Regiao.create :nome => "Zanaga"
-    Regiao.create :nome => "Jardim Ipiranga"
-    Regiao.create :nome => "Centro"
-    Regiao.create :nome => "Praia Azul"
+    Regiao.create :nome => "SAO JERONIMO"
+    Regiao.create :nome => "CIDADE JARDIM"
+    Regiao.create :nome => "SAO VITO"
+    Regiao.create :nome => "ZANAGA"
+    Regiao.create :nome => "JARDIM IPIRANGA"
+    Regiao.create :nome => "CENTRO"
+    Regiao.create :nome => "PRAIA AZUL"
   end
 
   def self.down

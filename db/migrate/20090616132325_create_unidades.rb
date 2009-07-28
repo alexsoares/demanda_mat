@@ -15,52 +15,52 @@ class CreateUnidades < ActiveRecord::Migration
     # 5 - CIEP
 
 # São Jerônimo
-    Unidade.create :nome => "Arapiranga", :tipo => 3 , :regiao_id => 1
-    Unidade.create :nome => "Bitu", :tipo => 3, :regiao_id => 1
-    Unidade.create :nome => "Maíra", :tipo => 3, :regiao_id  => 1
-    Unidade.create :nome => "Juriti", :tipo => 3, :regiao_id => 1
-    Unidade.create :nome => "Jacy", :tipo => 2, :regiao_id => 1
-    Unidade.create :nome => "Aracy", :tipo => 2, :regiao_id => 1
+    Unidade.create :nome => "ARAPIRANGA", :tipo => 3 , :regiao_id => 1
+    Unidade.create :nome => "BITU", :tipo => 3, :regiao_id => 1
+    Unidade.create :nome => "MAIRA", :tipo => 3, :regiao_id  => 1
+    Unidade.create :nome => "JURITI", :tipo => 3, :regiao_id => 1
+    Unidade.create :nome => "JACY", :tipo => 2, :regiao_id => 1
+    Unidade.create :nome => "ARACY", :tipo => 2, :regiao_id => 1
     Unidade.create :nome => "CAIC", :tipo => 1, :regiao_id => 1
 # Cidade Jardim
-    Unidade.create :nome => "Graúna", :tipo => 3, :regiao_id => 2
-    Unidade.create :nome => "Araúna", :tipo => 3, :regiao_id => 2
-    Unidade.create :nome => "Carandá", :tipo => 2, :regiao_id => 2
-    Unidade.create :nome => "Manaí", :tipo => 2, :regiao_id => 2
-    Unidade.create :nome => "Aracati", :tipo => 2, :regiao_id => 2
-    Unidade.create :nome => "Cunhataí", :tipo => 2, :regiao_id => 2
-    Unidade.create :nome => "Manacá", :tipo => 1, :regiao_id => 2
-    Unidade.create :nome => "Anajá", :tipo => 1, :regiao_id => 2
-    Unidade.create :nome => "Chuí", :tipo => 1, :regiao_id => 2
+    Unidade.create :nome => "GRAUNA", :tipo => 3, :regiao_id => 2
+    Unidade.create :nome => "ARAUNA", :tipo => 3, :regiao_id => 2
+    Unidade.create :nome => "CARANDA", :tipo => 2, :regiao_id => 2
+    Unidade.create :nome => "MANAI", :tipo => 2, :regiao_id => 2
+    Unidade.create :nome => "ARACATI", :tipo => 2, :regiao_id => 2
+    Unidade.create :nome => "CUNHATAI", :tipo => 2, :regiao_id => 2
+    Unidade.create :nome => "MANACA", :tipo => 1, :regiao_id => 2
+    Unidade.create :nome => "ANAJA", :tipo => 1, :regiao_id => 2
+    Unidade.create :nome => "CHUI", :tipo => 1, :regiao_id => 2
 # São Vito
-    Unidade.create :nome => "Manacá", :tipo => 3, :regiao_id => 3
-    Unidade.create :nome => "Potira", :tipo => 2, :regiao_id => 3
-    Unidade.create :nome => "Paturi", :tipo => 2, :regiao_id => 3
-    Unidade.create :nome => "Indaiá", :tipo => 2, :regiao_id => 3
-    Unidade.create :nome => "Batuíra", :tipo => 2, :regiao_id => 3
-    Unidade.create :nome => "Jacina", :tipo => 2, :regiao_id => 3
-    Unidade.create :nome => "Curimã", :tipo => 1, :regiao_id => 3
-    Unidade.create :nome => "Majoí", :tipo => 1, :regiao_id => 3
-    Unidade.create :nome => "Taperá", :tipo => 1, :regiao_id => 3
+    Unidade.create :nome => "MANACA", :tipo => 3, :regiao_id => 3
+    Unidade.create :nome => "POTIRA", :tipo => 2, :regiao_id => 3
+    Unidade.create :nome => "PATURI", :tipo => 2, :regiao_id => 3
+    Unidade.create :nome => "INDAIA", :tipo => 2, :regiao_id => 3
+    Unidade.create :nome => "BATUIRA", :tipo => 2, :regiao_id => 3
+    Unidade.create :nome => "JACINA", :tipo => 2, :regiao_id => 3
+    Unidade.create :nome => "CURIMA", :tipo => 1, :regiao_id => 3
+    Unidade.create :nome => "MAJOI", :tipo => 1, :regiao_id => 3
+    Unidade.create :nome => "TAPERA", :tipo => 1, :regiao_id => 3
 # Zanaga
-    Unidade.create :nome => "Curió", :tipo => 3, :regiao_id => 4
-    Unidade.create :nome => "Taraguá", :tipo => 3, :regiao_id => 4
-    Unidade.create :nome => "Urupê", :tipo => 3, :regiao_id => 4
-    Unidade.create :nome => "Patativa", :tipo => 2, :regiao_id => 4
-    Unidade.create :nome => "Araçari", :tipo => 2, :regiao_id => 4
-    Unidade.create :nome => "Curumim", :tipo => 2, :regiao_id => 4
+    Unidade.create :nome => "CURIO", :tipo => 3, :regiao_id => 4
+    Unidade.create :nome => "TARAGUA", :tipo => 3, :regiao_id => 4
+    Unidade.create :nome => "URUPE", :tipo => 3, :regiao_id => 4
+    Unidade.create :nome => "PATATIVA", :tipo => 2, :regiao_id => 4
+    Unidade.create :nome => "ARACARI", :tipo => 2, :regiao_id => 4
+    Unidade.create :nome => "CURUMIM", :tipo => 2, :regiao_id => 4
 # Jardim Ipiranga
-    Unidade.create :nome => "Tahíra", :tipo => 3, :regiao_id => 5
-    Unidade.create :nome => "Boré", :tipo => 2, :regiao_id => 5
-    Unidade.create :nome => "Ceci", :tipo => 2, :regiao_id => 5
-    Unidade.create :nome => "Corimbó", :tipo => 2, :regiao_id => 5
-    Unidade.create :nome => "Tangará", :tipo => 2, :regiao_id => 5
+    Unidade.create :nome => "TAHIRA", :tipo => 3, :regiao_id => 5
+    Unidade.create :nome => "BORE", :tipo => 2, :regiao_id => 5
+    Unidade.create :nome => "CECI", :tipo => 2, :regiao_id => 5
+    Unidade.create :nome => "CORIMBO", :tipo => 2, :regiao_id => 5
+    Unidade.create :nome => "TANGARA", :tipo => 2, :regiao_id => 5
 # Centro
-    Unidade.create :nome => "Bacuri", :tipo => 2, :regiao_id => 6
-    Unidade.create :nome => "Sabiá", :tipo => 2, :regiao_id => 6
+    Unidade.create :nome => "BACURI", :tipo => 2, :regiao_id => 6
+    Unidade.create :nome => "SABIA", :tipo => 2, :regiao_id => 6
 # Praia Azul
-    Unidade.create :nome => "Pitanga", :tipo => 3, :regiao_id => 7
-    Unidade.create :nome => "Panamby", :tipo => 3, :regiao_id => 7
+    Unidade.create :nome => "PITANGA", :tipo => 3, :regiao_id => 7
+    Unidade.create :nome => "PANAMBY", :tipo => 3, :regiao_id => 7
 
   end
 
