@@ -11,12 +11,7 @@ class Crianca < ActiveRecord::Base
   validates_numericality_of :celular, :if => :check_tel1 , :only_integer => true, :message =>  ' - NÃO É UM NÚMERO'
   validates_presence_of :option1, :message => ' - ESCOLHA PELO MENOS UMA OPÇÃO'
   validates_numericality_of :tel1, :only_integer => true, :message =>  ' - NÃO É NÚMERO'
-  validates_format_of :nome, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
-  validates_format_of :mae, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
-  validates_format_of :endereco, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
-  validates_format_of :complemento, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
-  validates_format_of :nome_responsavel, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
-  validates_format_of :local_trabalho, :with => /\A[A-Z]+\Z/,  :message => "SOMENTE LETRAS EM MAIÚSCULAS SEM SEM ACENTUAÇÃO"
+  validates_numericality_of :numero, :only_integer => true, :message =>  ' - NÃO É NÚMERO'
 
 
   named_scope :by_nome, lambda {|nome| { :conditions => { :nome => nome }}}
@@ -24,6 +19,19 @@ class Crianca < ActiveRecord::Base
 
   def check_tel1
     self.tel1.empty?
+  end
+
+
+  def before_save
+    self.nome.upcase!
+    self.bairro.upcase!
+    self.complemento.upcase!
+    self.mae.upcase!
+    self.endereco.upcase!
+    self.nome_responsavel.upcase!
+    self.parentesco.upcase!
+    self.local_trabalho.upcase!
+    
   end
 
   def check_opcao
@@ -57,27 +65,65 @@ class Crianca < ActiveRecord::Base
   end
 
   def status
-    if matricula == 1 then
+    if matricula == 1 and unidade_matricula == option1 then
       @status = 1
     else
-      @status = 0
-    end
-  end
+      if matricula == 1 and unidade_matricula == option2 then
+        @status = 2
+      else
+        if matricula == 1 and unidade_matricula == option3 then
+          @status = 3
+        else
+          if matricula == 1 and unidade_matricula == option4 then
+            @status = 4
+     else
+       @status = 0
+          end
+          end
+      end
+     end
+   end
+
 
   def conf_status
     if status == 0 then
       return 'AGUARDANDO'
     else
-      return 'MATRICULADO'
+      if status == 1 then
+          return 'MATRICULADO'
+      else
+        if status == 2 then
+          return 'MATRICULADO - POREM NAO NA OPCAO 1'
+        else
+          if status == 3 then
+            return 'MATRICULADO - POREM NAO NA OPCAO 1'
+          else
+            if status == 4 then
+              return 'MATRICULADO - POREM NAO NA OPCAO 1'
+            end
+          end
+        end
+      end
     end
-    
   end
+    
   def onde_matricula
     if unidade_matricula == 0 or unidade_matricula == nil then
       return ''
     else
-      return Unidade.find_by_id(unidade_matricula).nome
+      if unidade_matricula == option1 then
+        return Unidade.find_by_id(unidade_matricula).nome
+      else
+        if unidade_matricula == option2 then
+          return "OPCAO 2" + " - " + Unidade.find_by_id(unidade_matricula).nome
+        else
+          if unidade_matricula == option3 then
+            return "OPCAO 3" + " - " + Unidade.find_by_id(unidade_matricula).nome
+          end
+        end
+      end
     end
+
   end
 
   def onde_classifica

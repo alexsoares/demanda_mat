@@ -4,7 +4,7 @@
 
 <div id="conteudo">
 <input type="button" value="Imprimir" onclick=javascript:window.print()> 
-<table border ="1" cellpadding="2" cellspacing="2" width="100%" >
+<table border ="1" cellpadding="1" cellspacing="1" width="100%" >
     <tr>
     <center><th bgcolor="#cccccc">Nome</th></center>
     <th bgcolor="#cccccc">Data Nascimento</th>
@@ -52,7 +52,7 @@
     <p><td><center><%=h crianca.opcao3.upcase %></center></td></p>
 
     <p><td><center><%= Grupo.find_by_id(crianca.grupo_id).nome.upcase %></center></td></p>
-    <p><td><center><%=h crianca.conf_status.upcase %></center></td></p>
+    <p><td><center><%=h crianca.conf_status %></center></td></p>
     <p><td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
   </tr>
   <tr>
