@@ -39,5 +39,10 @@ font: bold;
 font-size:medium;
 text-align: left;
 color: green;
+}
 
+#nome_mae{
+ font: bold;
+font-size:x-large;
+color: red;
 }
