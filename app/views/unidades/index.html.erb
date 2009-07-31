@@ -4,7 +4,9 @@
 <h1>Relatório de Unidades</h1>
 </div>
 <br/>
-<input type="button" value="Imprimir" onclick=javascript:window.print()>
+|<%= link_to 'Cadastrar Unidade', new_unidade_path %> |
+<a href="javascript:window.print();">Imprimir</a>
+| <%= link_to ' Inicio' , root_path %> |
 <fieldset>
   
 <table >
@@ -32,5 +34,8 @@
 
 <br />
 
-<%= link_to 'Cadastrar Unidade', new_unidade_path %>
+| <%= link_to 'Cadastrar Unidade', new_unidade_path %> |
+<a href="javascript:window.print();">Imprimir</a>
+| <%= link_to ' Inicio' , root_path %> |
+
 </div>
