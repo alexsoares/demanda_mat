@@ -40,8 +40,10 @@
  <td VALIGN=TOP>
     <div id="mensagem">
       <u>OBSERVAÇÕES:</u> <br /> <br />
-      UTILIZE SOMENTE LETRAS MAIÚSCULAS<br /><br />
-      NÃO UTILIZAR ABREVIAÇÕES
+      > UTILIZE  SOMENTE LETRAS MAIÚSCULAS<br /><br />
+      > DIGITAR SEMPRE OS NOMES COMPLETOS <br /><br />
+      > NÃO UTILIZAR ACENTOS E CEDILHAS<br /><br />
+      > NÃO UTILIZAR ABREVIAÇÕES
  </div>
  <td>
  </td>
@@ -67,7 +69,7 @@
     <%= f.text_field :mae%><br />
     <%= observe_field :crianca_mae,
      :with => :crianca_mae,
-     :with =>:crianca_nome,
+
      :url => { :action => "mesma_mae" } %>
     <div id='nome_mae'>
     </div>
@@ -112,7 +114,7 @@
     <a href="#" id="dropdownbutton"><%= f.check_box :responsavel %></a><th>SIM</th><br />
        <ul id="menu" style="display:none">
          <th>Nome Responsável</th>  
-         <%= f.text_field :nome_responsavel %><br />
+         <%= f.text_field :nome_responsavel %><br />BRUNA FERNANDA DE DEUS DOS REIS
          <%= f.label :parentesco %><br />
          <%= f.select :parentesco, GRAU, :include_blank => ''%><br/>
 

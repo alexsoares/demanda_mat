@@ -30,7 +30,7 @@ color: red;
 #mensagem{
 font: bold;
 font-size:large;
-text-align: right;
+text-align: leftt;
 color: red;
 }
 
@@ -42,7 +42,13 @@ color: green;
 }
 
 #nome_mae{
- font: bold;
+font: bold;
+font-size:x-large;
+color: red;
+}
+
+#Certeza{
+font: bold;
 font-size:x-large;
 color: red;
 }
