@@ -68,8 +68,10 @@
  
 </fieldset>
 <br/>
-<center><input type="button" value="Imprimir" onclick=javascript:window.print()> </center>
+
 </div>
+
 <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
 <%= link_to 'Voltar', criancas_path %>  |
-<%= link_to 'Cadastrar Criança', new_crianca_path %>
+<%= link_to 'Cadastrar Criança', new_crianca_path %>  |
+  <a href="javascript:window.print();">Imprimir</a> 

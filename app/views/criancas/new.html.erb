@@ -37,11 +37,14 @@
   </td>
 
   <td>
- <div id="mensagem">
-   OBS: UTILIZE SOMENTE LETRAS MAIÚSCULAS<br />
-   EVITE UTILIZAR ABREVIAÇÕES
+ <td VALIGN=TOP>
+    <div id="mensagem">
+      <u>OBSERVAÇÕES:</u> <br /> <br />
+      UTILIZE SOMENTE LETRAS MAIÚSCULAS<br /><br />
+      NÃO UTILIZAR ABREVIAÇÕES
  </div>
-  </td>
+ <td>
+ </td>
    </table>
 </fieldset>
 <br/>
@@ -50,18 +53,23 @@
    <legend><font size=4>Dados da Criança</font></legend>
   <th>Nome         </th>
  
-  <%= f.text_field :nome, :class => 'teste' %><br />
+  <%= f.text_field :nome %><br />
     <%= observe_field :crianca_nome,
     :with => :crianca_nome,
     :url => { :action => 'mesmo_nome' } %>
-    <div id='nome_aviso' class='aviso'>
+    <div id='nome_aviso'>
     </div>
 
     <%= f.label :nascimento, 'Data de nascimento' %><br />
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><BR />
 
 <th>Nome da Mãe</th>
-    <%= f.text_field :mae %><br />
+    <%= f.text_field :mae%><br />
+    <%= observe_field :crianca_mae,
+    :with => :crianca_mae,
+    :url => { :action => "mesma_mae" } %>
+    <div id='nome_aviso'>
+    </div>
 
     <th>Classificação</th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  
