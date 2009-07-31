@@ -44,7 +44,7 @@
   <fieldset>
   <legend><font size=4>Dados da Inscrição</font></legend>
   <b>Unidade onde fez a matricula:      </b>
-     <%=h @crianca.unidade_id %>show.html
+     <%=h @crianca.unidade_id %>
      <%= ' - ' + Unidade.find_by_id(@crianca.unidade_id).nome %><br />
  <b>Data da Inscrição:       </b>
      <%=h @crianca.created_at.strftime("%e/%m/%Y - %H:%M horas")%> <br />
@@ -58,7 +58,7 @@
   <b>Matrícula - Opção 3:       </b>
      <%= @crianca.opcao3 %><br />
   <b>Matrícula - Opção 4:       </b>
-     <%= @crianca.opcao4 %><br />show.html
+     <%= @crianca.opcao4 %><br />
   <b>Status: </b>
      <%=h @crianca.conf_status	%> <br />
   <b>Matriculado :     </b>  

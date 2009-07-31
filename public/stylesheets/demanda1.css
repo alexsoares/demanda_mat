@@ -30,7 +30,7 @@ color: red;
 #mensagem{
 font: bold;
 font-size:large;
-text-align: leftt;
+text-align: left;
 color: red;
 }
 
@@ -51,4 +51,8 @@ color: red;
 font: bold;
 font-size:x-large;
 color: red;
+}
+#asterisco{
+ color: red;
+font-size: large;
 }
