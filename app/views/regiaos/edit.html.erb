@@ -13,13 +13,18 @@
         </fieldset>
        </p>
        <p>
-         <fieldset>  
+         <fieldset>
+           <p>
            <%= f.submit "Atualizar" %>
+           <p/>
          </fieldset>
        </p>
      
    <% end %>
+   
+  <br/>
+   |<%= link_to 'Exibir', @regiao %> |
+   <%= link_to 'Voltar', regiaos_path %>|
 
-   <%= link_to 'Exibir', @regiao %> |
-   <%= link_to 'Voltar', regiaos_path %>
 </div>
+
