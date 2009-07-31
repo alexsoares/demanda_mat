@@ -136,7 +136,7 @@ class CriancasController < ApplicationController
   end
 
   def mesmo_nome
-    unless Crianca.by_nome(params[:crianca_nome]).empty? then
+    if !Crianca.by_nome(params[:crianca_nome]).empty? then
       render :update do |page|
         page.replace_html 'nome_aviso', :text => 'Nome de criança já cadastrado no sistema '
         page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' onclick=\"return confirm('Gravar mesmo com nome duplicado?');\" type='submit' value='Cadastrar' />"
@@ -151,15 +151,15 @@ class CriancasController < ApplicationController
   end
 
    def mesma_mae
-    unless Crianca.by_mae(params[:crianca_mae]).empty? then
+    if Crianca.find_by_mae(params[:crianca_mae]) then
       render :update do |page|
-        page.replace_html 'nome_aviso', :text => 'Criança já cadastrada no sistema '
+        page.replace_html 'nome_mae', :text => 'Criança já cadastrada no sistema '
         page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' onclick=\"return confirm('Gravar mesmo com nome duplicado?');\" type='submit' value='Cadastrar' />"
 
     end
     else
       render :update do |page|
-        page.replace_html 'nome_aviso', :text => ''
+        page.replace_html 'nome_mae', :text => 'oo'
       end
 
     end
