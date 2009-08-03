@@ -17,12 +17,13 @@
 
     <%= f.label :tipo, 'Tipo' %><br />
     <select id="_unidade_tipo" name="unidade[tipo]">
-       <option value="0">---Selecione---</option>
-       <option value="1">Creche</option>
+       <option value="0"><%=h @unidade.nome_tipo %></option>
+       <option value="1">CRECHE</option>
        <option value="2">EMEI</option>
-       <option value="3">Casa da criança</option>
-       <option value="3">EMEF</option>
-       <option value="3">CIEP</option>
+       <option value="3">CASA DA CRIANCA</option>
+       <option value="4">EMEF</option>
+       <option value="5">CIEP</option>
+       <option value="6">TEMPO DE VIVER</option>
     </select>
 
   </p>
