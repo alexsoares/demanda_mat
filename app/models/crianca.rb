@@ -127,12 +127,16 @@ class Crianca < ActiveRecord::Base
   end
 
   def onde_classifica
-    return Grupo.find_by_id(grupo_id).descricao
+    if grupo_id == 0 then
+      return 'NÃO CLASSIFICAVEL - FORA DO LIMITE DE IDADE'
+    else
+      return Grupo.find_by_id(grupo_id).descricao
+    end
   end
 
   def opcao1
     if option1 == 0 or option1 == nil then
-       return 'Não Realizada'
+       return 'NAO REALIZADA'
     else
        return Unidade.find_by_id(option1).nome
     end
@@ -140,7 +144,7 @@ class Crianca < ActiveRecord::Base
 
   def opcao2
     if option2 == 0 or option2 == nil then
-       return 'Não Realizada'
+       return 'NAO REALIZADA'
     else
        return Unidade.find_by_id(option2).nome
     end
@@ -148,7 +152,7 @@ class Crianca < ActiveRecord::Base
 
   def opcao3
     if option3 == 0 or option3 == nil then
-       return 'Não Realizada'
+       return 'NAO REALIZADA'
     else
        return Unidade.find_by_id(option3).nome
     end
@@ -156,13 +160,11 @@ class Crianca < ActiveRecord::Base
 
   def opcao4
     if option4 == 0 or option4 == nil then
-       return 'Não Realizada'
+       return 'NAO REALIZADA'
     else
        return Unidade.find_by_id(option4).nome
     end
   end
-
-
 
 
 end
