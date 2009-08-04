@@ -10766,3 +10766,57 @@ Completed in 204ms (View: 183, DB: 7) | 200 OK [http://localhost/criancas]
 Processing HomeController#index (for 127.0.0.1 at 2009-08-04 10:36:37) [GET]
 Rendering home/index
 Completed in 96ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 192.168.0.152 at 2009-08-04 10:39:25) [GET]
+Rendering home/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://192.168.0.153/]
+
+
+Processing CriancasController#index (for 192.168.0.152 at 2009-08-04 10:39:40) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 448ms (View: 188, DB: 245) | 200 OK [http://192.168.0.153/criancas]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-04 11:31:55) [GET]
+Rendering home/index
+Completed in 87ms (View: 2, DB: 17) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-04 11:32:22) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 433ms (View: 192, DB: 226) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-04 11:32:25) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/new
+Completed in 140ms (View: 134, DB: 1) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-04 11:38:01) [POST]
+  Parameters: {"authenticity_token"=>"8c4bf21b21acacce9cdbb1ba84f49a033d5e2afa", "crianca_nome"=>"MIRIAN JULIAN CONDORI ZARCO"}
+Completed in 48ms (View: 1, DB: 30) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#rg (for 127.0.0.1 at 2009-08-04 11:38:07) [POST]
+  Parameters: {"authenticity_token"=>"8c4bf21b21acacce9cdbb1ba84f49a033d5e2afa", "crianca_regiao_id"=>"6"}
+Completed in 141ms (View: 3, DB: 133) | 200 OK [http://localhost/criancas/rg]
+
+
+Processing CriancasController#mesma_mae (for 127.0.0.1 at 2009-08-04 11:47:01) [POST]
+  Parameters: {"authenticity_token"=>"8c4bf21b21acacce9cdbb1ba84f49a033d5e2afa", "crianca_mae"=>"KELLY DE OLVEIRA PRADO COLOMBO"}
+Completed in 21ms (View: 1, DB: 15) | 200 OK [http://localhost/criancas/mesma_mae]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-04 11:47:16) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/new
+Completed in 57ms (View: 52, DB: 0) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#rg (for 127.0.0.1 at 2009-08-04 11:48:01) [POST]
+  Parameters: {"authenticity_token"=>"8c4bf21b21acacce9cdbb1ba84f49a033d5e2afa", "crianca_regiao_id"=>"3"}
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/criancas/rg]
