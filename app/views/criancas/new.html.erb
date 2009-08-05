@@ -70,11 +70,9 @@
     <%= f.text_field :mae%><br />
     <%= observe_field :crianca_mae,
      :with => :crianca_mae,
-
      :url => { :action => "mesma_mae" } %>
     <div id='nome_mae'>
     </div>
-
     <font color="red" size="5">*</font><th>Classificação </th>
     <%= f.collection_select :grupo_id, @grupos, :id, :nome, :include_blank => '---Selecione---' %>  
      <%= observe_field("crianca_grupo_id",

@@ -26,6 +26,8 @@ class CriancasController < ApplicationController
     end
   end
 
+
+
   # GET /criancas/new
   # GET /criancas/new.xml
   def new
@@ -136,11 +138,11 @@ class CriancasController < ApplicationController
   end
 
   def mesmo_nome
-    if Crianca.find_by_nome(params[:crianca_nome]) then
+    $nome = params[:crianca_nome]
+    if Crianca.find_by_nome($nome) then
       render :update do |page|
         page.replace_html 'nome_aviso', :text => 'Nome de criança já cadastrado no sistema '
         page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' onclick=\"return confirm('Gravar mesmo com nome duplicado?');\" type='submit' value='Cadastrar' />"
-    
     end
     else
       render :update do |page|
@@ -150,20 +152,21 @@ class CriancasController < ApplicationController
     end
   end
 
-   def mesma_mae
-    if (Crianca.find_by_mae(params[:crianca_mae])) || (Crianca.find_by_nome(params[:crianca_nome])) then
-      render :update do |page|
-        page.replace_html 'nome_mae', :text => 'Criança já cadastrada no sistema '
-        page.replace_html 'Certeza', :text =>  'Criança ja cadastrada, qualquer dúvida entrar em contato com a supervisão'
+  def mesma_mae
+     if Crianca.find_by_mae(params[:crianca_mae]) then
+       if Crianca.find_by_nome($nome) then
+        render :update do |page|
+          page.replace_html 'nome_mae', :text => 'Criança já cadastrada no sistema '
+          page.replace_html 'Certeza', :text =>  'Criança ja cadastrada, qualquer dúvida entrar em contato com a supervisão'
+        end
+        else
+          render :update do |page|
+             page.replace_html 'nome_mae', :text => ''
+             page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' type='submit' value='Cadastrar' />"
+          end
 
-    end
-    else
-      render :update do |page|
-        page.replace_html 'nome_mae', :text => ''
-        page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' type='submit' value='Cadastrar' />"
-      end
-
-    end
+       end
+     end
   end
 
 
