@@ -1,0 +1,22 @@
+<div id="conteudo">
+  <div id="topo">
+    <br/>
+    <h1>Procura demanda cada unidade</h1>
+  </div>
+  <p>
+    <fieldset>
+      <p>Selecione uma unidade para consultar: <%= collection_select :unidade, :unidade_id, @unidades, :id, :nome %></p>
+
+<%= observe_field 'unidade_unidade_id',
+     :update => 'listagem',
+     :url    => { :action => 'lista_unidade' },
+     :with   => 'unidade_unidade_id' %>
+<div id="listagem">
+<% render :partial => "resultado" %>
+</div>
+
+
+    </fieldset>
+  </p>
+
+</div>
