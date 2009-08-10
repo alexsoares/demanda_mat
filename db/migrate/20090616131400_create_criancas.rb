@@ -1,8 +1,8 @@
 class CreateCriancas < ActiveRecord::Migration
   def self.up
     create_table :criancas do |t|
-      t.string :nome, :limit => 30
-      t.string :mae, :limit => 30
+      t.string :nome, :limit => 50
+      t.string :mae, :limit => 50
       t.references :unidade
       t.references :regiao
       t.date :nascimento
