@@ -56,8 +56,8 @@ gems\:unpack=Unpacks the specified gem into vendor/gems.
 gems\:unpack\:dependencies=Unpacks the specified gems and its dependencies into vendor/gems
 generate_doc=
 gerar_doc\:plugins\:brazilian-rails=Generate documentation for Brazilian Rails plugins
-jrails\:install\:javascripts=Installs the jQuery and jRails javascripts to public/javascripts
-jrails\:update\:javascripts=Copies the jQuery and jRails javascripts to public/javascripts
+jrails\:js\:install=Copies the jQuery and jRails javascripts to public/javascripts
+jrails\:js\:scrub=Remove the prototype / script.aculo.us javascript files
 log\:clear=Truncates all *.log files in log/ to zero bytes
 notes=Enumerate all annotations
 notes\:custom=Enumerate a custom annotation, specify with ANNOTATION=WTFHAX

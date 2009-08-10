@@ -21,7 +21,19 @@ class Crianca < ActiveRecord::Base
     self.tel1.empty?
   end
 
+  def self.c
+    Crianca.find(:all)
+  end
 
+  def self.b_u
+    Crianca.find(:all, :conditions => {:matricula => 1 })
+  end
+
+  def self.un_din
+    
+
+  end
+  
   def before_save
     self.nome.upcase!
     self.bairro.upcase!

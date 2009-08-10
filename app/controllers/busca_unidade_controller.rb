@@ -4,12 +4,12 @@ class BuscaUnidadeController < ApplicationController
   before_filter :load_unidades
   
   def index
-    @criancas = Crianca.find(:all)
+    @teste = Unidade.find(:all)
   end
 
   	def lista_unidade
-      @criancas = Crianca.find(:all, :conditions => ["option1=",params[:unidade_unidade_id]])
-		   render :partial => "resultado"
+      @teste = Unidade.find(:id)
+		   render :partial => 'resultado'
   	end
 
 

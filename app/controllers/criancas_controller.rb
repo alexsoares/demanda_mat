@@ -104,6 +104,23 @@ class CriancasController < ApplicationController
     @unidades =  Unidade.find(:all, :order => "nome")
   end
 
+  def busca
+    @criancas = Crianca.c
+    render :partial => 'listar_criancas'
+  end
+
+  def busca_unidade
+    @criancas = Crianca.b_u
+    render :partial => 'listar_criancas'
+  end
+
+  def un_din
+    #@criancas = Crianca.un_din
+    Crianca.find_by_option1(:unidade_unidade_id)
+    render :partial => 'listar_criancas'
+  end
+
+
 
   def regiao_unidade
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:cr_id]}

@@ -11,6 +11,9 @@ margin:0;
 font:bold;
 }
 
+#inicial {
+
+}
 
 #topo strong {
 font:bold 24px verdana,arial,helvetica,sans-serif;
@@ -18,6 +21,7 @@ margin:25px;
 float:left;
 }
 #conteudo {
+
 margin:25px;
 }
 

@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/alexandre/demanda/app/controllers/criancas_controller.rb</file>
+        <file>file:/home/alexandre/demanda/app/models/crianca.rb</file>
+        <file>file:/home/alexandre/demanda/app/views/criancas/_listar_criancas.html.erb</file>
+        <file>file:/home/alexandre/demanda/app/views/criancas/_unidade.html.erb</file>
+        <file>file:/home/alexandre/demanda/app/views/criancas/index.html.erb</file>
+        <file>file:/home/alexandre/demanda/app/views/grupos/index.html.erb</file>
+        <file>file:/home/alexandre/demanda/app/views/layouts/criancas.html.erb</file>
+    </open-files>
 </project-private>
