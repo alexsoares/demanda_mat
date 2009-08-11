@@ -7,10 +7,10 @@
 
 <center><caption>Estatísticas</caption></center>
 <tr>
-  <center><td>Todas as Crianças Cadastradas </td><td><%= link_to_remote(Crianca.c.length, :update => "conteudo", :url => { :action => "busca"}) %></td></center>
+  <center><td>Todas as Crianças Cadastradas </td><td><%= link_to_remote(Crianca.c.length, :update => "listagem", :url => { :action => "busca"}) %></td></center>
 </tr>
 <tr>
-  <center><td>Crianças Matriculadas </td><td><%= link_to_remote(Crianca.b_u.length, :update => "conteudo", :url => { :action => "busca_unidade"}) %></td></center>
+  <center><td>Crianças Matriculadas </td><td><%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></td></center>
 </tr>
 
 
@@ -18,7 +18,7 @@
 
 
 <%= observe_field 'unidade_unidade_id',
-     :update => 'conteudo',
+     :update => "listagem",
      :url    => { :action => 'un_din' },
      :with   => 'unidade_unidade_id' %>
 </table></fieldset></center>

@@ -116,8 +116,13 @@ class CriancasController < ApplicationController
 
   def un_din
     #@criancas = Crianca.un_din
-    Crianca.find_by_option1(:unidade_unidade_id)
-    render :partial => 'listar_criancas'
+    $unidade_id = params[:unidade_unidade_id]
+    @criancas = Crianca.find :all, :conditions => {:option1 => $unidade_id}
+    if @criancas.nil? or @criancas.empty? then
+      render :text => 'Nenhum registro encontrado'
+    else
+      render :partial => 'listar_criancas'
+    end
   end
 
 
@@ -133,7 +138,7 @@ class CriancasController < ApplicationController
   end
  def grupo_crianca
       @zero = Grupo.find_by_id(params[:crianca_grupo_id])
-      if @zero == nil then
+      if @zero.nil? then
         render :text   => ''
       else
         render :text   =>  Grupo.find_by_id(params[:crianca_grupo_id]).descricao
