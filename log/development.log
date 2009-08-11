@@ -11260,3 +11260,795 @@ ActionView::TemplateError (compile error
 Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (70.5ms)
 Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.1ms)
 Rendering /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CriancasController#busca_unidade (for 127.0.0.1 at 2009-08-11 15:47:59) [POST]
+  Parameters: {"authenticity_token"=>"4841f098d39fa42cacdecebb24c7ab98c6160093"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+ERROR: compiling _run_erb_app47views47criancas47_listar_criancas46html46erb_locals_listar_criancas_object RAISED compile error
+/home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:57: syntax error, unexpected tGVAR
+;  Crianca.$teste ; @output_buffer.concat " </f...
+                 ^
+Function body:           def _run_erb_app47views47criancas47_listar_criancas46html46erb_locals_listar_criancas_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];listar_criancas = local_assigns[:listar_criancas];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "| <a href=\"javascript:window.print();\">Imprimir</a>\n| "
+; @output_buffer.concat(( link_to 'Voltar', criancas_path ).to_s); @output_buffer.concat " |\n\n<br/><br/>\n<table border =\"1\" cellpadding=\"1\" cellspacing=\"1\" width=\"100%\" >\n    <tr>\n    <center><th bgcolor=\"#cccccc\">Nome</th></center>\n    <th bgcolor=\"#cccccc\">Data Nascimento</th>\n    <th bgcolor=\"#cccccc\">Nome M\303\243e</th>\n    <th bgcolor=\"#cccccc\">Endere\303\247o</th>\n    <th bgcolor=\"#cccccc\">N.</th>\n    <th bgcolor=\"#cccccc\">Bairro</th>\n    <th bgcolor=\"#cccccc\">Fone1</th>\n    <th bgcolor=\"#cccccc\">Resp</th>\n    <th bgcolor=\"#cccccc\">Trabalha</th>\n    <th bgcolor=\"#cccccc\">Op\303\247\303\243o 1</th>\n    <th bgcolor=\"#cccccc\">Op\303\247\303\243o 2</th>\n    <th bgcolor=\"#cccccc\">Classifica\303\247\303\243o</th>\n    <th bgcolor=\"#cccccc\">Status</th>\n    <th bgcolor=\"#cccccc\">Unidade Matricula</th>\n    </tr>\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;  for crianca in @criancas ; @output_buffer.concat "\n  <tr>\n    <p><td><center>"
+
+; @output_buffer.concat((h crianca.nome.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.nascimento.strftime("%d/%m/%y") ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.mae.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.endereco.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.numero ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.bairro.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.tel1 ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.parentesco ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.verifica_trabalha ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.opcao1.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.opcao2.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.onde_classifica.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.conf_status ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.onde_matricula.upcase ).to_s); @output_buffer.concat "</center></td></p>\n  </tr>\n  <tr>\n    \n    <div id=\"negrito\">\n       <td bgcolor=\"#cccccc\">"
+
+
+
+
+; @output_buffer.concat(( link_to 'Exibir', crianca ).to_s); @output_buffer.concat "</td>\n       <td bgcolor=\"#cccccc\">"
+; @output_buffer.concat(( link_to 'Alterar', edit_crianca_path(crianca) ).to_s); @output_buffer.concat "</td>\n       <td bgcolor=\"#cccccc\">"
+; @output_buffer.concat(( link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete ).to_s); @output_buffer.concat "</td>\n    </div>\n\n  </tr>\n\n\n"
+
+
+
+
+
+;  end ; @output_buffer.concat "\n</table>\n<br/>\n\n\n           <center>\n             <font size=3> "
+
+
+
+
+
+;  Crianca.$teste ; @output_buffer.concat " </font>\n          </center>\n\n| <a href=\"javascript:window.print();\">Imprimir</a>\n| "
+
+
+
+; @output_buffer.concat(( link_to 'Voltar', criancas_path ).to_s); @output_buffer.concat "|\n\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:66:in `compile!'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `synchronize'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:152:in `render_partial'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:926:in `render_without_benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/home/seduc/demanda1/demanda/app/controllers/criancas_controller.rb:120:in `busca_unidade'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:57: syntax error, unexpected tGVAR
+;  Crianca.$teste ; @output_buffer.concat " </f...
+                 ^) on line #57 of app/views/criancas/_listar_criancas.html.erb:
+54: 
+55: 
+56:            <center>
+57:              <font size=3> <% Crianca.$teste %> </font>
+58:           </center>
+59: 
+60: | <a href="javascript:window.print();">Imprimir</a>
+
+    app/views/criancas/_listar_criancas.html.erb:66:in `compile!'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `synchronize'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:152:in `render_partial'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:926:in `render_without_benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    app/controllers/criancas_controller.rb:120:in `busca_unidade'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (104.5ms)
+Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.5ms)
+Rendering /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CriancasController#busca_unidade (for 127.0.0.1 at 2009-08-11 15:48:01) [POST]
+  Parameters: {"authenticity_token"=>"4841f098d39fa42cacdecebb24c7ab98c6160093"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+ERROR: compiling _run_erb_app47views47criancas47_listar_criancas46html46erb_locals_listar_criancas_object RAISED compile error
+/home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:57: syntax error, unexpected tGVAR
+;  Crianca.$teste ; @output_buffer.concat " </f...
+                 ^
+Function body:           def _run_erb_app47views47criancas47_listar_criancas46html46erb_locals_listar_criancas_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];listar_criancas = local_assigns[:listar_criancas];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "| <a href=\"javascript:window.print();\">Imprimir</a>\n| "
+; @output_buffer.concat(( link_to 'Voltar', criancas_path ).to_s); @output_buffer.concat " |\n\n<br/><br/>\n<table border =\"1\" cellpadding=\"1\" cellspacing=\"1\" width=\"100%\" >\n    <tr>\n    <center><th bgcolor=\"#cccccc\">Nome</th></center>\n    <th bgcolor=\"#cccccc\">Data Nascimento</th>\n    <th bgcolor=\"#cccccc\">Nome M\303\243e</th>\n    <th bgcolor=\"#cccccc\">Endere\303\247o</th>\n    <th bgcolor=\"#cccccc\">N.</th>\n    <th bgcolor=\"#cccccc\">Bairro</th>\n    <th bgcolor=\"#cccccc\">Fone1</th>\n    <th bgcolor=\"#cccccc\">Resp</th>\n    <th bgcolor=\"#cccccc\">Trabalha</th>\n    <th bgcolor=\"#cccccc\">Op\303\247\303\243o 1</th>\n    <th bgcolor=\"#cccccc\">Op\303\247\303\243o 2</th>\n    <th bgcolor=\"#cccccc\">Classifica\303\247\303\243o</th>\n    <th bgcolor=\"#cccccc\">Status</th>\n    <th bgcolor=\"#cccccc\">Unidade Matricula</th>\n    </tr>\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;  for crianca in @criancas ; @output_buffer.concat "\n  <tr>\n    <p><td><center>"
+
+; @output_buffer.concat((h crianca.nome.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.nascimento.strftime("%d/%m/%y") ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.mae.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.endereco.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.numero ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.bairro.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.tel1 ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.parentesco ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.verifica_trabalha ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.opcao1.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.opcao2.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.onde_classifica.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.conf_status ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.onde_matricula.upcase ).to_s); @output_buffer.concat "</center></td></p>\n  </tr>\n  <tr>\n    \n    <div id=\"negrito\">\n       <td bgcolor=\"#cccccc\">"
+
+
+
+
+; @output_buffer.concat(( link_to 'Exibir', crianca ).to_s); @output_buffer.concat "</td>\n       <td bgcolor=\"#cccccc\">"
+; @output_buffer.concat(( link_to 'Alterar', edit_crianca_path(crianca) ).to_s); @output_buffer.concat "</td>\n       <td bgcolor=\"#cccccc\">"
+; @output_buffer.concat(( link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete ).to_s); @output_buffer.concat "</td>\n    </div>\n\n  </tr>\n\n\n"
+
+
+
+
+
+;  end ; @output_buffer.concat "\n</table>\n<br/>\n\n\n           <center>\n             <font size=3> "
+
+
+
+
+
+;  Crianca.$teste ; @output_buffer.concat " </font>\n          </center>\n\n| <a href=\"javascript:window.print();\">Imprimir</a>\n| "
+
+
+
+; @output_buffer.concat(( link_to 'Voltar', criancas_path ).to_s); @output_buffer.concat "|\n\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:66:in `compile!'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `synchronize'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:152:in `render_partial'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:926:in `render_without_benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/home/seduc/demanda1/demanda/app/controllers/criancas_controller.rb:120:in `busca_unidade'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:57: syntax error, unexpected tGVAR
+;  Crianca.$teste ; @output_buffer.concat " </f...
+                 ^) on line #57 of app/views/criancas/_listar_criancas.html.erb:
+54: 
+55: 
+56:            <center>
+57:              <font size=3> <% Crianca.$teste %> </font>
+58:           </center>
+59: 
+60: | <a href="javascript:window.print();">Imprimir</a>
+
+    app/views/criancas/_listar_criancas.html.erb:66:in `compile!'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `synchronize'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:152:in `render_partial'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:926:in `render_without_benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    app/controllers/criancas_controller.rb:120:in `busca_unidade'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (168.0ms)
+Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.1ms)
+Rendering /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CriancasController#busca_unidade (for 127.0.0.1 at 2009-08-11 15:48:16) [POST]
+  Parameters: {"authenticity_token"=>"4841f098d39fa42cacdecebb24c7ab98c6160093"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+ERROR: compiling _run_erb_app47views47criancas47_listar_criancas46html46erb_locals_listar_criancas_object RAISED compile error
+/home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:57: syntax error, unexpected tGVAR
+;  Crianca.$teste ; @output_buffer.concat " </f...
+                 ^
+Function body:           def _run_erb_app47views47criancas47_listar_criancas46html46erb_locals_listar_criancas_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];listar_criancas = local_assigns[:listar_criancas];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "| <a href=\"javascript:window.print();\">Imprimir</a>\n| "
+; @output_buffer.concat(( link_to 'Voltar', criancas_path ).to_s); @output_buffer.concat " |\n\n<br/><br/>\n<table border =\"1\" cellpadding=\"1\" cellspacing=\"1\" width=\"100%\" >\n    <tr>\n    <center><th bgcolor=\"#cccccc\">Nome</th></center>\n    <th bgcolor=\"#cccccc\">Data Nascimento</th>\n    <th bgcolor=\"#cccccc\">Nome M\303\243e</th>\n    <th bgcolor=\"#cccccc\">Endere\303\247o</th>\n    <th bgcolor=\"#cccccc\">N.</th>\n    <th bgcolor=\"#cccccc\">Bairro</th>\n    <th bgcolor=\"#cccccc\">Fone1</th>\n    <th bgcolor=\"#cccccc\">Resp</th>\n    <th bgcolor=\"#cccccc\">Trabalha</th>\n    <th bgcolor=\"#cccccc\">Op\303\247\303\243o 1</th>\n    <th bgcolor=\"#cccccc\">Op\303\247\303\243o 2</th>\n    <th bgcolor=\"#cccccc\">Classifica\303\247\303\243o</th>\n    <th bgcolor=\"#cccccc\">Status</th>\n    <th bgcolor=\"#cccccc\">Unidade Matricula</th>\n    </tr>\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;  for crianca in @criancas ; @output_buffer.concat "\n  <tr>\n    <p><td><center>"
+
+; @output_buffer.concat((h crianca.nome.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.nascimento.strftime("%d/%m/%y") ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.mae.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.endereco.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.numero ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.bairro.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.tel1 ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.parentesco ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.verifica_trabalha ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.opcao1.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.opcao2.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.onde_classifica.upcase ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.conf_status ).to_s); @output_buffer.concat "</center></td>\n    <td><center>"
+; @output_buffer.concat((h crianca.onde_matricula.upcase ).to_s); @output_buffer.concat "</center></td></p>\n  </tr>\n  <tr>\n    \n    <div id=\"negrito\">\n       <td bgcolor=\"#cccccc\">"
+
+
+
+
+; @output_buffer.concat(( link_to 'Exibir', crianca ).to_s); @output_buffer.concat "</td>\n       <td bgcolor=\"#cccccc\">"
+; @output_buffer.concat(( link_to 'Alterar', edit_crianca_path(crianca) ).to_s); @output_buffer.concat "</td>\n       <td bgcolor=\"#cccccc\">"
+; @output_buffer.concat(( link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete ).to_s); @output_buffer.concat "</td>\n    </div>\n\n  </tr>\n\n\n"
+
+
+
+
+
+;  end ; @output_buffer.concat "\n</table>\n<br/>\n\n\n           <center>\n             <font size=3> "
+
+
+
+
+
+;  Crianca.$teste ; @output_buffer.concat " </font>\n          </center>\n\n| <a href=\"javascript:window.print();\">Imprimir</a>\n| "
+
+
+
+; @output_buffer.concat(( link_to 'Voltar', criancas_path ).to_s); @output_buffer.concat "|\n\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:66:in `compile!'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `synchronize'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:152:in `render_partial'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:926:in `render_without_benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/home/seduc/demanda1/demanda/app/controllers/criancas_controller.rb:120:in `busca_unidade'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+/home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/home/seduc/demanda1/demanda/app/views/criancas/_listar_criancas.html.erb:57: syntax error, unexpected tGVAR
+;  Crianca.$teste ; @output_buffer.concat " </f...
+                 ^) on line #57 of app/views/criancas/_listar_criancas.html.erb:
+54: 
+55: 
+56:            <center>
+57:              <font size=3> <% Crianca.$teste %> </font>
+58:           </center>
+59: 
+60: | <a href="javascript:window.print();">Imprimir</a>
+
+    app/views/criancas/_listar_criancas.html.erb:66:in `compile!'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `synchronize'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:152:in `render_partial'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:926:in `render_without_benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    app/controllers/criancas_controller.rb:120:in `busca_unidade'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/seduc/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/seduc/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (185.2ms)
+Rendered /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.1ms)
+Rendering /home/seduc/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-11 15:48:58) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+  [4;36;1mUnidade Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+Rendered criancas/_consultas (20.3ms)
+Completed in 75ms (View: 32, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#busca_unidade (for 127.0.0.1 at 2009-08-11 15:49:00) [POST]
+  Parameters: {"authenticity_token"=>"4841f098d39fa42cacdecebb24c7ab98c6160093"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 16) LIMIT 1[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 8) LIMIT 1[0m
+Rendered criancas/_listar_criancas (35.8ms)
+Completed in 76ms (View: 36, DB: 6) | 200 OK [http://localhost/criancas/busca_unidade]
