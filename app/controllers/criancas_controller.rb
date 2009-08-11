@@ -128,8 +128,7 @@ class CriancasController < ApplicationController
       render :text => 'Nenhum registro encontrado'
     else
       $teste = @criancas.length
-      render :partial => 'listar_criancas'
-      
+      render :partial => 'listar_criancas', :with => $teste
     end
     return 'SIM'
   end
