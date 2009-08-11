@@ -123,17 +123,20 @@ class CriancasController < ApplicationController
   def un_op1_din
     #@criancas = Crianca.un_din
     $unidade_op1_id = params[:unidade_unidade_op1_id]
-    @criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and matricula != 1"])
+    @criancas = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"])
     if @criancas.nil? or @criancas.empty? then
       render :text => 'Nenhum registro encontrado'
     else
+      $teste = @criancas.length
       render :partial => 'listar_criancas'
+      
     end
+    return 'SIM'
   end
 
   def un_op2_din
     $unidade_op2_id = params[:unidade_unidade_op2_id]
-    @criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and option2 =" + $unidade_op2_id + "and matricula != 1"])
+    @criancas = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and option2 = " + $unidade_op2_id + " and matricula != 1"])
     if @criancas.nil? or @criancas.empty? then
       render :text => 'Nenhum registro encontrado'
     else
@@ -143,7 +146,7 @@ class CriancasController < ApplicationController
 
   def un_op3_din
     $unidade_op3_id = params[:unidade_unidade_op3_id]
-    @criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and option2 =" + $unidade_op2_id + " and option3 =" + $unidade_op3_id])
+    @criancas = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and option2 = " + $unidade_op2_id + " and option3 = " + $unidade_op3_id])
     #@criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and option2 =" + $unidade_op2_id + " and option2 =" + $unidade_op2_id])
     if @criancas.nil? or @criancas.empty? then
       render :text => 'Nenhum registro encontrado'
@@ -151,7 +154,16 @@ class CriancasController < ApplicationController
       render :partial => 'listar_criancas'
     end
   end
-  
+
+  def mat_unidade
+    $unidade = params[:unidade_unidade_mat_id]
+    @criancas = Crianca.find(:all, :conditions => ["unidade_matricula =" + $unidade + " and matricula =1"])
+    if @criancas.nil? or @criancas.empty? then
+      render :text => 'Nenhuma crianca matriculada nesta escola'
+    else
+      render :partial => 'listar_criancas'
+    end
+  end
 
 
   def regiao_unidade

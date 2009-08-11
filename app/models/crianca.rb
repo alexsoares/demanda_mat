@@ -31,7 +31,6 @@ class Crianca < ActiveRecord::Base
 
   def self.un_din
     
-
   end
   
   def before_save

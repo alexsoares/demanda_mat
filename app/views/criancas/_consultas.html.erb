@@ -1,0 +1,83 @@
+<center><h2>Qual consulta deseja executar?</h2></center>
+<div id="info">
+<center>
+<fieldset>
+<legend>| <%= link_to 'Cadastrar Criança', new_crianca_path %>| <%= link_to ' Inicio' , root_path %> |</legend>
+<table rules="rows">
+  <table>
+
+    <script>
+       $(document).ready(function()
+         {
+           $("#dropdownbutton1").click(function ()
+             {
+               $("#menu1").slideToggle("higth");
+             });
+         });
+    </script>
+     <a href="#" id="dropdownbutton1"> >> Demanda por opção << </a>
+       <ul id="menu1" style="display:none">
+            <p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %></p>
+       </ul>
+         
+       <%= observe_field 'unidade_unidade_op1_id',
+           :update => "listagem",
+           :url    => { :action => 'un_op1_din' },
+           :with   => 'unidade_unidade_op1_id' %>
+
+
+        <%= observe_field 'unidade_unidade_op2_id',
+           :update => "listagem",
+           :url    => { :action => 'un_op2_din' },
+           :with   => 'unidade_unidade_op2_id' %>
+
+        <%= observe_field 'unidade_unidade_op3_id',
+           :update => "listagem",
+           :url    => { :action => 'un_op3_din' },
+           :with   => 'unidade_unidade_op3_id' %>
+
+    <script>
+       $(document).ready(function()
+         {
+           $("#dropdownbutton").click(function ()
+             {
+               $("#menu").slideToggle("higth");
+             });
+         });
+    </script>
+    <br />
+
+  
+   <a href="#" id="dropdownbutton"> >>Matriculas por unidade << </a>
+       <ul id="menu" style="display:none">
+         <p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+       </ul>
+          
+        <%= observe_field 'unidade_unidade_mat_id',
+           :update => "listagem",
+           :url    => { :action => 'mat_unidade' },
+           :with   => 'unidade_unidade_mat_id' %>
+</table>
+</table>
+</fieldset>
+
+
+        <center>
+          <caption style="font-size: 12pt">Estatísticas</caption>
+        </center>
+        <tr>
+           <center>
+             <td>Todas as Crianças Cadastradas </td>
+             <td><%= link_to_remote(Crianca.c.length, :update => "listagem", :url => { :action => "busca"}) %></td>
+           </center>
+        </tr>
+        <tr>
+           <center>
+             <td>Crianças Matriculadas </td><td><%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></td>
+           </center>
+        </tr>
+
+
+  </center>
+ </div>
+
