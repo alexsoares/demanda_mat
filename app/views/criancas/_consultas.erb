@@ -5,36 +5,22 @@
 
 <center><fieldset><table rules="rows">
 
-<center><caption>Estatísticas</caption></center>
+<center><caption style="font-size: 12pt">Estatísticas</caption></center>
 <tr>
-  <center><td>Todas as Crianças Cadastradas </td><td><%= link_to_remote(Crianca.c.length, :update => "listagem", :url => { :action => "busca"}) %></td></center>
+  <center><td>Todas as Crianças Cadastradas </td><td><%= link_to_remote(Crianca.c.length, :update => "conteudo", :url => { :action => "busca"}) %></td></center>
 </tr>
 <tr>
-  <center><td>Crianças Matriculadas </td><td><%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></td></center>
+  <center><td>Crianças Matriculadas </td><td><%= link_to_remote(Crianca.b_u.length, :update => "conteudo", :url => { :action => "busca_unidade"}) %></td></center>
 </tr>
 
 
-<p>Selecione uma unidade:
-<%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %>
-</p>
+<p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_id, @unidades, :id, :nome, :include_blank => true %></p>
 
 
-<%= observe_field 'unidade_unidade_op1_id',
-     :update => "listagem",
-     :url    => { :action => 'un_op1_din' },
-     :with   => 'unidade_unidade_op1_id' %>
-
-<%= observe_field 'unidade_unidade_op2_id',
-     :update => "listagem",
-     :url    => { :action => 'un_op2_din' },
-     :with   => 'unidade_unidade_op2_id' %>
-
-<%= observe_field 'unidade_unidade_op3_id',
-     :update => "listagem",
-     :url    => { :action => 'un_op3_din' },
-     :with   => 'unidade_unidade_op3_id' %>
-
-
+<%= observe_field 'unidade_unidade_id',
+     :update => "conteudo",
+     :url    => { :action => 'un_din' },
+     :with   => 'unidade_unidade_id' %>
 </table></fieldset></center>
 
 </div>
