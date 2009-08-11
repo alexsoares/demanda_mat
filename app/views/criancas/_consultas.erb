@@ -14,13 +14,27 @@
 </tr>
 
 
-<p>Selecione uma unidade: <%= collection_select :unidade, :unidade_id, @unidades, :id, :nome, :include_blank => true %></p>
+<p>Selecione uma unidade:
+<%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %>
+</p>
 
 
-<%= observe_field 'unidade_unidade_id',
+<%= observe_field 'unidade_unidade_op1_id',
      :update => "listagem",
-     :url    => { :action => 'un_din' },
-     :with   => 'unidade_unidade_id' %>
+     :url    => { :action => 'un_op1_din' },
+     :with   => 'unidade_unidade_op1_id' %>
+
+<%= observe_field 'unidade_unidade_op2_id',
+     :update => "listagem",
+     :url    => { :action => 'un_op2_din' },
+     :with   => 'unidade_unidade_op2_id' %>
+
+<%= observe_field 'unidade_unidade_op3_id',
+     :update => "listagem",
+     :url    => { :action => 'un_op3_din' },
+     :with   => 'unidade_unidade_op3_id' %>
+
+
 </table></fieldset></center>
 
 </div>

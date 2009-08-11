@@ -2,7 +2,7 @@ class CriancasController < ApplicationController
   before_filter :load_grupos
   before_filter :load_regiaos
   before_filter :load_unidades
-
+  #before_filter :load_variaveis
 
 # GET /criancas
   # GET /criancas.xml
@@ -104,6 +104,12 @@ class CriancasController < ApplicationController
     @unidades =  Unidade.find(:all, :order => "nome")
   end
 
+  def load_variaveis
+    $unidade_op1_id =0
+    $unidade_op2_id=0
+    $unidade_op3_id=0
+  end
+
   def busca
     @criancas = Crianca.c
     render :partial => 'listar_criancas'
@@ -114,10 +120,12 @@ class CriancasController < ApplicationController
     render :partial => 'listar_criancas'
   end
 
-  def un_din
+  def un_op1_din
     #@criancas = Crianca.un_din
-    $unidade_id = params[:unidade_unidade_id]
-    @criancas = Crianca.find :all, :conditions => {:option1 => $unidade_id}
+    $unidade_op1_id = params[:unidade_unidade_op1_id]
+
+    @criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and matricula != 1"])
+   
     if @criancas.nil? or @criancas.empty? then
       render :text => 'Nenhum registro encontrado'
     else
@@ -125,6 +133,27 @@ class CriancasController < ApplicationController
     end
   end
 
+  def un_op2_din
+    $unidade_op2_id = params[:unidade_unidade_op2_id]
+    @criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and option2 =" + $unidade_op2_id + "and matricula == 0"])
+    if @criancas.nil? or @criancas.empty? then
+      render :text => 'Nenhum registro encontrado'
+    else
+      render :partial => 'listar_criancas'
+    end
+  end
+
+  def un_op3_din
+    $unidade_op3_id = params[:unidade_unidade_op3_id]
+    @criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and option2 =" + $unidade_op2_id + " and option3 =" + $unidade_op3_id])
+    #@criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and option2 =" + $unidade_op2_id + " and option2 =" + $unidade_op2_id])
+    if @criancas.nil? or @criancas.empty? then
+      render :text => 'Nenhum registro encontrado'
+    else
+      render :partial => 'listar_criancas'
+    end
+  end
+  
 
 
   def regiao_unidade
