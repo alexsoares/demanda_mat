@@ -123,9 +123,7 @@ class CriancasController < ApplicationController
   def un_op1_din
     #@criancas = Crianca.un_din
     $unidade_op1_id = params[:unidade_unidade_op1_id]
-
     @criancas = Crianca.find(:all, :conditions => ["option1 ="+ $unidade_op1_id + " and matricula != 1"])
-   
     if @criancas.nil? or @criancas.empty? then
       render :text => 'Nenhum registro encontrado'
     else
