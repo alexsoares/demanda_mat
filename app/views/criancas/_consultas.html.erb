@@ -15,23 +15,26 @@
              });
          });
     </script>
-     <a href="#" id="dropdownbutton1" style="font-size: 12pt"> >> Demanda por opção << </a>
+     <a href="#" id="dropdownbutton1" style="font-size: 12pt"> >> Demanda por Unidade << </a>
        <ul id="menu1" style="display:none">
             <p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %></p>
        </ul>
          
        <%= observe_field 'unidade_unidade_op1_id',
+           :frequency => 0.5,
            :update => "listagem",
            :url    => { :action => 'un_op1_din' },
            :with   => 'unidade_unidade_op1_id' %>
 
 
         <%= observe_field 'unidade_unidade_op2_id',
+           :frequency => 0.5,
            :update => "listagem",
            :url    => { :action => 'un_op2_din' },
            :with   => 'unidade_unidade_op2_id' %>
 
         <%= observe_field 'unidade_unidade_op3_id',
+           :frequency => 0.5,
            :update => "listagem",
            :url    => { :action => 'un_op3_din' },
            :with   => 'unidade_unidade_op3_id' %>
@@ -48,12 +51,13 @@
     <br />
 
   
-   <a href="#" id="dropdownbutton" style="font-size: 12pt"> >>Matriculas por unidade << </a>
+   <a href="#" id="dropdownbutton" style="font-size: 12pt"> >>Matriculas por Unidade << </a>
        <ul id="menu" style="display:none">
          <p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
        </ul>
           
         <%= observe_field 'unidade_unidade_mat_id',
+           :frequency => 0.5,
            :update => "listagem",
            :url    => { :action => 'mat_unidade' },
            :with   => 'unidade_unidade_mat_id' %>

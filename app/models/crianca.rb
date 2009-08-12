@@ -179,9 +179,9 @@ class Crianca < ActiveRecord::Base
 
   def tipo_consulta
     if matricula == 0 then
-      return 'Criança(s) Aguardando Matricula'
+      return 'CRIANÇA(S) AGUARDANDO MATRÍCULA'
     else
-      return 'Criança(s) Matriculada(s)'
+      return 'CRIANÇA(S) MATRCULADA(S)'
     end
   end
 
