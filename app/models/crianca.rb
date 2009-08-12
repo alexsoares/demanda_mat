@@ -29,6 +29,10 @@ class Crianca < ActiveRecord::Base
     Crianca.find(:all, :conditions => {:matricula => 1 })
   end
 
+   def self.b_dm
+    Crianca.find(:all, :conditions => {:matricula => 0 })
+  end
+
   def self.un_din
     
   end

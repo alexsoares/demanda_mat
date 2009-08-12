@@ -120,6 +120,12 @@ class CriancasController < ApplicationController
     render :partial => 'listar_criancas'
   end
 
+  def busca_demanda
+    @criancas = Crianca.b_dm
+    render :partial => 'listar_criancas'
+  end
+
+
   def un_op1_din
     #@criancas = Crianca.un_din
     $unidade_op1_id = params[:unidade_unidade_op1_id]
@@ -201,7 +207,7 @@ class CriancasController < ApplicationController
     $nome = params[:crianca_nome]
     if Crianca.find_by_nome($nome) then
       render :update do |page|
-        page.replace_html 'nome_aviso', :text => 'Nome de criança já cadastrado no sistema '
+        page.replace_html 'nome_aviso', :text => 'Nome já cadastrado no sistema '
         page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' onclick=\"return confirm('Gravar mesmo com nome duplicado?');\" type='submit' value='Cadastrar' />"
     end
     else
