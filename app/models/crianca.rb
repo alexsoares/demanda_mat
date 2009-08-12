@@ -177,6 +177,13 @@ class Crianca < ActiveRecord::Base
     end
   end
 
+  def tipo_consulta
+    if matricula == 0 then
+      return 'Criança(s) Aguardando Matricula'
+    else
+      return 'Criança(s) Matriculada(s)'
+    end
+  end
 
 end
 

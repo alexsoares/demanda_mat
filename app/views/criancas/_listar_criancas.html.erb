@@ -1,6 +1,7 @@
 | <a href="javascript:window.print();">Imprimir</a>
 | <%= link_to 'Voltar', criancas_path %> |
-
+<%$teste=0%>
+<div id="contador"></div>
 <br/><br/>
 <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
     <tr>
@@ -38,7 +39,7 @@
     <td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
   </tr>
   <tr>
-    
+    <%  $teste = $teste + 1%>
     <div id="negrito">
        <td bgcolor="#cccccc"><%= link_to 'Exibir', crianca %></td>
        <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
@@ -49,11 +50,18 @@
 
 
 <% end %>
+
 </table>
 <br/>
 
 
+<tr>
+<p>
 
+ Existe(m) <%=h $teste %><%=h " " + crianca.tipo_consulta %>
+<br /><br /><br />
+</p>
+</tr>
 | <a href="javascript:window.print();">Imprimir</a>
 | <%= link_to 'Voltar', criancas_path %>|
 
