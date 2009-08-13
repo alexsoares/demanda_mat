@@ -76,3 +76,29 @@ color: red;
 font-size: large;
 }
 
+.menu_list {
+	width: 1500px;
+}
+.menu_head {
+	padding: 5px 10px;
+	cursor: pointer;
+	position: relative;
+	margin:1px;
+    font-weight:bold;
+  
+}
+.menu_body {
+	display:none;
+}
+.menu_body a{
+  display:block;
+  
+  
+  padding-left:10px;
+  font-weight:bold;
+  text-decoration:none;
+}
+.menu_body a:hover{
+  
+  text-decoration:underline;
+  }

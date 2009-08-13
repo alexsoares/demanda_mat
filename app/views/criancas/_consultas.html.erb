@@ -5,20 +5,41 @@
 <table rules="rows">
   <table>
 
-    <script>
-       $(document).ready(function()
-         {
-           $("#dropdownbutton1").click(function ()
-             {
-               $("#menu1").slideToggle("higth");
-             });
-         });
-    </script>
-     <a href="#" id="dropdownbutton1" style="font-size: 12pt"> >> Demanda por Unidade <<</a>
-       <ul id="menu1" style="display:none">
+<script type="text/javascript">
+$(document).ready(function()
+{
+	//slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
+	$("#firstpane p.menu_head").click(function()
+    {
+		$(this).css({backgroundImage:"url(down.png)"}).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+       	$(this).siblings().css({backgroundImage:"url(left.png)"});
+	});
+	//slides the element with class "menu_body" when mouse is over the paragraph
+	$("#secondpane p.menu_head").mouseover(function()
+    {
+	     $(this).css({backgroundImage:"url(down.png)"}).next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+         $(this).siblings().css({backgroundImage:"url(left.png)"});
+	});
+});
+</script>
 
-            <p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %></p>
-       </ul>
+<div style="float:left" > <!--This is the first division of left-->
+  <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
+		<p class="menu_head">  >> Demanda por Unidade <<  </p>
+		<div class="menu_body">
+		<a href="#"><p style="font-size: 8pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %></p></a>
+		</div>
+		<p class="menu_head"> >> Matriculas por Unidade << </p>
+		<div class="menu_body">
+			<a href="#"><p style="font-size: 8pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p></a>
+		</div>
+		<p class="menu_head"> >> Nome da Criança << </p>
+		<div class="menu_body">
+         <a href="#">Em Desenvolvimento</a>
+       </div>
+  </div>  <!--Code for menu ends here-->
+</div>
+
          
        <%= observe_field 'unidade_unidade_op1_id',
            :frequency => 0.5,
@@ -38,24 +59,7 @@
            :update => "listagem",
            :url    => { :action => 'un_op3_din' },
            :with   => 'unidade_unidade_op3_id' %>
-
-    <script>
-       $(document).ready(function()
-         {
-           $("#dropdownbutton").click(function ()
-             {
-               $("#menu").slideToggle("higth");
-             });
-         });
-    </script>
-    <br/>
-
-  
-   <a href="#" id="dropdownbutton" style="font-size: 12pt"> >>Matriculas por Unidade << </a>
-       <ul id="menu" style="display:none">
-         <p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
-       </ul>
-          
+      
         <%= observe_field 'unidade_unidade_mat_id',
            :frequency => 0.5,
            :update => "listagem",
