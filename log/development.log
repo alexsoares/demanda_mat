@@ -24014,3 +24014,49 @@ Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-13 12:52:26) [P
   [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
 Rendered criancas/_consultas (17.1ms)
 Completed in 46ms (View: 20, DB: 2) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-13 12:55:20) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 54ms (View: 19, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-13 12:55:22) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+Rendered criancas/_consultas (16.9ms)
+Completed in 45ms (View: 20, DB: 2) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#busca (for 127.0.0.1 at 2009-08-13 12:55:23) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.2ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Columns (21.2ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mUnidade Load (154.5ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.3ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 9) LIMIT 1[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mGrupo Load (0.3ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+Rendered criancas/_listar_criancas (201.6ms)
+Completed in 344ms (View: 28, DB: 179) | 200 OK [http://localhost/criancas/busca]
