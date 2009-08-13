@@ -175,19 +175,21 @@ class CriancasController < ApplicationController
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:cr_id]}
     render :update do |page|
     page.replace_html 'regiao', :partial => 'regiao_unidade'
-   end
-
-    
-    
+    end
   end
- def grupo_crianca
+
+  def grupo_crianca
       @zero = Grupo.find_by_id(params[:crianca_grupo_id])
       if @zero.nil? then
         render :text   => ''
       else
         render :text   =>  Grupo.find_by_id(params[:crianca_grupo_id]).descricao
      end
- end
+  end
+
+  def consulta
+    render :partial => 'consultas'
+  end
 
   def rg
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
