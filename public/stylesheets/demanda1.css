@@ -89,11 +89,10 @@ font-size: large;
 }
 .menu_body {
 	display:none;
+    margin: 50px;
 }
 .menu_body a{
-  display:block;
-  
-  
+  display:block; 
   padding-left:10px;
   font-weight:bold;
   text-decoration:none;
