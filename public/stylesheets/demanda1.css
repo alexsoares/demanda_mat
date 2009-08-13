@@ -85,7 +85,7 @@ font-size: large;
 	position: relative;
 	margin:1px;
     font-weight:bold;
-  
+ 
 }
 .menu_body {
 	display:none;
@@ -98,7 +98,3 @@ font-size: large;
   font-weight:bold;
   text-decoration:none;
 }
-.menu_body a:hover{
-  
-  text-decoration:underline;
-  }

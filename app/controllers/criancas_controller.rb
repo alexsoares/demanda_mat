@@ -2,6 +2,7 @@ class CriancasController < ApplicationController
   before_filter :load_grupos
   before_filter :load_regiaos
   before_filter :load_unidades
+  before_filter :load_criancas
   #before_filter :load_variaveis
 
 # GET /criancas
@@ -104,6 +105,10 @@ class CriancasController < ApplicationController
     @unidades =  Unidade.find(:all, :order => "nome")
   end
 
+  def load_criancas
+    @criancas = Crianca.find(:all, :order => "nome")
+  end
+
   def load_variaveis
     $unidade_op1_id =0
     $unidade_op2_id=0
@@ -168,6 +173,12 @@ class CriancasController < ApplicationController
     else
       render :partial => 'listar_criancas'
     end
+  end
+
+  def nome_crianca
+    $crianca = params[:crianca_crianca_id]
+    @criancas = Crianca.find(:all, :conditions => ['id=' + $crianca])
+    render :partial => 'listar_criancas'
   end
 
 
@@ -249,4 +260,5 @@ class CriancasController < ApplicationController
   end
 
   
+
 end
