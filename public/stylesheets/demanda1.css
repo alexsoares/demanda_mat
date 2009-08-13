@@ -2,6 +2,14 @@ body {
 margin:0;
 }
 
+#fundo2  { background-image: url(imagens/americana.jpg);
+           background-repeat: no-repeat;
+}
+.clip    { background-image: url(imagens/anexo.gif);
+            background-repeat: no-repeat;
+            padding-right: 5px; vertical-align: top;
+           }
+
 #topo {
 background:blue;
 color:black;
