@@ -55,9 +55,16 @@
   <%= f.text_field :nome %><br />
     <%= observe_field :crianca_nome,
     :with => :crianca_nome,
-    :url => { :action => 'mesmo_nome' } %>
+    :url => { :action => 'mesmo_nome' } %><BR/>
     <div id='nome_aviso'>
+    
     </div>
+    
+    <div id='nome_mae'>
+    
+    </div>
+    
+
 
     <%= f.label :nascimento, 'Data de nascimento' %><br />
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><BR />

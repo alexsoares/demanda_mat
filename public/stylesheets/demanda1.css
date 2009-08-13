@@ -76,6 +76,12 @@ color: red;
 font-size: large;
 }
 
+#nome_mae{
+font: bold;
+font-size:x-large;
+color: green;
+}
+
 .menu_list {
 	width: 1500px;
 }

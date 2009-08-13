@@ -29127,3 +29127,710 @@ Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-13 15:50:22) [P
   [4;35;1mCrianca Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
 Rendered criancas/_consultas (26.4ms)
 Completed in 155ms (View: 28, DB: 4) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 15:52:00) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.3ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (8.4ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (11.6ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 471ms (View: 404, DB: 23) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#rg (for 127.0.0.1 at 2009-08-13 15:52:15) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_regiao_id"=>"6"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.5ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mUnidade Load (214.5ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mSQL (51.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+Rendered criancas/_region_units (3.4ms)
+Completed in 498ms (View: 25, DB: 268) | 200 OK [http://localhost/criancas/rg]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 15:52:29) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARES"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mCrianca Load (6.6ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 50ms (View: 1, DB: 10) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#mesma_mae (for 127.0.0.1 at 2009-08-13 15:52:38) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_mae"=>"MARIA HELENA"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.2ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mCrianca Load (0.5ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`mae` = 'MARIA HELENA') LIMIT 1[0m
+Rendering criancas/mesma_mae
+
+
+ActionView::MissingTemplate (Missing template criancas/mesma_mae.erb in view path /home/alexandre/demanda/app/views:):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:95:in `find_full_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:16:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `new'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `_unmemoized__pick_template'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:70:in `_pick_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/1.8/mongrel_rails:19
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CriancasController#grupo_crianca (for 127.0.0.1 at 2009-08-13 15:52:41) [POST]
+  Parameters: {"crianca_grupo_id"=>"5", "authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mGrupo Load (12.3ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = '5') LIMIT 1[0m
+Completed in 52ms (View: 0, DB: 14) | 200 OK [http://localhost/criancas/grupo_crianca]
+
+
+Processing CriancasController#create (for 127.0.0.1 at 2009-08-13 15:53:52) [POST]
+  Parameters: {"commit"=>"Cadastrar", "authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca"=>{"complemento"=>"", "endereco"=>"RUA ANGELO VICENTIN", "nascimento(3i)"=>"22", "created_at(1i)"=>"2004", "responsavel"=>"1", "tel1"=>"32894314", "created_at(2i)"=>"8", "tel2"=>"", "nome"=>"ALEXANDRE SOARES", "created_at(3i)"=>"13", "regiao_id"=>"6", "created_at(4i)"=>"18", "created_at(5i)"=>"52", "unidade_id"=>"15", "parentesco"=>"Pai", "grupo_id"=>"5", "mae"=>"MARIA HELENA", "local_trabalho"=>"RHODIA", "bairro"=>"BARAO GERALDO", "option1"=>"37", "nome_responsavel"=>"JOSE RIBEIRO SOARES", "numero"=>"1046", "option2"=>"38", "trabalha"=>"1", "celular"=>"", "nascimento(1i)"=>"2007", "nascimento(2i)"=>"12"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCrianca Create (57.6ms)[0m   [0;1mINSERT INTO `criancas` (`endereco`, `complemento`, `option4`, `unidade_matricula`, `created_at`, `tel1`, `responsavel`, `nome`, `regiao_id`, `tel2`, `updated_at`, `nascimento`, `unidade_id`, `mae`, `grupo_id`, `parentesco`, `posicao`, `bairro`, `local_trabalho`, `numero`, `nome_responsavel`, `option1`, `celular`, `trabalha`, `option2`, `status`, `option3`, `matricula`) VALUES('RUA ANGELO VICENTIN', '', 0, 0, '2004-08-13 18:52:00', '32894314', 1, 'ALEXANDRE SOARES', 6, '', '2009-08-13 18:53:52', '2007-12-22', 15, 'MARIA HELENA', 5, 'PAI', 0, 'BARAO GERALDO', 'RHODIA', '1046', 'JOSE RIBEIRO SOARES', 37, '', 1, 38, 0, 0, 0)[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mCOMMIT[0m
+Redirected to #<Crianca:0xb691a378>
+Completed in 229ms (DB: 89) | 302 Found [http://localhost/criancas]
+
+
+Processing CriancasController#show (for 127.0.0.1 at 2009-08-13 15:53:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.6ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`id` = 2) [0m
+Rendering template within layouts/criancas
+Rendering criancas/show
+  [4;36;1mGrupo Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mGrupo Load (0.3ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 5) [0m
+  [4;36;1mUnidade Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;36;1mRegiao Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mRegiao Load (0.3ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.3ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 37) LIMIT 1[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 38) LIMIT 1[0m
+Completed in 99ms (View: 48, DB: 9) | 200 OK [http://localhost/criancas/2]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-13 15:53:56) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.4ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.5ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 52ms (View: 15, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-13 15:59:44) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mUnidade Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mCrianca Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+Rendered criancas/_consultas (21.3ms)
+Completed in 145ms (View: 22, DB: 4) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:04:21) [GET]
+  [4;36;1mSQL (69.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (136.4ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (1249.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (60.5ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 2496ms (View: 773, DB: 1524) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-13 16:05:15) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 91ms (View: 41, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-13 16:05:16) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mUnidade Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mCrianca Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+Rendered criancas/_consultas (30.2ms)
+Completed in 195ms (View: 44, DB: 4) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:05:23) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 106ms (View: 61, DB: 6) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#rg (for 127.0.0.1 at 2009-08-13 16:05:26) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_regiao_id"=>"6"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+  [4;35;1mUnidade Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+Rendered criancas/_region_units (2.4ms)
+Completed in 54ms (View: 25, DB: 2) | 200 OK [http://localhost/criancas/rg]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 16:05:31) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARES"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mCrianca Load (51.5ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 98ms (View: 1, DB: 55) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#mesma_mae (for 127.0.0.1 at 2009-08-13 16:05:40) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_mae"=>"MARIA HELENA"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mCrianca Load (0.5ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`mae` = 'MARIA HELENA') LIMIT 1[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 44ms (View: 1, DB: 4) | 200 OK [http://localhost/criancas/mesma_mae]
+
+
+Processing CriancasController#mesma_mae (for 127.0.0.1 at 2009-08-13 16:05:54) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_mae"=>"MARIA HELLENA"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mCrianca Load (8.0ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`mae` = 'MARIA HELLENA') LIMIT 1[0m
+Rendering criancas/mesma_mae
+
+
+ActionView::MissingTemplate (Missing template criancas/mesma_mae.erb in view path /home/alexandre/demanda/app/views:):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:95:in `find_full_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:16:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `new'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `_unmemoized__pick_template'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:70:in `_pick_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/1.8/mongrel_rails:19
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:05:57) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 202ms (View: 71, DB: 6) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 16:06:12) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARER"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mCrianca Load (0.5ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARER') LIMIT 1[0m
+Completed in 46ms (View: 1, DB: 4) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 16:06:15) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARES"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 42ms (View: 1, DB: 3) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:12:09) [GET]
+  [4;36;1mSQL (77.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (86.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.5ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (107.1ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 1437ms (View: 313, DB: 282) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#rg (for 127.0.0.1 at 2009-08-13 16:12:17) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_regiao_id"=>"6"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.3ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+Rendered criancas/_region_units (3.5ms)
+Completed in 65ms (View: 24, DB: 2) | 200 OK [http://localhost/criancas/rg]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 16:12:21) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARES"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 52ms (View: 9, DB: 3) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:12:42) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.4ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.2ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (1.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;36;1mUnidade Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mRegiao Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `regiaos`[0m
+  [4;36;1mGrupo Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+Completed in 146ms (View: 76, DB: 9) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#rg (for 127.0.0.1 at 2009-08-13 16:12:46) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_regiao_id"=>"6"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+  [4;36;1mUnidade Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `unidades` WHERE (`unidades`.`regiao_id` = '6') [0m
+Rendered criancas/_region_units (3.5ms)
+Completed in 49ms (View: 8, DB: 2) | 200 OK [http://localhost/criancas/rg]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 16:12:50) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARES"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 51ms (View: 9, DB: 3) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:13:12) [GET]
+  [4;36;1mSQL (20.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (6.4ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 117ms (View: 67, DB: 31) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 16:13:15) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARES"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 52ms (View: 9, DB: 3) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:14:22) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.3ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (99.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 499ms (View: 343, DB: 104) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#mesmo_nome (for 127.0.0.1 at 2009-08-13 16:14:27) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468", "crianca_nome"=>"ALEXANDRE SOARES"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.3ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`nome` = 'ALEXANDRE SOARES') LIMIT 1[0m
+Completed in 55ms (View: 10, DB: 4) | 200 OK [http://localhost/criancas/mesmo_nome]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:14:38) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 153ms (View: 107, DB: 8) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:14:42) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (2.9ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 200ms (View: 76, DB: 9) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:14:42) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 81ms (View: 48, DB: 5) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:14:56) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (1.6ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 171ms (View: 50, DB: 7) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:15:00) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.4ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 98ms (View: 53, DB: 6) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2009-08-13 16:15:11) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+Rendering template within layouts/criancas
+Rendering criancas/new
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mGrupo Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 214ms (View: 87, DB: 7) | 200 OK [http://localhost/criancas/new]

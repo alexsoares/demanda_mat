@@ -218,9 +218,11 @@ class CriancasController < ApplicationController
 
   def mesmo_nome
     $nome = params[:crianca_nome]
-    if Crianca.find_by_nome($nome) then
+    @verifica = Crianca.find_by_nome($nome)
+    if @verifica then
       render :update do |page|
-        page.replace_html 'nome_aviso', :text => 'Nome já cadastrado no sistema '
+        page.replace_html 'nome_aviso', :text => 'Nome já cadastrado no sistema'
+        page.replace_html 'nome_mae', :text => 'Mae:' +  @verifica.mae
         page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' onclick=\"return confirm('Gravar mesmo com nome duplicado?');\" type='submit' value='Cadastrar' />"
     end
     else
