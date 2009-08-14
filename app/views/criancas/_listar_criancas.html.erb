@@ -5,6 +5,9 @@
 <br/><br/>
 <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
     <tr>
+     <br/>
+    <font style="font-size: 10pt"><b> Posição </b></font>
+    <hr align="left" width="100%" color=#CDC9A5 size="1">
     <center><th bgcolor="#cccccc">Nome</th></center>
     <th bgcolor="#cccccc">Data Nascimento</th>
     <th bgcolor="#cccccc">Nome Mãe</th>
@@ -23,6 +26,8 @@
 
 <% for crianca in @criancas %>
   <tr>
+    <br/>
+    <center><%=h $teste + 1%></center>
     <p><td><center><%=h crianca.nome.upcase %></center></td>
     <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
     <td><center><%=h crianca.mae.upcase %></center></td>
