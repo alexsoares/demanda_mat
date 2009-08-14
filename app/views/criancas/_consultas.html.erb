@@ -24,17 +24,17 @@ $(document).ready(function()
 
 <div style="float:left" > <!--Divisão principal-->
   <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
-		<p class="menu_head"> >> Demanda por Unidade <<  </p>
+		<p class="menu_head"><font style="font-size: 12pt"> >> Demanda por Unidade <<  </font></p>
 		<div class="menu_body">
-		<p style="font-size: 8pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %></p>
+		<p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => 'Opção 1' %><%= collection_select :unidade, :unidade_op2_id, @unidades, :id, :nome, :include_blank => 'Opção 2' %><%= collection_select :unidade, :unidade_op3_id, @unidades, :id, :nome, :include_blank => 'Opção 3' %></p>
  		</div>
-		<p class="menu_head"> >> Matriculas por Unidade << </p>
+		<p class="menu_head"><font style="font-size: 12pt"> >> Matriculas por Unidade << </font></p>
 		<div class="menu_body">
-			<p style="font-size: 8pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+			<p style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
 		</div>
-		<p class="menu_head"> >> Nome da Criança << </p>
+		<p class="menu_head"><font style="font-size: 12pt"> >> Nome da Criança << </font></p>
 		<div class="menu_body">
-        <p style="font-size: 8pt">Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+        <p style="font-size: 12pt">Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
        </div>
   </div>  <!--Encerramento da script dropdpwn-->
 </div>
