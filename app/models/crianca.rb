@@ -185,7 +185,7 @@ class Crianca < ActiveRecord::Base
     if matricula == 0 then
       return 'CRIANÇA(S) AGUARDANDO MATRÍCULA'
     else
-      return 'CRIANÇA(S) MATRCULADA(S)'
+      return 'CRIANÇA(S) MATRICULADA(S)'
     end
   end
 

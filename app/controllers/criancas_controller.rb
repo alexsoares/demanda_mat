@@ -117,17 +117,17 @@ class CriancasController < ApplicationController
 
   def busca
     @criancas = Crianca.c
-    render :partial => 'listar_criancas'
+    render :partial => 'listar_todas_criancas'
   end
 
   def busca_unidade
     @criancas = Crianca.b_u
-    render :partial => 'listar_criancas'
+    render :partial => 'listar_todas_criancas'
   end
 
   def busca_demanda
     @criancas = Crianca.b_dm
-    render :partial => 'listar_criancas'
+    render :partial => 'listar_todas_criancas'
   end
 
 
@@ -171,14 +171,14 @@ class CriancasController < ApplicationController
     if @criancas.nil? or @criancas.empty? then
       render :text => 'Nenhuma crianca matriculada nesta escola'
     else
-      render :partial => 'listar_criancas'
+      render :partial => 'listar_todas_criancas'
     end
   end
 
   def nome_crianca
     $crianca = params[:crianca_crianca_id]
     @criancas = Crianca.find(:all, :conditions => ['id=' + $crianca])
-    render :partial => 'listar_criancas'
+    render :partial => 'listar_todas_criancas'
   end
 
 
