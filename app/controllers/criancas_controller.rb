@@ -222,12 +222,13 @@ class CriancasController < ApplicationController
     if @verifica then
       render :update do |page|
         page.replace_html 'nome_aviso', :text => 'Nome já cadastrado no sistema'
-        page.replace_html 'nome_mae', :text => 'Mae:' +  @verifica.mae
+        page.replace_html 'aviso_mae', :text => 'Mae:' +  @verifica.mae
         page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' onclick=\"return confirm('Gravar mesmo com nome duplicado?');\" type='submit' value='Cadastrar' />"
     end
     else
       render :update do |page|
         page.replace_html 'nome_aviso', :text => ''
+        page.replace_html 'aviso_mae', :text => ''
       end
  
     end

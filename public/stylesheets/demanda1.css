@@ -76,9 +76,9 @@ color: red;
 font-size: large;
 }
 
-#nome_mae{
-font: bold;
-font-size:x-large;
+#aviso_mae{
+font: bold 12px;
+
 color: green;
 }
 
