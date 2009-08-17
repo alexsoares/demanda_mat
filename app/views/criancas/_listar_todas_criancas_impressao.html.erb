@@ -1,0 +1,66 @@
+| <a href="javascript:window.print();">Imprimir</a>|
+
+<%$teste=0%>
+<div id="contador"></div>
+<br/><br/>
+<table cellpadding="1" cellspacing="1" width="100%" >
+    <tr>
+     <br/>
+    
+    <hr align="left" width="100%" color=#CDC9A5 size="1">
+    <center><th>Nome</th></center>
+    <th>Data Nascimento</th>
+    <th>Nome Mãe</th>
+    <th>Endereço</th>
+    <th>N.</th>
+    <th>Bairro</th>
+    <th>Fone1</th>
+    <th>Resp</th>
+    <th>Trabalha</th>
+    <th>Opção 1</th>
+    <th>Opção 2</th>
+    <th>Classificação</th>
+    <th>Status</th>
+    <th>Unidade Matricula</th>
+    </tr>
+
+<% for crianca in @criancas %>
+  <tr>
+    <br/>
+
+    <p><td><center><%=h crianca.nome.upcase %></center></td>
+    <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
+    <td><center><%=h crianca.mae.upcase %></center></td>
+    <td><center><%=h crianca.endereco.upcase %></center></td>
+    <td><center><%=h crianca.numero %></center></td>
+    <td><center><%=h crianca.bairro.upcase %></center></td>
+    <td><center><%=h crianca.tel1 %></center></td>
+    <td><center><%=h crianca.parentesco %></center></td>
+    <td><center><%=h crianca.verifica_trabalha %></center></td>
+    <td><center><%=h crianca.opcao1.upcase %></center></td>
+    <td><center><%=h crianca.opcao2.upcase %></center></td>
+    <td><center><%=h crianca.onde_classifica.upcase %></center></td>
+    <td><center><%=h crianca.conf_status %></center></td>
+    <td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+  </tr>
+  <tr>
+    <%  $teste = $teste + 1%>
+  </tr>
+
+
+<% end %>
+
+</table>
+<br/>
+
+
+<tr>
+<p><font size=3>
+
+ EXISTE(M) <%=h $teste %><%=h " " + crianca.tipo_consulta %>
+<br /><br /><br />
+</font></p>
+</tr>
+| <a href="javascript:window.print();">Imprimir</a>
+| <%= link_to 'Voltar', criancas_path %>|
+

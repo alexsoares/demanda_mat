@@ -109,6 +109,14 @@ class CriancasController < ApplicationController
     @criancas = Crianca.find(:all, :order => "nome")
   end
 
+  def versao_impressao_todas
+    render :partial => 'listar_todas_criancas_impressao'
+  end
+
+  def versao_impressao
+    render :partial => 'listar_criancas_impressao'
+  end
+
   def load_variaveis
     $unidade_op1_id =0
     $unidade_op2_id=0
