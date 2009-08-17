@@ -91,15 +91,14 @@ color: green;
 	position: relative;
 	margin:1px;
     font-weight:bold;
+    font-size: medium;
  
 }
 .menu_body {
-	display:none;
+    padding: 0.5px 0.5px;
+    display:none;
     margin: 50px;
+    font-size: large;
 }
-.menu_body a{
-  display:block; 
-  padding-left:10px;
-  font-weight:bold;
-  text-decoration:none;
+
 }
