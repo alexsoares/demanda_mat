@@ -6,7 +6,9 @@
 <%= stylesheet_link_tag 'scaffold' %>
 <%= stylesheet_link_tag 'demanda1' %>
 <%= javascript_include_tag :all %>
-
+<%= stylesheet_link_tag 'jquery.suggest.css' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag "jquery.suggest.js" %>
 </head>
 <body>
 <p style="color: green"><%= flash[:notice] %></p><%= yield  %>
