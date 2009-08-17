@@ -130,11 +130,26 @@ class CriancasController < ApplicationController
     render :partial => 'listar_todas_criancas'
   end
 
+  def class_unid
+    $class = params[:grupo_grupo_class_id]
+     @teste = Unidade.find(:all)
+  end
+  
+  def classif
+    $unidade = params[:unidade_unidade_class_id]
+    @criancas = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => "created_at")
+    if @criancas.nil? or @criancas.empty? then
+      render :text => 'Nenhuma crianca encontrada'
+    else
+      render :partial => 'listar_todas_criancas'
+    end
+  end
+
 
   def un_op1_din
     #@criancas = Crianca.un_din
     $unidade_op1_id = params[:unidade_unidade_op1_id]
-    @criancas = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["created_at and trabalha desc"])
+    @criancas = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
     if @criancas.nil? or @criancas.empty? then
       render :text => 'Nenhum registro encontrado'
     else

@@ -26,27 +26,27 @@ $(document).ready(function()
   <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
 		<p class="menu_head"> >> Demanda por Unidade << </p>
 		<div class="menu_body">
-		  <p>Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+		  <p/>Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
  		</div>
 		<p class="menu_head"> >> Matriculas por Unidade << </p>
 		<div class="menu_body">
-			<p>Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+			<p/>Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
 		</div>
 		<p class="menu_head"> >> Nome da Criança << </p>
 		<div class="menu_body">
-           <p>Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
-       </div>
- 	   <p class="menu_head"> >> Classificação << </p>
-	   <div class="menu_body">
-           <p>Selecione a classificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %> Unidade: <%= collection_select :unidade, :unidade_class_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+           <p/>Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
        </div>
 
-  </div>
+       </div>
+ 	   <p class="menu_head"><font style="font-size: 12pt"> >> Busca por Classificação << </font></p>
+		<div class="menu_body">
+          <div id ="atualiza_con">
+           <p style="font-size: 12pt">Selecione a clasdsificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %><%= collection_select :unidade, :unidade_class_id, @teste, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+          </div>
+       </div>
 
-
-
-</div>  <!--Encerramento da script dropdpwn-->
-
+  </div>  <!--Encerramento da script dropdpwn-->
+</div>
 
         <%= observe_field 'grupo_grupo_class_id',
            :frequency => 0.5,
@@ -80,11 +80,13 @@ $(document).ready(function()
            :url    => { :action => 'nome_crianca' },
            :with   => 'crianca_crianca_id' %>
 
+
 </table>
 </table>
+
 </fieldset>
-</center>
 
 <br/>
+      </center>
 
  </div>

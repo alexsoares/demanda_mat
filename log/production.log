@@ -10874,3 +10874,73 @@ Processing CriancasController#index (for 192.168.0.132 at 2009-08-14 15:45:43) [
 Rendering template within layouts/criancas
 Rendering criancas/index
 Completed in 110ms (View: 41, DB: 14) | 200 OK [http://192.168.0.153/criancas/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-17 14:11:14) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-17 14:11:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:11:16) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 59ms (View: 16, DB: 26) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:11:17) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 26ms (View: 12, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-17 14:11:18) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468"}
+Completed in 60ms (View: 33, DB: 20) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:12:07) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 25ms (View: 12, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:12:08) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 25ms (View: 12, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-17 14:12:09) [POST]
+  Parameters: {"authenticity_token"=>"c576b8834c7a2ab8ea19aad651859373d6f0f468"}
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:12:13) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 26ms (View: 12, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:12:13) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 28ms (View: 13, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:12:30) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 27ms (View: 12, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-17 14:12:30) [GET]
+Rendering template within layouts/criancas
+Rendering criancas/index
+Completed in 26ms (View: 13, DB: 1) | 200 OK [http://localhost/criancas]

@@ -2,7 +2,8 @@ class CriancasController < ApplicationController
   before_filter :load_grupos
   before_filter :load_regiaos
   before_filter :load_unidades
-
+  before_filter :load_criancas
+  #before_filter :load_variaveis
 
 # GET /criancas
   # GET /criancas.xml
@@ -25,6 +26,8 @@ class CriancasController < ApplicationController
       format.xml  { render :xml => @crianca }
     end
   end
+
+
 
   # GET /criancas/new
   # GET /criancas/new.xml
@@ -102,24 +105,82 @@ class CriancasController < ApplicationController
     @unidades =  Unidade.find(:all, :order => "nome")
   end
 
+  def load_criancas
+    @criancas = Crianca.find(:all, :order => "nome")
+  end
+
+  def load_variaveis
+    $unidade_op1_id =0
+    $unidade_op2_id=0
+    $unidade_op3_id=0
+  end
+
+  def busca
+    @criancas = Crianca.c
+    render :partial => 'listar_todas_criancas'
+  end
+
+  def busca_unidade
+    @criancas = Crianca.b_u
+    render :partial => 'listar_todas_criancas'
+  end
+
+  def busca_demanda
+    @criancas = Crianca.b_dm
+    render :partial => 'listar_todas_criancas'
+  end
+
+
+  def un_op1_din
+    #@criancas = Crianca.un_din
+    $unidade_op1_id = params[:unidade_unidade_op1_id]
+    @criancas = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["created_at and trabalha desc"])
+    if @criancas.nil? or @criancas.empty? then
+      render :text => 'Nenhum registro encontrado'
+    else
+      
+      render :partial => 'listar_criancas'
+    end
+    
+  end
+
+
+  def mat_unidade
+    $unidade = params[:unidade_unidade_mat_id]
+    @criancas = Crianca.find(:all, :conditions => ["unidade_matricula =" + $unidade + " and matricula =1"], :order => "created_at")
+    if @criancas.nil? or @criancas.empty? then
+      render :text => 'Nenhuma crianca matriculada nesta escola'
+    else
+      render :partial => 'listar_todas_criancas'
+    end
+  end
+
+  def nome_crianca
+    $crianca = params[:crianca_crianca_id]
+    @criancas = Crianca.find(:all, :conditions => ['id=' + $crianca])
+    render :partial => 'listar_todas_criancas'
+  end
+
 
   def regiao_unidade
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:cr_id]}
     render :update do |page|
     page.replace_html 'regiao', :partial => 'regiao_unidade'
-   end
-
-    
-    
+    end
   end
- def grupo_crianca
+
+  def grupo_crianca
       @zero = Grupo.find_by_id(params[:crianca_grupo_id])
-      if @zero == nil then
+      if @zero.nil? then
         render :text   => ''
       else
         render :text   =>  Grupo.find_by_id(params[:crianca_grupo_id]).descricao
      end
- end
+  end
+
+  def consulta
+    render :partial => 'consultas'
+  end
 
   def rg
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
@@ -136,20 +197,42 @@ class CriancasController < ApplicationController
   end
 
   def mesmo_nome
-    if 	!Crianca.by_nome(params[:crianca_nome]).empty? then
+    $nome = params[:crianca_nome]
+    @verifica = Crianca.find_by_nome($nome)
+    if @verifica then
       render :update do |page|
-        page.replace_html 'nome_aviso', :text => 'Nome de criança já cadastrado no sistema '
+        page.replace_html 'nome_aviso', :text => 'Nome já cadastrado no sistema'
+        page.replace_html 'aviso_mae', :text => 'Mae:' +  @verifica.mae
         page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' onclick=\"return confirm('Gravar mesmo com nome duplicado?');\" type='submit' value='Cadastrar' />"
-
-      end
+    end
     else
       render :update do |page|
-        page.replace_html 'nome_aviso', :text => ' '
+        page.replace_html 'nome_aviso', :text => ''
+        page.replace_html 'aviso_mae', :text => ''
       end
  
     end
   end
 
+  def mesma_mae
+     if Crianca.find_by_mae(params[:crianca_mae]) then
+       if Crianca.find_by_nome($nome) then
+        render :update do |page|
+          page.replace_html 'nome_mae', :text => 'Criança já cadastrada no sistema '
+          page.replace_html 'Certeza', :text =>  'Criança ja cadastrada, qualquer dúvida entrar em contato com a supervisão'
+        end
+        else
+          render :update do |page|
+             page.replace_html 'nome_mae', :text => ''
+             page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' type='submit' value='Cadastrar' />"
+          end
+
+       end
+     end
+  end
+
+
+   
   def same_birthday
     data_nasc = params[:ano].to_s + '-' + params[:mes].to_s + '-' + params[:dia].to_s
     if !Crianca.by_nome(params[:nome]).by_nascimento(data_nasc).empty? then
@@ -160,4 +243,5 @@ class CriancasController < ApplicationController
   end
 
   
+
 end
