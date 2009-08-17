@@ -26,19 +26,19 @@ $(document).ready(function()
   <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
 		<p class="menu_head"> >> Demanda por Unidade << </p>
 		<div class="menu_body">
-		  <p>Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+		    <p/>Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
  		</div>
 		<p class="menu_head"> >> Matriculas por Unidade << </p>
 		<div class="menu_body">
-			<p>Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+			<p/>Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
 		</div>
 		<p class="menu_head"> >> Nome da Criança << </p>
 		<div class="menu_body">
-           <p>Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+           <p/>Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
        </div>
  	   <p class="menu_head"> >> Classificação << </p>
 	   <div class="menu_body">
-           <p>Selecione a classificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %> Unidade: <%= collection_select :unidade, :unidade_class_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+           <p/>Selecione a classificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %> Unidade: <%= collection_select :unidade, :unidade_class_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
        </div>
 
   </div>
