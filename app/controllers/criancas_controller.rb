@@ -110,11 +110,42 @@ class CriancasController < ApplicationController
   end
 
   def versao_impressao_todas
+    if $consulta == 1 then
+       @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
+    else
+      if $consulta == 2 then
+        @crianca = Crianca.find(:all, :conditions => {:matricula => 1 })
+      else
+        if $consulta == 3 then
+          @crianca = Crianca.find(:all, :conditions => ['id=' + $crianca])
+        else
+          if $consulta == 4 then
+            @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => ["trabalha desc,created_at"])
+          end
+        end
+      end
+    end
+
     render :partial => 'listar_todas_criancas_impressao'
   end
 
   def versao_impressao
-    render :partial => 'listar_criancas_impressao'
+    if $consulta == 1 then
+       @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
+    else
+      if $consulta == 2 then
+        @crianca = Crianca.find(:all, :conditions => {:matricula => 1 })
+      else
+        if $consulta == 3 then
+          @crianca = Crianca.find(:all, :conditions => ['id=' + $crianca])
+        else
+          if $consulta == 4 then
+            @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => ["trabalha desc,created_at"])
+          end
+        end
+      end
+    end
+   render :partial => 'listar_criancas_impressao'
   end
 
   def load_variaveis
@@ -124,17 +155,17 @@ class CriancasController < ApplicationController
   end
 
   def busca
-    @criancas = Crianca.c
+    @crianca = Crianca.c
     render :partial => 'listar_todas_criancas'
   end
 
   def busca_unidade
-    @criancas = Crianca.b_u
+    @crianca = Crianca.b_u
     render :partial => 'listar_todas_criancas'
   end
 
   def busca_demanda
-    @criancas = Crianca.b_dm
+    @crianca = Crianca.b_dm
     render :partial => 'listar_todas_criancas'
   end
 
@@ -145,8 +176,9 @@ class CriancasController < ApplicationController
   
   def classif
     $unidade = params[:unidade_unidade_class_id]
-    @criancas = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => ["trabalha desc,created_at"])
-    if @criancas.nil? or @criancas.empty? then
+    $consulta = 4
+    @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => ["trabalha desc,created_at"])
+    if @crianca.nil? or @crianca.empty? then
       render :text => 'Nenhuma crianca encontrada'
     else
       render :partial => 'listar_criancas'
@@ -156,9 +188,10 @@ class CriancasController < ApplicationController
 
   def un_op1_din
     #@criancas = Crianca.un_din
+    $consulta = 1
     $unidade_op1_id = params[:unidade_unidade_op1_id]
-    @criancas = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
-    if @criancas.nil? or @criancas.empty? then
+    @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
+    if @crianca.nil? or @crianca.empty? then
       render :text => 'Nenhum registro encontrado'
     else
       
@@ -169,9 +202,10 @@ class CriancasController < ApplicationController
 
 
   def mat_unidade
+    $consulta = 2
     $unidade = params[:unidade_unidade_mat_id]
-    @criancas = Crianca.find(:all, :conditions => ["unidade_matricula =" + $unidade + " and matricula =1"], :order => "created_at")
-    if @criancas.nil? or @criancas.empty? then
+    @crianca = Crianca.find(:all, :conditions => ["unidade_matricula =" + $unidade + " and matricula =1"], :order => "created_at")
+    if @crianca.nil? or @crianca.empty? then
       render :text => 'Nenhuma crianca matriculada nesta escola'
     else
       render :partial => 'listar_todas_criancas'
@@ -179,8 +213,9 @@ class CriancasController < ApplicationController
   end
 
   def nome_crianca
+    $consulta = 3
     $crianca = params[:crianca_crianca_id]
-    @criancas = Crianca.find(:all, :conditions => ['id=' + $crianca])
+    @crianca = Crianca.find(:all, :conditions => ['id=' + $crianca])
     render :partial => 'listar_todas_criancas'
   end
 

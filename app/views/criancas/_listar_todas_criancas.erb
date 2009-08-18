@@ -1,4 +1,5 @@
-| <a href="javascript:window.print();">Imprimir</a>|
+<%= link_to_remote('Versão para impressão', :update => "listagem", :url => { :action => "versao_impressao_todas"}) %>
+
 
 <%$teste=0%>
 <div id="contador"></div>
@@ -22,7 +23,7 @@
     <th bgcolor="#cccccc">Unidade Matricula</th>
     </tr>
 
-<% for crianca in @criancas %>
+<% for crianca in @crianca %>
   <tr>
     <p><td><center><%=h crianca.nome.upcase %></center></td>
     <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
