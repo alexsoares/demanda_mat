@@ -1,0 +1,81 @@
+<div id="topo">
+  <br/>
+  <h1>Relatório Geral da Demanda Escolar</h1>
+</div>
+| <%= link_to 'Voltar', criancas_path %> | 
+<div id="conteudo">
+  <fieldset>
+        Demanda de Crianças em Todas as Unidades: <%= Crianca.demanda_total.length %> <br/>
+        Demanda de Criancas Por Regiões:<BR/>
+        >> SÃO JERÔNIMO   : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 1"]).length %><BR/>
+        >> CIDADE JARDIM  : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 2"]).length %><BR/>
+        >> SÃO VITO       : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 3"]).length %><BR/>
+        >> ZANAGA         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 4"]).length %><BR/>
+        >> JARDIM IPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 5"]).length %><BR/>
+        >> CENTRO         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 6"]).length %><BR/>
+        >> PRAIA AZUL     : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 7"]).length %><BR/>
+        Demanda de alunos por unidade: <br/>
+
+    <table border="0" width="70%" cellpadding="1" cellspacing="1">
+     <td>
+       <fieldset>
+       >> ARAPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 1"]).length %> <br/>
+       >> BITU: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 2"]).length %><br/>
+       >> MAIRA:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 3"]).length %><br/>
+       >> JURITI:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 4"]).length %><br/>
+       >> JACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 5"]).length %><br/>
+       >> ARACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 6"]).length %><br/>
+       >> CAIC: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 7"]).length %><br/>
+       >> GRAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 8"]).length %><br/>
+       >> ARAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 9"]).length %><br/>
+       >> CARANDA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 10"]).length %><br/>
+       >> MANAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 11"]).length %><br/>
+       >> ARACATI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 12"]).length %><br/>
+       >> CUNHATAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 13"]).length %><br/>
+       </fieldset>
+     </td>
+     <td>
+       <fieldset>
+         >> ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 15"]).length %><br/>
+         >> CHUI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 16"]).length %><br/>
+         >> MARACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 17"]).length %><br/>
+         >> POTIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 18"]).length %><br/>
+         >> PATURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 19"]).length %><br/>
+         >> INDAIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 20"]).length %><br/>
+         >> BATUIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 21"]).length %><br/>
+         >> JACINA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 22"]).length %><br/>
+         >> CURIMA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 23"]).length %><br/>
+         >> MAJOI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 24"]).length %><br/>
+         >> TAPERA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 25"]).length %><br/>
+         >> CURIO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 26"]).length %><br/>
+         >> TARAGUA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 27"]).length %><br/>
+       </fieldset>
+     </td>
+     <td>
+       <fieldset>
+         >> URUPE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 28"]).length %><br/>
+         >> PATATIVA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 29"]).length %><br/>
+         >> ARACARI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 30"]).length %><br/>
+         >> CURUMIM: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 31"]).length %><br/>
+         >> TAHIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 32"]).length %><br/>
+         >> BORE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 33"]).length %><br/>
+         >> CECI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 34"]).length %><br/>
+         >> CORIMBO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 35"]).length %><br/>
+         >> TANGARA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 36"]).length %><br/>
+         >> BACURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 37"]).length %><br/>
+         >> SABIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 38"]).length %><br/>
+         >> PITANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 39"]).length %><br/>
+         >> PANAMBY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 40"]).length %><br/>
+       </fieldset>
+     </td>
+     <td valign="top">
+       <fieldset>
+         >> MANACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 41"]).length %><br/>
+       </fieldset>
+     </td>   
+     </table>
+
+  </fieldset>
+</div>
+
+

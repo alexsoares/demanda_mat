@@ -257,6 +257,10 @@ class CriancasController < ApplicationController
      end
   end
 
+  def relatorio
+    render :partial => 'relatorio_geral'
+  end
+
   def consulta
     render :partial => 'consultas'
   end
