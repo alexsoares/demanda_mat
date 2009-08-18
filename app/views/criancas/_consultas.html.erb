@@ -40,10 +40,10 @@ $(document).ready(function()
 	   <div class="menu_body">
            <p>Selecione a classificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %> Unidade: <%= collection_select :unidade, :unidade_class_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
        </div>
- 	   <!-- <p class="menu_head"> >> Totalização << </p>
+ 	    <p class="menu_head"> >> Totalização << </p>
 	   <div class="menu_body">
            <p><%= link_to_remote('Relatório de Totalização Da Demanda Escolar', :update => "conteudo", :url => { :action => "relatorio"}) %></p>
-       </div> -->
+       </div>
   </div>
 
 </div>  <!--Encerramento da script dropdpwn-->
