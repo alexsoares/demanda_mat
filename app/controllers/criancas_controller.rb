@@ -112,7 +112,7 @@ class CriancasController < ApplicationController
   def versao_impressao_todas
     #Busca demanda por unidade
     if $consulta == 1 then
-       @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
+       @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order => "created_at")
     else
       #Busca crianças matriculadas
       if $consulta == 2 then
@@ -124,7 +124,7 @@ class CriancasController < ApplicationController
         else
           #Busca criancas classificadas por grupo e unidade
           if $consulta == 4 then
-            @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => ["trabalha desc,created_at"])
+            @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => "created_at")
           else
             if $consulta == 5 then
               #Busca criancas não matriculadas
@@ -141,7 +141,7 @@ class CriancasController < ApplicationController
   def versao_impressao
     #Busca demanda por unidade
     if $consulta == 1 then
-       @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
+       @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>"created_at")
     else
       #Busca crianças matriculadas
       if $consulta == 2 then
@@ -153,7 +153,7 @@ class CriancasController < ApplicationController
         else
           #Busca criancas classificadas por grupo e unidade
           if $consulta == 4 then
-            @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => ["trabalha desc,created_at"])
+            @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => "created_at")
           else
             if $consulta == 5 then
               #Busca criancas não matriculadas
@@ -198,7 +198,7 @@ class CriancasController < ApplicationController
   def classif
     $unidade = params[:unidade_unidade_class_id]
     $consulta = 4
-    @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => ["trabalha desc,created_at"])
+    @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => "created_at")
     if @crianca.nil? or @crianca.empty? then
       render :text => 'Nenhuma crianca encontrada'
     else
@@ -211,7 +211,7 @@ class CriancasController < ApplicationController
     #@criancas = Crianca.un_din
     $consulta = 1
     $unidade_op1_id = params[:unidade_unidade_op1_id]
-    @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>["trabalha desc,created_at"])
+    @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>"created_at")
     if @crianca.nil? or @crianca.empty? then
       render :text => 'Nenhum registro encontrado'
     else
