@@ -1,11 +1,10 @@
 <div id="topo">
   <br/>
-  <h1 align="right">Relatório Geral da Demanda Escolar</h1>
+  <h1>Relatório Geral da Demanda Escolar</h1>
 </div>
-<br/>
-| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> |<br/><br/>
-<div id="conteudo">
-
+<div id="impressao">
+  <br/>
+| <%= link_to 'Voltar', criancas_path %> | <a href="javascript:window.print();">Imprimir</a>|<br/><br/>
 
   <fieldset>
       <legend><font size=4>Relatório Geral de Demanada Escolar</font></legend>
@@ -14,7 +13,7 @@
         <br/>
 
   <fieldset>
-      <legend><font size=3>DEMANDA POR REGIÃO</font></legend>
+      <legend><font size=3 style="margin-left:25px">DEMANDA POR REGIÃO</font></legend>
 
     <table border="0" width="60%" cellpadding="5" cellspacing="1" >
     <tr>
@@ -89,5 +88,5 @@
  </fieldset>
 <br/><br/>
 </div>
-| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> |
+| <%= link_to 'Voltar', criancas_path %> | <a href="javascript:window.print();">Imprimir</a>|
 
