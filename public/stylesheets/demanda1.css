@@ -23,7 +23,10 @@ border-right: double;
 
 #rodape{
     background-image:url(Imagens/fundo_rodape.jpg);
-    margin:25px;
+    
+  	position: absolute;
+	bottom: 0;
+    width:96%;
 }
 #inicial {
 
