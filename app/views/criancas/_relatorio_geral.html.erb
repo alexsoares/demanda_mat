@@ -5,8 +5,6 @@
 <br/>
 | <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> |<br/><br/>
 <div id="conteudo">
-
-
   <fieldset>
       <legend><font size=4>Relatório Geral de Demanada Escolar</font></legend>
         <br/>
@@ -35,7 +33,7 @@
 <fieldset>
    <legend><font size=3>DEMANDA POR UNIDADE</font></legend>
 
-    <table border="0" width="110%" cellpadding="1" cellspacing="1">
+    <table border="0" width="120%" cellpadding="1" cellspacing="1">
       <tr>
     
        <th align="left"> > ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 15"]).length %></th>
@@ -92,5 +90,5 @@
  </fieldset>
 <br/><br/>
 </div>
-| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> |
+| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> | <%= link_to 'Voltar', criancas_path %> |
 
