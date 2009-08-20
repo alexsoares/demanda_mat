@@ -36,7 +36,8 @@
    <legend><font size=3>DEMANDA POR UNIDADE</font></legend>
 
     <table border="0" width="110%" cellpadding="1" cellspacing="1">
-     <tr>
+      <tr>
+    
        <th align="left"> > ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 15"]).length %></th>
        <th align="left"> > ARACARI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 30"]).length %></th>
        <th align="left"> > ARACATI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 12"]).length %></th>
@@ -47,7 +48,9 @@
        <th align="left"> > BATUIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 21"]).length %></th>
        <th align="left"> > BITU: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 2"]).length %></th>
        <th align="left"> > BORE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 33"]).length %></th>
+   
     </tr>
+
     <tr>
        <th align="left"> > CAIC: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 7"]).length %></th>
        <th align="left"> > CARANDA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 10"]).length %></th>
