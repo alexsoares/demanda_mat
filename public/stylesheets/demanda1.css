@@ -93,7 +93,7 @@ color: green;
 	width: 1500px;
 }
 .menu_head {
-	padding: 5px 10px;
+	padding: 1px 1px;
 	cursor: pointer;
 	position: relative;
 	margin:1px;
@@ -104,7 +104,7 @@ color: green;
 .menu_body {
     padding: 0.5px 0.5px;
     display:none;
-    margin: 50px;
+    margin: 5px;
     font-size: large;
 }
 
