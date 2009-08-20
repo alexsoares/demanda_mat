@@ -129,6 +129,12 @@ class CriancasController < ApplicationController
             if $consulta == 5 then
               #Busca criancas não matriculadas
               @crianca = Crianca.find(:all, :conditions => {:matricula => 0 })
+            else
+              if $consulta == 6 then
+                #Busca crianca por nome
+                @crianca = Crianca.find(:all, :conditions => ['id=' + $crianca])
+              end
+
             end
           end
         end
