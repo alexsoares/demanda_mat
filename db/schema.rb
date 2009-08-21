@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20090616132325) do
     t.integer  "matricula",                       :default => 0
     t.integer  "unidade_matricula",               :default => 0
     t.integer  "status",                          :default => 0
+    t.integer  "posicao",                         :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

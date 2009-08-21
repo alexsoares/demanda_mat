@@ -13026,3 +13026,673 @@ Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-20 13:35:24) [P
   [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
 Rendered criancas/_consultas (33.7ms)
 Completed in 176ms (View: 35, DB: 5) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:43:02) [GET]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:43:02) [GET]
+
+
+Mysql::Error (Unknown database 'demanda_development'):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:548:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:548:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:198:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:74:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:74:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:121:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:113:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (70.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.4ms)
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (28.3ms)[0m   [0;1mCREATE DATABASE `demanda_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (54.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (23.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRegiaos (20090616125707)
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE TABLE `regiaos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mRegiao Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.3ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'SAO JERONIMO', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'CIDADE JARDIM', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'SAO VITO', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'ZANAGA', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM IPIRANGA', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'CENTRO', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.3ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM BRASIL', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'PRAIA AZUL', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM DA PAZ ', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM DOS LIRIOS', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'PARQUE DAS NACOES', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'SAO ROQUE', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'PARQUE GRAMADO', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM PROGRESSO', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'PROFILURBE', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM LILASES', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'PARQUE DA LIBERDADE ', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'MATHIENSEN', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'CORDENUCI', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM SAO PEDRO', '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2009-08-20 18:43:24', 'JARDIM SAO MANOEL', '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616125707')[0m
+Migrating to CreateGrupos (20090616130849)
+  [4;35;1mSQL (23.1ms)[0m   [0mCREATE TABLE `grupos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(50), `descricao` varchar(50), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mGrupo Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGrupo Create (0.2ms)[0m   [0;1mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2009-08-20 18:43:24', 'BERCARIO I', '2009-08-20 18:43:24', 'CRIANCAS DE 4 MESES A 1 ANO ')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGrupo Create (0.2ms)[0m   [0mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2009-08-20 18:43:24', 'BERCARIO II', '2009-08-20 18:43:24', 'CRIANCAS DE 1 ANO E 1 MES A 1 ANO E 7 MESES')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGrupo Create (0.2ms)[0m   [0;1mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2009-08-20 18:43:24', 'BERCARIO III', '2009-08-20 18:43:24', 'CRIANCAS DE 1 ANO E 8 MESES A 2 ANOS E 4 MESES')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGrupo Create (0.2ms)[0m   [0mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2009-08-20 18:43:24', 'MATERNAL I', '2009-08-20 18:43:24', 'CRIANCAS DE 2 ANOS E 5 MESES A 3 ANOS')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGrupo Create (0.2ms)[0m   [0;1mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2009-08-20 18:43:24', 'MATERNAL II', '2009-08-20 18:43:24', 'CRIANCAS DE 3 ANOS E 1 MES A 3 ANOS E 6 MESES')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616130849')[0m
+Migrating to CreateCriancas (20090616131400)
+  [4;35;1mSQL (6.2ms)[0m   [0mCREATE TABLE `criancas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(50), `mae` varchar(50), `unidade_id` int(11), `regiao_id` int(11), `nascimento` date, `grupo_id` int(11), `endereco` varchar(50), `numero` varchar(10), `complemento` varchar(30), `bairro` varchar(30), `tel1` varchar(255), `tel2` varchar(255), `celular` varchar(255), `responsavel` int(11), `nome_responsavel` varchar(30), `parentesco` varchar(255) DEFAULT 0, `trabalha` tinyint(1), `local_trabalho` varchar(255), `option1` int(11) DEFAULT 0, `option2` int(11) DEFAULT 0, `option3` int(11) DEFAULT 0, `option4` int(11) DEFAULT 0, `matricula` int(11) DEFAULT 0, `unidade_matricula` int(11) DEFAULT 0, `status` int(11) DEFAULT 0, `posicao` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616131400')[0m
+Migrating to CreateUnidades (20090616132325)
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE TABLE `unidades` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(255), `tipo` int(11), `regiao_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.3ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'ARAPIRANGA', 1, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'BITU', 1, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'MAIRA', 1, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'JURITI', 1, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'JACY', 1, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'ARACY', 1, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2009-08-20 18:43:24', 'CAIC', 1, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'GRAUNA', 2, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'ARAUNA', 2, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'CARANDA', 2, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'MANAI', 2, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'ARACATI', 2, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'CUNHATAI', 2, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2009-08-20 18:43:24', 'MARACA', 2, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2009-08-20 18:43:24', 'ANAJA', 2, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2009-08-20 18:43:24', 'CHUI', 2, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'MANACA', 3, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'POTIRA', 3, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'PATURI', 3, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'INDAIA', 3, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'BATUIRA', 3, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'JACINA', 3, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2009-08-20 18:43:24', 'CURIMA', 3, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2009-08-20 18:43:24', 'MAJOI', 3, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2009-08-20 18:43:24', 'TAPERA', 3, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'CURIO', 4, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'TARAGUA', 4, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'URUPE', 4, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'PATATIVA', 4, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'ARACARI', 4, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'CURUMIM', 4, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'TAHIRA', 5, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'BORE', 5, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'CECI', 5, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'CORIMBO', 5, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'TANGARA', 5, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'BACURI', 6, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2009-08-20 18:43:24', 'SABIA', 6, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'PITANGA', 7, '2009-08-20 18:43:24')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2009-08-20 18:43:24', 'PANAMBY', 7, '2009-08-20 18:43:24')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090616132325')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `criancas`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `criancas`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `grupos`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `grupos`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `regiaos`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `regiaos`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `regiaos`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `unidades`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `unidades`[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:43:31) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:43:32) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-20 15:43:33) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (18.5ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.4ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.9ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.5ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (2.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.5ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 150ms (View: 93, DB: 22) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-20 15:43:34) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 65ms (View: 18, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-20 15:43:36) [POST]
+  Parameters: {"authenticity_token"=>"dbe35f857ee4a506f4ef1e79454aeef8b7e255e6"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Rendered criancas/_consultas (21.8ms)
+Completed in 61ms (View: 25, DB: 3) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#un_op1_din (for 127.0.0.1 at 2009-08-20 15:43:40) [POST]
+  Parameters: {"authenticity_token"=>"dbe35f857ee4a506f4ef1e79454aeef8b7e255e6", "unidade_unidade_op1_id"=>"15"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.6ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (option1 = 15 and matricula != 1) ORDER BY created_at[0m
+Completed in 36ms (View: 0, DB: 1) | 200 OK [http://localhost/criancas/un_op1_din]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-20 15:43:55) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 39ms (View: 11, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-20 15:43:56) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 51ms (View: 15, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-20 15:43:57) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 50ms (View: 15, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-20 15:43:57) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Completed in 118ms (View: 12, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:43:58) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:43:58) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UnidadesController#index (for 127.0.0.1 at 2009-08-20 16:29:58) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (11.4ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` IS NULL) [0m
+  [4;35;1mUnidade Load (6.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (unidades.tipo = 0) [0m
+  [4;36;1mUnidade Load (0.4ms)[0m   [0;1mSELECT * FROM `unidades` [0m
+Rendering template within layouts/unidades
+Rendering unidades/index
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mRegiao Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mRegiao Load (0.3ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mRegiao Load (0.4ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mRegiao Load (0.3ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mRegiao Load (0.3ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mRegiao Load (0.3ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) [0m
+  [4;35;1mRegiao Load (0.3ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 7) [0m
+Completed in 138ms (View: 92, DB: 22) | 200 OK [http://localhost/unidades]
+
+
+Processing UnidadesController#new (for 127.0.0.1 at 2009-08-20 16:30:04) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.2ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` IS NULL) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (unidades.tipo = 0) [0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+Rendering template within layouts/unidades
+Rendering unidades/new
+  [4;35;1mRegiao Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `regiaos`[0m
+Completed in 127ms (View: 15, DB: 3) | 200 OK [http://localhost/unidades/new]
+
+
+Processing UnidadesController#index (for 127.0.0.1 at 2009-08-20 16:30:08) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mRegiao Load (0.2ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` IS NULL) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (unidades.tipo = 0) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` [0m
+Rendering template within layouts/unidades
+Rendering unidades/index
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mRegiao Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `regiaos`[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) [0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 7) [0m
+Completed in 115ms (View: 90, DB: 3) | 200 OK [http://localhost/unidades]
+
+
+Processing RegiaosController#index (for 127.0.0.1 at 2009-08-20 16:30:15) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mRegiao Load (0.4ms)[0m   [0;1mSELECT * FROM `regiaos` [0m
+Rendering template within layouts/regiaos
+Rendering regiaos/index
+  [4;35;1mRegiao Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `regiaos`[0m
+Completed in 51ms (View: 38, DB: 2) | 200 OK [http://localhost/regiaos]
+
+
+Processing GruposController#index (for 127.0.0.1 at 2009-08-20 16:30:41) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.4ms)[0m   [0;1mSELECT * FROM `grupos` [0m
+Rendering template within layouts/grupos
+Rendering grupos/index
+  [4;35;1mGrupo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+Completed in 29ms (View: 16, DB: 2) | 200 OK [http://localhost/grupos]
+
+
+Processing UnidadesController#index (for 127.0.0.1 at 2009-08-20 16:30:47) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mRegiao Load (0.2ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` IS NULL) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (unidades.tipo = 0) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` [0m
+Rendering template within layouts/unidades
+Rendering unidades/index
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mRegiao Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `regiaos`[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 1) [0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 2) [0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 3) [0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 4) [0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 5) [0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 6) [0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `regiaos` WHERE (`regiaos`.`id` = 7) [0m
+Completed in 110ms (View: 86, DB: 4) | 200 OK [http://localhost/unidades]
