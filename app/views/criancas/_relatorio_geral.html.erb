@@ -3,8 +3,9 @@
   <h1 align="right">Relatório Geral da Demanda Escolar</h1>
 </div>
 <br/>
-| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> |<br/><br/>
-<div id="conteudo">
+| <%= link_to_remote('Versão para impressão', :update => "listagem", :url => { :action => "relatorio_impressao"}) %>
+| <%= link_to 'Voltar', criancas_path %> |<br/><br/>
+<div id="listagem">
   <fieldset>
       <legend><font size=4>Relatório Geral de Demanada Escolar</font></legend>
         <br/>

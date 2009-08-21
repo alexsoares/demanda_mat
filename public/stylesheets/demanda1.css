@@ -102,12 +102,16 @@ color: green;
  
 }
 .menu_body {
-    padding: 0.5px 0.5px;
+    padding: 0px 100px;
     display:none;
-    margin: 5px;
     font-size: large;
-}
+ }
 
+#estatistica{
+  position: fixed;
+  left: 970px;
+   top: 220px;
+  }
 
 #impressao {
     background-color:white;

@@ -1,0 +1,29 @@
+
+<div id="estatistica">
+
+
+    <table  border="1" cellpadding="5px"align="rigth">
+        <tr>
+          <td><font size=4><u><b>Estatísticas</b></u></font></td>
+       </tr>
+        <tr>
+           <center>
+             <td><font size=3>Total  Crianças  Cadastradas</font> </td>
+             <td><font size=3><%= Crianca.c.length%></font></td>
+           </center>
+        </tr>
+        <tr>
+           <center>
+             <td><font size=3>Total Crianças Matriculadas </font></td>
+             <td><font size=3><%= Crianca.b_u.length %></font></td>
+           </center>
+        </tr>
+        <tr>
+           <center>
+             <td><font size=3>Total Crianças Não Matriculadas </font></td>
+             <td><font size=3><%= Crianca.b_dm.length%></font></td>
+           </center>
+        </tr>
+
+    </table>
+  </div>

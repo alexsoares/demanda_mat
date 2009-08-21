@@ -8,37 +8,13 @@
    <div id="consul">
    </div>
   <br/>
-  <div id="listagem">
-    <fieldset>
-        <center>
-          <font size=4><u><b>Estatísticas</b></u></font>
-        </center>
-        <br/>
-        <tr>
-           <center>
-             <td><font size=3>Total  Crianças  Cadastradas</font> </td>
-             <td><font size=3><%= link_to_remote(Crianca.c.length, :update => "listagem", :url => { :action => "busca"}) %></font></td>
-           </center>
-        </tr>
-        <tr>
-           <center>
-             <td><font size=3>Total Crianças Matriculadas </font></td>
-             <td><font size=3><%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></font></td>
-           </center>
-        </tr>
-        <tr>
-           <center>
-             <td><font size=3>Total Crianças Não Matriculadas </font></td>
-             <td><font size=3><%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></td>
-           </center>
-        </tr>
 
-</fieldset>
-  </div>
-
+         <%= render :partial => 'estatistica'%>
 
 </div>
+<div id="Listagem"
 
+</div>
 
 
 

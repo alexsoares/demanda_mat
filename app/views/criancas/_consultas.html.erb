@@ -44,6 +44,17 @@ $(document).ready(function()
 	   <div class="menu_body">
            <p><font style="font-size: 12pt"><%= link_to_remote('Relatório Geral de Demanda Escolar', :update => "conteudo", :url => { :action => "relatorio"}) %></font></p>
        </div>
+
+  	    <p class="menu_head"> >> Estatística << </p>
+	   <div class="menu_body">
+           <p><font style="font-size: 12pt">Crianças  Cadastradas <%= link_to_remote(Crianca.c.length, :update => "listagem", :url => { :action => "busca"}) %></font></p>
+           <p><font style="font-size: 12pt">Crianças  Matriculadas <%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></font></p>
+           <p><font style="font-size: 12pt">Crianças  Não Matriculadasdas <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
+
+       </div>
+
+
+
   </div>
 
 </div>  <!--Encerramento da script dropdpwn-->
@@ -85,7 +96,8 @@ $(document).ready(function()
 </table>
 </fieldset>
 </center>
-
 <br/>
-
+</div>
+ <div id="listagem">
+   
  </div>
