@@ -14541,3 +14541,137 @@ Rendered criancas/_inicio (9.6ms)
   [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
 Rendered criancas/_estatistica (9.1ms)
 Completed in 79ms (View: 36, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-24 08:19:17) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-24 08:19:18) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-24 08:19:21) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (2.6ms)
+Completed in 53ms (View: 17, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-24 08:19:21) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (2.6ms)
+Completed in 53ms (View: 16, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-24 08:19:23) [POST]
+  Parameters: {"authenticity_token"=>"1a3a3df89fd148d2388398b293b268ca9f54cf2d"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mUnidade Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (27.5ms)
+Completed in 67ms (View: 30, DB: 4) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-24 08:19:35) [POST]
+  Parameters: {"authenticity_token"=>"1a3a3df89fd148d2388398b293b268ca9f54cf2d"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mGrupo Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (21.5ms)
+Completed in 61ms (View: 24, DB: 4) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#un_op1_din (for 127.0.0.1 at 2009-08-24 08:19:39) [POST]
+  Parameters: {"authenticity_token"=>"1a3a3df89fd148d2388398b293b268ca9f54cf2d", "unidade_unidade_op1_id"=>"30"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.5ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (option1 = 30 and matricula != 1) ORDER BY created_at[0m
+Completed in 37ms (View: 0, DB: 1) | 200 OK [http://localhost/criancas/un_op1_din]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-24 08:19:48) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (2.6ms)
+Completed in 55ms (View: 19, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-24 08:19:48) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (0.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (1.8ms)
+Completed in 36ms (View: 11, DB: 1) | 200 OK [http://localhost/criancas]
