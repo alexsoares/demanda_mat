@@ -102,7 +102,7 @@ color: green;
  }
 
 #estatistica{
-  position: fixed;
+  position: absolute;
   left: 970px;
    top: 220px;
   }
