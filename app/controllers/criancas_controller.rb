@@ -106,7 +106,7 @@ class CriancasController < ApplicationController
   end
 
   def load_criancas
-    @criancas = Crianca.find(:all, :order => "nome")
+    @criancas = Crianca.find(:all, :order => "nome ASC")
   end
 
   def versao_impressao_todas
