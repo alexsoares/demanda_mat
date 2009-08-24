@@ -1,26 +1,22 @@
 <div id="conteudo">
-<div id="topo">
-<center><br/><h1>Cadastro de Unidades</h1></center>
-</div>
-<br />
-<fieldset>
-<p>
-  <b>Nome:</b>
-<td><%=h @unidade.nome %></td>
-</p>
+  <div id="topo">
+    <h1>Cadastro de Unidades</h1>
+  </div><br />
+  <fieldset>
+    <p>
+      <b>Nome:</b>
+      <td><%=h @unidade.nome %></td>
+    </p>
+    <p>
+      <b>Tipo:</b>
+      <td><%=h @unidade.nome_tipo %></td>
+    </p>
+    <p>
+      <b>Localização</b>
+      <td><%=h @unidade.regiao.nome %></td>
+    </p>
+  </fieldset><br/>
 
-<p>
-  <b>Tipo:</b>
-  <td><%=h @unidade.nome_tipo %></td>
-</p>
-
-<p>
-  <b>Localização</b>
-  <td><%=h @unidade.regiao.nome %></td>
-</p>
-</fieldset>
-<br/>
-
-| <%= link_to 'Alterar', edit_unidade_path(@unidade) %> |
-<%= link_to 'Voltar', unidades_path %> |
+  | <%= link_to 'Alterar', edit_unidade_path(@unidade) %> |
+  <%= link_to 'Voltar', unidades_path %> |
 </div>

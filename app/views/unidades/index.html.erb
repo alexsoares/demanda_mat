@@ -1,44 +1,37 @@
 <div id="conteudo">
-<div id="topo">
-<h1>Relatório de Unidades</h1>
-<h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.0.1       . </font></h4>
-</div>
-<br/>
-|<%= link_to 'Cadastrar Unidade', new_unidade_path %> |
-<a href="javascript:window.print();">Imprimir</a>
-| <%= link_to ' Inicio' , root_path %> |
-<br/><br/>
-
-<fieldset>
-  
-<table >
-  <tr>
-    <th>Localização</th>
-    <th>Nome</th>
-    <th>Tipo de Ensino</th>
-  </tr>
-
-<% for unidade in @unidades %>
-  <tr>
-    <td><center><%=h unidade.regiao.nome %></center></td>
-    <td><center><%=h unidade.nome %></center></td>
-    <td><center><%=h unidade.nome_tipo %></center></td>
+  <div id="topo">
+    <h1>Relatório de Unidades</h1>
+    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.0.1       . </font></h4>
+  </div><br/>
+  |<%= link_to 'Cadastrar Unidade', new_unidade_path %> |
+  <a href="javascript:window.print();">Imprimir</a>
+  | <%= link_to ' Inicio' , root_path %> |
+  <br/><br/>
+  <fieldset>
+    <table>
+      <tr>
+        <th>Localização</th>
+        <th>Nome</th>
+        <th>Tipo de Ensino</th>
+      </tr>
+      <% for unidade in @unidades %>
+        <tr>
+          <td><center><%=h unidade.regiao.nome %></center></td>
+          <td><center><%=h unidade.nome %></center></td>
+          <td><center><%=h unidade.nome_tipo %></center></td>
 
     
-    <td><%= link_to 'Exbir', unidade %></td>
-    <td><%= link_to 'Alterar', edit_unidade_path(unidade) %></td>
-    <td><%= link_to 'Apagar', unidade, :confirm => 'Tem certeza?', :method => :delete %></td>
-  </tr>
+          <td><%= link_to 'Exbir', unidade %></td>
+          <td><%= link_to 'Alterar', edit_unidade_path(unidade) %></td>
+          <td><%= link_to 'Apagar', unidade, :confirm => 'Tem certeza?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+  </fieldset><br />
 
-<% end %>
-</table>
-</fieldset>
-
-<br />
-
-| <%= link_to 'Cadastrar Unidade', new_unidade_path %> |
-<a href="javascript:window.print();">Imprimir</a>
-| <%= link_to ' Inicio' , root_path %> |
+  | <%= link_to 'Cadastrar Unidade', new_unidade_path %> |
+  <a href="javascript:window.print();">Imprimir</a>
+  | <%= link_to ' Inicio' , root_path %> |
 
 </div>
 <div id="rodape">

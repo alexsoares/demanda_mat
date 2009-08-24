@@ -1,77 +1,73 @@
 <div id="conteudo">
-<div id="topo">
-<center><br/><h1>Cadastro de Crianças</h1></center>
-<h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  V1.0       . </font></h4>
-</div>
-<br />
-<fieldset>
-  <legend><font size=4>Dados da Criança</font></legend>
-  <b>Nome:</b>
+  <div id="topo">
+    <h1>Cadastro de Crianças</h1>
+    <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  V1.0       . </font></h4>
+  </div>
+  <br />
+  <fieldset>
+    <legend><font size=4>Dados da Criança</font></legend>
+    <b>Nome:</b>
       <%=h @crianca.nome %><br />
-  <b>Nascimento:   </b>
+    <b>Nascimento:   </b>
       <%=h @crianca.nascimento.strftime("%d/%m/%y")%> <br />
-  <b>Nome da mãe:</b>
+    <b>Nome da mãe:</b>
       <%=h @crianca.mae %><br />
-  <b>Classificação:</b>
+    <b>Classificação:</b>
       <%=h @crianca.grupo.nome + ' - ' %>
       <%=h @crianca.grupo.descricao	%> <br />
-  <b>Endereço:      </b>
+    <b>Endereço:      </b>
       <%=h @crianca.endereco%> 
       <%=h @crianca.numero%>  - 
       <%=h @crianca.complemento%> <br />
-  <b>Bairro:        </b>
+    <b>Bairro:        </b>
       <%=h @crianca.bairro%> <br />
-  <b>Telefone 1:    </b>
+    <b>Telefone 1:    </b>
       <%=h @crianca.tel1%> <br />
-  <b>Telefone 2:    </b>
+    <b>Telefone 2:    </b>
       <%=h @crianca.tel2%> <br />
-  <b>Celular:       </b>
+    <b>Celular:       </b>
       <%=h @crianca.celular%> 
- </fieldset>
-<br />
- <fieldset>
- <legend><font size=4>Acompanhante</font></legend>
-   <b>Responsável:   </b>
-     <%=h @crianca.nome_responsavel%> <br />
-  <b>Parentesco:   </b>
-    <%=h @crianca.parentesco %><br/>
-  <b>Trabalha:      </b>
-     <%=h @crianca.verifica_trabalha%>    -
-  <b>Local Trabalho:</b>
-     <%=h @crianca.local_trabalho%> 
- 
-  </fieldset>
-  <br />
+  </fieldset><br />
   <fieldset>
-  <legend><font size=4>Dados da Inscrição</font></legend>
-  <b>Unidade onde fez a matricula:      </b>
-     <%=h @crianca.unidade_id %>
-     <%= ' - ' + Unidade.find_by_id(@crianca.unidade_id).nome %><br />
- <b>Data da Inscrição:       </b>
-     <%=h @crianca.created_at.strftime("%e/%m/%Y - %H:%M horas")%> <br />
-          <b>Região de preferência: </b>
-     <%=h @crianca.regiao_id %>
-     <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
-  <b>Matrícula - Opção 1:       </b>
-    <%= @crianca.opcao1 %><br />
-  <b>Matrícula - Opção 2:       </b>
-     <%= @crianca.opcao2 %><br />
-  <b>Matrícula - Opção 3:       </b>
-     <%= @crianca.opcao3 %><br />
-  <b>Matrícula - Opção 4:       </b>
-     <%= @crianca.opcao4 %><br />
-  <b>Status: </b>
-     <%=h @crianca.conf_status	%> <br />
-  <b>Matriculado :     </b>  
-     <%=h @crianca.verifica_matricula%> <br />
-  <b>Un.Matriculada:</b>
-    <%=h @crianca.onde_matricula %> 
+    <legend><font size=4>Acompanhante</font></legend>
+    <b>Responsável:   </b>
+      <%=h @crianca.nome_responsavel%> <br />
+    <b>Parentesco:   </b>
+      <%=h @crianca.parentesco %><br/>
+    <b>Trabalha:      </b>
+      <%=h @crianca.verifica_trabalha%>    -
+    <b>Local Trabalho:</b>
+      <%=h @crianca.local_trabalho%>
+  </fieldset><br />
+  <fieldset>
+    <legend><font size=4>Dados da Inscrição</font></legend>
+    <b>Unidade onde fez a matricula:      </b>
+      <%=h @crianca.unidade_id %>
+      <%= ' - ' + Unidade.find_by_id(@crianca.unidade_id).nome %><br />
+    <b>Data da Inscrição:       </b>
+      <%=h @crianca.created_at.strftime("%e/%m/%Y - %H:%M horas")%> <br />
+    <b>Região de preferência: </b>
+      <%=h @crianca.regiao_id %>
+      <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
+    <b>Matrícula - Opção 1:       </b>
+      <%= @crianca.opcao1 %><br />
+    <b>Matrícula - Opção 2:       </b>
+      <%= @crianca.opcao2 %><br />
+    <b>Matrícula - Opção 3:       </b>
+      <%= @crianca.opcao3 %><br />
+    <b>Matrícula - Opção 4:       </b>
+      <%= @crianca.opcao4 %><br />
+    <b>Status: </b>
+      <%=h @crianca.conf_status	%> <br />
+    <b>Matriculado :     </b>
+      <%=h @crianca.verifica_matricula%> <br />
+    <b>Un.Matriculada:</b>
+      <%=h @crianca.onde_matricula %>
  
-</fieldset>
-<br/>
+  </fieldset><br/>
 
-| <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
- <%= link_to 'Voltar', criancas_path %>  |
-<%= link_to 'Cadastrar Criança', new_crianca_path %>  |
+  | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
+  <%= link_to 'Voltar', criancas_path %>  |
+  <%= link_to 'Cadastrar Criança', new_crianca_path %>  |
   <a href="javascript:window.print();">Imprimir</a> 
 </div>

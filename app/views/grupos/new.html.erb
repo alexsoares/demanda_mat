@@ -1,32 +1,28 @@
 <div id="conteudo">
-<div id="topo">
-<br/>
-<h1>Cadastro de Grupo</h1>
-<h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  V1.0       . </font></h4>
-</div>
-<br/>
-<fieldset>
-<% form_for(@grupo) do |f| %>
-  <%= f.error_messages %>
+  <div id="topo">
+    <h1>Cadastro de Grupo</h1>
+    <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  V1.0       . </font></h4>
+  </div><br/>
+  <fieldset>
+    <% form_for(@grupo) do |f| %>
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :nome, 'Nome' %><br />
+        <%= f.text_field :nome %>
+      </p>
 
-  <p>
-    <%= f.label :nome, 'Nome' %><br />
-    <%= f.text_field :nome %>
-  </p>
-
-  <p>
-    <%= f.label :descricao, 'Descricao' %><br />
-    <%= f.text_area :descricao %>
-  </p>
+      <p>
+        <%= f.label :descricao, 'Descricao' %><br />
+        <%= f.text_area :descricao %>
+      </p>
 
 
-  <p>
-    <%= f.submit "Cadastrar" %>
-  </p>
-</fieldset>
+      <p>
+        <%= f.submit "Cadastrar" %>
+      </p>
+    <% end %>
+  </fieldset>
 
-
-<% end %>
 <br/>
 | <%= link_to 'Voltar', grupos_path %> |
 </div>
