@@ -49,7 +49,7 @@ $(document).ready(function()
 	   <div class="menu_body">
            <p><font style="font-size: 12pt">Crianças  Cadastradas <%= link_to_remote(Crianca.c.length, :update => "listagem", :url => { :action => "busca"}) %></font></p>
            <p><font style="font-size: 12pt">Crianças  Matriculadas <%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></font></p>
-           <p><font style="font-size: 12pt">Crianças  Não Matriculadasdas <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
+           <p><font style="font-size: 12pt">Crianças  Não Matriculadas <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
 
        </div>
 

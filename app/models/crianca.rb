@@ -186,13 +186,16 @@ class Crianca < ActiveRecord::Base
   end
 
   def tipo_consulta
+    if $consulta == 3 then
+      return 'CRIANÇA(S) CADASTRADAS'
+    else
     if matricula == 0 then
       return 'CRIANÇA(S) AGUARDANDO MATRÍCULA'
     else
       return 'CRIANÇA(S) MATRICULADA(S)'
     end
+   end
   end
-
 end
 
 

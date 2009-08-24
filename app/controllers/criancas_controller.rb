@@ -340,6 +340,8 @@ class CriancasController < ApplicationController
     end
   end
 
-  
+ 
 
-end
+  end
+
+  
