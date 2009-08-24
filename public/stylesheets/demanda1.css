@@ -111,8 +111,7 @@ color: green;
     background-image:url(Imagens/fundo_rodape.jpg);
     margin:25px;
   	position:relative;
-	bottom:0;
-
+    top: 560px;
     width:96%;
     color:white;
     text-align:center;
