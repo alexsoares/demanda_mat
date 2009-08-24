@@ -12,8 +12,9 @@
     <th>Nome</th>
     <th>Data Nascimento</th>
     <th>Nome Mãe</th>    
-    <th>Endereço</th>    
-    <th>N.</th>    
+
+    <th>Cadastrado em</th>
+
     <th>Bairro</th>
     <th>Fone1</th>
     <th>Resp</th>
@@ -33,8 +34,9 @@
     <p><td><center><%=h crianca.nome.upcase %></center></td>
     <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
     <td><center><%=h crianca.mae.upcase %></center></td>
-    <td><center><%=h crianca.endereco.upcase %></center></td>
-    <td><center><%=h crianca.numero %></center></td>
+
+    <td><center><%=h crianca.created_at.strftime("%d/%m/%y") %></center></td>
+    
     <td><center><%=h crianca.bairro.upcase %></center></td>
     <td><center><%=h crianca.tel1 %></center></td>
     <td><center><%=h crianca.parentesco %></center></td>
