@@ -29,6 +29,10 @@ class Crianca < ActiveRecord::Base
     Crianca.find(:all, :conditions => ["matricula != 1"])
   end
 
+  def self.matricula_total
+    Crianca.find(:all, :conditions => ["matricula != 0"])
+  end
+
   def self.b_u
     Crianca.find(:all, :conditions => {:matricula => 1 })
   end
