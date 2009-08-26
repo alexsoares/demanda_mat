@@ -12,20 +12,20 @@
         <font style="font-size: 12pt"> GERAL DE MATRICULAS NA REDE: <%= Crianca.matricula_total.length %> </font><br/>
         <br/>
 
-  <fieldset>
-      <legend><font size=3 style="margin-left:25px">DEMANDA POR REGIÃO</font></legend>
+   <fieldset>
+      <legend><font size=3>DEMANDA POR REGIÃO</font></legend>
 
     <table border="0" width="60%" cellpadding="5" cellspacing="1" >
     <tr>
-        <th align="left"> > SÃO JERÔNIMO   : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 1"]).length %></th>
-        <th align="left"> > CIDADE JARDIM  : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 2"]).length %></th>
-        <th align="left"> > SÃO VITO       : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 3"]).length %></th>
-        <th align="left"> > ZANAGA         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 4"]).length %></th>
+        <th align="left" style= "font-size: 9pt"> > SÃO JERÔNIMO   : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 1"]).length %></th>
+        <th align="left" style= "font-size: 9pt"> > CIDADE JARDIM  : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 2"]).length %></th>
+        <th align="left" style= "font-size: 9pt"> > SÃO VITO       : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 3"]).length %></th>
+        <th align="left" style= "font-size: 9pt"> > ZANAGA         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 4"]).length %></th>
     <tr/>
     <tr>
-        <th align="left"> > JARDIM IPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 5"]).length %></th>
-        <th align="left"> > CENTRO         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 6"]).length %></th>
-        <th align="left"> > PRAIA AZUL     : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 7"]).length %></th>
+        <th align="left" style= "font-size: 9pt"> > JARDIM IPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 5"]).length %></th>
+        <th align="left" style= "font-size: 9pt"> > CENTRO         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 6"]).length %></th>
+        <th align="left" style= "font-size: 9pt"> > PRAIA AZUL     : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 7"]).length %></th>
      </tr>
  </table>
 </fieldset>
@@ -34,60 +34,126 @@
 <fieldset>
    <legend><font size=3>DEMANDA POR UNIDADE</font></legend>
 
-    <table border="0" width="110%" cellpadding="1" cellspacing="1">
-     <tr>
-       <th align="left"> > ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 15"]).length %></th>
-       <th align="left"> > ARACARI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 30"]).length %></th>
-       <th align="left"> > ARACATI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 12"]).length %></th>
-       <th align="left"> > ARACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 6"]).length %></th>
-       <th align="left"> > ARAPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 1"]).length %></th>
-       <th align="left"> > ARAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 9"]).length %></th>
-       <th align="left"> > BACURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 37"]).length %></th>
-       <th align="left"> > BATUIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 21"]).length %></th>
-       <th align="left"> > BITU: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 2"]).length %></th>
-       <th align="left"> > BORE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 33"]).length %></th>
+    <table border="0" width="120%" cellpadding="1" cellspacing="1">
+      <tr>
+
+       <th align="left" style= "font-size: 9pt"> > ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 15"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARACARI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 30"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARACATI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 12"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 6"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARAPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 1"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 9"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BACURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 37"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BATUIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 21"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BITU: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 2"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BORE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 33"]).length %></th>
+
+    </tr>
+
+    <tr>
+       <th align="left" style= "font-size: 9pt"> > CAIC: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 7"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CARANDA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 10"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CECI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 34"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CHUI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 16"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CORIMBO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 35"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CUNHATAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 13"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CURIMA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 23"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CURUMIM: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 31"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CURIO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 26"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > GRAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 8"]).length %></th>
     </tr>
     <tr>
-       <th align="left"> > CAIC: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 7"]).length %></th>
-       <th align="left"> > CARANDA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 10"]).length %></th>
-       <th align="left"> > CECI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 34"]).length %></th>
-       <th align="left"> > CHUI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 16"]).length %></th>
-       <th align="left"> > CORIMBO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 35"]).length %></th>
-       <th align="left"> > CUNHATAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 13"]).length %></th>
-       <th align="left"> > CURIMA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 23"]).length %></th>
-       <th align="left"> > CURUMIM: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 31"]).length %></th>
-       <th align="left"> > CURIO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 26"]).length %></th>
-       <th align="left"> > GRAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 8"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > INDAIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 20"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > JACINA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 22"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > JACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 5"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > JURITI:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 4"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MAIRA:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 3"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MAJOI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 24"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MANACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 41"]).length %><br/>
+       <th align="left" style= "font-size: 9pt"> > MANAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 11"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MARACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 17"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > PANAMBY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 40"]).length %><br/>
     </tr>
     <tr>
-       <th align="left"> > INDAIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 20"]).length %></th>
-       <th align="left"> > JACINA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 22"]).length %></th>
-       <th align="left"> > JACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 5"]).length %></th>
-       <th align="left"> > JURITI:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 4"]).length %></th>
-       <th align="left"> > MAIRA:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 3"]).length %></th>
-       <th align="left"> > MAJOI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 24"]).length %></th>
-       <th align="left"> > MANACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 41"]).length %><br/>
-       <th align="left"> > MANAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 11"]).length %></th>
-       <th align="left"> > MARACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 17"]).length %></th>
-       <th align="left"> > PANAMBY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 40"]).length %><br/>
-    </tr>
-    <tr>
-       <th align="left"> > PATATIVA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 29"]).length %></th>
-       <th align="left"> > PATURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 19"]).length %></th>
-       <th align="left"> > PITANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 39"]).length %></th>
-       <th align="left"> > POTIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 18"]).length %></th>
-       <th align="left"> > SABIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 38"]).length %></th>
-       <th align="left"> > TANGARA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 36"]).length %></th>
-       <th align="left"> > TAPERA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 25"]).length %></th>
-       <th align="left"> > TARAGUA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 27"]).length %></th>
-       <th align="left"> > TAHIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 32"]).length %></th>
-       <th align="left"> > URUPE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 28"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > PATATIVA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 29"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > PATURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 19"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > PITANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 39"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > POTIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 18"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > SABIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 38"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TANGARA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 36"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TAPERA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 25"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TARAGUA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 27"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TAHIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 32"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > URUPE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 28"]).length %></th>
       </tr>
   </table>
   </fieldset>
+
+<br/>
+<fieldset>
+   <legend><font size=3>MATRICULA POR UNIDADE</font></legend>
+
+    <table border="0" width="120%" cellpadding="1" cellspacing="1">
+      <tr>
+
+       <th align="left" style= "font-size: 9pt"> > ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 15"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARACARI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 30"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARACATI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 12"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARACY: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 6"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARAPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 1"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > ARAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 9"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BACURI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 37"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BATUIRA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 21"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BITU: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 2"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > BORE: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 33"]).length %></th>
+
+    </tr>
+
+    <tr>
+       <th align="left" style= "font-size: 9pt"> > CAIC: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 7"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CARANDA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 10"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CECI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 34"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CHUI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 16"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CORIMBO: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 35"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CUNHATAI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 13"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CURIMA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 23"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CURUMIM: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 31"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > CURIO: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 26"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > GRAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 8"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 9pt"> > INDAIA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 20"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > JACINA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 22"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > JACY: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 5"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > JURITI:<%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 4"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MAIRA:<%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 3"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MAJOI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 24"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MANACA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 41"]).length %><br/>
+       <th align="left" style= "font-size: 9pt"> > MANAI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 11"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > MARACA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 17"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > PANAMBY: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 40"]).length %><br/>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 9pt"> > PATATIVA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 29"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > PATURI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 19"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > PITANGA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 39"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > POTIRA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 18"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > SABIA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 38"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TANGARA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 36"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TAPERA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 25"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TARAGUA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 27"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > TAHIRA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 32"]).length %></th>
+       <th align="left" style= "font-size: 9pt"> > URUPE: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 28"]).length %></th>
+      </tr>
+  </table>
+  </fieldset>
+
+
+
+
+
  </fieldset>
 <br/><br/>
 </div>
-
- | <a href="javascript:window.print();">Imprimir</a >| <%= link_to 'Voltar', criancas_path %> |
+| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> | <%= link_to 'Voltar', criancas_path %> |
 

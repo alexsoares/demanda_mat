@@ -31246,3 +31246,1739 @@ Rendered criancas/_inicio (1.3ms)
   [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
 Rendered criancas/_estatistica (9.0ms)
 Completed in 67ms (View: 22, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-26 14:03:54) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 117ms (View: 113, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-26 14:03:55) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 17ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:04:35) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (11.2ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (14.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (23.7ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (11.5ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (14.5ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (23.4ms)
+Completed in 182ms (View: 51, DB: 76) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:04:35) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (11.2ms)
+Completed in 73ms (View: 29, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:04:37) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mUnidade Columns (152.9ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mCrianca Columns (77.8ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mGrupo Columns (9.3ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (288.3ms)
+Completed in 336ms (View: 53, DB: 242) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:04:38) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.1ms)
+Completed in 67ms (View: 22, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:04:39) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (6.8ms)
+Completed in 49ms (View: 17, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:04:40) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mUnidade Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mCrianca Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mGrupo Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (33.4ms)
+Completed in 74ms (View: 34, DB: 5) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#busca_unidade (for 127.0.0.1 at 2009-08-26 14:04:45) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mUnidade Load (18.9ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 16) LIMIT 1[0m
+  [4;35;1mGrupo Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 7) LIMIT 1[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+Rendered criancas/_listar_todas_criancas (148.1ms)
+Completed in 206ms (View: 143, DB: 25) | 200 OK [http://localhost/criancas/busca_unidade]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:04:53) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.4ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.9ms)
+Completed in 164ms (View: 24, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:04:53) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.1ms)
+Completed in 67ms (View: 22, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:04:55) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mCrianca Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mGrupo Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (41.4ms)
+Completed in 84ms (View: 42, DB: 6) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#un_op1_din (for 127.0.0.1 at 2009-08-26 14:05:00) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f", "unidade_unidade_op1_id"=>"15"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (option1 = 15 and matricula != 1) ORDER BY created_at[0m
+  [4;36;1mCrianca Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 16) LIMIT 1[0m
+  [4;36;1mGrupo Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 16) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 16) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` WHERE (`grupos`.`id` = 5) LIMIT 1[0m
+Rendered criancas/_listar_criancas (42.5ms)
+Completed in 235ms (View: 73, DB: 7) | 200 OK [http://localhost/criancas/un_op1_din]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2009-08-26 14:06:00) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (81.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;35;1mCrianca Load (0.9ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;36;1mCrianca Load (1.0ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;35;1mCrianca Load (0.8ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;36;1mCrianca Load (0.9ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;35;1mCrianca Load (0.8ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;35;1mCrianca Load (0.8ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;35;1mCrianca Load (0.9ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;35;1mCrianca Load (0.9ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;36;1mCrianca Load (0.8ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;35;1mCrianca Load (6.9ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;35;1mCrianca Load (0.7ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;36;1mCrianca Load (0.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral (212.4ms)
+Completed in 253ms (View: 74, DB: 152) | 200 OK [http://localhost/criancas/relatorio]
+
+
+Processing CriancasController#relatorio_impressao (for 127.0.0.1 at 2009-08-26 14:06:03) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+Rendered criancas/_relatorio_geral_impressao (41.6ms)
+Completed in 89ms (View: 45, DB: 7) | 200 OK [http://localhost/criancas/relatorio_impressao]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:06:08) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (6.9ms)
+Completed in 52ms (View: 17, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:06:08) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.0ms)
+Completed in 67ms (View: 22, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:06:10) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mCrianca Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mGrupo Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (46.0ms)
+Completed in 91ms (View: 47, DB: 6) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2009-08-26 14:08:08) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;36;1mCrianca Load (17.7ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral (86.0ms)
+Completed in 145ms (View: 75, DB: 29) | 200 OK [http://localhost/criancas/relatorio]
+
+
+Processing CriancasController#relatorio_impressao (for 127.0.0.1 at 2009-08-26 14:08:15) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+Rendered criancas/_relatorio_geral_impressao (47.2ms)
+Completed in 94ms (View: 51, DB: 7) | 200 OK [http://localhost/criancas/relatorio_impressao]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:11:24) [GET]
+  [4;36;1mSQL (29.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.8ms)
+Completed in 70ms (View: 23, DB: 31) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:11:25) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.2ms)
+Completed in 71ms (View: 23, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:11:28) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mUnidade Columns (29.5ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mCrianca Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mGrupo Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (72.7ms)
+Completed in 120ms (View: 45, DB: 34) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2009-08-26 14:11:31) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral (49.5ms)
+Completed in 162ms (View: 54, DB: 8) | 200 OK [http://localhost/criancas/relatorio]
+
+
+Processing CriancasController#relatorio_impressao (for 127.0.0.1 at 2009-08-26 14:11:34) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+Rendered criancas/_relatorio_geral_impressao (47.4ms)
+Completed in 98ms (View: 53, DB: 7) | 200 OK [http://localhost/criancas/relatorio_impressao]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:11:39) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.1ms)
+Completed in 65ms (View: 22, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:11:40) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (7.1ms)
+Completed in 52ms (View: 17, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:14:31) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (17.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mCrianca Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (45.1ms)
+Completed in 107ms (View: 59, DB: 23) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2009-08-26 14:14:34) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral (76.0ms)
+Completed in 158ms (View: 82, DB: 12) | 200 OK [http://localhost/criancas/relatorio]
+
+
+Processing CriancasController#relatorio_impressao (for 127.0.0.1 at 2009-08-26 14:14:37) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+Rendered criancas/_relatorio_geral_impressao (31.9ms)
+Completed in 88ms (View: 37, DB: 5) | 200 OK [http://localhost/criancas/relatorio_impressao]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:14:42) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.0ms)
+Completed in 68ms (View: 22, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:14:42) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (6.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (7.7ms)
+Completed in 164ms (View: 24, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:15:31) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mCrianca Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (46.5ms)
+Completed in 91ms (View: 47, DB: 6) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2009-08-26 14:15:36) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral (66.4ms)
+Completed in 120ms (View: 72, DB: 12) | 200 OK [http://localhost/criancas/relatorio]
+
+
+Processing CriancasController#relatorio_impressao (for 127.0.0.1 at 2009-08-26 14:15:39) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.2ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral_impressao (48.9ms)
+Completed in 98ms (View: 53, DB: 8) | 200 OK [http://localhost/criancas/relatorio_impressao]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:15:42) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (6.4ms)
+Completed in 66ms (View: 16, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:15:42) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (0.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (7.6ms)
+Completed in 56ms (View: 17, DB: 1) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:38:23) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (2.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (14.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (63.6ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.4ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mUnidade Columns (218.6ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mCrianca Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mGrupo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (341.9ms)
+Completed in 739ms (View: 143, DB: 305) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:38:25) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mUnidade Columns (19.4ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mCrianca Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mGrupo Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (51.9ms)
+Completed in 85ms (View: 34, DB: 23) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2009-08-26 14:38:31) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.4ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral (165.0ms)
+Completed in 224ms (View: 177, DB: 12) | 200 OK [http://localhost/criancas/relatorio]
+
+
+Processing CriancasController#relatorio_impressao (for 127.0.0.1 at 2009-08-26 14:38:36) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGrupo Load (0.1ms)[0m   [0;1mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;35;1mRegiao Load (0.1ms)[0m   [0mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;36;1mCrianca Load (0.2ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral_impressao (68.6ms)
+Completed in 143ms (View: 93, DB: 12) | 200 OK [http://localhost/criancas/relatorio_impressao]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:38:40) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.4ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.0ms)
+Completed in 101ms (View: 56, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2009-08-26 14:38:41) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.2ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.4ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` [0m
+Rendering template within layouts/criancas
+Rendering criancas/index
+Rendered criancas/_inicio (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.2ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_estatistica (9.4ms)
+Completed in 72ms (View: 23, DB: 2) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2009-08-26 14:38:42) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mUnidade Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mCrianca Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `criancas`[0m
+  [4;35;1mGrupo Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `grupos`[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 1) [0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (`criancas`.`matricula` = 0) [0m
+Rendered criancas/_consultas (45.2ms)
+Completed in 89ms (View: 46, DB: 6) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2009-08-26 14:38:45) [POST]
+  Parameters: {"authenticity_token"=>"64171132212858e37636134d5dffa556701f517f"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGrupo Load (0.1ms)[0m   [0mSELECT * FROM `grupos` ORDER BY nome[0m
+  [4;36;1mRegiao Load (0.1ms)[0m   [0;1mSELECT * FROM `regiaos` ORDER BY nome[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome[0m
+  [4;36;1mCrianca Load (0.3ms)[0m   [0;1mSELECT * FROM `criancas` ORDER BY nome ASC[0m
+  [4;35;1mCrianca Load (0.3ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 1) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 3) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 4) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 5) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 6) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and regiao_id = 7) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 33) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 13) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 1 and option1 = 28) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 15) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 30) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 12) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 6) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 1) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 9) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 37) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 21) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 2) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 33) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 7) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 10) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 34) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 16) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 35) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 13) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 23) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 31) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 26) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 8) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 20) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 22) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 5) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 4) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 3) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 24) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 41) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 11) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 17) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 40) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 29) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 19) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 39) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 18) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 38) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 36) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 25) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 27) [0m
+  [4;36;1mCrianca Load (0.1ms)[0m   [0;1mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 32) [0m
+  [4;35;1mCrianca Load (0.1ms)[0m   [0mSELECT * FROM `criancas` WHERE (matricula != 0 and unidade_matricula = 28) [0m
+Rendered criancas/_relatorio_geral (47.2ms)
+Completed in 104ms (View: 60, DB: 8) | 200 OK [http://localhost/criancas/relatorio]
