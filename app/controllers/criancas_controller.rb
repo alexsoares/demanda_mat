@@ -43,6 +43,8 @@ class CriancasController < ApplicationController
   # GET /criancas/1/edit
   def edit
     @crianca = Crianca.find(params[:id])
+    $id_crianca = params[:id]
+    $nome = params[:nome]
   end
 
   # POST /criancas
@@ -108,6 +110,26 @@ class CriancasController < ApplicationController
   def load_criancas
     @criancas = Crianca.find(:all, :order => "nome ASC")
   end
+
+  def autentica_matricula
+    $unidade_matricula = params[:crianca_unidade_matricula]
+    #@teste = Crianca.find(params[:id])
+    @existe = Crianca.find(:all, :conditions => ["((id= "+ $id_crianca +" and (option1 = " + $unidade_matricula + " or option2 = " + $unidade_matricula + " or option3 = " + $unidade_matricula + " or option4 = " + $unidade_matricula +")))"])
+    if @existe.empty? then
+     render :update do |page|
+      page.replace_html 'unidade', :text => "OPÇÃO NÃO ESCOLHIDA NO CADASTRO DE PREFERÊNCIA DE UNIDADE. ESCOLHA UMA DAS OPÇÕES LISTADA ACIMA."
+      page.replace_html 'Certeza', :text =>  'PREFERÊNCIA DE MATRICULA INVÁLIDA, FAVOR REFAZER SUA ESCOLHA DE MATRICULA.'
+     end
+
+
+    else
+      render :update do |page|
+        page.replace_html 'unidade', :text => "OPÇÃO PREVISTA DURANTE O CADASTRO DA CRIANÇA NAS PREFERÊNCIA DE UNIDADE"
+        page.replace_html 'Certeza', :text => "<input id='crianca_submit' name='commit' type='submit' value='Atualizar' />"
+      end
+    end
+  end
+
 
   def versao_impressao_todas
     #Busca demanda por unidade
