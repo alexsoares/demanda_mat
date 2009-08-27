@@ -128,11 +128,19 @@
       <%= f.check_box :matricula %><th>SIM</th><br />
       <th>Un.Matriculada</th>
       <%= f.collection_select :unidade_matricula, @unidades, :id, :nome, :include_blank => '' %> <br />
+      <div id="unidade"></div>
+      <%= observe_field("crianca_unidade_matricula",
+          :url => {:action => 'autentica_matricula'},
+          :with =>"crianca_unidade_matricula",
+          :on => "blur")%>
+
     </p>
   </fieldset><br/>
   <fieldset>
     <p>
+     <div id="Certeza">
       <%= f.submit "Atualizar" %>
+     </div>
     </p>
   </fieldset>
 
