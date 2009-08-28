@@ -3,7 +3,7 @@ class CriancasController < ApplicationController
   before_filter :load_regiaos
   before_filter :load_unidades
   before_filter :load_criancas
-  #before_filter :load_variaveis
+  before_filter :load_criancas_mat
 
 # GET /criancas
   # GET /criancas.xml
@@ -110,6 +110,13 @@ class CriancasController < ApplicationController
   def load_criancas
     @criancas = Crianca.find(:all, :order => "nome ASC")
   end
+
+  def load_criancas_mat
+    @criancasmat = Crianca.find(:all, :conditions => ["matricula = 0" ])
+  end
+
+
+
 
   def autentica_matricula
     $unidade_matricula = params[:crianca_unidade_matricula]
@@ -269,11 +276,11 @@ class CriancasController < ApplicationController
   def nome_crianca
     $consulta = 6
     $crianca = params[:crianca_crianca_id]
-    @crianca = Crianca.find(:all, :conditions => ['id=' + $crianca])
+    @crianca = Crianca.find(:all, :conditions => ['id=' + $crianca ])
     render :partial => 'listar_todas_criancas'
   end
 
-
+ 
   def regiao_unidade
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:cr_id]}
     render :update do |page|
@@ -300,6 +307,10 @@ class CriancasController < ApplicationController
 
   def consulta
     render :partial => 'consultas'
+  end
+
+ def matric
+    render :partial => 'matricular'
   end
 
   def rg
