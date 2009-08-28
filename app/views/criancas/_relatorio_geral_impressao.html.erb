@@ -2,7 +2,7 @@
 <div id="impressao">
   <br/>
  | <a href="javascript:window.print();">Imprimir</a>
- | <%= link_to 'Voltar', criancas_path %> |<br/><br/>
+ | <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |<br/><br/>
 
   <fieldset>
       <legend><font size=4>RELATORIO GERAL DE DEMANDA ESCOLAR</font></legend>
@@ -155,5 +155,5 @@
  </fieldset>
 <br/><br/>
 </div>
-| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> | <%= link_to 'Voltar', criancas_path %> |
+| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> |<%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
 

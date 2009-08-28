@@ -1,7 +1,7 @@
 <div id="impressao">
 
 |<a href="javascript:window.print();">Imprimir</a>
-| <%= link_to 'Voltar', criancas_path %> |
+| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
 
 <%$teste=0%>
 <div id="contador"></div>
@@ -68,5 +68,5 @@
 </tr>
 </div>
 | <a href="javascript:window.print();">Imprimir</a>
-| <%= link_to 'Voltar', criancas_path %> |
+| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
 

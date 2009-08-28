@@ -1,5 +1,5 @@
 | <%= link_to_remote('Versão para impressão', :update => "listagem", :url => { :action => "versao_impressao"}) %> 
-| <%= link_to 'Voltar', criancas_path %> |
+| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
 
 
 <%$teste=0%>
@@ -72,5 +72,5 @@
 </font></p>
 </tr>
 | <%= link_to_remote('Versão para impressão', :update => "listagem", :url => { :action => "versao_impressao"}) %> 
-| <%= link_to 'Voltar', criancas_path %>|
+| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %>|
 
