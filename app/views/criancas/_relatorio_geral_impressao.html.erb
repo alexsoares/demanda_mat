@@ -155,5 +155,5 @@
  </fieldset>
 <br/><br/>
 </div>
-| <%= link_to_remote('Versão para impressão', :update => "conteudo", :url => { :action => "relatorio_impressao"}) %> |<%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
+| <a href="javascript:window.print();">Imprimir</a> | <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
 
