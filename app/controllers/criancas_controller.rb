@@ -112,7 +112,7 @@ class CriancasController < ApplicationController
   end
 
   def load_criancas_mat
-    @criancasmat = Crianca.find(:all, :conditions => ["matricula = 0" ])
+    @criancasmat = Crianca.find(:all, :conditions => ["matricula = 0" ], :order => "nome ASC")
   end
 
 
