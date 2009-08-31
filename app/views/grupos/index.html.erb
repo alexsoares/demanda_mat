@@ -1,32 +1,35 @@
 <div id="conteudo">
   <div id="topo">
-    <h1>Relatório de Grupos</h1>
-    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.0.1       . </font></h4>
-  </div>
+    <h1 align="right">Relatório Grupos</h1>
+    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.1.0       . </font></h4>
+  </div><br/>
   <p>
-    | <%= link_to 'Cadastrar Grupo', new_grupo_path %> |
+    | <%= link_to 'Cadastrar', new_grupo_path %> |
     <a href="javascript:window.print();">Imprimir</a>
     | <%= link_to ' Inicio' , root_path %> |
 
-   <fieldset>
-    <table>
+  <fieldset>
+   <legend><font size=4>Grupos</font></legend>
+   <table border ="1" cellpadding="5" cellspacing="1" width="30%" >
       <tr>
-        <th>Nome</th>
-        <th>Descricão</th>
+        <th bgcolor="#cccccc">Nome</th>
+        <th bgcolor="#cccccc">Descricão</th>
       </tr>
       <% for grupo in @grupos %>
         <tr>
-          <td><%=h grupo.nome %></td>
-          <td><%=h grupo.descricao %></td>
-          <td><%= link_to 'Exibir', grupo %></td>
-          <td><%= link_to 'Alterar', edit_grupo_path(grupo) %></td>
-          <td><%= link_to 'Apagar', grupo, :confirm => 'Tem certeza?', :method => :delete %></td>
+          <td><center><%=h grupo.nome %></center></td>
+          <td><center><%=h grupo.descricao %></center></td>
+        </tr>
+        <tr>
+          <td bgcolor="#cccccc"><%= link_to 'Exibir', grupo %></td>
+          <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_grupo_path(grupo) %></td>
+          <td bgcolor="#cccccc"><%= link_to 'Apagar', grupo, :confirm => 'Tem certeza?', :method => :delete %></td>
         </tr>
       <% end %>
     </table>
    </fieldset>
   </p><br />
-  | <%= link_to 'Cadastrar Grupo', new_grupo_path %> |
+  | <%= link_to 'Cadastrar', new_grupo_path %> |
   <a href="javascript:window.print();">Imprimir</a>
   | <%= link_to ' Inicio' , root_path %> |
 </div>

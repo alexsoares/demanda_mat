@@ -1,13 +1,13 @@
 <div id="conteudo">
- <div id="topo">
-  <h1>Alteração de Grupos</h1>
-  <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  V1.0       . </font></h4>
- </div>
+  <div id="topo">
+    <h1 align="right">Alteração do Cadastro de Grupos</h1>
+    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.1.0       . </font></h4>
+  </div><br/>
 <p>
-<% form_for(@grupo) do |f| %>
+  <fieldset>
+   <legend><font size=4>Grupo</font></legend>
+  <% form_for(@grupo) do |f| %>
   <%= f.error_messages %>
-
-<fieldset>
   <p>
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
@@ -27,7 +27,7 @@
   </fieldset>
 </p>
 <br/>
-| <%= link_to 'Exbir', @grupo %> |
+| <%= link_to 'Exibir', @grupo %> 
 | <%= link_to 'Voltar', grupos_path %> |
 </div>
 <% end %>

@@ -1,23 +1,28 @@
-<div id='conteudo'>
+<div id="conteudo">
   <div id="topo">
-    <br />
-       <h1>Cadastro de Regiões</h1>
+    <h1 align="right">Cadastro de Região </h1>
+    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.0.1       . </font></h4>
   </div>
  <% form_for(@regiao) do |f| %>
   <%= f.error_messages %>
 
   <p>
-   <fieldset> 
-    <%= f.label :nome, 'Nome' %><br />
+  <fieldset>
+   <legend><font size=4>Região</font></legend>
+   <p>
+   <%= f.label :nome, 'Nome' %><br />
     <%= f.text_field :nome %>
+   </p> 
    </fieldset>
   </p>
   <p>
    <fieldset>
+     <p>
     <%= f.submit "Cadastrar" %>
+    </p>
    </fieldset>
   </p>
 <% end %>
 <br/>
-|<%= link_to 'Voltar', regiaos_path %>|
+| <%= link_to 'Voltar', regiaos_path %> |
 </div>

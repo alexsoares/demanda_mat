@@ -1,8 +1,11 @@
 <div id="conteudo">
   <div id="topo">
-    <h1>Alteração de Unidades</h1>
+    <h1 align="right">Alteração do Cadastro de Unidades</h1>
+    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.1.0       . </font></h4>
   </div><br/>
-  <fieldset>
+
+    <fieldset>
+   <legend><font size=4>Unidade</font></legend>
     <% form_for(@unidade) do |f| %>
       <%= f.error_messages %>
       <p>
@@ -25,6 +28,7 @@
         <%= f.label :regiao_id, 'Região' %><br />
         <%= f.collection_select :regiao_id, @regiaos, :id, :nome %>
       </p>
+        </fieldset>
       <br/>
       <fieldset>
         <p>
@@ -32,8 +36,8 @@
         </p>
       </fieldset>
     <% end %>
-  </fieldset><br/>
 
+      <br/>
 | <%= link_to 'Exibir', @unidade %> |
 <%= link_to 'Voltar', unidades_path %> |
 </div>

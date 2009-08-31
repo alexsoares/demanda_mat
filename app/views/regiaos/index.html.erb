@@ -1,26 +1,29 @@
 <div id="conteudo">
   <div id="topo">
-    <h1>Relatório de Regiões</h1>
+    <h1 align="right">Relatório de Regiões </h1>
     <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.0.1       . </font></h4>
   </div>
   <p>
-| <%= link_to 'Cadastrar Região', new_regiao_path %> |
+| <%= link_to 'Cadastrar', new_regiao_path %> |
    <a href="javascript:window.print();">Imprimir</a>
 | <%= link_to ' Inicio' , root_path %> |
 
-   <fieldset>
-    <table>
+  <fieldset>
+   <legend><font size=4>Regiões</font></legend>
+    <table border ="1" cellpadding="5" cellspacing="1" width="23%" >
      
       <tr>
-        <th>Nome</th>
+        <th bgcolor="#cccccc">Nome</th>
       </tr>
 
       <% for regiao in @regiaos %>
        <tr>
         <td><%=h regiao.nome %></td>
-        <td><%= link_to 'Exibir', regiao %></td>
-        <td><%= link_to 'Alterar', edit_regiao_path(regiao) %></td>
-        <td><%= link_to 'Apagar', regiao, :confirm => 'Tem certeza?', :method => :delete %></td>
+       </tr>
+       <tr>
+         <td bgcolor="#cccccc"><%= link_to 'Exibir', regiao %></td>
+        <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_regiao_path(regiao) %></td>
+        <td bgcolor="#cccccc"><%= link_to 'Apagar', regiao, :confirm => 'Tem certeza?', :method => :delete %></td>
        </tr>
       <% end %>
     </table>
@@ -28,7 +31,7 @@
   </p>
   <p>
 
-   | <%= link_to 'Cadastrar Região', new_regiao_path %> |
+   | <%= link_to 'Cadastrar', new_regiao_path %> |
      <a href="javascript:window.print();">Imprimir</a>
    | <%= link_to ' Inicio' , root_path %> |
 
