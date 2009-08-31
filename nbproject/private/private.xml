@@ -2,13 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_consultas.html.erb</file>
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_inicio.html.erb</file>
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_listar_criancas.html.erb</file>
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_listar_criancas_impressao.html.erb</file>
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_listar_todas_criancas.erb</file>
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_listar_todas_criancas_impressao.html.erb</file>
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_relatorio_geral.html.erb</file>
-        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/_relatorio_geral_impressao.html.erb</file>
+        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/edit.html.erb</file>
+        <file>file:/home/seduc/demandaN/demanda/app/views/criancas/new.html.erb</file>
     </open-files>
 </project-private>

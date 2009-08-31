@@ -13,12 +13,14 @@ class CreateCriancas < ActiveRecord::Migration
       t.string :bairro, :limit => 30
       t.string :tel1
       t.string :tel2
+      t.string :nomerecado, :limit => 50
       t.string :celular
       t.integer :responsavel
       t.string :nome_responsavel, :limit => 30
       t.string :parentesco, :default => 0
       t.boolean :trabalha
       t.string :local_trabalho
+      t.string :fonetrabalho
       t.integer :option1, :default => 0
       t.integer :option2, :default => 0
       t.integer :option3, :default => 0

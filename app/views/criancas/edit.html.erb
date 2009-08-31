@@ -5,7 +5,7 @@
 <div id="conteudo">
   <div id="topo">
     <h1 >Alteração do Cadastro de Crianças</h1>
-    <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  V1.0       . </font></h4>
+    <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  Ver.1.0       . </font></h4>
   </div>
   <% form_for(@crianca) do |f| %>
     <%= f.error_messages %>
@@ -28,88 +28,60 @@
    </fieldset><br/>
    <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
-      <p>
+      
         <th>Nome         </th>
         <%= f.text_field :nome %><br />
-      </p>
-      <p>
         <th>Nascimento   </th>
         <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30))%><br />
-      </p>
-      <p>
         <th>Nome da Mãe</th>
         <%= f.text_field :mae %><br />
-      </p>
-      <p>
         <th>Classificação</th>
         <%= f.collection_select :grupo_id, @grupos, :id, :nome %> <br />
-        <div id="onde_classifica">
-          <%=h @crianca.onde_classifica%>
-        </div>
-        <%= observe_field("crianca_grupo_id",
+        <%=h @crianca.onde_classifica%>
+          <%= observe_field("crianca_grupo_id",
           :url => {:action => 'grupo_crianca'},
           :with =>"crianca_grupo_id",
           :on => "blur",
           :update => "onde_classifica")%>
-      </p>
-      <p>
+        <br />
         <th>Endereço      </th>
         <%= f.text_field :endereco %><br />
-      </p>
-      <p>
         <th>Número        </th>
         <%= f.text_field :numero %><br />
-      </p>
-      <p>
         <th>Complemento   </th>
         <%= f.text_field :complemento %><br />
-      </p>
-      <p>
         <th>Bairro        </th>
         <%= f.text_field :bairro %><br />
-      </p>
-      <p>
-        <th>Telefone 1    </th>
+        <th>Telefone Residencia1    </th>
         <%= f.text_field :tel1 %><br />
-      </p>
-      <p>
-        <th>Telefone 2    </th>
+        <th>Telefone Recado    </th>
         <%= f.text_field :tel2 %><br />
-      </p>
-      <p>
+        <th>Nome (recado) </th>
+        <%= f.text_field :nomerecado %><br />
         <th>Celular       </th>
         <%= f.text_field :celular %><br />
-      </p>
   </fieldset><br />
+
   <fieldset>
    <legend><font size=4>Acompanhante</font></legend>
-      <p>
         <th>Responsável</th>
         <%= f.check_box :responsavel %><br />
-      </p>
-      <p>
         <th>Nome Responsável   </th>
         <%= f.text_field :nome_responsavel %><br />
-      </p>
-      <p>
         <%= f.label :parentesco %>
-        <%= f.text_field :parentesco %> <font color="red"> [Opções de alteração: Mãe, Pai, Avó, Avô, Tia, Tio, Irmã, Irmão, Tutor, Outros]</font>
-      </p>
-      <p>
+        <%= f.text_field :parentesco %> <font color="red"> [Opções de alteração: Mãe, Pai, Avó, Avô, Tia, Tio, Irmã, Irmão, Tutor, Outros]</font><br />
         <th>Trabalha      </th>
-        <%= f.check_box :trabalha %>     <th>SIM</th>
-      </p>
-      <p>
+        <%= f.check_box :trabalha %>     <th>SIM</th><br />
         <th>Local Trabalho</th>
         <%= f.text_field :local_trabalho %><br />
-      </p>
-
+        <th>Fone Trabalho</th>
+         <%= f.text_field :fonetrabalho %><br />
+    
   </fieldset>
   <div id="region">
   <br/>
     <fieldset>
       <legend><font size=4>Preferências</font></legend>
-      <p>
         <th>Opção 1       </th>
         <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />
         <th>Opção 2       </th>
@@ -118,12 +90,11 @@
         <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '' %> <br />
         <th>Opção 4       </th>
         <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '' %> <br />
-      </p>
-    </fieldset>
+        </fieldset>
   </div><br/>
   <fieldset>
     <legend><font size=4>Dados da Inscrição</font></legend>
-    <p>
+    
       <th>Matriculado     </th>
       <%= f.check_box :matricula %><th>SIM</th><br />
       <th>Un.Matriculada</th>
@@ -134,7 +105,6 @@
           :with =>"crianca_unidade_matricula",
           :on => "blur")%>
 
-    </p>
   </fieldset><br/>
   <fieldset>
     <p>

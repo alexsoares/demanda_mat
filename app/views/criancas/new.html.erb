@@ -1,7 +1,7 @@
 <div id="conteudo">
  <div id="topo">
    <h1>Cadastro de Crianças</h1>
-   <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  V1.0       . </font></h4>
+   <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  Ver.1.0       . </font></h4>
  </div>
  
 
@@ -77,10 +77,12 @@
     <%= f.text_field :complemento %><br />
     <th>Bairro        </th>
     <%= f.text_field :bairro %><br />
-    <font color="red" size="5">*</font> <th>Telefone 1 </th>
+    <font color="red" size="5">*</font> <th>Telefone Residencial</th>
     <%= f.text_field :tel1 %><br />
-    <th>Telefones 2    </th>
-    <%= f.text_field :tel2 %><br />
+    <th>Telefone Recado    </th>
+    <%= f.text_field :tel2 %><br/>
+    <th>Nome (recado) </th>
+    <%= f.text_field :nomerecado %><br />
     <th>Celular       </th>
     <%= f.text_field :celular %><br />
     <script>
@@ -119,7 +121,9 @@
    <a href="#" id="dropdownbutton1"><%= f.check_box :trabalha %></a><th>SIM</th><br />
        <ul id="menu1" style="display:none">
          <th>Local Trabalho</th>  
-         <%= f.text_field :local_trabalho %><br />
+         <%= f.text_field :local_trabalho %><br/>
+         <th>Fone Trabalho</th>
+         <%= f.text_field :fonetrabalho %><br />
        </ul>   
   </fieldset>
  <br/>
@@ -127,22 +131,14 @@
   <fieldset>
    <legend><font size=4>Preferências</font></legend>
    <div id='region'>
-    <p>
-     <font color="red" size="5">*</font><%= f.label :option1, 'Opção 1 ' %> <br />
-     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
-    </p>
-    <p>
-     <%= f.label :option2, 'Opção 2' %><br />
-     <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
-    </p>
-    <p>
-     <%= f.label :option3, 'Opção 3' %><br />
-     <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
-    </p>
-    <p>
-     <%= f.label :option4, ' Opção 4' %><br />
-     <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
-    </p>
+     <font color="red" size="5">*</font><%= f.label :option1, 'Opção 1 ' %>
+     <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %> <br/>
+     <%= f.label :option2, 'Opção 2' %>
+     <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '---Selecione---' %><br/>
+     <%= f.label :option3, 'Opção 3' %>
+     <%= f.collection_select :option3, @unidades, :id, :nome, :include_blank => '---Selecione---' %><br/>
+     <%= f.label :option4, ' Opção 4' %>
+     <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '---Selecione---' %><br/>
    </div>
   </fieldset>
 
