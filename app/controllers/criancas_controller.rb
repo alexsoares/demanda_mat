@@ -233,8 +233,18 @@ class CriancasController < ApplicationController
   end
 
 
-  def busca_opcao1
-    @crianca = Crianca.opcao1
+  def busca_op1
+    @crianca = Crianca.busca_op1
+    render :partial => 'listar_todas_criancas'
+  end
+
+  def busca_op2
+    @crianca = Crianca.busca_op2
+    render :partial => 'listar_todas_criancas'
+  end
+
+  def busca_op3
+    @crianca = Crianca.busca_op3
     render :partial => 'listar_todas_criancas'
   end
 

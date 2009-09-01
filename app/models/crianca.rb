@@ -12,7 +12,7 @@ class Crianca < ActiveRecord::Base
   validates_presence_of :option1, :message => ' - ESCOLHA PELO MENOS UMA OPÇÃO'
   validates_numericality_of :tel1, :only_integer => true, :message =>  ' - NÃO É NÚMERO'
   validates_numericality_of :numero, :only_integer => true, :message =>  ' - NÃO É NÚMERO'
-
+  
 
   named_scope :by_nome, lambda {|nome| { :conditions => { :nome => nome }}}
   named_scope :by_nascimento, lambda {|datanascimento| { :conditions => { :nascimento => datanascimento }}}
@@ -21,6 +21,10 @@ class Crianca < ActiveRecord::Base
     self.tel1.empty?
   end
 
+
+  def check_matricula
+
+  end
   def self.c
     Crianca.find(:all)
   end
@@ -41,9 +45,19 @@ class Crianca < ActiveRecord::Base
     Crianca.find(:all, :conditions => {:matricula => 0 })
   end
 
-    def self.opcao1
-    Crianca.find(:all, :conditions => ["status = 1"])
+  def self.busca_op1
+    Crianca.find_by_sql  "Select * from criancas where matricula = 1 and unidade_matricula = option1"
   end
+
+
+ def self.busca_op2
+   Crianca.find_by_sql  "Select * from criancas where matricula = 1 and unidade_matricula = option2"
+ end
+
+ def self.busca_op3
+  Crianca.find_by_sql  "Select * from criancas where matricula = 1 and unidade_matricula = option3"
+ end
+
 
   def self.un_din
     
