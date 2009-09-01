@@ -32,7 +32,24 @@ $(document).ready(function()
 		<div class="menu_body">
 			<p><font style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
 		</div>
-		<p class="menu_head"> >> Nome da Criança << </p>
+
+
+
+  	    <p class="menu_head"> >> Crianças Matriculadas << </p>
+	   <div class="menu_body">
+         <p><font style="font-size: 12pt">Na 1a. Opção: <%= link_to_remote(Crianca.opcao1.length, :update => "listagem", :url => { :action => "busca_op1"}) %></font></p>
+         <p><font style="font-size: 12pt">Não na 1a. Opção: <%= link_to_remote(Crianca.opcao1.length, :update => "listagem", :url => { :action => "busca_opção"}) %></font></p>
+
+
+         <p><font style="font-size: 12pt">Crianças  Não Matriculadas <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
+
+
+
+      </div>
+
+
+
+        <p class="menu_head"> >> Nome da Criança << </p>
 		<div class="menu_body">
            <p><font style="font-size: 12pt">Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
        </div>

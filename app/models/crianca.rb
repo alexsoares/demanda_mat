@@ -41,6 +41,10 @@ class Crianca < ActiveRecord::Base
     Crianca.find(:all, :conditions => {:matricula => 0 })
   end
 
+    def self.opcao1
+    Crianca.find(:all, :conditions => ["status = 1"])
+  end
+
   def self.un_din
     
   end

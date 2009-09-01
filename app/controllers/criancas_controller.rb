@@ -5,6 +5,8 @@ class CriancasController < ApplicationController
   before_filter :load_criancas
   before_filter :load_criancas_mat
 
+
+
 # GET /criancas
   # GET /criancas.xml
   def index
@@ -229,6 +231,13 @@ class CriancasController < ApplicationController
     @crianca = Crianca.b_dm
     render :partial => 'listar_todas_criancas'
   end
+
+
+  def busca_opcao1
+    @crianca = Crianca.opcao1
+    render :partial => 'listar_todas_criancas'
+  end
+
 
   def class_unid
     $class = params[:grupo_grupo_class_id]
