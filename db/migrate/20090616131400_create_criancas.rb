@@ -26,7 +26,8 @@ class CreateCriancas < ActiveRecord::Migration
       t.integer :option3, :default => 0
       t.integer :option4, :default => 0
       t.integer :matricula, :default => 0
-      t.integer :unidade_matricula, :default => 0 
+      t.integer :unidade_matricula, :default => 0
+      t.string :obs, :limit => 100
       t.integer :status, :default => 0
       t.integer :posicao, :default => 0
       t.timestamps

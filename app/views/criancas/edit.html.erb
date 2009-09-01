@@ -22,8 +22,8 @@
         <%= f.collection_select :regiao_id, @regiaos, :id, :nome %> <br />
       </p>
       <p>
-        <%= f.label :created_at, 'Cadastrado em:' %><br />
-        <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
+        <%= f.label :created_at, 'Cadastrado em:' %>
+        <%=h @crianca.created_at.strftime("%e/%m/%Y - %H:%M horas")%> <br />
       </p>
    </fieldset><br/>
    <fieldset>
@@ -104,7 +104,8 @@
           :url => {:action => 'autentica_matricula'},
           :with =>"crianca_unidade_matricula",
           :on => "blur")%>
-
+      <th>Observação</th>
+       <%= f.text_field :obs %><br />
   </fieldset><br/>
   <fieldset>
     <p>
