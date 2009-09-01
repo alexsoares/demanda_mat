@@ -392,8 +392,23 @@ class CriancasController < ApplicationController
     end
   end
 
- 
+ def verifica_data
+   if not params[:crianca_nascimento_3i].nil? then
+     $ano = params[:crianca_nascimento_3i].to_s
+   end
+   if not params[:crianca_nascimento_1i].nil? then
+     $dia = params[:crianca_nascimento_1i].to_s
+   end
+   if not params[:crianca_nascimento_2i].nil? then
+     $mes = params[:crianca_nascimento_2i].to_s
+   end
+   $data = $dia.to_s + " " + $mes.to_s + " " + $ano.to_s
 
-  end
+   
+   render :text => $data.to_s 
+
+ end
+
+end
 
   

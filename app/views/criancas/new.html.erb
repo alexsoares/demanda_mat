@@ -55,6 +55,32 @@
     <div id='aviso_mae'></div> 
     <%= f.label :nascimento, 'Data de nascimento' %><br />
     <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><BR />
+    <%= observe_field 'crianca_nascimento_3i',
+    :with => 'crianca_nascimento_1i',
+    :url => { :action => 'verifica_data'}%>
+    <%= observe_field 'crianca_nascimento_2i',
+    :with => 'crianca_nascimento_2i',
+    :url => { :action => 'verifica_data'}%>
+    <%= observe_field 'crianca_nascimento_1i',
+    :with => 'crianca_nascimento_3i',
+    :url => { :action => 'verifica_data'},
+    :update => 'data_invalida'%>
+
+    <div id="data_invalida"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <font color="red" size="5">*</font><th>Nome da Mãe </th>
     <%= f.text_field :mae%><br />
     <%= observe_field :crianca_mae,
