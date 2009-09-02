@@ -28,7 +28,11 @@ $(document).ready(function()
 		<div class="menu_body">
 		    <p><font style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
  		</div>
-		<p class="menu_head"> >> Matriculas por Unidade << </p>
+		 	   <p class="menu_head"> >> Demanda por Classificação << </p>
+	    <div class="menu_body">
+           <p><font style="font-size: 12pt">Selecione a classificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %> Unidade: <%= collection_select :unidade, :unidade_class_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
+       </div>
+        <p class="menu_head"> >> Matriculas por Unidade << </p>
 		<div class="menu_body">
 			<p><font style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
 		</div>
@@ -37,11 +41,12 @@ $(document).ready(function()
 
   	    <p class="menu_head"> >> Crianças Matriculadas << </p>
 	   <div class="menu_body">
+         <p><font style="font-size: 12pt">Crianças Matriculadas <%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></font></p>
          <p><font style="font-size: 12pt">Na 1a. Opção: <%= link_to_remote(Crianca.busca_op1.length, :update => "listagem", :url => { :action => "busca_op1"}) %></font></p>
          <p><font style="font-size: 12pt">Na 2a. Opção: <%= link_to_remote(Crianca.busca_op2.length, :update => "listagem", :url => { :action => "busca_op2"}) %></font></p>
          <p><font style="font-size: 12pt">Na 3a. Opção: <%= link_to_remote(Crianca.busca_op3.length, :update => "listagem", :url => { :action => "busca_op3"}) %></font></p>
 
-         <p><font style="font-size: 12pt">Crianças  Não Matriculadas <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
+         
 
 
 
@@ -53,10 +58,7 @@ $(document).ready(function()
 		<div class="menu_body">
            <p><font style="font-size: 12pt">Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
        </div>
- 	   <p class="menu_head"> >> Classificação << </p>
-	   <div class="menu_body">
-           <p><font style="font-size: 12pt">Selecione a classificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %> Unidade: <%= collection_select :unidade, :unidade_class_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
-       </div>
+
  	    <p class="menu_head"> >> Totalização << </p>
 	   <div class="menu_body">
            <p><font style="font-size: 12pt"><%= link_to_remote('Relatório Geral de Demanda Escolar', :update => "listagem", :url => { :action => "relatorio"}) %></font></p>
