@@ -20,7 +20,7 @@ development:
   database: demanda_development
   pool: 5
   username: root
-  password: s3inf05
+  password: s3inf0
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -32,7 +32,7 @@ test:
   database: demanda_test
   pool: 5
   username: root
-  password: s3inf05
+  password: s3inf0
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -41,5 +41,5 @@ production:
   database: demanda_production
   pool: 5
   username: root
-  password: s3inf05 
+  password: s3inf0 
   socket: /var/run/mysqld/mysqld.sock
