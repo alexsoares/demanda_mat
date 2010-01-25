@@ -24,6 +24,11 @@
       <p>
         <%= f.label :created_at, 'Cadastrado em:' %>
         <%=h @crianca.created_at.strftime("%e/%m/%Y - %H:%M horas")%> <br />
+         <br/>
+        <%= f.label :created_at, 'Alteração da data de cadastramento:' %><br />
+        <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
+
+
       </p>
    </fieldset><br/>
    <fieldset>

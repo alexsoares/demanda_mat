@@ -15,7 +15,19 @@ class Unidade < ActiveRecord::Base
     if tipo == 4 then
        @teste =  'EMEF'
     else
-       @teste = 'CIEP'
+    if tipo == 5 then
+       @teste =  'CIEP'
+    else
+    if tipo == 6 then
+       @teste =  'TEMPO DE VIVER'
+    else
+    if tipo == 7 then
+       @teste =  'FILANTROPICA'
+    else
+       @teste = 'NADA SELECIONADO'
+    end
+    end
+    end
     end
     end
     end

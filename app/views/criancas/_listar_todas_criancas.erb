@@ -40,7 +40,11 @@
     <td><center><%=h crianca.opcao2.upcase %></center></td>
     <td><center><%=h crianca.onde_classifica.upcase %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
-    <td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+<% if crianca.onde_matricula.nil? %>    
+<td><center><%=h crianca.onde_matricula %></center></td></p>
+<%else%>
+<td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+<%end%>
   </tr>
   <tr>
     <%  $teste = $teste + 1%>
