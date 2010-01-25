@@ -183,6 +183,24 @@ class Crianca < ActiveRecord::Base
     end
   end  
 
+
+  def s_p
+    if servidor_publico == false then
+      return 'NÃO'
+    else
+      return 'SIM'
+    end
+  end
+
+  def transferido
+    if transferencia == false then
+      return 'NÃO'
+    else
+      return 'SIM'
+    end
+  end
+
+
   def opcao2
     if option2 == 0 or option2 == nil then
        return 'NAO REALIZADA'

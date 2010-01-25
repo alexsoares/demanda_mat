@@ -13,6 +13,12 @@
     <p>
     <fieldset>
       <legend><font size=4>Dados da Inscrição</font></legend>
+
+     <p>
+      <%= f.label :servidor_publico, 'Filho de servidor publico concursado?' %><br />
+      <%= f.check_box :servidor_publico %>
+     </p>
+
       <p>
       <th>Unidade</th>
       <%= f.collection_select :unidade_id, @unidades, :id, :nome %> <br />
@@ -87,6 +93,24 @@
   <br/>
     <fieldset>
       <legend><font size=4>Preferências</font></legend>
+    <script>
+        $(document).ready(function()
+          {
+            $("#dropdownbutton").click(function ()
+              {
+                $("#menu").slideToggle("high");
+              });
+          });
+    </script>
+<p>
+   <%= f.label :transferencia, 'Transferido de outra região?' %><br />
+   <a href="#" id="dropdownbutton"><%= f.check_box :transferencia %></a><th>SIM</th><br />
+       <ul id="menu" style="display:none">
+         <%= f.label :obs_transf, 'Obs' %><br />
+         <%= f.text_area :obs_transf %><br />
+       </ul>
+      </p>
+
         <th>Opção 1       </th>
         <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '' %> <br />
         <th>Opção 2       </th>
@@ -99,7 +123,6 @@
   </div><br/>
   <fieldset>
     <legend><font size=4>Dados da Inscrição</font></legend>
-    
       <th>Matriculado     </th>
       <%= f.check_box :matricula %><th>SIM</th><br />
       <th>Un.Matriculada</th>
@@ -112,6 +135,15 @@
       <th>Observação</th>
        <%= f.text_field :obs %><br />
   </fieldset><br/>
+
+  <fieldset>
+    <%= f.label :n_especial, 'Possui necessidade especial?' %>
+    <%= f.check_box :n_especial %> <br/>
+    <%= f.label :necessidade, 'Descricao Necessidade' %><br />
+    <%= f.text_area :necessidade %><br />
+  </fieldset>
+
+
   <fieldset>
     <p>
      <div id="Certeza">

@@ -13,9 +13,7 @@
     <center><th bgcolor="#cccccc">Nome</th></center>
     <th bgcolor="#cccccc">Data Nascimento</th>
     <th bgcolor="#cccccc">Nome Mãe</th>
-
     <th bgcolor="#cccccc">Cadastrado em</th>
-
     <th bgcolor="#cccccc">Bairro</th>
     <th bgcolor="#cccccc">Fone1</th>
     <th bgcolor="#cccccc">Resp</th>
@@ -25,6 +23,8 @@
     <th bgcolor="#cccccc">Classificação</th>
     <th bgcolor="#cccccc">Status</th>
     <th bgcolor="#cccccc">Unidade Matricula</th>
+    <th bgcolor="#cccccc">Filho Servidor Publico</th>
+    <th bgcolor="#cccccc">Transferido</th>
     </tr>
 
 <% for crianca in @crianca %>
@@ -45,7 +45,9 @@
     <td><center><%=h crianca.opcao2.upcase %></center></td>
     <td><center><%=h crianca.onde_classifica.upcase %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
-    <td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+    <td><center><%=h crianca.onde_matricula.upcase %></center></td>
+    <td><center><%=h crianca.s_p.upcase %></center></td>
+    <td><center><%=h crianca.transferido.upcase %></center></td></p>
   </tr>
   <tr>
     <%  $teste = $teste + 1%>

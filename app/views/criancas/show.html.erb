@@ -6,6 +6,7 @@
   <br />
   <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
+
     <b>Nome:</b>
       <%=h @crianca.nome %><br />
     <b>Nascimento:   </b>
@@ -28,7 +29,28 @@
     <b>Nome (recado):    </b>
       <%=h @crianca.nomerecado%> <br />
     <b>Celular:       </b>
-      <%=h @crianca.celular%> 
+      <%=h @crianca.celular%> <br/>
+    <b>Filho de servidor: </b>
+      <% if @crianca.servidor_publico == 0 then %>
+        <b>NÃO</b>
+      <%else%>
+        <b>SIM</b>
+      <%end%>
+      <br/>
+    <b>Possui necessidade especial?: </b>
+      <%if @crianca.n_especial == 1 then%>
+        <%=h "SIM" + (@crianca.necessidade).to_s%>
+      <%else%>
+        <b>NÃO POSSUI</b>
+      <%end%>
+      <BR/>
+    <b>Foi transferido?: </b>
+      <%if @crianca.transferencia == 1 then%>
+        <%=h "SIM" + (@crianca.obs_transf).to_s%>
+      <%else%>
+        <b>NUNCA FOI TRANSFERIDO.</b>
+      <%end%>
+
   </fieldset><br />
   <fieldset>
     <legend><font size=4>Acompanhante</font></legend>

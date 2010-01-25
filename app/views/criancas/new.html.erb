@@ -12,8 +12,13 @@
   <fieldset>
   
    <legend><font size=4>Dados da Inscrição</font></legend>
-   <table width="100%">
+   <table width="100%" >
     <td width="60%">
+     <p>      
+      <%= f.label :servidor_publico, 'Filho de servidor publico cuncursado?' %><br />
+      <%= f.check_box :servidor_publico %>SIM
+     </p>
+
      <p>
        <%= f.label :unidade, 'Unidade da Inscrição' %><br />
        <%= f.collection_select :unidade_id, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
@@ -155,7 +160,25 @@
      <%= f.collection_select :option4, @unidades, :id, :nome, :include_blank => '---Selecione---' %><br/>
    </div>
   </fieldset>
+  <fieldset>
 
+   <script>
+       $(document).ready(function()
+         {
+            $("#dropdownbutton5").click(function ()
+               {
+                  $("#menu5").slideToggle("high");
+               });
+         });
+   </script>
+   <th>Possui necessidade especial?       </th>
+   <a href="#" id="dropdownbutton5"><%= f.check_box :n_especial %></a><th>SIM</th><br />
+       <ul id="menu5" style="display:none">
+         <th>Descreva a necessidade</th>
+         <%= f.text_area :necessidade %><br/>
+       </ul>
+  </fieldset>
+ <br/>
 <br />
   <fieldset>
    <div id='Certeza'>  

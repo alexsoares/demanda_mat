@@ -30,6 +30,11 @@ class CreateCriancas < ActiveRecord::Migration
       t.string :obs, :limit => 100
       t.integer :status, :default => 0
       t.integer :posicao, :default => 0
+      t.boolean :servidor_publico, :default => 0
+      t.boolean :transferencia, :default => 0
+      t.string :obs_transf, :limit => 100
+      t.boolean :n_especial, :default => 0
+      t.string :necessidade, :limit => 100
       t.timestamps
     end
 
