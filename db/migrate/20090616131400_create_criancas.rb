@@ -35,6 +35,8 @@ class CreateCriancas < ActiveRecord::Migration
       t.string :obs_transf, :limit => 100
       t.boolean :n_especial, :default => 0
       t.string :necessidade, :limit => 100
+      t.boolean :mudou_endereco, :default => 0
+      t.boolean :gemelar, :default => 0
       t.timestamps
     end
 

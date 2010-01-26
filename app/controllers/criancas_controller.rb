@@ -4,7 +4,7 @@ class CriancasController < ApplicationController
   before_filter :load_unidades
   before_filter :load_criancas
   before_filter :load_criancas_mat
-
+  
 
 
 # GET /criancas
@@ -252,18 +252,34 @@ class CriancasController < ApplicationController
   def class_unid
     $class = params[:grupo_grupo_class_id]
      @teste = Unidade.find(:all)
+     render :nothing => true
   end
   
   def classif
     $unidade = params[:unidade_unidade_class_id]
     $consulta = 4
-    @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade], :order => "servidor_publico desc, transferencia desc, created_at")
+    @crianca = Crianca.find(:all, :conditions => ["grupo_id = " + $class + " and option1 = " + $unidade + " and matricula != 1"], :order => "servidor_publico desc, transferencia desc, created_at")
     if @crianca.nil? or @crianca.empty? then
       render :text => 'Nenhuma crianca encontrada'
     else
       render :partial => 'listar_criancas'
     end
   end
+
+  def atualiza_grupo
+    @atualiza_grupo = Crianca.find(:all)
+    $contador = 0
+    for at_grupo in @atualiza_grupo
+      $teste = Date.today - at_grupo.nascimento
+      $teste3 = $teste.years(at_grupo.nascimento)
+
+      $contador = $contador + 1
+    end
+
+    render :nothing => true
+  end
+
+
 
 
   def un_op1_din

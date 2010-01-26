@@ -72,7 +72,8 @@
     :update => 'data_invalida'%>
 
     <div id="data_invalida"></div>
-
+      <%= f.label :gemelar, 'Possui irmão(s) gemeo(s)?' %>
+      <%= f.check_box :gemelar %>SIM<br />
 
     <font color="red" size="5">*</font><th>Nome da Mãe </th>
     <%= f.text_field :mae%><br />
@@ -151,6 +152,7 @@
    <legend><font size=4>Preferências</font></legend>
    <div id='region'>
      <font color="red" size="5">*</font><%= f.label :option1, 'Opção 1 ' %>
+
      <%= f.collection_select :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %> <br/>
      <%= f.label :option2, 'Opção 2' %>
      <%= f.collection_select :option2, @unidades, :id, :nome, :include_blank => '---Selecione---' %><br/>

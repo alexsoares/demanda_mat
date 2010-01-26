@@ -11,6 +11,8 @@
       <%=h @crianca.nome %><br />
     <b>Nascimento:   </b>
       <%=h @crianca.nascimento.strftime("%d/%m/%y")%> <br />
+    <b>Possui irmão Gêmeo</b>
+    <%=h @crianca.gemeos.upcase! %><br />
     <b>Nome da mãe:</b>
       <%=h @crianca.mae %><br />
     <b>Classificação:</b>

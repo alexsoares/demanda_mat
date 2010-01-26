@@ -167,6 +167,16 @@ class Crianca < ActiveRecord::Base
 
   end
 
+  def gemeos
+    if gemelar == false then
+      return "NÃO"
+    else
+      return "SIM"
+    end
+  end
+
+
+
   def onde_classifica
     if grupo_id == 0 then
       return 'NÃO CLASSIFICAVEL - FORA DO LIMITE DE IDADE'
