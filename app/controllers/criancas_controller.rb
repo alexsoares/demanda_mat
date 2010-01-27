@@ -269,18 +269,59 @@ class CriancasController < ApplicationController
   def atualiza_grupo
     @atualiza_grupo = Crianca.find(:all)
     $contador = 0
+    $contador2 = 0
+    $contador3 = 0
+    $contador4 = 0
+    $contador5 = 0
+    $contador6 = 0
+    $contador7 = 0    
     for at_grupo in @atualiza_grupo
-      $teste = Date.today - at_grupo.nascimento
-      $teste3 = $teste.years(at_grupo.nascimento)
-
-      $contador = $contador + 1
+      dias = Date.today - at_grupo.nascimento
+      if (((0 >= dias) and (dias < 366)) and at_grupo.grupo_id != 1) then
+        $contador = $contador + 1
+      else
+        if (((dias > 365) and (dias < 577)) and at_grupo.grupo_id != 2) then
+          $contador2 = $contador2 + 1
+        else
+          if (((dias > 576) and (dias < 851)) and at_grupo.grupo_id != 3) then
+            $contador3 = $contador3 + 1
+          else
+            if (((dias > 850) and (dias < 1096)) and at_grupo.grupo_id != 4) then
+              $contador4 = $contador4 + 1
+            else
+              if (((dias > 1095) and (dias < 1276)) and at_grupo.grupo_id != 5) then
+                $contador5 = $contador5 + 1
+              else
+                if (((dias > 1275) and (dias < 1641)) and at_grupo.grupo_id != 6) then
+                  $contador6 = $contador6 + 1
+                else
+                  if( ((dias > 1640) and (dias < 2006)) and at_grupo.grupo_id != 7) then
+                    $contador7 = $contador7 + 1
+                  end
+                end
+              end
+            end
+          end
+        end
+      end   
     end
+    Crianca.connection.execute("CALL atualiza_grupo")
+   render :update do |page|
+      page.replace_html 'reordenar', :text => 'Para grupo BI foi(ram) realocado(s) ' + $contador.to_s +  ' criança(s), Para grupo BII foi(ram) realocado(s) ' + $contador2.to_s + ' criança(s), Para grupo BIII foi(ram) realocado(s) ' +  $contador3.to_s + ' criança(s), Para grupo MI foi(ram) realocado(s)  ' + $contador4.to_s + ' criança(s), Para grupo MII foi(ram) realocado(s)  ' + $contador5.to_s + ' criança(s),  Para grupo NI foi(ram) realocado(s)  ' + $contador6.to_s + ' criança(s),  Para grupo NII foi(ram) realocado(s)  ' + $contador7.to_s + ' criança(s).'
+   end
 
-    render :nothing => true
+ end
+
+
+  def config
+    render :partial => 'configuracao'
   end
 
-
-
+  def confirma
+   render :update do |page|
+     page.replace_html 'reordenar', :partial =>  'reordenar_criancas'
+   end
+  end
 
   def un_op1_din
     #@criancas = Crianca.un_din
