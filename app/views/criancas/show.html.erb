@@ -33,24 +33,29 @@
     <b>Celular:       </b>
       <%=h @crianca.celular%> <br/>
     <b>Filho de servidor: </b>
-      <% if @crianca.servidor_publico == 0 then %>
-        <b>NÃO</b>
+      <% if @crianca.servidor_publico == false then %>
+        NÃO
       <%else%>
-        <b>SIM</b>
+        SIM
       <%end%>
       <br/>
-    <b>Possui necessidade especial?: </b>
-      <%if @crianca.n_especial == 1 then%>
-        <%=h "SIM" + (@crianca.necessidade).to_s%>
+    <b>Possui necessidade especial?</b>
+      <%if @crianca.n_especial == true then%>
+        <%=h "SIM" %><br/>
+         <b>Descricao Necessidade</b>
+        <%=h @crianca.necessidade %>
       <%else%>
-        <b>NÃO POSSUI</b>
+        NÃO POSSUI
       <%end%>
       <BR/>
+
     <b>Foi transferido?: </b>
-      <%if @crianca.transferencia == 1 then%>
-        <%=h "SIM" + (@crianca.obs_transf).to_s%>
+      <%if @crianca.transferencia == true then%>
+        <%=h "SIM" %><br/>
+       <b>Observações</b>
+        <%=h @crianca.obs_transf %>
       <%else%>
-        <b>NUNCA FOI TRANSFERIDO.</b>
+        NUNCA FOI TRANSFERIDO.
       <%end%>
 
   </fieldset><br />
@@ -93,8 +98,9 @@
       <%=h @crianca.onde_matricula %><br/>
      <b>Observação:</b>
       <%=h @crianca.obs %>
- 
-  </fieldset><br/>
+   </fieldset><br/>
+
+
 
   | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
   <%= link_to 'Voltar', criancas_path %>  |
