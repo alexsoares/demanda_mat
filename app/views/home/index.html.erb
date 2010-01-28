@@ -43,7 +43,7 @@
 <tr>
 <%  if current_user.has_role?('admin') then%>
 <tr>
-<td width="100%" colspan="6"><br/><center><font size="6"><%= link_to_remote('GERENCIAR USUÁRIOS', :url => { :action => "gen_user", :controller => 'home'}) %></font></center><br/></td>
+<td width="100%" colspan="6"><br/><center><font size="4"><%= link_to_remote('GERENCIAR USUÁRIOS', :url => { :action => "gen_user", :controller => 'home'}) %></font></center><br/></td>
 </tr>
 <%end%>
 
