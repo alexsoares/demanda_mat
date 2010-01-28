@@ -14,6 +14,7 @@ display: none;
     <h2 align="right">Cadastro de Crianças</h2>
     <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  Ver.1.5       . </font></h4>
   </div>
+  <div id="show2a">
     <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
 
@@ -124,18 +125,19 @@ display: none;
 <td align="center"> Assinatura Escola               </td>
 </tr>
 </table>
-<div class="botao">
+ <div class="botao">
     <table width="100%">
     <tr>
     | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
-      <%= link_to 'Voltar', criancas_path %>  |
-      <%= link_to 'Cadastrar', new_crianca_path %>  |
+      <%= link_to 'Voltar', criancas_path %>  
+    |  <%= link_to 'Cadastrar', new_crianca_path %>
+    | <%= link_to_remote('Versão para impressão', :update => "show2a", :url => { :action => "show2impressao"}) %> |
       <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
     </tr>
   </table>
 
+ </div>
+
 </div>
-
-
 
 </div>

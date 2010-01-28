@@ -469,6 +469,13 @@ class CriancasController < ApplicationController
 
  end
 
+  def show2impressao
+    #Busca demanda por unidade
+     @crianca = Crianca.find(params[:id])
+   render :partial => 'show2'
+  end
+
+
 end
 
   
