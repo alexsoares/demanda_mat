@@ -103,7 +103,7 @@ color: green;
 
 #estatistica{
   position: absolute;
-  left: 970px;
+  left: 900px;
    top: 300px;
   }
 
@@ -137,7 +137,7 @@ color: green;
 #posicao {
 width:25%;
 margin-top:80px;
-margin-left: 500px;
+margin-left: 450px;
 }
 
 #confirmacao {

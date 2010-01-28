@@ -48,12 +48,13 @@
   </tr>
   <tr>
     <%  $teste = $teste + 1%>
+    <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
     <div id="negrito">
        <td bgcolor="#cccccc"><%= link_to 'Exibir', crianca %></td>
        <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
        <td bgcolor="#cccccc"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
     </div>
-
+    <%end%>
   </tr>
 
 
