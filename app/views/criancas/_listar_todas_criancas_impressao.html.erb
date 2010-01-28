@@ -26,6 +26,10 @@
     <th>Classificação</th>
     <th>Status</th>
     <th>Unidade Matricula</th>
+    <th>Filho Servidor Publico</th>
+    <th>Transferido</th>
+    <th>Histórico Contatos</th>
+
     </tr>
 
 <% for crianca in @crianca %>
@@ -46,7 +50,12 @@
     <td><center><%=h crianca.opcao2.upcase %></center></td>
     <td><center><%=h crianca.onde_classifica.upcase %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
-    <td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+    <td><center><%=h crianca.onde_matricula.upcase %></center></td>
+    <td><center><%=h crianca.s_p.upcase %></center></td>
+    <td><center><%=h crianca.transferido.upcase %></center></td>
+    <td><center><%=h crianca.historico_contato %></center></td></p>
+
+
   </tr>
   <tr>
     <%  $teste = $teste + 1%>

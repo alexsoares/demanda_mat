@@ -72,6 +72,10 @@ class Crianca < ActiveRecord::Base
     self.nome_responsavel.upcase!
     self.parentesco.upcase!
     self.local_trabalho.upcase!
+    self.obs.upcase!
+    self.obs_transf.upcase!
+    self.necessidade.upcase!
+    self.historico_contato.upcase!
     
   end
 

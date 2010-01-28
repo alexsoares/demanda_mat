@@ -22,6 +22,10 @@
     <th bgcolor="#cccccc">Classificação</th>
     <th bgcolor="#cccccc">Status</th>
     <th bgcolor="#cccccc">Unidade Matricula</th>
+    <th bgcolor="#cccccc">Filho Servidor Publico</th>
+    <th bgcolor="#cccccc">Transferido</th>
+    <th bgcolor="#cccccc">Histórico Contatos</th>
+
     </tr>
 
 <% for crianca in @crianca %>
@@ -41,10 +45,14 @@
     <td><center><%=h crianca.onde_classifica %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
 <% if crianca.onde_matricula.nil? %>    
-<td><center><%=h crianca.onde_matricula %></center></td></p>
+<td><center><%=h crianca.onde_matricula %></center></td>
 <%else%>
 <td><center><%=h crianca.onde_matricula %></center></td>
 <%end%>
+    <td><center><%=h crianca.s_p.upcase %></center></td>
+    <td><center><%=h crianca.transferido.upcase %></center></td>
+    <td><center><%=h crianca.historico_contato %></center></td></p>
+
   </tr>
   <tr>
     <%  $teste = $teste + 1%>
