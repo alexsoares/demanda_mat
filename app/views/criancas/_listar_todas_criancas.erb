@@ -26,24 +26,24 @@
 
 <% for crianca in @crianca %>
   <tr>
-    <p><td><center><%=h crianca.nome.upcase %></center></td>
+    <p><td><center><%=h crianca.nome %></center></td>
     <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
-    <td><center><%=h crianca.mae.upcase %></center></td>
+    <td><center><%=h crianca.mae %></center></td>
 
     <td><center><%=h crianca.created_at.strftime("%d/%m/%y %H:%M") %></center></td>
 
-    <td><center><%=h crianca.bairro.upcase %></center></td>
+    <td><center><%=h crianca.bairro %></center></td>
     <td><center><%=h crianca.tel1 %></center></td>
     <td><center><%=h crianca.parentesco %></center></td>
     <td><center><%=h crianca.verifica_trabalha %></center></td>
-    <td><center><%=h crianca.opcao1.upcase %></center></td>
-    <td><center><%=h crianca.opcao2.upcase %></center></td>
-    <td><center><%=h crianca.onde_classifica.upcase %></center></td>
+    <td><center><%=h crianca.opcao1 %></center></td>
+    <td><center><%=h crianca.opcao2 %></center></td>
+    <td><center><%=h crianca.onde_classifica %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
 <% if crianca.onde_matricula.nil? %>    
 <td><center><%=h crianca.onde_matricula %></center></td></p>
 <%else%>
-<td><center><%=h crianca.onde_matricula.upcase %></center></td></p>
+<td><center><%=h crianca.onde_matricula %></center></td>
 <%end%>
   </tr>
   <tr>
