@@ -1,4 +1,5 @@
 class GruposController < ApplicationController
+require_role ["seduc","admin"]
   # GET /grupos
   # GET /grupos.xml
   def index

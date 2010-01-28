@@ -1,4 +1,5 @@
 class UnidadesController < ApplicationController
+require_role ["seduc","admin"]
   # GET /unidades
   # GET /unidades.xml
   before_filter :load_regiaos

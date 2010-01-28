@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090616132325) do
+ActiveRecord::Schema.define(:version => 20100128092358) do
 
   create_table "criancas", :force => true do |t|
     t.string   "nome",              :limit => 50
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(:version => 20090616132325) do
     t.integer  "status",                           :default => 0
     t.integer  "posicao",                          :default => 0
     t.boolean  "servidor_publico",                 :default => false
+    t.boolean  "transferencia",                    :default => false
+    t.string   "obs_transf",        :limit => 100
+    t.boolean  "n_especial",                       :default => false
+    t.string   "necessidade",       :limit => 100
+    t.boolean  "mudou_endereco",                   :default => false
+    t.boolean  "gemelar",                          :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,12 +65,37 @@ ActiveRecord::Schema.define(:version => 20090616132325) do
     t.datetime "updated_at"
   end
 
+  create_table "roles", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "roles_users", :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
+  add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
+
   create_table "unidades", :force => true do |t|
     t.string   "nome"
     t.integer  "tipo"
     t.integer  "regiao_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "email"
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
+    t.string   "activation_code",           :limit => 40
+    t.datetime "activated_at"
   end
 
 end

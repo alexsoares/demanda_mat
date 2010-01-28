@@ -1,0 +1,71 @@
+<DIV ID="conteudo">
+<div id="topo"><h1 align="right">Gerenciamento de usuários</h1></div>
+<table width="100%" >
+    <%if logged_in? then%>
+
+      <td width="55%">
+                    Usuário: <font size="4" color="green"><%= current_user.login %> - </font>
+            <% if current_user.has_role?('admin') %>
+              Acesso de Administrador do Sistema
+            <%else%>
+              <% if current_user.has_role?('secretaria') %>
+               Acesso de Secretário(a)
+              <%else%>
+                <% if current_user.has_role?('direcao') %>
+                  Acesso de Diretor(a)
+                <%else%>
+                  <% if current_user.has_role?('supervisao') %>
+                    Acesso de Supervisao
+                  <%end%>
+                <%end%>
+              <%end%>
+            <%end%>
+
+      </td>
+
+            <td width="45%" align="right">
+              <%= link_to '|Sair|', logout_path %>
+              <%= link_to h(current_user.login.capitalize), user_path(current_user) %><font color="blue">|</font><br/>
+</td>
+    <%else%>
+      <td><%= link_to '|Entrar|', login_path %></td>
+    <%end%>
+
+</table>
+
+<br/>
+<div id="conteudo">
+
+ | <%= link_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %> |
+
+<br/>
+ <DIV ID="conteudo">
+<table border="1" width="50%" frame="box" rules="all">
+  <tr>
+        <td width="100%" colspan="5" align="center"><h1>Listagem Usuários Cadastrados</h1></td>
+  </tr>
+  <tr>
+    <th align="center">LOGIN</th>
+    <th align="center">STATUS</th>
+  </tr>
+<%@usuarios = User.find(:all, :order => 'login') %>
+<% for user in @usuarios %>
+  <tr>
+    <td align="left"><%= user.login %></td>
+    <% if user.activated_at == nil then %>
+      <td align="Center">DESATIVADO</td>
+    <%else%>
+      <td align="center">ATIVO</td>
+    <%end%>
+  </tr>
+  <tr>
+    <td align="rigth" colspan="2">| <%= link_to 'Apagar', user, :confirm => 'Confirma?', :method => :delete %> |</td>
+  </tr>
+<% end %>
+</table>
+</DIV>
+
+| <%= link_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %> |
+</div>
+</DIV>
+

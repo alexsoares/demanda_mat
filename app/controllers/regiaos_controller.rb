@@ -1,4 +1,5 @@
 class RegiaosController < ApplicationController
+require_role ["seduc","admin"]
   # GET /regiaos
   # GET /regiaos.xml
   def index

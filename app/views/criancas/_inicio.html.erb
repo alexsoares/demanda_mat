@@ -1,9 +1,14 @@
 <div id="fundo_menu">
 <legend>
-<td>|  <%= link_to ' Início' , root_path %> |<%= link_to 'Cadastrar', new_crianca_path %></td>
-<td>| <%= link_to_remote('Matricular', :update => "consul", :url => { :action => "matric"}) %></td>
+<td>| <%= link_to ' Início' , root_path %></td>
+<%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>  
+  <td>| <%= link_to 'Cadastrar', new_crianca_path %></td>
+  <td>| <%= link_to_remote('Matricular', :update => "consul", :url => { :action => "matric"}) %></td>
+<%end%>
 <td>| <%= link_to_remote('Consultar', :update => "consul", :url => { :action => "consulta"}) %></td>
-<td>| <%= link_to_remote('Configuração', :update => 'menu',:url => { :action => "config"}) %></td>
+<%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
+  <td>| <%= link_to_remote('Configuração', :update => 'menu',:url => { :action => "config"}) %></td>
+<%end%>
 <td>| <%= link_to 'Voltar', criancas_path %></td>
 |</legend>
 <hr align="left" width="60%" color=#9C9C9C size="3"

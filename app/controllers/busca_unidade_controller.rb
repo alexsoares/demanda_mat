@@ -1,4 +1,5 @@
 class BuscaUnidadeController < ApplicationController
+  require_role ["seduc","admin"]
   before_filter :load_grupos
   before_filter :load_regiaos
   before_filter :load_unidades

@@ -4,7 +4,10 @@ class CriancasController < ApplicationController
   before_filter :load_unidades
   before_filter :load_criancas
   before_filter :load_criancas_mat
-  
+  require_role ["seduc","admin"], :for => :update # don't allow contractors to update
+  require_role ["seduc","admin"], :for => :destroy # don't allow contractors to destroy
+  require_role ["seduc"], :for => [:atualiza_grupo,:matric,:config,:confirma] #
+
 
 
 # GET /criancas

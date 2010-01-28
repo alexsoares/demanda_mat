@@ -1,0 +1,8 @@
+drop trigger if exists ativa_user
+delimiter $$
+ CREATE TRIGGER ativa_user
+     BEFORE INSERT ON roles_users
+     FOR EACH ROW
+     BEGIN
+	UPDATE users SET activated_at = now() where id = new.user_id;
+     END$$
