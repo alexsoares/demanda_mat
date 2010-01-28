@@ -25,7 +25,7 @@ class CriancasController < ApplicationController
   # GET /criancas/1.xml
   def show
     @crianca = Crianca.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @crianca }
@@ -469,11 +469,6 @@ class CriancasController < ApplicationController
 
  end
 
-  def show2impressao
-    #Busca demanda por unidade
-     @crianca = Crianca.find(params[:id])
-   render :partial => 'show2'
-  end
 
 
 end
