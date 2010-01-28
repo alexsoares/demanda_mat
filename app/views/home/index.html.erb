@@ -47,9 +47,9 @@
 </tr>
 <%end%>
 <%  if current_user.has_role?('externo') then%>
-  <tr><td colspan="3"><br/><center><font size="4"><%= link_to "Consultar demanda", criancas_path %></font></center><br/></td></tr>
+  <tr><td colspan="4"><br/><center><font size="4"><%= link_to "Consultar demanda", criancas_path %></font></center><br/></td></tr>
 <%else%>
-  <tr><td colspan="3"><br/><center><font size="4"><%= link_to "Controlar demanda", criancas_path %></font></center><br/></td></tr>
+  <tr><td colspan="4"><br/><center><font size="4"><%= link_to "Controlar demanda", criancas_path %></font></center><br/></td></tr>
   <td><br/><center><font size="4"><%= link_to "Crianças", criancas_path %></font></center><br/></td>
 <%end%>
 <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
