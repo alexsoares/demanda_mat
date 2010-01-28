@@ -134,6 +134,12 @@ color: green;
     width:27%;
 }
 
+#posicao {
+width:25%;
+margin-top:80px;
+margin-left: 500px;
+}
+
 #confirmacao {
     background-color:silver;
     font:bold;
