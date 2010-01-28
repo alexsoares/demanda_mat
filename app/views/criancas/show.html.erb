@@ -14,10 +14,9 @@ display: none;
     <h2 align="right">Cadastro de Crianças</h2>
     <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  Ver.1.5       . </font></h4>
   </div>
-  <div id="show2a">
+  <br/>
     <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
-
     <b>Nome:</b>
       <%=h @crianca.nome %><br />
     <b>Nascimento:   </b>
@@ -68,7 +67,7 @@ display: none;
       <%else%>
         NUNCA FOI TRANSFERIDO.
       <%end%>
-
+<%  if $flag_imp == 0 then %>
   </fieldset>
   <fieldset>
     <legend><font size=4>Acompanhante</font></legend>
@@ -124,6 +123,7 @@ display: none;
 <td align="center"> Assinatura do responsável               </td>
 <td align="center"> Assinatura Escola               </td>
 </tr>
+
 </table>
  <div class="botao">
     <table width="100%">
@@ -131,13 +131,24 @@ display: none;
     | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
       <%= link_to 'Voltar', criancas_path %>  
     |  <%= link_to 'Cadastrar', new_crianca_path %>
-   
-      <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+
+    |<%$flag_imp =1%><%= link_to 'Impressão Dados', @crianca %> |
+    
+
+     
     </tr>
   </table>
 
  </div>
+<%end%>
 
+ <div class="botao">
+    <table width="100%">
+     <tr>
+       <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+     </tr>
+    </table>
+</div
 </div>
 
 </div>

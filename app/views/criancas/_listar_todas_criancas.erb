@@ -48,6 +48,7 @@
   </tr>
   <tr>
     <%  $teste = $teste + 1%>
+    <% $flag_imp = 0 %>
     <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
     <div id="negrito">
        <td bgcolor="#cccccc"><%= link_to 'Exibir', crianca %></td>

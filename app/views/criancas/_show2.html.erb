@@ -3,6 +3,11 @@ function Imprimir(){
 window.print();
 }
 </script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
     <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
 
@@ -58,4 +63,7 @@ window.print();
       <%end%>
 
   </fieldset>
-<input type="Button" Value="Imprimir" onclick="Imprimir()">
+ <div class="botao">
+
+    <input type="Button" Value="Imprimir" onclick="Imprimir()">
+ </div>
