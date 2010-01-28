@@ -1,10 +1,20 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
 <div id="conteudo">
   <div id="topo">
-    <h1 align="right">Cadastro de Crianças</h1>
+    <h2 align="right">Cadastro de Crianças</h2>
     <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  Ver.1.5       . </font></h4>
   </div>
-  <br />
-  <fieldset>
+    <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
 
     <b>Nome:</b>
@@ -58,7 +68,7 @@
         NUNCA FOI TRANSFERIDO.
       <%end%>
 
-  </fieldset><br />
+  </fieldset>
   <fieldset>
     <legend><font size=4>Acompanhante</font></legend>
     <b>Responsável:   </b>
@@ -71,7 +81,7 @@
       <%=h @crianca.local_trabalho%> <br/>
     <b>Fone Trabalho:</b>
       <%=h @crianca.fonetrabalho%>
-  </fieldset><br />
+  </fieldset>
   <fieldset>
     <legend><font size=4>Dados da Inscrição</font></legend>
     <b>Unidade onde fez a inscrição:      </b>
@@ -86,10 +96,12 @@
       <%= @crianca.opcao1 %><br />
     <b>Matrícula - Opção 2:       </b>
       <%= @crianca.opcao2 %><br />
+<div class="botao">
     <b>Matrícula - Opção 3:       </b>
       <%= @crianca.opcao3 %><br />
     <b>Matrícula - Opção 4:       </b>
       <%= @crianca.opcao4 %><br />
+</div>
     <b>Status: </b>
       <%=h @crianca.conf_status	%> <br />
     <b>Matriculado :     </b>
@@ -102,8 +114,28 @@
 
 
 
-  | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
-  <%= link_to 'Voltar', criancas_path %>  |
-  <%= link_to 'Cadastrar', new_crianca_path %>  |
-  <a href="javascript:window.print();">Imprimir</a> |
+<table width="100%">
+<tr>
+<td align="center">___________________________________</td>
+<td align="center">___________________________________</td>
+</tr>
+<tr>
+<td align="center"> Assinatura do responsável               </td>
+<td align="center"> Assinatura do responsável               </td>
+</tr>
+</table>
+<div class="botao">
+    <table width="100%">
+    <tr>
+    | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
+      <%= link_to 'Voltar', criancas_path %>  |
+      <%= link_to 'Cadastrar', new_crianca_path %>  |
+      <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+    </tr>
+  </table>
+
+</div>
+
+
+
 </div>
