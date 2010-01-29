@@ -56,6 +56,7 @@ class CriancasController < ApplicationController
   # POST /criancas.xml
   def create
     @crianca = Crianca.new(params[:crianca])
+  $flag_imp = 0
 
     respond_to do |format|
       if @crianca.save

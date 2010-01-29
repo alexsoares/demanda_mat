@@ -129,7 +129,7 @@ display: none;
     <table width="100%">
     <tr>
     | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
-      <%= link_to 'Voltar', criancas_path %>  
+     
     |  <%= link_to 'Cadastrar', new_crianca_path %>
 
     |<%$flag_imp =1%><%= link_to 'Impressão Dados', @crianca %> |
@@ -145,10 +145,14 @@ display: none;
  <div class="botao">
     <table width="100%">
      <tr>
+       <br />
+       <br />
+       <td align="left">|<%= link_to 'Voltar', criancas_path %>|</td>
        <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+
      </tr>
     </table>
-</div
+ </div>
 </div>
 
-</div>
+
