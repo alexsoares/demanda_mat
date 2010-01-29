@@ -37,7 +37,7 @@ class CreateCriancas < ActiveRecord::Migration
       t.string :necessidade, :limit => 100
       t.boolean :mudou_endereco, :default => 0
       t.boolean :gemelar, :default => 0
-      t.string :historico_contatos, :limit =>240
+      t.string :historico_contato, :limit =>240
       t.timestamps
     end
 

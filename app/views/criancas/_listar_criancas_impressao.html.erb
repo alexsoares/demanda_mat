@@ -1,3 +1,9 @@
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
 <div id="impressao">
 
 |<a href="javascript:window.print();">Imprimir</a>
@@ -71,6 +77,7 @@
 </font></p>
 </tr>
 </div>
+ <div class="botao">
 | <a href="javascript:window.print();">Imprimir</a>
-| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> 
-
+| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
+</div>

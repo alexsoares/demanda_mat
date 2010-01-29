@@ -127,7 +127,8 @@ color: green;
 
 #impressao {
     background-color:white;
-    font:bold
+    font:bold;
+    width:100%
 }
 
 #reordenar {

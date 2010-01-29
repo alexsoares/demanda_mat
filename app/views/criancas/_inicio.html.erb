@@ -1,4 +1,16 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
 <div id="fundo_menu">
+ <div class="botao">
 <legend>
 <td>| <%= link_to ' Início' , root_path %></td>
 <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>  
@@ -14,5 +26,5 @@
 |</legend>
 <hr align="left" width="60%" color=#9C9C9C size="3"
 </div>
-
+</div>  
 

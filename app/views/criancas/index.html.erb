@@ -1,3 +1,13 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
 <div id="conteudo">
   <div id="topo">    
       <h1  align="right"> S I S D E M A N  --  Ver. 1.5 </h1>
@@ -34,10 +44,11 @@
 <br/>
 <br/>
 
-
+ <div class="botao">
    <div id="menu">
       <%= render :partial => 'inicio'%>
     </div>
+</div>
    <div id="consul">
    </div>
   <br/>

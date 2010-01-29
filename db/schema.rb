@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(:version => 20100128092358) do
     t.string   "nomerecado",        :limit => 50
     t.string   "celular"
     t.integer  "responsavel"
-    t.string   "nome_responsavel",  :limit => 30
+    t.string   "nome_responsavel",  :limit => 50
     t.string   "parentesco",                       :default => "0"
     t.boolean  "trabalha"
     t.string   "local_trabalho"
-    t.string   "fonetrabalho"
+    t.string   "fonetrabalho",      :limit => 25
     t.integer  "option1",                          :default => 0
     t.integer  "option2",                          :default => 0
     t.integer  "option3",                          :default => 0
@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(:version => 20100128092358) do
     t.integer  "unidade_matricula",                :default => 0
     t.string   "obs",               :limit => 100
     t.integer  "status",                           :default => 0
-    t.integer  "posicao",                          :default => 0
-    t.boolean  "servidor_publico",                 :default => false
-    t.boolean  "transferencia",                    :default => false
+    t.integer  "posicao",                          :default => 0,     :null => false
+    t.boolean  "servidor_publico",                 :default => false, :null => false
+    t.boolean  "transferencia",                    :default => false, :null => false
     t.string   "obs_transf",        :limit => 100
-    t.boolean  "n_especial",                       :default => false
-    t.string   "necessidade",       :limit => 100
-    t.boolean  "mudou_endereco",                   :default => false
-    t.boolean  "gemelar",                          :default => false
+    t.boolean  "n_especial",                       :default => false, :null => false
+    t.string   "necessidade",       :limit => 100,                    :null => false
+    t.boolean  "mudou_endereco",                   :default => false, :null => false
+    t.boolean  "gemelar",                          :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
