@@ -49,7 +49,7 @@
   <br/>
 
 <fieldset>
-    <legend><font size=4>Dados da Criança</font></legend>
+   <legend><font size=4>Dados da Criança</font></legend>
       <table>
        <tr>
          <td><b><font color="red" size="5">*</font>Nome </b>
@@ -82,9 +82,6 @@
          <td>
               <div id="data_invalida"></div>
          </td>
-      <tr>
-         <td><b><%= f.label :gemelar, 'Irmão(s) gemeo(s)?' %></b></td>
-         <td><%= f.check_box :gemelar %>SIM</td>
        </tr>
        <tr>
          <td><b><font color="red" size="5">*</font>Nome da Mãe</b></td>
@@ -110,6 +107,27 @@
             <div id='descricao'></div>
          </td>
        </tr>
+       <tr>
+           <td>
+             <script>
+               $(document).ready(function()
+                {
+                  $("#dropdownbutton9").click(function ()
+                   {
+                     $("#menu9").slideToggle("high");
+                    });
+                });
+               </script>
+               <b>Possui irmão(s)</b>
+                <a href="#" id="dropdownbutton9"><%= f.check_box :gemelar %></a>SIM
+               <td>
+                <ul id="menu9" style="display:none">
+                  <b>Observações</b>
+                   <%= f.text_field :obs_irmao %><br />
+               </ul>
+               </td>
+           </td>
+      </tr>
        <tr>
          <td><b>Endereço  </b></td>
          <td><%= f.text_field :endereco %></td>
