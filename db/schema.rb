@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100128092358) do
+ActiveRecord::Schema.define(:version => 20100202154711) do
 
   create_table "criancas", :force => true do |t|
     t.string   "nome",              :limit => 50
@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(:version => 20100128092358) do
     t.string   "nomerecado",        :limit => 50
     t.string   "celular"
     t.integer  "responsavel"
-    t.string   "nome_responsavel",  :limit => 50
+    t.string   "nome_responsavel",  :limit => 30
     t.string   "parentesco",                       :default => "0"
     t.boolean  "trabalha"
     t.string   "local_trabalho"
-    t.string   "fonetrabalho",      :limit => 25
+    t.string   "fonetrabalho"
     t.integer  "option1",                          :default => 0
     t.integer  "option2",                          :default => 0
     t.integer  "option3",                          :default => 0
@@ -40,14 +40,17 @@ ActiveRecord::Schema.define(:version => 20100128092358) do
     t.integer  "unidade_matricula",                :default => 0
     t.string   "obs",               :limit => 100
     t.integer  "status",                           :default => 0
-    t.integer  "posicao",                          :default => 0,     :null => false
-    t.boolean  "servidor_publico",                 :default => false, :null => false
-    t.boolean  "transferencia",                    :default => false, :null => false
+    t.integer  "posicao",                          :default => 0
+    t.boolean  "servidor_publico",                 :default => false
+    t.boolean  "transferencia",                    :default => false
     t.string   "obs_transf",        :limit => 100
-    t.boolean  "n_especial",                       :default => false, :null => false
-    t.string   "necessidade",       :limit => 100,                    :null => false
-    t.boolean  "mudou_endereco",                   :default => false, :null => false
-    t.boolean  "gemelar",                          :default => false, :null => false
+    t.boolean  "n_especial",                       :default => false
+    t.string   "necessidade",       :limit => 100
+    t.boolean  "mudou_endereco",                   :default => false
+    t.boolean  "gemelar",                          :default => false
+    t.string   "obs_irmao",         :limit => 50
+    t.string   "historico_contato", :limit => 240
+    t.integer  "user_id",                          :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,6 +58,14 @@ ActiveRecord::Schema.define(:version => 20100128092358) do
   create_table "grupos", :force => true do |t|
     t.string   "nome",       :limit => 50
     t.string   "descricao",  :limit => 50
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "logs", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "obs"
+    t.integer  "crianca_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

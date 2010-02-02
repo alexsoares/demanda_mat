@@ -4,7 +4,7 @@ class CriancasController < ApplicationController
   before_filter :load_unidades
   before_filter :load_criancas
   before_filter :load_criancas_mat
-  require_role ["seduc","admin"], :for => :update # don't allow contractors to update
+  require_role ["seduc","admin","escola"], :for => :update # don't allow contractors to update
   require_role ["seduc","admin"], :for => :destroy # don't allow contractors to destroy
   require_role ["seduc"], :for => [:atualiza_grupo,:matric,:config,:confirma] #
 
@@ -74,6 +74,11 @@ class CriancasController < ApplicationController
   # PUT /criancas/1.xml
   def update
     @crianca = Crianca.find(params[:id])
+    @atualiza_log = Log.new
+    @atualiza_log.user_id = current_user
+    @atualiza_log.obs = "Atualizado em: "  + (Time.now().strftime("%d/%m/%y %H:%M")).to_s
+    @atualiza_log.crianca_id = @crianca.id
+    @atualiza_log.save
 
     respond_to do |format|
       if @crianca.update_attributes(params[:crianca])
@@ -91,6 +96,11 @@ class CriancasController < ApplicationController
   # DELETE /criancas/1.xml
   def destroy
     @crianca = Crianca.find(params[:id])
+    @crianca_log = Log.new
+    @crianca_log.user_id = current_user
+    @crianca_log.obs = "Apagado em: " + (Time.now().strftime("%d/%m/%y %H:%M")).to_s
+    @crianca_log.crianca_id = @crianca.id
+    @crianca_log.save
     @crianca.destroy
 
     respond_to do |format|

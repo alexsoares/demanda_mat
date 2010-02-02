@@ -39,6 +39,7 @@ class CreateCriancas < ActiveRecord::Migration
       t.boolean :gemelar, :default => 0
       t.string :obs_irmao, :limit => 50
       t.string :historico_contato, :limit =>240
+      t.integer :user_id, :default => 0
       t.timestamps
     end
 

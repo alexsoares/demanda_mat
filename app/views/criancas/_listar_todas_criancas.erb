@@ -65,10 +65,18 @@
        <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
        <td bgcolor="#cccccc"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
     </div>
-    <%end%>
+    
+    <%else%>
+    <%  if current_user.has_role?('escola') then%>
+    <div id="negrito">
+       <td bgcolor="#cccccc"><%= link_to 'Exibir', crianca %></td>
+       <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+
+
+    </div>
+   <%end%>
+  <%end%>
   </tr>
-
-
 <% end %>
 
 </table>

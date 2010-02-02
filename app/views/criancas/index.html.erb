@@ -25,9 +25,13 @@ display: none;
               <% if current_user.has_role?('seduc') %>
                Acesso da Secretaria de Educação
               <%else%>
-                <% if current_user.has_role?('externo') %>
+                 <% if current_user.has_role?('externo') %>
                   Acesso de Visitante
-                <%end%>
+                 <%else%>
+                   <% if current_user.has_role?('escola') %>
+                      Acesso secretaria de escola
+                   <%end%>
+                 <%end%>
               <%end%>
             <%end%>
 

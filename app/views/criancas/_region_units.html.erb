@@ -1,6 +1,6 @@
 <table>
    <tr>
-    <td><b>   <%= label :option1, 'Opção 1' %></b></td>
+    <td><font color="red" size="5">*</font><b><%= label :option1, 'Opção 1' %></b></td>
     <td><%= collection_select :crianca, :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %></td>
   </tr>
   <tr>

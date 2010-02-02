@@ -11,7 +11,6 @@ class CreateUsers < ActiveRecord::Migration
       t.column :remember_token_expires_at, :datetime
       t.column :activation_code, :string, :limit => 40
       t.column :activated_at, :datetime
-      
     end
     User.create :login => 'administrador', :password => 's3inf09', :password_confirmation => 's3inf09'
     

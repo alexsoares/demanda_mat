@@ -22,6 +22,10 @@
               <%else%>
                 <% if current_user.has_role?('externo') %>
                   Acesso de Visitante
+                <%else%>
+                   <% if current_user.has_role?('escola') %>
+                      Acesso secretaria de escola
+                   <%end%>
                 <%end%>
               <%end%>
             <%end%>
@@ -46,7 +50,7 @@
 <td width="100%" colspan="6"><br/><center><font size="4"><%= link_to_remote('GERENCIAR USUÁRIOS', :url => { :action => "gen_user", :controller => 'home'}) %></font></center><br/></td>
 </tr>
 <%end%>
-<%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
+<%  if current_user.has_role?('admin') or current_user.has_role?('seduc') or current_user.has_role?('escola') or current_user.has_role?('escriturario') then%>
   <tr><td colspan="4"><br/><center><font size="4"><%= link_to "Controlar demanda", criancas_path %></font></center><br/></td></tr>
 <%else%>
 <% if current_user.has_role?('externo') then%>

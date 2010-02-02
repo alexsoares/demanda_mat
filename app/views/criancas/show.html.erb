@@ -128,8 +128,9 @@ display: none;
  <div class="botao">
     <table width="100%">
     <tr>
-    | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> 
-     
+  <%   if current_user.has_role?('admin') or current_user.has_role?('seduc') or current_user.has_role?('escola')%>
+    | <%= link_to 'Alterar', edit_crianca_path(@crianca) %>
+  <%end%>
     |  <%= link_to 'Cadastrar', new_crianca_path %>
 
     |<%$flag_imp =1%><%= link_to 'Impressão Dados', @crianca %> |

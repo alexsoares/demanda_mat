@@ -1,17 +1,17 @@
   <p>
-    <%= label :option1, 'Opção 1' %><br />
+    <b><font color="red" size="5">*</font><%= label :option1, 'Opção 1' %></b>
 
     <%= collection_select :crianca, :option1, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
   <p>
-    <%= label :option2, 'Opção 2' %><br />
+    <b><%= label :option2, 'Opção 2' %></b>
     <%= collection_select :crianca, :option2, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
   <p>
-    <%= label :option3, 'Opção 3' %><br />
+    <b><%= label :option3, 'Opção 3' %></b>
     <%= collection_select :crianca, :option3, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
   <p>
-    <%= label :option4, 'Opção 4' %><br />
+    <b><%= label :option4, 'Opção 4' %></b>
     <%= collection_select :crianca, :option4, @unidades, :id, :nome, :include_blank => '---Selecione---' %>
   </p>
