@@ -21,10 +21,8 @@ display: none;
     <center><th>Nome</th></center>
     <th>Data Nascimento</th>
     <th>Nome Mãe</th>
-    
     <th>Cadastrado em</th>
-    
-    <th>Bairro</th>
+     <th>Bairro</th>
     <th>Fone1</th>
     <th>Resp</th>
     <th>Trabalha</th>
@@ -34,6 +32,7 @@ display: none;
     <th>Status</th>
     <th>Unidade Matricula</th>
     <th>Filho Servidor Publico</th>
+    <th>Possui Irmão(s)</th>
     <th>Transferido</th>
     <th>Histórico Contatos</th>
 
@@ -46,9 +45,7 @@ display: none;
     <p><td><center><%=h crianca.nome.upcase %></center></td>
     <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
     <td><center><%=h crianca.mae.upcase %></center></td>
-
     <td><center><%=h crianca.created_at.strftime("%d/%m/%y %H:%M") %></center></td>
-
     <td><center><%=h crianca.bairro.upcase %></center></td>
     <td><center><%=h crianca.tel1 %></center></td>
     <td><center><%=h crianca.parentesco %></center></td>
@@ -59,6 +56,7 @@ display: none;
     <td><center><%=h crianca.conf_status %></center></td>
     <td><center><%=h crianca.onde_matricula.upcase %></center></td>
     <td><center><%=h crianca.s_p.upcase %></center></td>
+    <td><center><%=h crianca.gemeos%></center></td>
     <td><center><%=h crianca.transferido.upcase %></center></td>
     <td><center><%=h crianca.historico_contato %></center></td></p>
 

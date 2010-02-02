@@ -24,7 +24,7 @@ display: none;
     <b>Nome da mãe:</b>
       <%=h @crianca.mae %><br />
     <b>Possui irmão(s)</b>
-    <%=h @crianca.gemeos.upcase! %> -<%=h @crianca.obs_irmao.upcase!%>  <br />
+    <%=h @crianca.gemeos %> -<%=h @crianca.obs_irmao%>  <br />
     <b>Classificação:</b>
       <%=h @crianca.grupo.nome + ' - ' %>
       <%=h @crianca.grupo.descricao	%> <br />
@@ -109,7 +109,7 @@ display: none;
     <b>Unidade Matriculada:</b>
       <%=h @crianca.onde_matricula %><br/>
      <b>Observação:</b>
-      <%=h @crianca.obs %>
+      <%=h @crianca.historico_contato %>
    </fieldset><br/>
 
 
@@ -128,7 +128,7 @@ display: none;
  <div class="botao">
     <table width="100%">
     <tr>
-    | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
+    | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> 
      
     |  <%= link_to 'Cadastrar', new_crianca_path %>
 

@@ -24,6 +24,7 @@
     <th bgcolor="#cccccc">Status</th>
     <th bgcolor="#cccccc">Unidade Matricula</th>
     <th bgcolor="#cccccc">Filho Servidor Publico</th>
+    <th bgcolor="#cccccc">Possui Irmão(s)</th>
     <th bgcolor="#cccccc">Transferido</th>
     <th bgcolor="#cccccc">Histórico Contatos</th>
     </tr>
@@ -45,10 +46,9 @@
     <td><center><%=h crianca.onde_classifica %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
     <td><center><%=h crianca.onde_matricula %></center></td>
-    <td><center><%=h crianca.s_p.upcase %></center></td>
-    <td><center><%=h crianca.transferido.upcase %></center></td>
-    <td><center><%=h crianca.s_p.upcase %></center></td>
-    <td><center><%=h crianca.transferido.upcase %></center></td>
+    <td><center><%=h crianca.s_p%></center></td>
+    <td><center><%=h crianca.gemeos%></center></td>
+    <td><center><%=h crianca.transferido %></center></td>
     <td><center><%=h crianca.historico_contato %></center></td></p>
 
   </tr>

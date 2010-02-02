@@ -18,9 +18,7 @@ display: none;
     <th>Nome</th>
     <th>Data Nascimento</th>
     <th>Nome Mãe</th>    
-
     <th>Cadastrado em</th>
-
     <th>Bairro</th>
     <th>Fone1</th>
     <th>Resp</th>
@@ -31,6 +29,7 @@ display: none;
     <th>Status</th>
     <th>Unidade Matricula</th>
     <th>Filho Servidor Publico</th>
+    <th>Possui Irmão(s)</th>
     <th>Transferido</th>
     <th>Histórico Contatos</th>
 
@@ -55,6 +54,7 @@ display: none;
     <td><center><%=h crianca.opcao2.upcase %></center></td>
     <td><center><%=h crianca.onde_classifica.upcase %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
+    <td><center><%=h crianca.gemeos%></center></td>
     <td><center><%=h crianca.onde_matricula.upcase %></center></td>
     <td><center><%=h crianca.historico_contato %></center></td></p>
   </tr>

@@ -178,7 +178,7 @@ class Crianca < ActiveRecord::Base
 
 
   def onde_classifica
-    if grupo_id == 0 then
+    if grupo_id == 0 or grupo_id.nil? then
       return 'NÃO CLASSIFICAVEL - FORA DO LIMITE DE IDADE'
     else
       return Grupo.find_by_id(grupo_id).descricao
