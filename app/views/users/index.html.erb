@@ -8,14 +8,19 @@
             <% if current_user.has_role?('admin') %>
               Acesso de Administrador do Sistema
             <%else%>
-              <% if current_user.has_role?('secretaria') %>
-               Acesso de Secretário(a)
+              <% if current_user.has_role?('seduc') %>
+               Acesso da Secretaria de Educação
               <%else%>
-                <% if current_user.has_role?('direcao') %>
-                  Acesso de Diretor(a)
-                <%else%>
-                  <% if current_user.has_role?('supervisao') %>
-                    Acesso de Supervisao
+                 <% if current_user.has_role?('externo') %>
+                  Acesso de Visitante
+                 <%else%>
+                   <% if current_user.has_role?('escola') %>
+                      Acesso diretor de escola
+                 <%else%>
+                   <% if current_user.has_role?('escriturario') %>
+                      Acesso secretaria de escola
+                   <%end%>
+
                   <%end%>
                 <%end%>
               <%end%>

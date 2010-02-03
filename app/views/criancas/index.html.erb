@@ -29,9 +29,14 @@ display: none;
                   Acesso de Visitante
                  <%else%>
                    <% if current_user.has_role?('escola') %>
+                      Acesso diretor de escola
+                 <%else%>
+                   <% if current_user.has_role?('escriturario') %>
                       Acesso secretaria de escola
                    <%end%>
-                 <%end%>
+
+                  <%end%>
+                <%end%>
               <%end%>
             <%end%>
 
