@@ -319,6 +319,11 @@ class CriancasController < ApplicationController
         end
       end   
     end
+    @reclassifica = Log.new
+    @reclassifica.user_id = current_user
+    @reclassifica.obs = "Realizada reclassificação dos grupos em: " + (Time.now().strftime("%d/%m/%y %H:%M")).to_s
+    @reclassifica.crianca_id = 0
+    @reclassifica.save
     Crianca.connection.execute("CALL atualiza_grupo")
    render :update do |page|
       page.replace_html 'reordenar', :text => 'Para grupo BI foi(ram) realocado(s) ' + $contador.to_s +  ' criança(s), Para grupo BII foi(ram) realocado(s) ' + $contador2.to_s + ' criança(s), Para grupo BIII foi(ram) realocado(s) ' +  $contador3.to_s + ' criança(s), Para grupo MI foi(ram) realocado(s)  ' + $contador4.to_s + ' criança(s), Para grupo MII foi(ram) realocado(s)  ' + $contador5.to_s + ' criança(s),  Para grupo NI foi(ram) realocado(s)  ' + $contador6.to_s + ' criança(s),  Para grupo NII foi(ram) realocado(s)  ' + $contador7.to_s + ' criança(s).'
