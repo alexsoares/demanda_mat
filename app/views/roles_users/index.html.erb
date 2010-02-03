@@ -14,10 +14,10 @@
                 <% if current_user.has_role?('externo') %>
                   Acesso de Externo
                 <%else%>
-                  <%if Role.find(@role_user.role_id).name == 'escola' then%>
+                  <%if current_user.has_role?('escola') then%>
                     <td align="center">Usuário pertencente ao grupo de diretores(escola). Acesso Diretor.</td>
                   <%else%>
-                    <%if Role.find(@role_user.role_id).name == 'escriturario' then%>
+                    <%if current_user.has_role?('escriturario') then%>
                       <td align="center">Usuário pertencente ao grupo escriturario. Acesso Secretaria de escola.</td>
                     <%end%>
                   <%end%>
@@ -67,6 +67,14 @@
       <%else%>
         <%if Role.find(role_user.role_id).name == 'externo' then%>
           <td align="center">Usuário pertencente ao grupo externo. Acesso Visitante.</td>
+        <%else%>
+          <%if current_user.has_role?('escola') then%>
+            <td align="center">Usuário pertencente ao grupo de diretores(escola). Acesso Diretor.</td>
+          <%else%>
+            <%if current_user.has_role?('escriturario') then%>
+              <td align="center">Usuário pertencente ao grupo escriturario. Acesso Secretaria de escola.</td>
+            <%end%>
+          <%end%>
         <%end%>
       <%end%>
     <%end%>

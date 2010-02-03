@@ -1,6 +1,24 @@
 class LogsController < ApplicationController
   # GET /logs
   # GET /logs.xml
+
+  before_filter :load_users
+
+
+  def load_users
+    @users = User.find(:all)
+  end
+
+  def log_user
+    $log_user = params[:log_user_id]
+    @log_user = Log.find(:all,:conditions => 'user_id = ' + $log_user)
+   render :update do |page|
+      page.replace_html 'log', :partial => 'logs'
+   end
+
+  end
+
+
   def index
     @logs = Log.find(:all)
 

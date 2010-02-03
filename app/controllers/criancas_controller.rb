@@ -76,7 +76,8 @@ class CriancasController < ApplicationController
     @crianca = Crianca.find(params[:id])
     @atualiza_log = Log.new
     @atualiza_log.user_id = current_user
-    @atualiza_log.obs = "Atualizado em: "  + (Time.now().strftime("%d/%m/%y %H:%M")).to_s
+    @atualiza_log.obs = "Atualizado"
+    @atualiza_log.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @atualiza_log.crianca_id = @crianca.id
     @atualiza_log.save
 
@@ -98,7 +99,8 @@ class CriancasController < ApplicationController
     @crianca = Crianca.find(params[:id])
     @crianca_log = Log.new
     @crianca_log.user_id = current_user
-    @crianca_log.obs = "Apagado em: " + (Time.now().strftime("%d/%m/%y %H:%M")).to_s
+    @crianca_log.obs = "Apagado"
+    @crianca_log.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @crianca_log.crianca_id = @crianca.id
     @crianca_log.save
     @crianca.destroy
@@ -321,7 +323,8 @@ class CriancasController < ApplicationController
     end
     @reclassifica = Log.new
     @reclassifica.user_id = current_user
-    @reclassifica.obs = "Realizada reclassificação dos grupos em: " + (Time.now().strftime("%d/%m/%y %H:%M")).to_s
+    @reclassifica.obs = "Realizada reclassificação dos grupos"
+    @reclassifica.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @reclassifica.crianca_id = 0
     @reclassifica.save
     Crianca.connection.execute("CALL atualiza_grupo")

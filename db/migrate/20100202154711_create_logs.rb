@@ -3,6 +3,7 @@ class CreateLogs < ActiveRecord::Migration
     create_table :logs do |t|
       t.references :user
       t.string :obs
+      t.string :data
       t.references :crianca
       t.timestamps
     end
