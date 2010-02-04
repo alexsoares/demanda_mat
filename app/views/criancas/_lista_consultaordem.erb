@@ -25,9 +25,9 @@
     <td><center><%=h format("%.3f",professor.pontuacao_final)%></center></td>
     <td><center><%=h professor.jornada_sem%></center></td>
         <% if professor.dt_nasc.nil? then %>
-             <td><center><%=h professor.dt_nasc %></td></center>
+             <td><center><%=h professor.dt_nasc %></center></td>
         <%else%>
-             <td><center><%=h professor.dt_nasc.strftime("%d/%m/%y") %></td></center>
+             <td><center><%=h professor.dt_nasc.strftime("%d/%m/%y") %></center></td>
     <%end%>
  <tr/>
 

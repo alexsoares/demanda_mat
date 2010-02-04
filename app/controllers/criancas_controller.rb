@@ -75,7 +75,7 @@ class CriancasController < ApplicationController
   def update
     @crianca = Crianca.find(params[:id])
     @atualiza_log = Log.new
-    @atualiza_log.user_id = current_user
+    @atualiza_log.user_id = current_user.id
     @atualiza_log.obs = "Atualizado"
     @atualiza_log.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @atualiza_log.crianca_id = @crianca.id
@@ -98,7 +98,7 @@ class CriancasController < ApplicationController
   def destroy
     @crianca = Crianca.find(params[:id])
     @crianca_log = Log.new
-    @crianca_log.user_id = current_user
+    @crianca_log.user_id = current_user.id
     @crianca_log.obs = "Apagado"
     @crianca_log.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @crianca_log.crianca_id = @crianca.id
@@ -322,7 +322,7 @@ class CriancasController < ApplicationController
       end   
     end
     @reclassifica = Log.new
-    @reclassifica.user_id = current_user
+    @reclassifica.user_id = current_user.id
     @reclassifica.obs = "Realizada reclassificação dos grupos"
     @reclassifica.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @reclassifica.crianca_id = 0
