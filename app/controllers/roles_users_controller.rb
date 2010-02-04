@@ -94,15 +94,16 @@ class RolesUsersController < ApplicationController
   def destroy
     @role_user = RolesUser.find(params[:id])
     @role_user.destroy
-
     @user = User.find(params[:id])
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to(roles_users_url) }
       format.xml  { head :ok }
     end
   end
+
+
+  
   def role_id
     $new_role_id = params[:roles_user_role_id]
     render :text => ''
