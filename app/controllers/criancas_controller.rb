@@ -339,6 +339,10 @@ class CriancasController < ApplicationController
     render :partial => 'configuracao'
   end
 
+  def sobresis
+    render :partial => 'sobre'
+  end
+
   def confirma
    render :update do |page|
      page.replace_html 'reordenar', :partial =>  'reordenar_criancas'
