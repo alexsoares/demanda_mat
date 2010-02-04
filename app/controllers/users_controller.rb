@@ -50,6 +50,12 @@ class UsersController < ApplicationController
     redirect_back_or_default('/')
   end
 
+
+
+
+
+
+  
   def show
     @user = current_user
   end
