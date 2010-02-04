@@ -322,7 +322,7 @@ class CriancasController < ApplicationController
       end   
     end
     @reclassifica = Log.new
-    @reclassifica.user_id = current_user.id
+    @reclassifica.user_id = current_user.i
     @reclassifica.obs = "Realizada reclassificação dos grupos"
     @reclassifica.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @reclassifica.crianca_id = 0
