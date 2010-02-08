@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20100202154711) do
   create_table "logs", :force => true do |t|
     t.integer  "user_id"
     t.string   "obs"
+    t.string   "data"
     t.integer  "crianca_id"
     t.datetime "created_at"
     t.datetime "updated_at"

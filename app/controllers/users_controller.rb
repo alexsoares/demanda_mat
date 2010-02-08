@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   def destroy
 
     @user = User.find(params[:id])
-    @user.activated_at = nil
+
     @user.destroy
 
     respond_to do |format|
