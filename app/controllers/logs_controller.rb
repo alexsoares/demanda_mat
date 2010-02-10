@@ -6,7 +6,7 @@ class LogsController < ApplicationController
 
 
   def load_users
-    @users = User.find(:all)
+    @users = User.find(:all, :order => "login")
   end
 
   def log_user

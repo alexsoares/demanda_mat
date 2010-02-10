@@ -14,7 +14,7 @@ class RolesUsersController < ApplicationController
   end
 
   def load_role
-    @roles = Role.find(:all)
+    @roles = Role.find(:all, :order => "name")
     @role_users = RolesUser.find(:all)
   end
 
