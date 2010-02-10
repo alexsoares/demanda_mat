@@ -73,6 +73,15 @@ class RolesUsersController < ApplicationController
         format.xml  { render :xml => @role_user.errors, :status => :unprocessable_entity }
       end
     end
+
+    $user_id= @role_user.user_id
+    @user = User.find(:all, :conditions => ['id =' +($user_id).to_s])
+    #@user = User.find_by_sql("SELECT * FROM roles_users,users WHERE roles_users.user_id = users.id and users.id = "+($user_id).to_s)
+    #$user_id = params[:user_id]
+    for user in @user
+      user.activate
+    end
+
   end
 
   # PUT /role_users/1
