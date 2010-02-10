@@ -1,3 +1,4 @@
+SHOW
 <div id="conteudo">
   <div id="topo">
     <h1 align="right">Logs de acessos</h1>
@@ -19,11 +20,24 @@
           <b>Em (Data e Hora):</b>
           <%=h @log.data %>
         </p>
+         <p>
+          <b>Criança afetada:</b>
+       <%  if @log.crianca_id == 0 then %>
+            TODAS AS CRIANCAS>
+          <%else%>
+          <% if @log.obs == "Apagado" %>
+            <%=  @log.crianca_id %> - Com a exclusão da criança, impossível exibir seu nome.
+          <%else%>
+            <%=  @log.crianca_id %> - <%=h @log.crianca.nome %>
+          <%end%>
+          <%end%>
+        </p>
+
 
       </fieldset>
     </p>
    <br/>
 
 
-<%= link_to 'Voltar', logs_path %>
+| <%= link_to 'Voltar', logs_path %> |
 </div>
