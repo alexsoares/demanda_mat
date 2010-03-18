@@ -1,0 +1,38 @@
+DROP TRIGGER IF EXISTS `pontuacao_production`.`calcula_pontos_insert`//
+CREATE TRIGGER `pontuacao_production`.`calcula_pontos_insert` BEFORE INSERT ON `pontuacao_production`.`titulo_professors`
+ FOR EACH ROW BEGIN
+	
+	SELECT valor INTO @valor from titulacaos where id = new.titulo_id;
+	SET NEW.valor = @valor;
+
+	IF ((new.titulo_id = 1) or (new.titulo_id = 2) or (new.titulo_id = 3) or (new.titulo_id = 4) or (new.titulo_id = 5)) THEN
+                SET @pontuacao_titulo = new.quantidade * @valor;
+		SET NEW.pontuacao_titulo = @pontuacao_titulo;
+		SET NEW.STATUS = 1;
+		UPDATE professors SET total_titulacao = total_titulacao + @pontuacao_titulo where professors.id = new.professor_id;
+	ELSE 
+        SELECT CONCAT((YEAR(CURDATE()) - 1),'-11-01') INTO @dta FROM dual;
+    IF new.dt_titulo < @dta THEN
+        SET new.status = 0;
+    ELSE
+	IF ((new.titulo_id = 6) or (new.titulo_id = 7) or (new.titulo_id = 8)) THEN		
+		select CONCAT(year(curdate()),'-10-31') into @data_tit from dual;
+		SET NEW.dt_titulo = @data_tit;
+		SET NEW.dt_validade = DATE_ADD(NEW.dt_titulo,INTERVAL "1" YEAR);
+		SET NEW.pontuacao_titulo = new.quantidade * @valor;
+		if  (curdate() < NEW.DT_VALIDADE) then	
+			UPDATE professors SET total_titulacao = total_titulacao + new.pontuacao_titulo where professors.id = new.professor_id;
+			SET NEW.STATUS = 1;
+		else
+			SET NEW.STATUS = 0;
+		end if;
+       END IF;
+
+	END IF;			
+	END IF;
+
+	
+
+    END
+//
+

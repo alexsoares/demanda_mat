@@ -1,0 +1,10 @@
+---------------------------------------------------- INVALIDA TITULOS COM VALIDADE EXPIRADA------------------------------------------------
+mysql -h localhost -u root pontuacao_development -ps3inf0 -e "UPDATE titulo_professors SET status = 0,validade = 1 where dt_validade < curdate()"
+---------------------------------------------------- INVALIDA TITULOS FORA DO ANO LETIVO ------------------------------------------------
+mysql -h localhost -u root pontuacao_development -ps3inf0 -e "UPDATE titulo_professors SET status = 0,validade = 1 where ano_letivo <> year(curdate())"
+
+
+
+
+
+

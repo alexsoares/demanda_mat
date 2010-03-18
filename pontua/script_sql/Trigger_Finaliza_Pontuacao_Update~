@@ -1,0 +1,7 @@
+delimiter !!
+ CREATE TRIGGER finaliza_pontos_before_update
+     before UPDATE ON professors
+     FOR EACH ROW
+    BEGIN
+	SET new.pontuacao_final = (new.total_trabalhado + new.total_titulacao);
+    END!!

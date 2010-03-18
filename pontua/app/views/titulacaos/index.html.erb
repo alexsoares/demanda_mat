@@ -1,0 +1,81 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<br/>
+<div id="conteudo">
+    
+<br/>
+<div class="botao">
+  <div id="submenu">
+    <ul>
+      <li><%= link_to 'Cadastrar', new_titulacao_path %></li>
+      
+    </ul>
+  </div>
+  <br/>
+  <br/>
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+   <br/>
+  <br/>
+</div>
+  <fieldset>
+   <legend><font size=4>Títulos</font></legend>
+
+<table border ="1" frame="box" width="100%">
+  <tr>
+    <td colspan="4">
+      <h1 align="center">Relatório Títulos</h1>
+    </td>
+  </tr>
+
+<% for titulacao in @titulacaos %>
+
+  <tr>
+    <th>Descrição</th>
+    <th>Validade</th>
+    <th>Valor</th>
+    <th>Referência</th>
+  </tr>
+  <tr>
+    <td align="center"><%= titulacao.descricao %></td>
+    <td align="center"><%= titulacao.tipo %></td>
+    <td align="center"><%= titulacao.valor %></td>
+    <td align="center"><%= titulacao.referencia %></td>
+ </tr>
+  <tr>
+    <td bgcolor="#cccccc" colspan="4">
+  <% if current_user.has_role?('direcao') or current_user.has_role?('supervisao') or current_user.has_role?('admin') %>
+    | <%= link_to 'Alterar', edit_titulacao_path(titulacao) %>
+    | <%= link_to 'Apagar', titulacao, :confirm => 'Confirma deleção?', :method => :delete %> |
+
+  <%end%>
+    </td>
+  </tr>
+
+<% end %>
+</table>
+</fieldset>
+<br />
+
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  <br/>
+  <br/>
+  <div id="submenu">
+    <ul>
+      <li><%= link_to 'Cadastrar', new_titulacao_path %></li>
+      
+    </ul>
+  </div>
+
+</div>
+
+</div>

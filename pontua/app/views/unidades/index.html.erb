@@ -1,0 +1,75 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<br/>
+<div id="conteudo">
+
+<br/>
+<div class="botao">
+  <div id="submenu">
+    <ul>
+      <li><%= link_to 'Cadastrar', new_unidade_path %></li>
+      
+    </ul>
+  </div>
+  <br/>
+  <br/>
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+   <br/>
+  <br/>
+  </div>
+  <fieldset>
+   <legend><font size=4>Unidades</font></legend>
+   <table border ="1" cellpadding="5" cellspacing="1" width="100%" >
+      <tr>
+        <td colspan="4">
+          <h1 align="center">Relatório de Unidades</h1>
+        </td>
+      </tr>
+      <tr>
+        <th bgcolor="#cccccc">Localização</th>
+        <th bgcolor="#cccccc">Nome</th>
+        <th bgcolor="#cccccc">Tipo de Ensino</th>
+      </tr>
+      <% for unidade in @unidades %>
+
+        <tr>
+          <td><center><%=h unidade.regiao.nome %></center></td>
+          <td><center><%=h unidade.nome %></center></td>
+          <td><center><%=h unidade.nome_tipo %></center></td>
+         </tr>
+         <tr>
+          <td bgcolor="#cccccc"><%= link_to 'Exibir', unidade %></td>
+          <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_unidade_path(unidade) %></td>
+          <td bgcolor="#cccccc"><%= link_to 'Apagar', unidade, :confirm => 'Tem certeza?', :method => :delete %></td>
+        </tr>
+
+         <td>
+
+         </td>
+
+      <% end %>
+    </table>
+  </fieldset>
+ <br />
+<div class="botao">
+ <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  <br/>
+  <br/>
+
+  <div id="submenu">
+    <ul>
+      <li><%= link_to 'Cadastrar', new_unidade_path %></li>
+      
+    </ul>
+  </div>
+</div>
+</div>

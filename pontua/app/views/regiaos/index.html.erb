@@ -1,0 +1,66 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<br/>
+<div id="conteudo">
+
+<br/>
+<div class="botao">
+  <div id="submenu">
+    <ul>
+      <li><%= link_to 'Cadastrar', new_regiao_path %></li>
+      
+    </ul>
+  </div>
+  <br/>
+  <br/>
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+   <br/>
+  <br/>
+  </div>
+  <fieldset>
+   <legend><font size=4>Regiões</font></legend>
+    <table border ="1" cellpadding="5" cellspacing="1" width="100%" >
+      <tr>
+        <td colspan="4">
+          <h1 align="center">Relatório de Regiões</h1>
+        </td>
+      </tr>
+      <tr>
+        <th bgcolor="#cccccc" colspan="2">Nome</th>
+      </tr>
+
+      <% for regiao in @regiaos %>
+       <tr>
+        <td colspan="2"><%=h regiao.nome %></td>
+       </tr>
+       <tr>
+         <td bgcolor="#cccccc"><%= link_to 'Exibir', regiao %></td>
+        <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_regiao_path(regiao) %></td>
+        <td bgcolor="#cccccc"><%= link_to 'Apagar', regiao, :confirm => 'Tem certeza?', :method => :delete %></td>
+       </tr>
+      <% end %>
+    </table>
+   </fieldset>
+  
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  <br/>
+  <br/>
+
+  <div id="submenu">
+    <ul>
+      <li><%= link_to 'Cadastrar', new_regiao_path %></li>
+      
+    </ul>
+  </div>
+</div>
+</div>

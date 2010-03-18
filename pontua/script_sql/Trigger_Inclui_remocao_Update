@@ -1,0 +1,46 @@
+drop trigger if exists remocao_professor_update;
+delimiter $$
+ CREATE TRIGGER remocao_professor_update
+     BEFORE UPDATE ON remocaos
+     FOR EACH ROW
+    BEGIN
+	IF new.remocao_efetivada = 1 then
+                SET new.flag_remocao_finalizada = 1;
+		SET NEW.STATUS = 0;
+                SELECT sede_id INTO @sede_id_ant FROM professors WHERE id = NEW.professor_id;
+                UPDATE professors SET sede_id_ant = @sede_id_ant WHERE id = NEW.professor_id;
+		UPDATE professors SET sede_id = new.unidade_id where id = new.professor_id;
+
+
+	ELSE
+                SET new.flag_remocao_finalizada = 1;
+                update acum_trabs set verifica = 2 where professor_id = new.professor_id;
+		SET NEW.STATUS = 0;
+		UPDATE acum_trabs SET valor_unid = old.valor_unid where professor_id = new.professor_id;
+		UPDATE trabalhados SET unidade = old.unidade_atual where professor_id = new.professor_id and ano = year(curdate()) and ano_letivo = year(curdate());
+		UPDATE trabalhados SET unidade = old.unidade_ant where professor_id = new.professor_id and ano = (year(curdate()) - 1) and ano_letivo = year(curdate());
+		UPDATE acum_trabs set tot_acum_unid = old.tot_acum_unid where professor_id = new.professor_id;
+
+	select pont_base_trab,pont_base_efet,pont_base_rede,pont_base_unid into @pbt,@pbe,@pbr,@pbu from acum_trabs where professor_id = new.professor_id;
+	select tot_acum_ant_trab,tot_acum_ant_efet,tot_acum_ant_rede,tot_acum_ant_unid into @tac,@tae,@tar,@tau from acum_trabs where professor_id = new.professor_id;
+	select dias_trab into @dias_trab_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id;
+	select dias_trab into @dias_trab_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id;
+	select dias_efetivos into @dias_efet_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id;
+	select dias_efetivos into @dias_efet_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id;
+	select dias_rede into @dias_rede_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id;
+	select dias_rede into @dias_rede_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id;
+	select dias_unidade into @dias_unid_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id;
+	select dias_unidade into @dias_unid_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id;
+
+	SET @valor_trab = (@pbt * (@tac + @dias_trab_ant + @dias_trab_at));
+	SET @valor_efet = (@pbe * (@tae + @dias_efet_ant + @dias_efet_at));
+	SET @valor_rede = (@pbr * (@tar + @dias_rede_ant + @dias_rede_at));
+	SET @valor_unid = (@pbu * (@tau + @dias_unid_ant + @dias_unid_at));
+        set new.total = (@valor_trab + @valor_efet + @valor_rede + @valor_unid);
+
+	UPDATE professors SET total_trabalhado = (@valor_trab + @valor_efet + @valor_rede + @valor_unid) where id = new.professor_id;
+
+	END IF;
+
+
+    END$$

@@ -1,0 +1,28 @@
+Unable to load role_user, underlying cause no such file to load -- role_user 
+
+ /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:155:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:262:in `require_or_load'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:221:in `depend_on'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:133:in `require_dependency'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/fixtures.rb:856:in `try_to_load_dependency'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/fixtures.rb:871:in `require_fixture_classes'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/fixtures.rb:868:in `each'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/fixtures.rb:851:in `fixtures'
+/home/alexandre/pontuacao_v2/pontuacao/test/test_helper.rb:38
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/alexandre/pontuacao_v2/pontuacao/test/functional/home_controller_test.rb:1
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:93:in `require_file'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:109:in `add_to_suites'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:108:in `each'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:108:in `add_to_suites'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:66:in `parse_args'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:59:in `loop'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:59:in `parse_args'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:166:in `run_mediator'
+/home/alexandre/.netbeans/6.5/nb_test_mediator.rb:279

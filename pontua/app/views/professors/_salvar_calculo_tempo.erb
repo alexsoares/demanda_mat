@@ -1,0 +1,24 @@
+<% form_for(@acum) do |f| %>
+  <%= f.error_messages %>
+    <%= f.hidden_field(:professor_id, :value => $professor)   %>
+    <%= f.hidden_field(:tot_acum_trab, :value => $total_trab_g) %>
+    <%= f.hidden_field(:tot_acum_efet, :value => $total_efet_g) %>
+    <%= f.hidden_field(:tot_acum_rede, :value => $total_rede_g) %>
+    <%= f.hidden_field(:tot_acum_unid, :value => $total_unid_g) %>
+    <%= f.hidden_field(:tot_geral_trab, :value => $total_trab_g) %>
+    <%= f.hidden_field(:tot_geral_efet, :value => $total_efet_g) %>
+    <%= f.hidden_field(:tot_geral_rede, :value => $total_rede_g) %>
+    <%= f.hidden_field(:tot_geral_unid, :value => $total_unid_g) %>
+
+    <%= f.hidden_field(:pont_base_trab, :value => $pont_trab) %>
+    <%= f.hidden_field(:pont_base_efet, :value => $pont_efet) %>
+    <%= f.hidden_field(:pont_base_rede, :value => $pont_rede) %>
+    <%= f.hidden_field(:pont_base_unid, :value => $pont_unid) %>
+    <%= f.hidden_field(:valor_trab, :value => $total_trab) %>
+    <%= f.hidden_field(:valor_efet, :value => $total_efet) %>
+    <%= f.hidden_field(:valor_rede, :value => $total_rede) %>
+    <%= f.hidden_field(:valor_unid, :value => $total_unid) %>
+  <p>
+    <%= f.submit "Salvar", :controller => 'acum_trabs/edit' %>
+  </p>
+<% end %>

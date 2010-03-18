@@ -1,0 +1,12 @@
+  <fieldset>
+    <legend><font size=4>Matrícula: <%= collection_select :professor, :professor_id, @prof, :id, :matricula, :include_blank => ' -- Selecione -- ' %>
+       <%= observe_field 'professor_professor_id',
+         :frequency => 0.5,
+         :update => "dados_professor",
+         :with => :professor_professor_id,
+         :url => { :action => 'reiniciar' } %></font></legend>
+
+
+    <div id="dados_professor"></div>
+
+    </fieldset><br />

@@ -1,0 +1,50 @@
+drop trigger if exists totaliza_pontos_update
+delimiter !!
+ CREATE TRIGGER totaliza_pontos_update
+     BEFORE UPDATE ON acum_trabs
+     FOR EACH ROW
+    BEGIN
+
+	if new.verifica <> 2 then
+		select dias_trab into @dias_trab_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id and flag = 0;
+		select dias_trab into @dias_trab_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id and flag = 0;
+		SET NEW.tot_acum_trab = ((old.tot_acum_trab + @dias_trab_ant + @dias_trab_at));
+	
+		select dias_efetivos into @dias_efet_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id and flag = 0;
+		select dias_efetivos into @dias_efet_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id and flag = 0;
+		SET NEW.tot_acum_efet = ((old.tot_acum_efet + @dias_efet_ant + @dias_efet_at));
+	
+		select dias_rede into @dias_rede_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id and flag = 0;
+		select dias_rede into @dias_rede_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id and flag = 0;
+		SET NEW.tot_acum_rede = ((old.tot_acum_rede + @dias_rede_ant + @dias_rede_at));
+	
+		select dias_unidade into @dias_unid_ant from trabalhados where ano = (year(curdate()) -1) and professor_id = NEW.professor_id and flag = 0;
+		select dias_unidade into @dias_unid_at from trabalhados where ano = year(curdate()) and professor_id = NEW.professor_id and flag = 0;
+		SET NEW.tot_acum_unid = ((old.tot_acum_unid + @dias_unid_ant + @dias_unid_at));
+	
+		SET NEW.tot_acum_ant_trab = old.tot_acum_trab;
+		SET NEW.tot_acum_ant_efet = old.tot_acum_efet;
+		SET NEW.tot_acum_ant_rede = old.tot_acum_rede;
+		SET NEW.tot_acum_ant_unid = old.tot_acum_unid;
+
+		SET NEW.tot_geral_trab = (old.tot_acum_trab + @dias_trab_ant + @dias_trab_at);
+		SET NEW.tot_geral_efet = (old.tot_acum_efet + @dias_efet_ant + @dias_efet_at);
+		SET NEW.tot_geral_rede = (old.tot_acum_rede + @dias_rede_ant + @dias_rede_at);
+		SET NEW.tot_geral_unid = (old.tot_acum_unid + @dias_unid_ant + @dias_unid_at);
+	
+		SET NEW.valor_trab = (old.pont_base_trab * (old.tot_acum_trab + @dias_trab_ant + @dias_trab_at));
+		SET NEW.valor_efet = (old.pont_base_efet * (old.tot_acum_efet + @dias_efet_ant + @dias_efet_at));
+		SET NEW.valor_rede = (old.pont_base_rede * (old.tot_acum_rede + @dias_rede_ant + @dias_rede_at));
+		SET NEW.valor_unid = (old.pont_base_unid * (old.tot_acum_unid + @dias_unid_ant + @dias_unid_at));
+	
+		UPDATE professors SET total_trabalhado = (new.valor_trab + new.valor_efet + new.valor_rede + new.valor_unid) where id = new.professor_id;
+	        UPDATE trabalhados SET flag = 1 WHERE  professor_id = new.professor_id;
+
+	end if;
+
+
+
+    END!!
+
+
+

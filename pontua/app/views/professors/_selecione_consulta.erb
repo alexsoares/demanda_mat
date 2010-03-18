@@ -1,0 +1,14 @@
+<div id="conteudo">
+
+    <h2 align="center">   Consultas</h2>
+
+<br/>
+
+| <%= link_to_remote('Pontuação Professor', :url => { :action => "consulta_ppu"}) %>
+| <%= link_to_remote('Pontuação por Unidade', :url => { :action => "consulta_pu"}) %>
+| <%= link_to_remote('Professores', :url => { :action => "consulta_tp"}) %>
+| <%= link_to_remote('Titulação Professor', :url => { :action => "consulta_pt"}) %>
+| <%= link_to_remote('Pontuacao Geral Professor', :url => { :action => "consulta_geral"}) %>
+| <%= link_to 'Voltar', professors_path %> |
+<hr align="left" width="54%" color=#9C9C9C size="3">
+</div>

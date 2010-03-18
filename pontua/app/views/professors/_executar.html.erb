@@ -1,0 +1,15 @@
+<div id="menu_principal">
+  <br>
+
+
+| <%= link_to ' Início' , root_path %>
+<%  if (current_user.has_role?('admin'))%>
+  | <%= link_to_remote('Novo Ano', :url => { :controller => "calculos", :action => "iniciar_ano", :confirm => 'O ano letivo será alterado para o proximo ano_exercício. Confirma?'}) %>
+<%  end %>
+| <%= link_to 'Contagem Dias', calculo_dias_path %>
+|  <%= link_to 'Calcular', acum_trabs_path %>
+| <%= link_to 'Voltar', professors_path %> |
+
+<hr align="left" width="25%" color=#9C9C9C size="3">
+
+</div>

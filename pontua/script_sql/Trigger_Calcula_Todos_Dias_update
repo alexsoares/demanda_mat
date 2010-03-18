@@ -1,0 +1,25 @@
+drop trigger if exists calculo_dias_update;
+delimiter $$
+ CREATE TRIGGER calculo_dias_update
+     BEFORE UPDATE ON trabalhados
+     FOR EACH ROW
+     BEGIN
+	set @de = 0;
+        SET NEW.dias_trab = (new.dias - (new.f_abonada + new.atestado + new.f_justif + new.f_injustif + new.lic_saude + new.afastamento + new.outro_trab));
+	IF new.unidade = 0 then
+		SET NEW.dias_unidade = 0;
+	else
+		SET NEW.dias_unidade = new.unidade - (new.f_abonada + new.atestado + new.f_justif + new.f_injustif + new.lic_saude);
+	end if;
+	SET NEW.dias_rede = new.dias + new.outro_trab;
+	SELECT f_abonada into @f_abonada from trabalhados where professor_id = new.professor_id and ano = new.ano and ano_letivo = curdate();
+	SELECT atestado into @atestado from trabalhados where professor_id = new.professor_id and ano = new.ano and ano_letivo = curdate();
+	SELECT lic_saude into @lic_saude from trabalhados where professor_id = new.professor_id and ano = new.ano and ano_letivo = curdate();
+
+	SET @de = ((new.f_abonada + @f_abonada) + (new.atestado + @atestado) + (new.lic_saude + @lic_saude)); 
+	IF @de <= 15 then
+		SET NEW.dias_efetivos = new.dias - (new.f_justif + new.f_injustif + new.afastamento);
+	ELSE
+		SET NEW.dias_efetivos = new.dias - (new.f_abonada + new.atestado + new.lic_saude + new.f_justif + new.f_injustif + new.afastamento);
+	END IF;
+     END$$
