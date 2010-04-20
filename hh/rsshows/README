@@ -1,0 +1,11 @@
+A idéia se consiste no seguinte: um sistema que busque em tempo real no EzRSS (feed rss disponiblizado para séries do EzTV.it) dados das séries favoritas do usuário.
+
+A aplicação consiste nos seguintes módulos:
+
+ - list: lista todas as séries cadastradas
+ - search - lista todas as séries disponíveis (baseado no ezrss)
+ - add - adiciona série
+ - remove - remove série
+ - last - verifica qual foi o último episódio visto de determinada série ou adiciona o último episódio visto para que o sistema tome conta apartir de tal ponto dos novos episódios disponíveis
+ - update - atualiza lista de séries e exibe uma lista com novos episódios disponíveis (baseado no "comando" last)
+ - get - faz o download dos .torrent dos novos episódios disponíveis
