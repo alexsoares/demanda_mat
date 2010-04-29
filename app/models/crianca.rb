@@ -21,6 +21,23 @@ class Crianca < ActiveRecord::Base
     self.tel1.empty?
   end
 
+  
+  def self.nome_unidade(unidade)
+    Unidade.find(unidade).nome
+  end
+
+  def self.todas_crianca_por_unidade(unidade)
+    Crianca.find(:all, :conditions => ['option1 = ?', unidade])
+  end
+
+  def self.matriculas_crianca_por_unidade(unidade)
+    Crianca.find(:all, :conditions => ['option1 = ? and matricula = 1',unidade])
+  end
+
+  def self.nao_matriculas_crianca_por_unidade(unidade)
+    Crianca.find(:all, :conditions => ['option1 = ? and matricula <> 1',unidade])
+  end
+
 
   def check_matricula
 
@@ -181,7 +198,7 @@ class Crianca < ActiveRecord::Base
     if grupo_id == 0 or grupo_id.nil? then
       return 'NÃO CLASSIFICAVEL - FORA DO LIMITE DE IDADE'
     else
-      return Grupo.find_by_id(grupo_id).descricao
+      return grupo.descricao
     end
   end
 
@@ -189,7 +206,7 @@ class Crianca < ActiveRecord::Base
     if option1 == 0 or option1 == nil then
        return 'NAO REALIZADA'
     else
-       return Unidade.find_by_id(option1).nome
+       return Unidade.find(option1).nome
     end
   end  
 

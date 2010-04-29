@@ -44,6 +44,8 @@ class User < ActiveRecord::Base
     save(false)
   end
 
+  before_save :associa_role_padrao
+  
   def active?
     # the existence of an activation code means they have not activated yet
     activation_code.nil?
@@ -112,8 +114,16 @@ class User < ActiveRecord::Base
     end
     
     def make_activation_code
-
       self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
     end
-    
+
+    def associa_role_padrao
+      @roles_user = RolesUser.new
+      @roles_user.role_id = 3
+      @roles_user.user_id = self.id
+      @roles_user.save
+
+      self.activated_at = Time.now.utc
+    end
+
 end

@@ -1,9 +1,20 @@
-<div id="fundo_menu">
-<legend>
-<td>| <%= link_to_remote('Atualizar Grupo', :url => { :action => "confirma"}) %></td>
-<td>| <%= link_to 'Verificar Log', logs_path %>|</td>
-<td> <%= link_to 'Voltar', criancas_path %>|</td>
-</legend>
-<hr align="left" width="60%" color=#9C9C9C size="3"
-</div>
-<div id="reordenar"></div>
+<li><%= link_to_remote('Atualizar Grupo', :url => { :controller => 'criancas',:action => "atualiza_grupo"}) %></li>
+<li><%= link_to 'Verificar Log', logs_path %></li>
+<br/>
+<br/>
+<br/>
+<hr>
+
+<table>
+  <tr>
+    <td align="center">
+      <div id="reordenar"></div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <div id="confirma"></div>
+    </td>
+  </tr>
+</table>
+

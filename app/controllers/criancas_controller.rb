@@ -20,6 +20,16 @@ class CriancasController < ApplicationController
       format.xml  { render :xml => @criancas }
     end
   end
+  
+  def relatorio_crianca
+    @crianca = "Filtre pela criança desejada"
+  end
+
+  def search
+    @crianca = Crianca.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"], :include => ['grupo','unidade'])
+    render :action => 'relatorio_crianca'
+  end
+
 
   # GET /criancas/1
   # GET /criancas/1.xml
@@ -31,8 +41,6 @@ class CriancasController < ApplicationController
       format.xml  { render :xml => @crianca }
     end
   end
-
-
 
   # GET /criancas/new
   # GET /criancas/new.xml
@@ -47,7 +55,9 @@ class CriancasController < ApplicationController
 
   # GET /criancas/1/edit
   def edit
+
     @crianca = Crianca.find(params[:id])
+    @unidade_matricula = Unidade.find_by_sql("select u.id, u.nome from unidades u right join criancas c on u.id in (c.option1, c.option2, c.option3, c.option4) where c.id = " + (@crianca.id).to_s)
     $id_crianca = params[:id]
     $nome = params[:nome]
   end
@@ -110,31 +120,6 @@ class CriancasController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
-   #Inicialização variavel / combobox grupo
-
-  def load_grupos
-    @grupos =  Grupo.find(:all, :order => "nome")
-  end
-
-  def load_regiaos
-    @regiaos =  Regiao.find(:all, :order => "nome")
-  end
-
-  def load_unidades
-    @unidades =  Unidade.find(:all, :order => "nome")
-  end
-
-  def load_criancas
-    @criancas = Crianca.find(:all, :order => "nome ASC")
-  end
-
-  def load_criancas_mat
-    @criancasmat = Crianca.find(:all, :conditions => ["matricula = 0" ], :order => "nome ASC")
-  end
-
-
-
 
   def autentica_matricula
     $unidade_matricula = params[:crianca_unidade_matricula]
@@ -284,35 +269,35 @@ class CriancasController < ApplicationController
 
   def atualiza_grupo
     @atualiza_grupo = Crianca.find(:all)
-    $contador = 0
-    $contador2 = 0
-    $contador3 = 0
-    $contador4 = 0
-    $contador5 = 0
-    $contador6 = 0
-    $contador7 = 0    
+    contador = 0
+    contador2 = 0
+    contador3 = 0
+    contador4 = 0
+    contador5 = 0
+    contador6 = 0
+    contador7 = 0    
     for at_grupo in @atualiza_grupo
       dias = Date.today - at_grupo.nascimento
       if (((0 >= dias) and (dias < 366)) and at_grupo.grupo_id != 1) then
-        $contador = $contador + 1
+        contador = contador + 1
       else
         if (((dias > 365) and (dias < 577)) and at_grupo.grupo_id != 2) then
-          $contador2 = $contador2 + 1
+          contador2 = contador2 + 1
         else
           if (((dias > 576) and (dias < 851)) and at_grupo.grupo_id != 3) then
-            $contador3 = $contador3 + 1
+            contador3 = contador3 + 1
           else
             if (((dias > 850) and (dias < 1096)) and at_grupo.grupo_id != 4) then
-              $contador4 = $contador4 + 1
+              contador4 = contador4 + 1
             else
               if (((dias > 1095) and (dias < 1276)) and at_grupo.grupo_id != 5) then
-                $contador5 = $contador5 + 1
+                contador5 = contador5 + 1
               else
                 if (((dias > 1275) and (dias < 1641)) and at_grupo.grupo_id != 6) then
-                  $contador6 = $contador6 + 1
+                  contador6 = contador6 + 1
                 else
                   if( ((dias > 1640) and (dias < 2006)) and at_grupo.grupo_id != 7) then
-                    $contador7 = $contador7 + 1
+                    contador7 = contador7 + 1
                   end
                 end
               end
@@ -327,19 +312,45 @@ class CriancasController < ApplicationController
     @reclassifica.data = (Time.now().strftime("%d/%m/%y %H:%M")).to_s
     @reclassifica.crianca_id = 0
     @reclassifica.save
-    Crianca.connection.execute("CALL atualiza_grupo")
+
+    mystring = <<-HEREDOC
+    <br/>
+    <h3>Contabilidade Grupos após esta ação</h3>
+    <br/>
+    
+    Para grupo BI serão realocado(s) <strong><font color="red">#{contador.to_s}</font></strong> criança(s).
+    Para grupo BII serão realocado(s) <strong><font color="red">#{contador2.to_s}</font></strong> criança(s).
+    Para grupo BIII serão realocado(s) <strong><font color="red">#{contador3.to_s}</font></strong> criança(s).
+    Para grupo MI serão realocado(s)  <strong><font color="red">#{contador4.to_s}</font></strong> criança(s).
+    Para grupo MII serão realocado(s)  <strong><font color="red">#{contador5.to_s}</font></strong> criança(s).
+    Para grupo NI serão realocado(s)  <strong><font color="red">#{contador6.to_s}</font></strong> criança(s).
+    Para grupo NII serão realocado(s)  <strong><font color="red">#{contador7.to_s}</font></strong> criança(s).
+    
+HEREDOC
+    
+
    render :update do |page|
-      page.replace_html 'reordenar', :text => 'Para grupo BI foi(ram) realocado(s) ' + $contador.to_s +  ' criança(s), Para grupo BII foi(ram) realocado(s) ' + $contador2.to_s + ' criança(s), Para grupo BIII foi(ram) realocado(s) ' +  $contador3.to_s + ' criança(s), Para grupo MI foi(ram) realocado(s)  ' + $contador4.to_s + ' criança(s), Para grupo MII foi(ram) realocado(s)  ' + $contador5.to_s + ' criança(s),  Para grupo NI foi(ram) realocado(s)  ' + $contador6.to_s + ' criança(s),  Para grupo NII foi(ram) realocado(s)  ' + $contador7.to_s + ' criança(s).'
+      page.replace_html 'reordenar', :text => mystring
+      page.replace_html 'confirma', :partial => 'reordenar_criancas'
    end
 
  end
 
+  def efetiva_realocacao
+   Crianca.connection.execute("CALL atualiza_grupo")
+   render :update do |page|
+      page.replace_html 'reordenar', :text => ''
+      page.replace_html 'confirma', :text => "<strong>Processo concluído com sucesso</strong>"
+   end
+
+  end
 
   def config
     render :partial => 'configuracao'
   end
 
   def sobresis
+    
     render :partial => 'sobre'
   end
 
@@ -390,12 +401,20 @@ class CriancasController < ApplicationController
     end
   end
 
-  def grupo_crianca
+  def grupo_crianca      
       @zero = Grupo.find_by_id(params[:crianca_grupo_id])
+      @unidades = Unidade.find :all, :conditions => {:tipo => params[:crianca_grupo_id]}
       if @zero.nil? then
-        render :text   => ''
+        render :update do |page|
+          page.replace_html '#region', :partial => 'regiao_unidade'
+          page.replace_html 'descricao', :text => ''
+        end
       else
-        render :text   =>  Grupo.find_by_id(params[:crianca_grupo_id]).descricao
+
+        render :update do |page|
+          page.replace_html 'descricao', :text => Grupo.find_by_id(params[:crianca_grupo_id]).descricao
+        end
+
      end
   end
 
@@ -416,6 +435,7 @@ class CriancasController < ApplicationController
   end
 
   def rg
+    
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
     @u = Unidade.count :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
     if @u == 2 then
@@ -477,20 +497,44 @@ class CriancasController < ApplicationController
 
  def verifica_data
    if not params[:crianca_nascimento_3i].nil? then
-     $ano = params[:crianca_nascimento_3i].to_s
+     ano = params[:crianca_nascimento_3i].to_s
    end
    if not params[:crianca_nascimento_1i].nil? then
-     $dia = params[:crianca_nascimento_1i].to_s
+     dia = params[:crianca_nascimento_1i].to_s
    end
    if not params[:crianca_nascimento_2i].nil? then
-     $mes = params[:crianca_nascimento_2i].to_s
+     mes = params[:crianca_nascimento_2i].to_s
    end
-   $data = $dia.to_s + " " + $mes.to_s + " " + $ano.to_s
-
-   
-   render :text => $data.to_s 
+   data = dia.to_s + " " + mes.to_s + " " + ano.to_s  
+   render :text => data.to_s 
 
  end
+
+
+
+ protected
+    #Inicialização variavel / combobox grupo
+
+  def load_grupos
+    @grupos =  Grupo.find(:all, :order => "nome")
+  end
+
+  def load_regiaos
+    @regiaos =  Regiao.find(:all, :order => "nome")
+  end
+
+  def load_unidades
+    @unidades =  Unidade.find(:all, :order => "nome")
+
+  end
+
+  def load_criancas
+    @criancas = Crianca.find(:all, :order => "nome ASC")
+  end
+
+  def load_criancas_mat
+    @criancasmat = Crianca.find(:all, :conditions => ["matricula = 0" ], :order => "nome ASC")
+  end
 
 
 

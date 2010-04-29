@@ -4,10 +4,10 @@ display: none;
 }
 </style>
 <div id="conteudo">
-<div id="topo">
-<h2 align="right">Log's de Ação - S I S D E M A N  --  V1.5       .</h2>
-<h4 align="right"> <font size="2"> Americana <%= Time.now.strftime("%d de %B de %Y - %H:%M ") %>horas</font></h4>
-</div>
+<br/>
+<h2 align="center">Log's de Ação - S I S D E M A N  --  V1.5       .</h2>
+<h4 align="center"> <font size="2"> Americana <%= Time.now.strftime("%d de %B de %Y - %H:%M ") %>horas</font></h4>
+
 <br/>
 <br/>
 <table width="30%">
@@ -24,7 +24,7 @@ display: none;
 <div class="botao">
     <table width="100%">
     <tr>
-      |<%= link_to 'Voltar', criancas_path %>|
+      <%= link_to_remote('Configuração', :update => 'menu',:url => { :action => "config", :controller => 'criancas'}) %>
     </tr>
   </table>
 

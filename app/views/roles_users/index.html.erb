@@ -1,59 +1,19 @@
 <div id="conteudo">
-  <div id="topo"><h1 align="right">Gerenciamento de Usuários</h1></div>
- <table width="100%" >
-    <%if logged_in? then%>
-
-      <td width="55%">
-                    Usuário: <font size="4" color="green"><%= current_user.login %> - </font>
-            <% if current_user.has_role?('admin') %>
-              Acesso de Administrador do Sistema
-            <%else%>
-              <% if current_user.has_role?('seduc') %>
-               Acesso Secretaria de Educação
-              <%else%>
-                <% if current_user.has_role?('externo') %>
-                  Acesso de Externo
-                <%else%>
-                  <%if current_user.has_role?('escola') then%>
-                    <td align="center">Usuário pertencente ao grupo de diretores(escola). Acesso Diretor.</td>
-                  <%else%>
-                    <%if current_user.has_role?('escriturario') then%>
-                      <td align="center">Usuário pertencente ao grupo escriturario. Acesso Secretaria de escola.</td>
-                    <%end%>
-                  <%end%>
-                <%end%>
-              <%end%>
-            <%end%>
-
-      </td>
-
-            <td width="45%" align="right">
-              <%= link_to '|Sair|', logout_path %>
-              <%= link_to h(current_user.login.capitalize), user_path(current_user) %><font color="blue">|</font><br/>
-</td>
-    <%else%>
-      <td><%= link_to '|Entrar|', login_path %></td>
-    <%end%>
-
-</table>
+  <h1 align="center">Gerenciamento de Usuários</h1>
+  <br/>
+ |<%= link_to 'Associar', new_roles_user_path %>
 
 <br/>
-
-  <div id="conteudo">
-
-|<%= link_to 'Associar', new_roles_user_path %>
-| <%= link_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %> |
-
-<br/>
-<div id="conteudo">
+<div id="conteudo1">
 <table border="1" width="80%" frame="box" rules="all">
+  
   <tr>
         <td width="100%" colspan="4" align="center"><h1>Listagem Usuários Associados</h1></td>
   </tr>
   <tr>
-    <th>Login</th>
-    <th>Acesso de</th>
-    <th>Descricao</th>
+    <th bgcolor="gray">Login</th>
+    <th bgcolor="gray">Acesso de</th>
+    <th bgcolor="gray">Descricao</th>
   </tr>
 <% for role_user in @role_users %>
   <tr>
@@ -80,9 +40,9 @@
     <%end%>
   </tr>
   <tr>
-    <td>| <%= link_to 'Exibir', role_user %>
-    | <%= link_to 'Alterar', edit_roles_user_path(role_user) %>
-    | <%= link_to 'Apagar', role_user, :confirm => 'Confirma?', :method => :delete %> |</td>
+    <td colspan="2" bgcolor="white">| <%= link_to 'Exibir', role_user %></td>
+    <td>| <%= link_to 'Alterar', edit_roles_user_path(role_user) %></td>
+    <td>| <%= link_to 'Apagar', role_user, :confirm => 'Confirma?', :method => :delete %> |</td>
   </tr>
 <% end %>
 
@@ -93,5 +53,4 @@
 |<%= link_to 'Associar', new_roles_user_path %>
 | <%= link_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %> |
 
-</div>
 </div>

@@ -1,42 +1,43 @@
-| <%= link_to_remote('Versão para impressão', :update => "listagem", :url => { :action => "versao_impressao_todas"}) %> 
-| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
+<style media="print">
+  .botao {
+    display: none;
+  }
+</style>
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+</div>
 
 <%$teste=0%>
 <div id="contador"></div>
 <br/><br/>
 <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
     <tr>
-
-    <center><th bgcolor="#cccccc">Nome</th></center>
-    <th bgcolor="#cccccc">Data Nascimento</th>
-    <th bgcolor="#cccccc">Nome Mãe</th>
-
-    <th bgcolor="#cccccc">Cadastrado em</th>
-
-    <th bgcolor="#cccccc">Bairro</th>
-    <th bgcolor="#cccccc">Fone1</th>
-    <th bgcolor="#cccccc">Resp</th>
-    <th bgcolor="#cccccc">Trabalha</th>
-    <th bgcolor="#cccccc">Opção 1</th>
-    <th bgcolor="#cccccc">Opção 2</th>
-    <th bgcolor="#cccccc">Classificação</th>
-    <th bgcolor="#cccccc">Status</th>
-    <th bgcolor="#cccccc">Unidade Matricula</th>
-    <th bgcolor="#cccccc">Filho Servidor Publico</th>
-    <th bgcolor="#cccccc">Possui Irmão(s)</th>
-    <th bgcolor="#cccccc">Transferido</th>
-    <th bgcolor="#cccccc">Histórico Contatos</th>
+      <th align="center" bgcolor="white">Nome</th>
+      <th bgcolor="white">Data Nascimento</th>
+      <th bgcolor="white">Nome Mãe</th>
+      <th bgcolor="white">Cadastrado em</th>
+      <th bgcolor="white">Bairro</th>
+      <th bgcolor="white">Fone1</th>
+      <th bgcolor="white">Resp</th>
+      <th bgcolor="white">Trabalha</th>
+      <th bgcolor="white">Opção 1</th>
+      <th bgcolor="white">Opção 2</th>
+      <th bgcolor="white">Classificação</th>
+      <th bgcolor="white">Status</th>
+      <th bgcolor="white">Unidade Matricula</th>
+      <th bgcolor="white">Filho Servidor Publico</th>
+      <th bgcolor="white">Possui Irmão(s)</th>
+      <th bgcolor="white">Transferido</th>
+      <th bgcolor="white">Histórico Contatos</th>
 
     </tr>
 
 <% for crianca in @crianca %>
   <tr>
-    <p><td><center><%=h crianca.nome %></center></td>
+    <td><center><%=h crianca.nome %></center></td>
     <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
     <td><center><%=h crianca.mae %></center></td>
-
     <td><center><%=h crianca.created_at.strftime("%d/%m/%y %H:%M") %></center></td>
-
     <td><center><%=h crianca.bairro %></center></td>
     <td><center><%=h crianca.tel1 %></center></td>
     <td><center><%=h crianca.parentesco %></center></td>
@@ -45,15 +46,15 @@
     <td><center><%=h crianca.opcao2 %></center></td>
     <td><center><%=h crianca.onde_classifica %></center></td>
     <td><center><%=h crianca.conf_status %></center></td>
-<% if crianca.onde_matricula.nil? %>    
-<td><center><%=h crianca.onde_matricula %></center></td>
-<%else%>
-<td><center><%=h crianca.onde_matricula %></center></td>
-<%end%>
+    <% if crianca.onde_matricula.nil? %>
+      <td><center><%=h crianca.onde_matricula %></center></td>
+    <%else%>
+      <td><center><%=h crianca.onde_matricula %></center></td>
+    <%end%>
     <td><center><%=h crianca.s_p.upcase %></center></td>
     <td><center><%=h crianca.gemeos%></center></td>
     <td><center><%=h crianca.transferido.upcase %></center></td>
-    <td><center><%=h crianca.historico_contato %></center></td></p>
+    <td><center><%=h crianca.historico_contato %></center></td>
 
   </tr>
   <tr>
@@ -61,28 +62,22 @@
     <% $flag_imp = 0 %>
     <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
     <div id="negrito">
-       <td bgcolor="#cccccc"><%= link_to 'Exibir', crianca %></td>
-       <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
-       <td bgcolor="#cccccc"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
+       <td bgcolor="white"><%= link_to 'Exibir', crianca %></td>
+       <td bgcolor="white"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+       <td bgcolor="white"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
     </div>
-    
     <%else%>
-    <%  if current_user.has_role?('escola') then%>
-    <div id="negrito">
-       <td bgcolor="#cccccc"><%= link_to 'Exibir', crianca %></td>
-       <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
-
-
-    </div>
-   <%end%>
-  <%end%>
+      <%  if current_user.has_role?('escola') then%>
+        <div id="negrito">
+          <td bgcolor="white"><%= link_to 'Exibir', crianca %></td>
+          <td bgcolor="white"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+        </div>
+      <%end%>
+    <%end%>
   </tr>
 <% end %>
-
 </table>
 <br/>
-
-
 <tr>
 <p><font size=3>
 
@@ -91,6 +86,8 @@
 </font></p>
 </tr>
 <br/>
-| <%= link_to_remote('Versão para impressão', :update => "listagem", :url => { :action => "versao_impressao_todas"}) %> 
-| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+</div>
+
 

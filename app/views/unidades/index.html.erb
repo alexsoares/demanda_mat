@@ -1,46 +1,57 @@
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
 <div id="conteudo">
-  <div id="topo">
-    <h1 align="right">Relatório de Unidades</h1>
-    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.1.5       . </font></h4>
-  </div><br/>
-  | <%= link_to 'Cadastrar', new_unidade_path %> |
-  <a href="javascript:window.print();">Imprimir</a>
-  | <%= link_to ' Inicio' , root_path %> |
-  <br/><br/>
+  <div class="botao">
+    <br/>    
+    <input type="Button" Value="Imprimir" onclick="Imprimir()">
+    <br/>
+  </div>
+
+     <table width="100%">
+      <tr>
+        <td width="50%"></td>
+        <td width="50%" align="right">
+          <% form_tag unidades_path, {:method => 'get', :action => 'search'} do %>
+           <p>
+              <%= hinted_text_field_tag(:search, params[:search], "Entre nome", :size => 30) %>
+              <%= submit_tag "Filtrar", :name => nil %>
+           </p>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+
   <fieldset>
    <legend><font size=4>Unidades</font></legend>
-   <table border ="1" cellpadding="5" cellspacing="1" width="40%" >
+   <table border ="1" cellpadding="5" cellspacing="1" width="100%" >
       <tr>
-        <th bgcolor="#cccccc">Localização</th>
-        <th bgcolor="#cccccc">Nome</th>
-        <th bgcolor="#cccccc">Tipo de Ensino</th>
+        <th bgcolor="gray">Localização</th>
+        <th bgcolor="gray">Nome</th>
+        <th bgcolor="gray">Tipo de Ensino</th>
       </tr>
-      <% for unidade in @unidades %>
-
+      <%for unidade in @unidades%>
         <tr>
           <td><center><%=h unidade.regiao.nome %></center></td>
           <td><center><%=h unidade.nome %></center></td>
           <td><center><%=h unidade.nome_tipo %></center></td>
-         </tr>
-         <tr>
-          <td bgcolor="#cccccc"><%= link_to 'Exibir', unidade %></td>
-          <td bgcolor="#cccccc"><%= link_to 'Alterar', edit_unidade_path(unidade) %></td>
-          <td bgcolor="#cccccc"><%= link_to 'Apagar', unidade, :confirm => 'Tem certeza?', :method => :delete %></td>
-        </tr>
-      
-         <td>
-           
-         </td>
-
+       </tr>
+        <tr>
+          <div class="botao">
+          <td bgcolor="white"><%= link_to '|Exibir', unidade %></td>
+          <td bgcolor="white"><%= link_to '|Alterar', edit_unidade_path(unidade) %></td>
+          <td bgcolor="white"><%= link_to '|Apagar|', unidade, :confirm => 'Tem certeza?', :method => :delete %></td>
+          </div>
+        </tr>        
       <% end %>
     </table>
   </fieldset><br />
 
-  | <%= link_to 'Cadastrar', new_unidade_path %> |
-  <a href="javascript:window.print();">Imprimir</a>
-  | <%= link_to ' Inicio' , root_path %> |
+  <div class="botao">
+    <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  </div>
+</div>
 
-</div>
-<div id="rodape">
-  © 2009 . Prefeitura de Americana - SEDUC - Todos os Direitos Reservados.
-</div>

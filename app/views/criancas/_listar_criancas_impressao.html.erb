@@ -16,9 +16,9 @@ display: none;
     <tr>
     <font style="font-size: 10pt"><u><b> Posição </b></u></font>
     <th>Nome</th>
-    <th>Data Nascimento</th>
+<!--    <th>Data Nascimento</th>!-->
     <th>Nome Mãe</th>    
-    <th>Cadastrado em</th>
+<!--    <th>Cadastrado em</th>!-->
     <th>Bairro</th>
     <th>Fone1</th>
     <th>Resp</th>
@@ -41,10 +41,10 @@ display: none;
     <br/>
     <center><%=h $teste + 1%></center>
     <p><td><center><%=h crianca.nome.upcase %></center></td>
-    <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
+<!--    <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td> !-->
     <td><center><%=h crianca.mae.upcase %></center></td>
 
-    <td><center><%=h crianca.created_at.strftime("%d/%m/%y %H:%M") %></center></td>
+<!--    <td><center><%=h crianca.created_at.strftime("%d/%m/%y %H:%M") %></center></td>!-->
     
     <td><center><%=h crianca.bairro.upcase %></center></td>
     <td><center><%=h crianca.tel1 %></center></td>

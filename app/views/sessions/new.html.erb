@@ -1,37 +1,30 @@
 <div id="conteudo">
-<div id="topo">
-    <h2 align="right">   Senha de Acesso    .</h2>
-    <h4 align="right"> <font   color="#ff0000"> S I S D E M A N D A --  Ver.1.5. </font></h4>
-   <br/>
-</div>
-<div id="menuINCLUIRus">
-    <%if logged_in? then%>
-<font color="white"><td><%= link_to '|Sair|', logout_path %></td></font>
-     <td>Está logado como: <%= current_user.name %></td>
+  <div id="position">
+  <%if logged_in? then%>
+      <font color="white"><td><%= link_to '|Sair|', logout_path %></td></font>
+      <td>Está logado como: <%= current_user.name %></td>
     <%else%>
-<font color="white"><td><%= link_to '|Incluir usuário|', signup_path %></td></font>
-      <td><%= link_to 'Entrar|', login_path %></td>
+      <font color="white"><td><%= link_to '|Incluir usuário|', signup_path %></td></font>
+        
     <%end%>
-</div>
 
-<div id="posicao">
- <p>
- <br/>
- <fieldset >
-  <h2 align="center"> <u>Senha de Acesso</u></h2>
+  </div>
+    <div id="img-login">
+	<div class="conteudo">
      <center>
-      <% form_tag session_path do -%>
+     <div id="teste">
+     <% form_tag session_path do -%>
           <p><label for="login">Usuário:</label><br/>
-          <div id="acertoTAG"> <%= text_field_tag 'login',nil%></div></p>
-
+           <%= text_field_tag 'login',nil%></p>
           <p><label for="password">Senha:</label><br/>
           <%= password_field_tag 'password' %></p>
 
-
-
-      <p><%= submit_tag 'Entrar' %></p>
+      <p class="button"><%= submit_tag 'Entrar' %></p>
      <% end -%>
+  
+
+     </div>
     </center>
-</fieldset>
-</div>
+	</div>
+    </div>
 </div>

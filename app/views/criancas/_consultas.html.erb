@@ -10,11 +10,12 @@ display: none;
 </style>
  <div class="botao">
 <center><h2>Qual consulta deseja executar?</h2></center>
+<br/>
 <div id="info">
 <center>
-<fieldset>
-<table rules="rows">
-  <table>
+
+<table rules="rows" border="1">
+  <table border="1">
 
 <script type="text/javascript">
 $(document).ready(function()
@@ -33,7 +34,7 @@ $(document).ready(function()
 });
 </script>
 
-<div style="float:left" > <!--Divisão principal-->
+<div style="float:left"> <!--Divisão principal-->
   <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
 		<p class="menu_head"> >> Demanda por Unidade << </p>
           <div class="menu_body">
@@ -69,9 +70,12 @@ $(document).ready(function()
              <p><font style="font-size: 12pt">Crianças  Matriculadas <%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></font></p>
              <p><font style="font-size: 12pt">Crianças  Não Matriculadas <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
            </div>
+           <br/>
+           <br/>
+           <br/>
+
   </div>
 </div>  <!--Encerramento da script dropdpwn !-->
-
 <!-- Observer da busca Grupo unidade - Busca II !-->
         <%= observe_field 'grupo_grupo_class_id',
            :frequency => 0.5,
@@ -102,10 +106,9 @@ $(document).ready(function()
            :update => "listagem",
            :url    => { :action => 'nome_crianca' },
            :with   => 'crianca_crianca_id' %>
+</table>
+</table>
 
-</table>
-</table>
-</fieldset>
 </center>
 <br/>
 </div>

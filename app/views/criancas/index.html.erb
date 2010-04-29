@@ -5,72 +5,22 @@ window.print();
 </script>
 <style media="print">
 .botao {
-display: none;
-}
+    display: none;
+  }
 </style>
+    
 <div id="conteudo">
-  <div id="topo">    
-      <h1  align="right"> S I S D E M A N  --  Ver. 1.5 </h1>
-        <h4 align="right"> <font   color="#ff0000"> S I S D E M A N  --  Ver.1.5       . </font></h4>
-  </div>
   <br/>
-     <table width="100%">
-    <%if logged_in? then%>
-
-      <td width="55%">
-                    Usuário: <font size="4" color="green"><%= current_user.login %> - </font>
-            <% if current_user.has_role?('admin') %>
-              Acesso de Administrador do Sistema
-            <%else%>
-              <% if current_user.has_role?('seduc') %>
-               Acesso da Secretaria de Educação
-              <%else%>
-                 <% if current_user.has_role?('externo') %>
-                  Acesso de Visitante
-                 <%else%>
-                   <% if current_user.has_role?('escola') %>
-                      Acesso diretor de escola
-                 <%else%>
-                   <% if current_user.has_role?('escriturario') %>
-                      Acesso secretaria de escola
-                   <%end%>
-
-                  <%end%>
-                <%end%>
-              <%end%>
-            <%end%>
-
-      </td>
-
-            <td width="45%" align="right">
-              <%= link_to '|Sair|', logout_path %>
-              <%= link_to h(current_user.login.capitalize), user_path(current_user) %><font color="blue">|</font><br/>
-</td>
-    <%else%>
-      <td><%= link_to '|Entrar|', login_path %></td>
-    <%end%>
-    </table>
-<br/>
-<br/>
-
  <div class="botao">
    <div id="menu">
       <%= render :partial => 'inicio'%>
-    </div>
-</div>
+      <script type="text/javascript" src="/javascripts/swfobject.js"></script>
 
-   <div id="consul">
    </div>
-  <br/>
-
+ </div>
+ <div id="consul"></div>
   <%= render :partial => 'estatistica'%>
-
 </div>
-<div id="Listagem">
-
-</div>
-<div id="rodape">
-  © 2009 . Prefeitura de Americana - SEDUC - Todos os Direitos Reservados.
-</div>
+<div id="Listagem"></div>
 
 

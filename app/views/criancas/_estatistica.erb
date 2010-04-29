@@ -8,33 +8,29 @@ window.print();
 display: none;
 }
 </style>
-
-<div id="estatistica">
 <div class="botao">
+<div id="estatistica" title="Estatistica">
+<div id="boxes">
+<div class="fixo">
+	<div class="titulo">
+	  <h6><b>Estatísticas</b></h6>
+	</div>
+    <div class="conteudo">
+		<p><font size=3>Crianças Cadastradas</font>
+		<font size=3><%= Crianca.c.length %></font></p>
 
-    <table  border="1" cellpadding="5px"align="rigth" frame="box" rules="rows">
-        <tr>
-          <td><font size=4><center><b>Estatísticas</b></center></font></td>
-       </tr>
-        <tr>
-           <center>
-             <td><font size=3>Total  Crianças  Cadastradas</font> </td>
-             <td><font size=3><%= Crianca.c.length%></font></td>
-           </center>
-        </tr>
-        <tr>
-           <center>
-             <td><font size=3>Total Crianças Matriculadas </font></td>
-             <td><font size=3><%= Crianca.b_u.length %></font></td>
-           </center>
-        </tr>
-        <tr>
-           <center>
-             <td><font size=3>Total Crianças Não Matriculadas </font></td>
-             <td><font size=3><%= Crianca.b_dm.length%></font></td>
-           </center>
-        </tr>
+   		<p><font size=3>Crianças Matriculadas</font>
+		<font size=3><%= Crianca.b_u.length %></font></p>
 
-    </table>
-  </div>
+		<p><font size=3>Crianças Não Matriculadas</font>
+		<font size=3><%= Crianca.b_dm.length %></font></p>
+	</div>
 </div>
+</div>
+</div>
+</div>
+
+
+
+
+

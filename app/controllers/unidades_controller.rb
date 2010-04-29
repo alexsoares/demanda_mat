@@ -7,7 +7,7 @@ require_role ["seduc","admin"]
   before_filter :nome_tipo
 
   def index
-    @unidades = Unidade.find(:all)
+    @unidades = Unidade.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +19,7 @@ require_role ["seduc","admin"]
   # GET /unidades/1.xml
   def show
     @unidade = Unidade.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @unidade }

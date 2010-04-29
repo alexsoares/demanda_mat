@@ -1,8 +1,9 @@
 <div id="conteudo">
- <div id="topo">
-   <h1 align="right">Cadastro de Crianças</h1>
-   <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  Ver. 1.5       . </font></h4>
- </div>
+   <br/>
+   <h1 align="center">Cadastro de Crianças</h1>
+   
+   <br/>
+ 
 
 
 <% form_for(@crianca) do |f| %>
@@ -12,6 +13,38 @@
    <legend><font size=4>Dados da Inscrição</font></legend>
    <table width="100%">
     <td width="60%">
+
+<!--
+Exemplo 1 - Calendar
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#datepicker").datepicker();
+  });
+  </script>
+<div type="text" id="datepicker"></div> 
+
+Exemplo 2 - Calendar
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker();
+	});
+	</script>
+
+
+
+<div class="demo">
+
+<p>Date: <input id="datepicker" type="text"></p>
+
+</div><End demo>
+
+<div style="display: none;" class="demo-description">
+
+<p>The datepicker is tied to a standard form input field.  Focus on the input (click, or use the tab key) to open an interactive calendar in a small overlay.  Choose a date, click elsewhere on the page (blur the input), or hit the Esc key to close. If a date is chosen, feedback is shown as the input's value.</p>
+
+</div>< End demo-description >
+!-->
+
      <table>
       <tr>
          <td><b><%= f.label :servidor_publico, 'Filho de servidor publico cuncursado?' %></b></td>
@@ -66,23 +99,17 @@
           </td>
        </tr>
        <tr>
+
+
+
+
+
          <td><b><%= f.label :nascimento, 'Data Nascimento' %></b></td>
-         <td><%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %>
-             <%= observe_field 'crianca_nascimento_3i',
-               :with => 'crianca_nascimento_1i',
-               :url => { :action => 'verifica_data'}%>
-             <%= observe_field 'crianca_nascimento_2i',
-               :with => 'crianca_nascimento_2i',
-               :url => { :action => 'verifica_data'}%>
-             <%= observe_field 'crianca_nascimento_1i',
-               :with => 'crianca_nascimento_3i',
-               :url => { :action => 'verifica_data'},
-               :update => 'data_invalida'%>
-         </td>
-         <td>
-              <div id="data_invalida"></div>
-         </td>
+         <!--<td><%= datepicker_tag(:crianca, :nascimento,{:size  => 10},{:changeYear => true, :yearRange => "'1990:2010'",:duration => "'slow'"}) %></td>!-->
+         <td>    <%= f.date_select(:nascimento, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 30)) %><BR /></td>
        </tr>
+
+
        <tr>
          <td><b><font color="red" size="5">*</font>Nome da Mãe</b></td>
          <td><%= f.text_field :mae%>
@@ -229,7 +256,6 @@
    </div>
   </fieldset>
  <br/>
- <fieldset>
    <script>
        $(document).ready(function()
          {
@@ -239,7 +265,8 @@
                });
          });
    </script>
-   <th><b>Possui necessidade especial?</b></th>
+  <fieldset>
+ <th><b>Possui necessidade especial?</b></th>
    <a href="#" id="dropdownbutton5"><%= f.check_box :n_especial %></a><th>SIM</th><br />
        <ul id="menu5" style="display:none">
          <th><b>Descreva a necessidade</b></th><br/>
@@ -256,6 +283,6 @@
   </fieldset>
  </p>
  <br/>
- | <%= link_to 'Voltar', criancas_path %> |
+ | <%= link_to 'Voltar', root_path %> |
 <% end %>
 </div>

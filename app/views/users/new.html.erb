@@ -1,17 +1,12 @@
-<div id="topo">
-    <h2 align="right">   Criação de Senha de Acesso    .</h2>
-    <h4 align="right"> <font   color="#ff0000"> S I S M E R E N D A --  Ver.1.5    . </font></h4>
-   <br/>
-</div>
 
-
-<div id="posicao">
+<div id="caixausuario">
+<div id="posicaousuario">
 <p>
-<br/>
+<br/><br/><br/><br/>
 
-<fieldset>
-  <h1 align="center"> <u>Senha de Acesso</u></h1>
-    <br/>
+
+  <h2 align="center"> <u>Criação de Senha de Acesso</u></h2>
+
    <%= error_messages_for :user %>
       <center>
        <% form_for :user, :url => users_path do |f| -%>
@@ -27,21 +22,26 @@
              <div id="aviso"></div>
        <p><%= submit_tag 'Increver-se' %></p>
       <% end -%>
+      
      </center>
-| <%=link_to 'Voltar', root_path%> |
-</fieldset>
+    <table width="100%">
+     <tr>
+       <td align="right">|<%= link_to 'Voltar', root_path %>|</td>
+     </tr>
+    </table>
+
+
 </div>
-<div id="obs">
+</div>
 <fieldset>
   <legend><font size=5>Observações:</font></legend>
    <div id="mensagem">
-     1. Ao criar um usuário utilize o padrão <b> função.nome </b>- <i>ex: diretor.fulano</i><br/>
+     1. Ao criar um usuário utilize o padrão <b> unidade.nome </b>- <i>ex: SEDUC.fulano</i><br/>
      2. Crie uma senha com no mínimo seis dígidos.<br/>
      3. A senha é responsabilidade do usuário. <br/>
      4. Todo usuário necessita de validação.<br>
      5. Ligue para Informática/SEDUC para validar usuário.<br/>
   </div>
 </fieldset>
-</div>
 
 

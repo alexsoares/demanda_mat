@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>S I S D E M A N : <%= controller.action_name %></title>
+    <%= stylesheet_link_tag 'scaffold' %>
+    <%= stylesheet_link_tag 'demanda1' %>
+    
+    <%= stylesheet_link_tag 'demanda1' %>
+    <%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'jquery-1.3.2.min' %>
+    <%= javascript_include_tag 'jquery-ui-1.7.2.custom.min' %>
+    <%= javascript_include_tag 'ui.datepicker-pt-BR' %>
+
+</head>
+<body>
+<div id="conteudo">
+<div id="topo">
+
+<h2 align="right">CONTROLE DE ACESSO - SISTEMA DE DEMANDA ESCOLAR</h2>
+<h4 align="right" style="color:red">S I S D E M A N -- Ver.2.0 . </h4>
+</div>
+</div>
+
+  <p style="color: green"><%= flash[:notice] %></p><%= yield  %>
+</body>
+<div id="rodape">
+  © 2009 . Prefeitura de Americana - SEDUC - Todos os Direitos Reservados.
+</div>
+</html>

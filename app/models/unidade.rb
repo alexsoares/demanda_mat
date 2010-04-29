@@ -1,5 +1,6 @@
 class Unidade < ActiveRecord::Base
   belongs_to :regiao
+  has_many :criancas
 
   def nome_tipo
 

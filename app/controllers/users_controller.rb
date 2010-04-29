@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
+  
   include AuthenticatedSystem
 
-
+  layout "cad_user"
   def index
 
   end

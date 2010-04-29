@@ -3,8 +3,8 @@ require_role ["seduc","admin"]
   # GET /regiaos
   # GET /regiaos.xml
   def index
-    @regiaos = Regiao.find(:all)
-
+    
+    @regiaos = Regiao.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @regiaos }
