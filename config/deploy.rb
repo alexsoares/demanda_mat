@@ -11,6 +11,8 @@ set :scm, :git
 server application, :app, :web, :db, :primary => true
 
 after "deploy:update_code", "deploy:custom_symlinks"
+after "deploy:symlink", "deploy:update_crontab"
+
 
  namespace :deploy do
    task :start do ; end
