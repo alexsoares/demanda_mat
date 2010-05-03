@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100202154711) do
+ActiveRecord::Schema.define(:version => 20100503133329) do
 
   create_table "criancas", :force => true do |t|
     t.string   "nome",              :limit => 50
@@ -55,6 +55,25 @@ ActiveRecord::Schema.define(:version => 20100202154711) do
     t.datetime "updated_at"
   end
 
+  create_table "documents", :force => true do |t|
+    t.string   "titulo"
+    t.text     "descricao"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
+
+  create_table "faqs", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "duvida"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "grupos", :force => true do |t|
     t.string   "nome",       :limit => 50
     t.string   "descricao",  :limit => 50
@@ -65,8 +84,8 @@ ActiveRecord::Schema.define(:version => 20100202154711) do
   create_table "logs", :force => true do |t|
     t.integer  "user_id"
     t.string   "obs"
-    t.string   "data"
     t.integer  "crianca_id"
+    t.string   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
