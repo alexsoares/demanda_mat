@@ -1,4 +1,4 @@
-et :application, "192.168.0.247"
+set :application, "192.168.0.247"
 set :repository,  "ssh://git@192.168.0.245/~/repositories/demanda.git"
 
 set :user, "administrador"
