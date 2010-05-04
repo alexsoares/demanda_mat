@@ -14,7 +14,7 @@
 # end
 #
 every 1.minute do
- command "/usr/bin/mysqldump -u root -ps3inf05 demanda_production > /home/railsapps/BKP_DD.sql"
+ command "/usr/bin/mysqldump -u root -ps3inf05 demanda_production > /home/administrador/BKP_DD.sql"
 end
 
 # every 4.days do
