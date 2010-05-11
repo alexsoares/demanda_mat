@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
     save(false)
   end
 
-  before_save :associa_role_padrao
+  before_create :associa_role_padrao
   after_create :send_email
   
   def active?
