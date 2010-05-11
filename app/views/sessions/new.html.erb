@@ -5,25 +5,28 @@
       <td>Está logado como: <%= current_user.name %></td>
     <%else%>
       <font color="white"><td><%= link_to '|Incluir usuário|', signup_path %></td></font>
-        
+
     <%end%>
 
   </div>
     <div id="img-login">
 	<div class="conteudo">
      <center>
-     <div id="teste">
+
      <% form_tag session_path do -%>
-          <p><label for="login">Usuário:</label><br/>
-           <%= text_field_tag 'login',nil%></p>
-          <p><label for="password">Senha:</label><br/>
-          <%= password_field_tag 'password' %></p>
 
-      <p class="button"><%= submit_tag 'Entrar' %></p>
-     <% end -%>
-  
+           <label for="login"> Usuário:</label><br/>
+           <%= text_field_tag 'login',nil%><br/>
+	     <div id="conteudologin">
+          <label for="password">Senha:</label><br/>
+          <%= password_field_tag 'password' %>
+        </div>
+           <p class="button"><%= submit_tag 'Entrar' %></p>
 
-     </div>
+     <% end%>
+
+
+
     </center>
 	</div>
     </div>
