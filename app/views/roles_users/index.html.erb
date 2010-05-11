@@ -17,6 +17,7 @@
   </tr>
 <% for role_user in @role_users %>
   <tr>
+    <%teste = role_user.id%>
     <td align="center" width="25%"><%= User.find(role_user.user_id).login %></td>
     <td align="center"><%= Role.find(role_user.role_id).name %></td>
     <%if Role.find(role_user.role_id).name == 'admin' then%>

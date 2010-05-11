@@ -7,7 +7,8 @@ require_role ["seduc","admin"]
   before_filter :nome_tipo
 
   def index
-    @unidades = Unidade.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
+    @unidades = Unidade.paginate(:page=>params[:page],:per_page =>25, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
+    #@unidades = Unidade.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
 
     respond_to do |format|
       format.html # index.html.erb

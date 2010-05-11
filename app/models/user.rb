@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   before_create :make_activation_code 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :password, :password_confirmation, :regiao_id
+  attr_accessible :login, :password, :password_confirmation, :regiao_id, :email
 
   # Activates the user in the database.
   def activate
@@ -45,6 +45,7 @@ class User < ActiveRecord::Base
   end
 
   before_save :associa_role_padrao
+  after_create :send_email
   
   def active?
     # the existence of an activation code means they have not activated yet
@@ -118,6 +119,10 @@ class User < ActiveRecord::Base
     
     def make_activation_code
       self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+    end
+
+    def send_email
+      
     end
 
     def associa_role_padrao

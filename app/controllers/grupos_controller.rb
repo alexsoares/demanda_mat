@@ -3,8 +3,8 @@ require_role ["seduc","admin"]
   # GET /grupos
   # GET /grupos.xml
   def index
-
-    @grupos = Grupo.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
+    @grupos = Grupo.paginate(:page => params[:page], :per_page => 10,:conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
+    #@grupos = Grupo.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @grupos }

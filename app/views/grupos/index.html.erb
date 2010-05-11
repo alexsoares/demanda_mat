@@ -43,11 +43,12 @@
         <tr>
           <td bgcolor="white"><%= link_to '|Exibir', grupo %>
           <td bgcolor="white"><%= link_to '|Alterar', edit_grupo_path(grupo) %></td>
-          <td bgcolor="white"><%= link_to '|Apagar|', grupo, :confirm => 'Tem certeza?', :method => :delete %></td>
+          <!-- <td bgcolor="white"><%= link_to '|Apagar|', grupo, :confirm => 'Tem certeza?', :method => :delete %></td>!-->
         </tr>
       <% end %>
     </table>
    </fieldset>
   </p><br />
+  <%= will_paginate @grupos %>
     <input type="Button" Value="Imprimir" onclick="Imprimir()">
 </div>
