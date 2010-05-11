@@ -10,12 +10,10 @@ display: none;
 </style>
 
 <div id="conteudo">
-  <br/>
-    <h2 align="center">Cadastro de Crianças</h2>
-    
-  <br/>
-    <fieldset>
+ <h2 align="center">Cadastro de Crianças</h2>
+  <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
+    <font size=3>
     <b>Nome:</b>
       <%=h @crianca.nome %><br />
     <b>Nascimento:   </b>
@@ -66,10 +64,12 @@ display: none;
       <%else%>
         NUNCA FOI TRANSFERIDO.
       <%end%>
-<%  if $flag_imp == 0 then %>
+ <%  if $flag_imp == 0 then %>
+ </font>
   </fieldset>
   <fieldset>
     <legend><font size=4>Acompanhante</font></legend>
+    <font size=3>
     <b>Responsável:   </b>
       <%=h @crianca.nome_responsavel%> <br />
     <b>Parentesco:   </b>
@@ -80,9 +80,11 @@ display: none;
       <%=h @crianca.local_trabalho%> <br/>
     <b>Fone Trabalho:</b>
       <%=h @crianca.fonetrabalho%>
+    </font>
   </fieldset>
   <fieldset>
     <legend><font size=4>Dados da Inscrição</font></legend>
+        <font size=3>
     <b>Unidade onde fez a inscrição:      </b>
       <%=h @crianca.unidade_id %>
       <%= ' - ' + Unidade.find_by_id(@crianca.unidade_id).nome %><br />
@@ -109,10 +111,16 @@ display: none;
       <%=h @crianca.onde_matricula %><br/>
      <b>Observação / Histórico de Contato:</b>
       <%=h @crianca.historico_contato %>
-   </fieldset><br/>
-
-
-
+    </font>
+   </fieldset>
+    <font size="3"><u><b>IMPORTANTE</b></u></font><br/>
+<font size="2"> 1) O responsável pela criança deve informar qualquer alteração de endereço ou telefone para contato. <br/></font>
+<font size="2">2) Após TRÊS tentativas de contato com o responsável pela criança, a vaga será repassada à outro interessado e a solcitação cancelada.<br/></font>
+<font size="2">3) Caso uma solicitação seja cancelada o responsável deverá realizar novo cadastro.</font>
+<br/>
+Ciente:
+<br/>
+<br/>
 <table width="100%">
 <tr>
 <td align="center">___________________________________</td>
@@ -120,7 +128,7 @@ display: none;
 </tr>
 <tr>
 <td align="center"> Assinatura do responsável               </td>
-<td align="center"> Assinatura Escola               </td>
+<td align="center"> Assinatura diretor(a)              </td>
 </tr>
 
 </table>
