@@ -60,8 +60,12 @@ class RolesUsersController < ApplicationController
   # POST /role_users.xml
   def create
     @role_user = RolesUser.new(params[:roles_user])
-
-     
+    @role_existente = RolesUser.find_by_user_id(@role_user.user_id)    
+    
+    
+    @role_existente.destroy
+    
+    
 
     respond_to do |format|
       if @role_user.save
