@@ -6,7 +6,7 @@ class RolesUsersController < ApplicationController
   # GET /role_users.xml
 
   def load_user
-    @users = User.find_by_sql("SELECT login,id FROM users where id not in (select user_id from roles_users) and role_id = 3 ")
+    @users = User.find_by_sql("SELECT login,id FROM users where id not in (select user_id from roles_users where role_id <> 3)")
   end
 
   def listar_user_ass
@@ -60,8 +60,12 @@ class RolesUsersController < ApplicationController
   # POST /role_users.xml
   def create
     @role_user = RolesUser.new(params[:roles_user])
-
-     
+    @role_existente = RolesUser.find_by_user_id(@role_user.user_id)    
+    
+    
+    @role_existente.destroy
+    
+    
 
     respond_to do |format|
       if @role_user.save
