@@ -52,6 +52,11 @@ display: none;
                 <%else%>
                    <% if current_user.has_role?('escola') %>
                       Acesso secretaria de escola
+                     <%else%>
+                       <% if current_user.has_role?('escriturario') %>
+                         Acesso escriturario de escola
+                       <%end%>
+
                    <%end%>
                 <%end%>
               <%end%>
@@ -75,7 +80,7 @@ display: none;
           <li><%= link_to 'Sair', logout_path,:confirm => "Tem certeza que deseja fazer logout?" %></li>
         </ul>
     </li>
-    <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') or current_user.has_role?('escola')  then%>
+    <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') or current_user.has_role?('escola') or current_user.has_role?('escriturario')  then%>
     <li><a>Cadastrar</a>
       <ul>        
           <%  if current_user.has_role?('escola') or current_user.has_role?('seduc') or current_user.has_role?('admin') or current_user.has_role?('escriturario')  then%>

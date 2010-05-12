@@ -29,7 +29,7 @@ display: none;
         <td width="100%" align="right">
            <p>
               <%= hinted_text_field_tag(:search, params[:search], "Entre nome da criança", :size => 30) %>
-              <%= submit_tag 'Filtar!' %>
+              <%= submit_tag 'Filtrar!' %>
            </p>
         </td>
       </tr>
@@ -79,7 +79,14 @@ display: none;
                   <td bgcolor="white" align="center"><%= link_to 'Exibir', crianca %></td>
                   <td bgcolor="white" align="center"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
                 </div>
+              <%else%>
+
+                <div id="negrito">
+                  <td bgcolor="white" align="center"><%= link_to 'Exibir', crianca %></td>
+                </div>
+
               <%end%>
+
             <%end%>
 
 
