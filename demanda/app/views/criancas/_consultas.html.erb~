@@ -1,0 +1,92 @@
+<center><h2>Qual consulta deseja executar?</h2></center>
+<div id="info">
+<center>
+<fieldset>
+<table rules="rows">
+  <table>
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+	//slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
+	$("#firstpane p.menu_head").click(function()
+    {
+		$(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");  
+	});
+	//slides the element with class "menu_body" when mouse is over the paragraph
+	$("#secondpane p.menu_head").mouseover(function()
+    {
+	     $(this).next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+         
+	});
+});
+</script>
+
+<div style="float:left" > <!--Divisão principal-->
+  <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
+		<p class="menu_head"> >> Demanda por Unidade << </p>
+		<div class="menu_body">
+		  <p/>Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+ 		</div>
+		<p class="menu_head"> >> Matriculas por Unidade << </p>
+		<div class="menu_body">
+			<p/>Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+		</div>
+		<p class="menu_head"> >> Nome da Criança << </p>
+		<div class="menu_body">
+           <p/>Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+       </div>
+
+       </div>
+ 	   <p class="menu_head"><font style="font-size: 12pt"> >> Busca por Classificação << </font></p>
+		<div class="menu_body">
+          <div id ="atualiza_con">
+           <p style="font-size: 12pt">Selecione a clasdsificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %><%= collection_select :unidade, :unidade_class_id, @teste, :id, :nome, :include_blank => ' -- Selecione -- ' %></p>
+          </div>
+       </div>
+
+  </div>  <!--Encerramento da script dropdpwn-->
+</div>
+
+        <%= observe_field 'grupo_grupo_class_id',
+           :frequency => 0.5,
+           :url    => { :action => 'class_unid' },
+           :with   => 'grupo_grupo_class_id' %>
+
+        <%= observe_field 'unidade_unidade_class_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'classif' },
+           :with   => 'unidade_unidade_class_id' %>
+
+        <%= observe_field 'unidade_unidade_op1_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'un_op1_din' },
+           :with   => 'unidade_unidade_op1_id' %>
+
+
+      
+        <%= observe_field 'unidade_unidade_mat_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'mat_unidade' },
+           :with   => 'unidade_unidade_mat_id' %>
+
+
+        <%= observe_field 'crianca_crianca_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'nome_crianca' },
+           :with   => 'crianca_crianca_id' %>
+
+
+</table>
+</table>
+
+</fieldset>
+
+<br/>
+      </center>
+
+ </div>

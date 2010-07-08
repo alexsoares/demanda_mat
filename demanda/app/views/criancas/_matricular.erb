@@ -1,0 +1,24 @@
+<br/>
+<br/>
+<fieldset>
+<br/>
+ <legend><font size=4> MATRICULA</font></legend>
+
+ <div style="float:left" > <!--Divisão principal-->
+    <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
+  	   <p> <font style="font-size: 12pt"> > Crianças  Não Matriculadas >>> <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
+       <p> <font style="font-size: 12pt"> > Nome da Criança >>> <%= collection_select :crianca, :crianca_id, @criancasmat, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
+    </div>
+ </div>  <!--Encerramento da script dropdpwn-->
+
+        <%= observe_field 'crianca_crianca_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'nome_crianca' },
+           :with   => 'crianca_crianca_id' %>
+
+
+</fieldset>
+<br/>
+ <div id="listagem">
+</div>

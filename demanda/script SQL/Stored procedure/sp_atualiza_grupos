@@ -1,0 +1,59 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `demanda_development`.`atualiza_grupo`$$
+CREATE PROCEDURE `demanda_development`.`atualiza_grupo` ()
+BEGIN
+   DECLARE done BOOLEAN DEFAULT 0;
+   DECLARE o INT;
+   DECLARE $dias INT;
+   DECLARE atualiza CURSOR
+   FOR select id from criancas;
+ -- Declare continue handler
+   DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET done=1;
+
+     	   
+     Open atualiza;
+     REPEAT
+
+      -- Get order number
+      FETCH atualiza INTO o;
+       select (datediff(current_date(),nascimento)) INTO $dias from criancas where id = o;
+       if $dias > 0 and $dias < 366 then 
+	   UPDATE criancas set grupo_id = 1 where id = o;
+	else
+	if $dias > 365 and $dias < 577 then 
+	   UPDATE criancas set grupo_id = 2 where id = o;
+	else
+	  if $dias > 576 and $dias < 851 then 
+	    UPDATE criancas set grupo_id = 3 where id = o;
+          else
+	    if $dias > 850 and $dias < 1096 then 
+	      UPDATE criancas set grupo_id = 4 where id = o;
+	    else
+	      if $dias > 1095 and $dias < 1276 then 
+	        UPDATE criancas set grupo_id = 5 where id = o;
+              else
+	  	if $dias > 1275 and $dias < 1641 then 
+	    	  UPDATE criancas set grupo_id = 6 where id = o;
+		else
+		  if $dias > 1640 and $dias < 2006 then 
+	    	    UPDATE criancas set grupo_id = 7 where id = o;
+
+	  	  end if;
+	  	end if;
+	      end if;
+	    end if;
+	  end if;
+	end if;
+       end if;
+   -- End of loop
+     UNTIL done END REPEAT;
+
+
+   CLOSE atualiza;
+
+END$$
+
+
+DELIMITER ;
+

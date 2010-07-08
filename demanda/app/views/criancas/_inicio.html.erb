@@ -1,0 +1,60 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+<div class="sub-menu-hv">
+<div id="fundo_menu">
+ <div class="botao">
+    <legend>
+      <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
+        <td><%= link_to_remote('Matricular', :update => "consul", :url => { :action => "matric"}) %></td>
+      <%end%>
+      <td><%= link_to_remote('Consultar', :update => "consul", :url => { :action => "consulta"}) %></td>
+      <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
+        <td><%= link_to_remote('Configurar', :update => 'menu',:url => { :action => "config"}) %></td>
+      <%end%>
+
+<!--
+    <script type="text/javascript">
+
+    // incrementa a velocidade padrão da animação paragerar o efeito
+	$.fx.speeds._default = 1000;
+	$(function() {
+		$('#dialog').dialog({
+			autoOpen: false,
+			show: 'blind',
+			hide: 'explode'
+
+		});
+
+		$('#about').click(function() {
+			$('#dialog').dialog('open');
+			return false;
+		});
+	});
+	</script>
+
+<div id="dialog" title="Sobre o Sistema">
+	<p>     Sistema de controle de demanda escolar da Prefeitura Municipal de Americana
+     desenvolvido pela Secretaria da Educação - SEDUC
+     Analistas:<br/>
+     > Alexandre Jose Ribeiro Soraes<br/>
+     > Naor Garcia Filho
+</p>
+</div>
+
+| <a id="about" ><u>Sobre</u></a>
+
+!-->
+
+
+</legend>
+</div>
+</div>  
+</div>

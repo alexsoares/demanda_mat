@@ -1,0 +1,30 @@
+<div id="conteudo">
+<div id="topo">
+<center>
+<br/>
+<h1>Cadastro de Grupo</h1>
+</center>
+</div>
+<fieldset>
+<% form_for(@grupo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome, 'Nome' %><br />
+    <%= f.text_field :nome %>
+  </p>
+
+  <p>
+    <%= f.label :descricao, 'Descricao' %><br />
+    <%= f.text_area :descricao %>
+  </p>
+
+
+  <p>
+    <%= f.submit "Cadastrar" %>
+  </p>
+</div>
+</fieldset>
+<% end %>
+
+<%= link_to 'Voltar', grupos_path %>

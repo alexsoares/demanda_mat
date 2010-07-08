@@ -1,0 +1,86 @@
+<style media="print">
+  .botao {
+    display: none;
+  }
+</style>
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+</div>
+<%$teste=0%>
+<div id="contador"></div>
+  <br/><br/>
+  <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+    <tr>
+    <br/>
+    <th bgcolor="white"> Posição </th>
+    <th bgcolor="white">Nome</th>
+    <!--<th bgcolor="#cccccc">Data Nascimento</th>!-->
+    <th bgcolor="white">Nome Mãe</th>
+    <th bgcolor="white">Cadastrado em</th>
+    <th bgcolor="white">Bairro</th>
+    <th bgcolor="white">Fone1</th>
+    <th bgcolor="white">Resp</th>
+    <th bgcolor="white">Trabalha</th>
+    <th bgcolor="white">Opção 1</th>
+    <th bgcolor="white">Opção 2</th>
+    <!--<th bgcolor="white">Classificação</th>!-->
+    <th bgcolor="white">Status</th>
+    <th bgcolor="white">Unidade Matricula</th>
+    <th bgcolor="white">Filho Servidor Publico</th>
+    <th bgcolor="white">Possui Irmão(s)</th>
+    <th bgcolor="white">Transferido</th>
+    <th bgcolor="white">Histórico Contatos</th>
+    </tr>
+    <% for crianca in @crianca %>
+      <tr>
+      <br/>
+      <p>
+        <td align="center"><%=h $teste + 1%></td>
+        <td><center><%=h crianca.nome.upcase %></center></td>
+    <!--<td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>!-->
+        <td><center><%=h crianca.mae.upcase %></center></td>
+        <td><center><%=h crianca.created_at.strftime("%d/%m/%y %H:%M") %></center></td>
+        <td><center><%=h crianca.bairro.upcase %></center></td>
+        <td><center><%=h crianca.tel1 %></center></td>
+        <td><center><%=h crianca.parentesco %></center></td>
+        <td><center><%=h crianca.verifica_trabalha %></center></td>
+        <td><center><%=h crianca.opcao1.upcase %></center></td>
+        <td><center><%=h crianca.opcao2.upcase %></center></td>
+        <!--<td><center><%=h crianca.onde_classifica %></center></td>!-->
+        <td><center><%=h crianca.conf_status %></center></td>
+        <td><center><%=h crianca.onde_matricula %></center></td>
+        <td><center><%=h crianca.s_p%></center></td>
+        <td><center><%=h crianca.gemeos%></center></td>
+        <td><center><%=h crianca.transferido %></center></td>
+        <td><center><%=h crianca.historico_contato %></center></td></p>
+      </tr>
+      <tr>
+        <%  $teste = $teste + 1%>
+        <%   $flag_imp = 0%>
+        <div class="botao">
+          <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
+            <td bgcolor="white"><%= link_to 'Exibir', crianca %></td>
+            <td bgcolor="white"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+            <td bgcolor="white"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
+          <%else%>
+            <%  if current_user.has_role?('escola') then%>
+              <div id="negrito">
+                <td bgcolor="white"><%= link_to 'Exibir', crianca %></td>
+                <td bgcolor="white"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+              </div>
+            <%end%>
+          <%end%>
+        </div>
+      </tr>
+    <% end %>
+  </table>
+  <br/>
+  <tr>
+    <p><font size=3>
+      EXISTE(M) <%=h $teste %><%=h " " + crianca.tipo_consulta %>
+      <br /><br /><br />
+    </font></p>
+  </tr>
+  <div class="botao">
+    <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  </div>

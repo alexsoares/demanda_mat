@@ -1,0 +1,9 @@
+Rails.criancas = {
+    'index': function() {
+ alert('Bem vindo ao Sistema de Controle da Demanda Escolar - Secretaria da Educação - PMA');
+    },
+ 
+    'new': function() {
+
+    }
+}

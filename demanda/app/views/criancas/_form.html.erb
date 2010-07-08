@@ -1,0 +1,48 @@
+<% form_for(@crianca) do |f| %>  
+<%= f.error_messages %>  
+
+<p>
+    <th>Nome         </th>
+    <%= f.text_field :nome %><br />
+    <th>Nascimento   </th>  
+    <%= f.date_select(:nascimento, :order => [:day, :month, :year])%><br />
+    <th>Grupo Alocado</th>  
+    <%= f.collection_select :grupo_id, @grupos, :id, :nome %> <br />
+
+    <th>Endereço      </th>  
+    <%= f.text_field :endereco %><br />
+    <th>Número        </th>  
+    <%= f.text_field :numero %><br />
+    <th>Complemento   </th>  
+    <%= f.text_field :complemento %><br />
+    <th>Bairro        </th>  
+    <%= f.text_field :bairro %><br />
+    <th>Telefone 1    </th>  
+    <%= f.text_field :tel1 %><br />
+    <th>Telefone 2    </th>    
+    <%= f.text_field :tel2 %><br />
+    <th>Celular       </th>  
+    <%= f.text_field :celular %><br />
+    <th>Responsável   </th>  
+    <%= f.text_field :responsavel %><br />
+    <th>Parentesco    </th>  
+    <%= f.text_field :parentesco %><br />
+    <th>Trabalha      </th>  
+ 
+    <th>SIM</th><br />
+    <th>Local Trabalho</th>  
+    <%= f.text_field :local_trabalho %><br />
+    <th>Opção 1       </th>
+    <%= f.text_field :option1 %><br />
+    <th>Opção 2       </th>
+    <%= f.text_field :option2 %><br />
+    <th>Opção 3       </th>
+    <%= f.text_field :option3 %><br />
+    <th>Opção 4       </th> 
+    <%= f.text_field :option4 %><br />
+
+</p>  
+<p>  
+<%= f.submit "Gravar" %>  
+</p> 
+<% end %> 

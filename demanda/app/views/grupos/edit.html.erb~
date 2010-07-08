@@ -1,0 +1,31 @@
+<div id="conteudo">
+<div id="topo">
+  <br/>
+  <h1>Alteração de Grupos</h1>
+</div>
+<p>
+<% form_for(@grupo) do |f| %>
+  <%= f.error_messages %>
+
+<fieldset>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :descricao, 'Descricao' %><br />
+    <%= f.text_area :descricao %>
+  </p>
+
+  <p>
+</fieldset>
+<fieldset>
+    <%= f.submit "Atualizar" %>
+</fieldset>
+</p>
+<>/p
+
+<%= link_to 'Exbir', @grupo %> |
+<%= link_to 'Voltar', grupos_path %>
+</div>
+<% end %>

@@ -1,0 +1,117 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+ <div class="botao">
+<center><h2>Qual consulta deseja executar?</h2></center>
+<br/>
+<div id="info">
+<center>
+
+<table rules="rows" border="1">
+  <table border="1">
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+	//slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
+	$("#firstpane p.menu_head").click(function()
+    {
+		$(this).next("div.menu_body").slideToggle(1000).siblings("div.menu_body").slideUp("medium");
+	});
+	//slides the element with class "menu_body" when mouse is over the paragraph
+	$("#secondpane p.menu_head").mouseover(function()
+    {
+	     $(this).next("div.menu_body").slideDown(1000).siblings("div.menu_body").slideUp("fast");
+         
+	});
+});
+</script>
+
+<div style="float:left"> <!--Divisão principal-->
+  <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
+		<p class="menu_head"> >> Demanda por Unidade << </p>
+          <div class="menu_body">
+            <p><font style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_op1_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
+          </div>
+		<p class="menu_head"> >> Demanda por Classificação << </p>
+          <div class="menu_body">
+           <p><font style="font-size: 12pt">Selecione a classificação desejada: <%= collection_select :grupo, :grupo_class_id, @grupos, :id, :nome, :include_blank => ' -- Selecione -- ' %> Unidade: <%= collection_select :unidade, :unidade_class_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
+          </div>
+        <p class="menu_head"> >> Matriculas por Unidade << </p>
+          <div class="menu_body">
+			<p><font style="font-size: 12pt">Selecione uma unidade: <%= collection_select :unidade, :unidade_mat_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
+          </div>
+  	    <p class="menu_head"> >> Crianças Matriculadas << </p>
+          <div class="menu_body">
+            <p><font style="font-size: 12pt">Crianças Matriculadas <%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></font></p>
+            <p><font style="font-size: 12pt">Na 1a. Opção: <%= link_to_remote(Crianca.busca_op1.length, :update => "listagem", :url => { :action => "busca_op1"}) %></font></p>
+            <p><font style="font-size: 12pt">Na 2a. Opção: <%= link_to_remote(Crianca.busca_op2.length, :update => "listagem", :url => { :action => "busca_op2"}) %></font></p>
+            <p><font style="font-size: 12pt">Na 3a. Opção: <%= link_to_remote(Crianca.busca_op3.length, :update => "listagem", :url => { :action => "busca_op3"}) %></font></p>
+          </div>
+        <p class="menu_head"> >> Nome da Criança << </p>
+          <div class="menu_body">
+            <p><font style="font-size: 12pt">Selecione o nome da criança: <%= collection_select :crianca, :crianca_id, @criancas, :id, :nome, :include_blank => ' -- Selecione -- ' %></font></p>
+          </div>
+ 	    <p class="menu_head"> >> Totalização << </p>
+          <div class="menu_body">
+            <p><font style="font-size: 12pt"><%= link_to_remote('Relatório Geral de Demanda Escolar', :update => "listagem", :url => { :action => "relatorio"}) %></font></p>
+
+          </div>
+  	    <p class="menu_head"> >> Estatística << </p>
+    	   <div class="menu_body">
+             <p><font style="font-size: 12pt">Crianças  Cadastradas <%= link_to_remote(Crianca.c.length, :update => "listagem", :url => { :action => "busca"}) %></font></p>
+             <p><font style="font-size: 12pt">Crianças  Matriculadas <%= link_to_remote(Crianca.b_u.length, :update => "listagem", :url => { :action => "busca_unidade"}) %></font></p>
+             <p><font style="font-size: 12pt">Crianças  Não Matriculadas <%= link_to_remote(Crianca.b_dm.length, :update => "listagem", :url => { :action => "busca_demanda"}) %></font></p>
+           </div>
+           <br/>
+           <br/>
+           <br/>
+
+  </div>
+</div>  <!--Encerramento da script dropdpwn !-->
+<!-- Observer da busca Grupo unidade - Busca II !-->
+        <%= observe_field 'grupo_grupo_class_id',
+           :frequency => 0.5,
+           :url    => { :action => 'class_unid' },
+           :with   => 'grupo_grupo_class_id' %>
+        <%= observe_field 'unidade_unidade_class_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'classif' },
+           :with   => 'unidade_unidade_class_id' %>
+<!-- Observer busca demanda por unidade - Busca I!-->
+        <%= observe_field 'unidade_unidade_op1_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'un_op1_din' },
+           :with   => 'unidade_unidade_op1_id' %>
+
+<!-- Observer busca matriculados por unidade - Busca III!-->
+        <%= observe_field 'unidade_unidade_mat_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'mat_unidade' },
+           :with   => 'unidade_unidade_mat_id' %>
+
+<!-- Observer busca matriculados por unidade - Busca V!-->
+        <%= observe_field 'crianca_crianca_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'nome_crianca' },
+           :with   => 'crianca_crianca_id' %>
+</table>
+</table>
+
+</center>
+<br/>
+</div>
+</div>
+ <div id="listagem"></div>
+

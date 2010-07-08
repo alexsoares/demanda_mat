@@ -1,0 +1,33 @@
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+<div id="conteudo">
+<br/>
+<h2 align="center">Log's de Ação - S I S D E M A N  --  V1.5       .</h2>
+<h4 align="center"> <font size="2"> Americana <%= Time.now.strftime("%d de %B de %Y - %H:%M ") %>horas</font></h4>
+
+<br/>
+<br/>
+<table width="30%">
+<div class="botao">
+<fieldset>
+<div id="selecione" align="center">
+  <%= render :partial => 'selecione_usuario' %>
+</div>
+</fieldset>
+</div>
+</table>
+<br />
+<div id="log"></div>
+<div class="botao">
+    <table width="100%">
+    <tr>
+      <%= link_to_remote('Configuração', :update => 'menu',:url => { :action => "config", :controller => 'criancas'}) %>
+    </tr>
+  </table>
+
+</div>
+
+</div>

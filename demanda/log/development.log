@@ -1,0 +1,495 @@
+# Logfile created on Mon Jun 21 13:47:42 -0300 2010  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (58.1ms)[0m   [0;1mDROP DATABASE IF EXISTS `demanda_development`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE DATABASE `demanda_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (22.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRegiaos (20090616125707)
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE `regiaos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mRegiao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2010-06-21 16:48:01', 'SAO JERONIMO', '2010-06-21 16:48:01')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.1ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2010-06-21 16:48:01', 'CIDADE JARDIM', '2010-06-21 16:48:01')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2010-06-21 16:48:01', 'SAO VITO', '2010-06-21 16:48:01')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.2ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2010-06-21 16:48:01', 'ZANAGA', '2010-06-21 16:48:01')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (3.1ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2010-06-21 16:48:01', 'JARDIM IPIRANGA', '2010-06-21 16:48:01')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegiao Create (0.3ms)[0m   [0mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2010-06-21 16:48:01', 'CENTRO', '2010-06-21 16:48:01')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegiao Create (0.2ms)[0m   [0;1mINSERT INTO `regiaos` (`created_at`, `nome`, `updated_at`) VALUES('2010-06-21 16:48:01', 'PRAIA AZUL', '2010-06-21 16:48:01')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616125707')[0m
+Migrating to CreateGrupos (20090616130849)
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE TABLE `grupos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(50), `descricao` varchar(50), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mGrupo Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGrupo Create (0.3ms)[0m   [0;1mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2010-06-21 16:48:01', 'BERCARIO I', '2010-06-21 16:48:01', 'CRIANCAS DE 4 MESES A 1 ANO ')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGrupo Create (0.3ms)[0m   [0mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2010-06-21 16:48:01', 'BERCARIO II', '2010-06-21 16:48:01', 'CRIANCAS DE 1 ANO E 1 MES A 1 ANO E 7 MESES')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGrupo Create (0.2ms)[0m   [0;1mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2010-06-21 16:48:01', 'BERCARIO III', '2010-06-21 16:48:01', 'CRIANCAS DE 1 ANO E 8 MESES A 2 ANOS E 4 MESES')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGrupo Create (0.2ms)[0m   [0mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2010-06-21 16:48:01', 'MATERNAL I', '2010-06-21 16:48:01', 'CRIANCAS DE 2 ANOS E 5 MESES A 3 ANOS')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGrupo Create (0.2ms)[0m   [0;1mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2010-06-21 16:48:01', 'MATERNAL II', '2010-06-21 16:48:01', 'CRIANCAS DE 3 ANOS E 1 MES A 3 ANOS E 6 MESES')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGrupo Create (0.2ms)[0m   [0mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2010-06-21 16:48:01', 'NIVEL I', '2010-06-21 16:48:01', 'CRIANCAS DE 3 ANOS E 7 MESES A 4 ANOS E 6 MESES ')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGrupo Create (0.2ms)[0m   [0;1mINSERT INTO `grupos` (`created_at`, `nome`, `updated_at`, `descricao`) VALUES('2010-06-21 16:48:01', 'NIVEL II', '2010-06-21 16:48:01', 'CRIANCAS DE 4 ANOS E 7 MESES A 5 ANOS E 6 MESES ')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616130849')[0m
+Migrating to CreateCriancas (20090616131400)
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE TABLE `criancas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(50), `mae` varchar(50), `unidade_id` int(11), `regiao_id` int(11), `nascimento` date, `grupo_id` int(11), `endereco` varchar(50), `numero` varchar(10), `complemento` varchar(30), `bairro` varchar(30), `tel1` varchar(255), `tel2` varchar(255), `nomerecado` varchar(50), `celular` varchar(255), `responsavel` int(11), `nome_responsavel` varchar(30), `parentesco` varchar(255) DEFAULT 0, `trabalha` tinyint(1), `local_trabalho` varchar(255), `fonetrabalho` varchar(255), `option1` int(11) DEFAULT 0, `option2` int(11) DEFAULT 0, `option3` int(11) DEFAULT 0, `option4` int(11) DEFAULT 0, `matricula` int(11) DEFAULT 0, `unidade_matricula` int(11) DEFAULT 0, `obs` varchar(100), `status` int(11) DEFAULT 0, `posicao` int(11) DEFAULT 0, `servidor_publico` tinyint(1) DEFAULT 0, `transferencia` tinyint(1) DEFAULT 0, `obs_transf` varchar(100), `n_especial` tinyint(1) DEFAULT 0, `necessidade` varchar(100), `mudou_endereco` tinyint(1) DEFAULT 0, `gemelar` tinyint(1) DEFAULT 0, `obs_irmao` varchar(50), `historico_contato` varchar(240), `user_id` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616131400')[0m
+Migrating to CreateUnidades (20090616132325)
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE TABLE `unidades` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(255), `tipo` int(11), `regiao_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mUnidade Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.3ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:01', 'ARAPIRANGA', 1, '2010-06-21 16:48:01')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.3ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'BITU', 1, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (17.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.1ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'MAIRA', 1, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'JURITI', 1, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'JACY', 1, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'ARACY', 1, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2010-06-21 16:48:02', 'CAIC', 1, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.3ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'GRAUNA', 2, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'ARAUNA', 2, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'CARANDA', 2, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'MANAI', 2, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'ARACATI', 2, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'CUNHATAI', 2, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2010-06-21 16:48:02', 'MARACA', 2, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2010-06-21 16:48:02', 'ANAJA', 2, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2010-06-21 16:48:02', 'CHUI', 2, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'MANACA', 3, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'POTIRA', 3, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'PATURI', 3, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'INDAIA', 3, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'BATUIRA', 3, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'JACINA', 3, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2010-06-21 16:48:02', 'CURIMA', 3, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2010-06-21 16:48:02', 'MAJOI', 3, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(1, '2010-06-21 16:48:02', 'TAPERA', 3, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'CURIO', 4, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'TARAGUA', 4, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'URUPE', 4, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'PATATIVA', 4, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'ARACARI', 4, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'CURUMIM', 4, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'TAHIRA', 5, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'BORE', 5, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'CECI', 5, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'CORIMBO', 5, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'TANGARA', 5, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.1ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'BACURI', 6, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(2, '2010-06-21 16:48:02', 'SABIA', 6, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUnidade Create (0.2ms)[0m   [0;1mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'PITANGA', 7, '2010-06-21 16:48:02')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUnidade Create (0.2ms)[0m   [0mINSERT INTO `unidades` (`tipo`, `created_at`, `nome`, `regiao_id`, `updated_at`) VALUES(3, '2010-06-21 16:48:02', 'PANAMBY', 7, '2010-06-21 16:48:02')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090616132325')[0m
+Migrating to CreateUsers (20100128092312)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `email` varchar(255), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(255), `remember_token_expires_at` datetime, `activation_code` varchar(40), `activated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (15.8ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'administrador') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100128092312')[0m
+Migrating to CreateRoles (20100128092358)
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE `roles_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mCREATE INDEX `index_roles_users_on_role_id` ON `roles_users` (`role_id`)[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCREATE INDEX `index_roles_users_on_user_id` ON `roles_users` (`user_id`)[0m
+  [4;35;1mRole Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Create (0.2ms)[0m   [0mINSERT INTO `roles` (`name`) VALUES('admin')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Create (0.1ms)[0m   [0;1mINSERT INTO `roles` (`name`) VALUES('seduc')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Create (0.1ms)[0m   [0mINSERT INTO `roles` (`name`) VALUES('externo')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Create (0.1ms)[0m   [0;1mINSERT INTO `roles` (`name`) VALUES('escola')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Create (0.1ms)[0m   [0mINSERT INTO `roles` (`name`) VALUES('escriturario')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRolesUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRolesUser Create (0.2ms)[0m   [0mINSERT INTO `roles_users` (`role_id`, `user_id`) VALUES(1, 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100128092358')[0m
+Migrating to CreateLogs (20100202154711)
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE `logs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `obs` varchar(255), `data` varchar(255), `crianca_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202154711')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `criancas`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `criancas`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `criancas`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `grupos`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `grupos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `grupos`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `logs`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `logs`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `logs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `regiaos`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `regiaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `regiaos`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `roles`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `roles`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mSQL (48.8ms)[0m   [0mdescribe `roles_users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `roles_users`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `unidades`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `unidades`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-21 13:49:15) [GET]
+  [4;36;1mSQL (9.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 18ms (DB: 11) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-21 13:49:15) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:49:22) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "login"=>"administrador", "password"=>"s3inf09"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 30ms (View: 8, DB: 1) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:49:33) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "login"=>"administrador", "password"=>"s3inf09"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 24ms (View: 8, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:50:27) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "login"=>"administrador", "password"=>"s3inf09"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 34ms (View: 12, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:51:16) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "login"=>"administrador", "password"=>"s3inf09"}
+  [4;35;1mSQL (12.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 25ms (View: 8, DB: 12) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:51:24) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "login"=>"Administrador", "password"=>"s3inf09"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'Administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 33ms (View: 11, DB: 1) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:51:38) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "login"=>"administrador", "password"=>"s3inf09"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 110ms (View: 11, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:52:13) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "login"=>"Administrador", "password"=>"s3inf09"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'Administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 33ms (View: 11, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-21 13:53:41) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/cad_user
+Rendering users/new
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-21 13:54:06) [POST]
+  Parameters: {"commit"=>"Increver-se", "authenticity_token"=>"b7fc46a9c019c4c99d943c334d17663c1bf0b027", "user"=>{"password_confirmation"=>"musand", "password"=>"musand", "login"=>"naor", "email"=>"naorgarciaf@hotmail.com"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Sent mail to naorgarciaf@hotmail.com
+
+From: demanda@ribeirosoares.com
+To: naorgarciaf@hotmail.com
+Subject: =?utf-8?Q?Usu=c3=a1rio_Cadastrado_com_sucesso?=
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<h1>Cadastro efetuado com sucesso</h1>
+
+<h2>Bem Vindo ao Sistema de controle de Demanda infantil - Sisdemanda</h2>
+<h3>Prefeitura Municipal de Americana - Secretaria de Educação</h3>
+
+<p>Obrigado pelo cadastro</p>
+
+<p>
+  <b>Usuário / login: </b>
+  <font color="red"> naor</font><br/>
+  <b>Password / senha: </b>
+  <font color="red"> musand</font>
+</p>
+
+
+Site: <a href="www.sisdemanda.rg3.net">Acessar SisDemanda</a>
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'naor') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`salt`, `created_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `updated_at`, `activation_code`, `remember_token`, `login`, `email`) VALUES('da7468e76a36eb5e807260220d196fee8dbdd127', '2010-06-21 16:54:13', NULL, 'f103c695baf7050a5f5178545be32d2d72292c1a', NULL, '2010-06-21 16:54:13', 'dfb1b60191e01dc22c2f5bf306d24508a786017d', NULL, 'naor', 'naorgarciaf@hotmail.com')[0m
+  [4;35;1mRolesUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRolesUser Create (0.3ms)[0m   [0;1mINSERT INTO `roles_users` (`role_id`, `user_id`) VALUES(3, 1)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/cad_user
+Rendering users/aviso
+Completed in 7050ms (View: 9, DB: 5) | 200 OK [http://localhost/users]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-21 13:54:16) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to /
+Completed in 94ms (DB: 2) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-21 13:54:16) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-21 13:54:16) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:54:24) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "login"=>"Administrador", "password"=>"s3inf0"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'Administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 34ms (View: 11, DB: 1) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:54:33) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "login"=>"Administrador", "password"=>"s3inf09"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'Administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 128ms (View: 11, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-21 13:56:18) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-21 13:56:18) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:56:26) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "login"=>"Administrador", "password"=>"s3inf09"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'Administrador' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 25ms (View: 8, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:56:28) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "login"=>"", "password"=>""}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (login = '' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 34ms (View: 11, DB: 1) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:56:29) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "login"=>"", "password"=>""}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = '' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 32ms (View: 10, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:56:29) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "login"=>"", "password"=>""}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (login = '' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 36ms (View: 11, DB: 0) | 200 OK [http://localhost/session]
