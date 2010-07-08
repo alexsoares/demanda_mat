@@ -1,0 +1,38 @@
+<br/>
+ <div id="conteudo">
+   
+<table border="1" width="100%" frame="box" rules="all">
+<%= button_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %>
+<br/>
+<br/>
+  <tr>
+        <td width="100%" colspan="5" align="center"><h1>Listagem Usuários Cadastrados</h1></td>
+  </tr>
+
+<table border="1" width="50%" frame="box" rules="all" align="center">
+  <tr>
+    <th align="center">LOGIN</th>
+    <th align="center">STATUS</th>
+  </tr>
+<%@usuarios = User.find(:all, :order => 'login') %>
+<% for user in @usuarios %>
+  <tr>
+    <td align="left"><%= user.login %></td>
+    <% if user.activated_at == nil then %>
+      <td align="Center">DESATIVADO</td>
+    <%else%>
+      <td align="center">ATIVO</td>
+    <%end%>
+  </tr>
+  <tr>
+    <td align="rigth" colspan="2">| <%= link_to 'Apagar', user, :confirm => 'Confirma?', :method => :delete %> |</td>
+  </tr>
+<% end %>
+</table>
+
+<%= button_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %>
+</table>
+</div>
+
+
+

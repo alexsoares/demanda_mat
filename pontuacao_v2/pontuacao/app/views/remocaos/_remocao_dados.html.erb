@@ -1,0 +1,96 @@
+
+
+<br/>
+
+<h3><center><b>Ano:</b><%= Time.current.strftime("%Y") %></center></h3>
+
+<% for professor in @professors %>
+<table width="100%" >
+ <td></td>
+ <td width="60%" >
+      <b>Matrícula:<%=h professor.matricula %></b><br/>
+      <b>Nome: <%=h professor.nome %></b><br/>
+      <b>Data Ingresso:</b>
+          <%if professor.dt_ingresso.nil? then %>
+                <%=h professor.dt_ingresso %>
+               <%else%>
+                 <%=h professor.dt_ingresso.strftime("%d/%m/%y") %>
+            <%end%>
+            <br/>
+      <b>Sede:</b><%=h Unidade.find(professor.sede_id).nome%>
+   </td>
+   <td width="40%" >
+     <b>RG:</b><%=h professor.RG%><br/>
+     <b>CPF: </b><%=h professor.CPF %><br/>
+     <b>Função:</b><%=h professor.funcao%><br/>
+   </td>
+ </table>
+ 
+ <br/>
+ <b><u>REMOÇÃO POR ESCOLHA</u></b><br/><br/>
+ <table width="100%" align="center">
+   <tr>
+     <td><u>  Unidades Pretendida</u></td>
+     <td><u> Periodo </u> </td>
+     <td><u>  Unidades Pretendida</u></td>
+     <td> <u> Periodo </u> </td>
+     <td> </td>
+   </tr>
+
+   <tr>
+     <td> </td>
+     <td> </td>
+   </tr>
+   <tr>
+     <td>1)__________________________ </td>
+     <td>   __________________________ </td>
+     <td>4)__________________________ </td>
+     <td>   __________________________ </td>
+   </tr>
+
+   <tr>
+     <td>2)__________________________ </td>
+     <td>   __________________________ </td>
+     <td>5)__________________________ </td>
+     <td>   __________________________ </td>
+
+   </tr>
+
+
+   <tr>
+     <td>3)__________________________ </td>
+     <td>   __________________________ </td>
+     <td>6)__________________________ </td>
+     <td>   __________________________ </td>
+   </tr>
+ <br/> <br/>
+
+<table align="center">
+ <td>
+    <tr>
+      <td><b>Total Tempo Serviço:        </b></td><td> <%=  h professor.total_trabalhado%></td>
+    </tr>
+    <tr>
+      <td><b>Total Titulação: </b></td><td><%=  h professor.total_titulacao %></td>
+    <tr>
+    </tr>
+     <td><b>Total Geral:</b></td> <td><%=  h professor.pontuacao_final%></td>
+    </tr>
+  </td>
+
+</table>
+  <% end %>
+  </table>
+ <br/> <br/> <br/> <br/> <br/> 
+
+
+   Americana _____/______/<%= Time.current.strftime("%Y") %>
+  <br/><br/><br/> <br/>
+ 
+     ________________________________________________<br/>
+          assinatura do professor<br/><br/>
+  
+
+
+
+

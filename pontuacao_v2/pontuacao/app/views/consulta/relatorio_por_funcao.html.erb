@@ -1,0 +1,65 @@
+<div id="conteudo">
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+<br/>
+<br/>
+<hr/>
+<div class="botao">
+  <%= form_tag({ :method => 'get', :action => 'search' }, :id => 'graph-unit-form')%>
+    <%= error_messages_for 'contact' %>
+   <table width="100%">
+    <div class="botao">
+      <tr>
+        <td width="80%" align="right">
+          <div class="botao">
+           Função:
+          <%= select_tag :funcao, options_for_select(CARGO)%>
+          <%= submit_tag 'Filtrar' %></div>
+        </td>
+      </tr>
+    </div>
+    </table>
+</div>
+<hr/>
+<br/>
+<br/>
+<div id="contador"></div>
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+</div>
+
+<table border ="1" cellpadding="1" cellspacing="1" width="100%" frame="box" rules="all">
+    <tr style="font-size:12px">
+     <br/>
+
+        <th bgcolor="gray" width="15%">Matricula</th>
+        <th bgcolor="gray" width="70%">Nome</th>
+        <th bgcolor="gray" width="15%">Pontuação Final</th>
+    </tr>
+    <%if  @relatorio_funcao == "Selecione uma função"%>
+      <center><b><%= @relatorio_funcao %></b></center>
+      <br/>
+    <%else%>
+        <h3 align="center">Professores com cargo de:  <%= params[:funcao] %></h3>
+      <% for funcao in @relatorio_funcao %>
+        <tr>
+          <td><center><%=h funcao.matricula %></center></td>
+          <td><center><%=h funcao.nome %></center></td>
+          <td><center><%=h funcao.pontuacao_final %></center></td>
+        </tr>
+        <tr>
+        </tr>
+    <% end %>
+  <%end%>
+
+</table>
+<br/>
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+</div>
+
+</div>
+
