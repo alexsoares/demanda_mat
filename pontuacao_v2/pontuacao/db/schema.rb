@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100222110247) do
+ActiveRecord::Schema.define(:version => 20100713103143) do
 
   create_table "acum_trabs", :force => true do |t|
     t.integer  "professor_id"
@@ -33,10 +33,16 @@ ActiveRecord::Schema.define(:version => 20100222110247) do
     t.decimal  "valor_efet",                      :precision => 10, :scale => 3, :default => 0.0
     t.decimal  "valor_rede",                      :precision => 10, :scale => 3, :default => 0.0
     t.decimal  "valor_unid",                      :precision => 10, :scale => 3, :default => 0.0
-    t.integer  "status",                                                         :default => 0
-    t.integer  "verifica",                                                       :default => 0
+    t.integer  "status",                                                         :default => 0,   :null => false
+    t.integer  "verifica",                                                       :default => 0,   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "busca_professor", :id => false, :force => true do |t|
+    t.integer "matricula", :null => false
+    t.string  "nome",      :null => false
+    t.string  "funcao",    :null => false
   end
 
   create_table "logs", :force => true do |t|
@@ -55,19 +61,19 @@ ActiveRecord::Schema.define(:version => 20100222110247) do
   end
 
   create_table "professors", :force => true do |t|
-    t.integer  "matricula",                                                        :null => false
-    t.string   "nome",                                                             :null => false
+    t.integer  "matricula",                                                                      :null => false
+    t.string   "nome",                                                                           :null => false
     t.datetime "dt_atual"
     t.datetime "dt_ingresso"
     t.datetime "dt_nasc"
-    t.string   "RG",                                              :default => "0"
-    t.string   "CPF",                                             :default => "0"
-    t.integer  "INEP",                                            :default => 0
-    t.integer  "RD",                                              :default => 0
-    t.integer  "n_filhos",                                        :default => 0
-    t.integer  "sede_id",                                                          :null => false
-    t.integer  "jornada_sem",                                     :default => 0
-    t.string   "funcao",                                                           :null => false
+    t.string   "RG",               :limit => 20,                                :default => "0"
+    t.string   "CPF",              :limit => 20,                                :default => "0"
+    t.integer  "INEP",                                                          :default => 0
+    t.integer  "RD",                                                            :default => 0
+    t.integer  "n_filhos",                                                      :default => 0
+    t.integer  "sede_id",                                                                        :null => false
+    t.integer  "jornada_sem",                                                   :default => 0
+    t.string   "funcao",                                                                         :null => false
     t.string   "endres"
     t.string   "complemento"
     t.string   "bairro"
@@ -75,12 +81,12 @@ ActiveRecord::Schema.define(:version => 20100222110247) do
     t.integer  "telefone"
     t.string   "cidade"
     t.string   "obs"
-    t.decimal  "total_trabalhado", :precision => 10, :scale => 3, :default => 0.0
-    t.decimal  "total_titulacao",  :precision => 10, :scale => 3, :default => 0.0
-    t.decimal  "pontuacao_final",  :precision => 10, :scale => 3, :default => 0.0
-    t.integer  "flag"
+    t.decimal  "total_trabalhado",               :precision => 10, :scale => 3, :default => 0.0
+    t.decimal  "total_titulacao",                :precision => 10, :scale => 3, :default => 0.0
+    t.decimal  "pontuacao_final",                :precision => 10, :scale => 3, :default => 0.0
+    t.integer  "flag",                                                          :default => 0,   :null => false
     t.integer  "sede_id_ant"
-    t.string   "log_user"
+    t.string   "log_user",         :limit => 30
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -92,17 +98,19 @@ ActiveRecord::Schema.define(:version => 20100222110247) do
   end
 
   create_table "remocaos", :force => true do |t|
-    t.integer  "professor_id"
-    t.integer  "ano_letivo"
-    t.boolean  "remocao"
-    t.decimal  "valor_unid",              :precision => 10, :scale => 3
-    t.integer  "unidade_ant",                                            :default => 0, :null => false
-    t.integer  "unidade_atual",                                          :default => 0, :null => false
-    t.integer  "status",                                                 :default => 0, :null => false
+    t.integer  "professor_id",                                                         :default => 0,   :null => false
+    t.integer  "ano_letivo",                                                           :default => 0,   :null => false
+    t.integer  "remocao",                 :limit => 1,                                 :default => 0,   :null => false
+    t.decimal  "valor_unid",                            :precision => 10, :scale => 3, :default => 0.0, :null => false
+    t.integer  "unidade_ant",                                                          :default => 0
+    t.integer  "unidade_atual",                                                        :default => 0
+    t.integer  "status",                                                                                :null => false
     t.integer  "unidade_id"
-    t.boolean  "remocao_efetivada"
-    t.decimal  "tot_acum_unid",           :precision => 10, :scale => 3
-    t.integer  "flag_remocao_finalizada"
+    t.integer  "remocao_efetivada",       :limit => 1
+    t.integer  "tot_acum_unid",           :limit => 13, :precision => 13, :scale => 0, :default => 0,   :null => false
+    t.decimal  "tot_geral_unid",                        :precision => 10, :scale => 3, :default => 0.0, :null => false
+    t.decimal  "total",                                 :precision => 10, :scale => 3, :default => 0.0
+    t.integer  "flag_remocao_finalizada",                                              :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -152,27 +160,29 @@ ActiveRecord::Schema.define(:version => 20100222110247) do
     t.integer  "ano_letivo",                                      :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "tipo_curso"
   end
 
   create_table "trabalhados", :force => true do |t|
-    t.integer  "professor_id",                     :null => false
-    t.integer  "ano",                              :null => false
-    t.integer  "dias",          :default => 0
-    t.integer  "unidade",       :default => 0
-    t.integer  "outro_trab",    :default => 0
-    t.integer  "f_abonada",     :default => 0
-    t.integer  "atestado",      :default => 0
-    t.integer  "f_justif",      :default => 0
-    t.integer  "f_injustif",    :default => 0
-    t.integer  "lic_saude",     :default => 0
-    t.integer  "afastamento",   :default => 0
-    t.integer  "dias_trab",     :default => 0
-    t.integer  "dias_efetivos", :default => 0
-    t.integer  "dias_rede",     :default => 0
-    t.integer  "dias_unidade",  :default => 0
-    t.boolean  "flag",          :default => false
+    t.integer  "professor_id",                                  :null => false
+    t.integer  "ano",                                           :null => false
+    t.integer  "dias",                       :default => 0
+    t.integer  "unidade",                    :default => 0
+    t.integer  "outro_trab",                 :default => 0
+    t.integer  "f_abonada",                  :default => 0
+    t.integer  "atestado",                   :default => 0
+    t.integer  "f_justif",                   :default => 0
+    t.integer  "f_injustif",                 :default => 0
+    t.integer  "lic_saude",                  :default => 0
+    t.integer  "afastamento",                :default => 0
+    t.integer  "dias_trab",                  :default => 0
+    t.integer  "dias_efetivos",              :default => 0
+    t.integer  "dias_rede",                  :default => 0
+    t.integer  "dias_unidade",               :default => 0
+    t.boolean  "flag",                       :default => false
     t.integer  "ano_letivo"
     t.boolean  "remocao"
+    t.integer  "call_back",     :limit => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -196,7 +206,7 @@ ActiveRecord::Schema.define(:version => 20100222110247) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
-    t.integer  "regiao_id"
+    t.integer  "regiao_id",                               :default => 0
   end
 
   create_table "visaos", :force => true do |t|

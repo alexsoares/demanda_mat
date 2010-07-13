@@ -2,10 +2,11 @@ class TituloProfessorsController < ApplicationController
   before_filter :load_titulacao
   before_filter :load_professors
   before_filter :professor_unidade
-  require_role "supervisao", :for_all_except => [:search,:relatorio_prof_titulacao,:update, :titulos_busca, :destroy, :index, :new, :create, :sel_prof, :busca_prof, :guarda_valor1, :guarda_valor, :nome_professor]
+  require_role "supervisao", :for_all_except => [:search,:search_by_desc,:search_by_professor_titulos_anuais,:relatorio_titulos_anuais_invalidos,:relatorio_por_descricao_titulo, :relatorio_prof_titulacao,:update, :titulos_busca, :destroy, :index, :new, :create, :sel_prof, :busca_prof, :guarda_valor1, :guarda_valor, :nome_professor]
   # GET /titulo_professors
   # GET /titulo_professors.xml
 
+  #Relatorio por tiulos
 
   def relatorio_prof_titulacao
     @relatorio_tit_prof = "Selecione um titulo para filtragem"
@@ -23,6 +24,47 @@ class TituloProfessorsController < ApplicationController
    end
     render :action => 'relatorio_prof_titulacao'
   end
+
+#=====================================================================================================================================================================
+
+# Relatorio pela descrição do titulo
+
+  def relatorio_por_descricao_titulo
+    @relatorio_por_descricao_titulo = "Descreva o titulo para filtragem"
+  end
+
+  def search_by_desc
+   
+   if (params[:titulo]).present?
+     #@relatorio_por_descricao_titulo = TituloProfessor.obs_like(params[:titulo])
+     @relatorio_por_descricao_titulo = TituloProfessor.all(:conditions => ["obs like ? and titulo_id = 1",params[:titulo]])
+   else
+     @relatorio_por_descricao_titulo = "Descreva o titulo para filtragem"
+   end
+    render :action => 'relatorio_por_descricao_titulo'
+
+  end
+
+
+#====================================================================================================================================================================
+# Relatorio titulos anuais invalidos
+
+  def relatorio_titulos_anuais_invalidos
+    @relatorio_tit_prof = "Selecione o professor"
+  end
+
+  def search_by_professor_titulos_anuais
+   
+   if (params[:titulos_anuais][:professor_id]).present?
+     @relatorio_tit_prof = TituloProfessor.all(:conditions => ["professor_id = ? and (titulo_id = 6 or titulo_id = 7 or titulo_id = 8)",params[:titulos_anuais][:professor_id]])
+   else
+     @relatorio_tit_prof = "Selecione o professor"
+   end
+    render :action => 'relatorio_titulos_anuais_invalidos'
+
+  end
+
+#====================================================================================================================================================================
 
   def professor_unidade
     if current_user.regiao_id == 53 or current_user.regiao_id == 52 then
@@ -69,7 +111,6 @@ class TituloProfessorsController < ApplicationController
   # POST /titulo_professors.xml
   def create
     @titulo_professor = TituloProfessor.new(params[:titulo_professor])
-
     respond_to do |format|
       if @titulo_professor.save
         flash[:notice] = 'TITULAÇÂO CADASTRADA COM SUCESSO.'
@@ -112,7 +153,7 @@ class TituloProfessorsController < ApplicationController
     @titulo_professor.destroy
 
     respond_to do |format|
-      format.html { redirect_to(new_titulo_professor_path) }
+      format.html { redirect_to(titulo_professors_path) }
       format.xml  { head :ok }
     end
   end
@@ -179,11 +220,17 @@ class TituloProfessorsController < ApplicationController
     $id_titulo = params[:titulo_professor_titulo_id]
     $valor = Titulacao.find_by_id($id_titulo).valor
 
-    render :update do |page|
-      page.replace_html 'valor', :text => 'O valor do Titulo é: ' + ($valor).to_s
-      #page.replace_html 'titulos', :partial => 'totaliza_titulo'
-    end
+    if $id_titulo.to_i == 7
+      render :update do |page|
+        page.replace_html 'valor', :text => 'O valor do Titulo é: ' + ($valor).to_s
+        page.replace_html 'tipo_titulo', :partial => 'tipo'
+      end
+    else
+      render :update do |page|
+        page.replace_html 'valor', :text => 'O valor do Titulo é: ' + ($valor).to_s
 
+      end
+    end
 
   end
 
@@ -201,7 +248,7 @@ class TituloProfessorsController < ApplicationController
   end
 
  def titulos_busca
-        @titulo_busca = TituloProfessor.find_by_sql("SELECT * FROM titulo_professors where professor_id = " + params[:altera_professor_id] )
+        @titulo_busca = TituloProfessor.find_by_sql("SELECT * FROM titulo_professors where professor_id = " + params[:altera_professor_id] + " and ano_letivo = " + Time.current.strftime("%Y") )
       render :update do |page|
         page.replace_html 'alteracao', :partial => 'alterar'
       end

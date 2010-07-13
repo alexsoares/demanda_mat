@@ -58,17 +58,18 @@ display: none;
     </li>
     <li><a>Executar</a>
       <ul>
-        <%  if current_user.has_role?('admin') then%>
-          <li><%= link_to_remote('Gerenciar Usuários', :url => { :action => "gen_user", :controller => 'home'}) %></li>
-          <li><%= link_to_remote('Novo Ano', :url => { :controller => "calculos", :action => "iniciar_ano"}) %></li>
-        <%end%>
-
           <li><a>Pontuação ----------></a>
             <ul>
               <li><%= link_to 'Tempo de Serviço', new_trabalhado_path%></li>
               <li><%= link_to 'Títulos',new_titulo_professor_path %></li>
               <li><%= link_to_remote('Pontuação', :url => { :action => "relato_prof", :controller => "professors"}) %></li>
            </ul>
+
+        <%  if current_user.has_role?('admin') then%>
+          <li><%= link_to_remote('Gerenciar Usuários', :url => { :action => "gen_user", :controller => 'home'}) %></li>
+          <li><%= link_to('Novo Ano', iniciar_ano_path) %></li>
+          <li><%= link_to('Arrumar Titulos', arrumar_titulos_path) %></li>
+        <%end%>
           <li><%= link_to "Gerar Remoção", remocaos_path %></li>
 
         <%  if current_user.has_role?('direcao') or (current_user.has_role?('supervisao')) or (current_user.has_role?('admin'))%>

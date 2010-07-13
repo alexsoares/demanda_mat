@@ -126,7 +126,7 @@ class TrabalhadosController < ApplicationController
     @trabalhado.flag = false
     @trabalhado.call_back = false
     @log = Log.new
-    @log.trabalhado(current_user, @trabalhado.professor_id, "Atualizado tempo de serviço. Ano :#{@trabalhado.ano} - Ano letivo: #{@trabalhado.ano_letivo}")
+    @log.log(current_user, @trabalhado.professor_id, "Atualizado tempo de serviço. Ano :#{@trabalhado.ano} - Ano letivo: #{@trabalhado.ano_letivo}")
     respond_to do |format|
       if @trabalhado.update_attributes(params[:trabalhado])
         flash[:notice] = 'TEMPO DE SERVIÇO ATUALIZADO COM SUCESSO'

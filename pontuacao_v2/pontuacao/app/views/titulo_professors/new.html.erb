@@ -2,11 +2,7 @@
   <br/>
   <h1 align="center">Cadastro dos Títulos dos Professores</h1>
 <br/>
-
-
 <br/>
-
-
 <div id="menu">
 <div id="menu_principal">
 <legend>
@@ -16,17 +12,11 @@
 <hr align="left" width="17%" color=#9C9C9C size="3">
 </div>
 </div>
-
-
 <fieldset><legend><font size=5>Cadastro Titulação</font></legend>
-
 <% form_for(@titulo_professor) do |f| %>
   <%= f.error_messages %>
-
-
 <table border="1">
-  <td valign="top">
-  
+  <td valign="top">  
     <table border="1">
       <tr>
         <td><%= f.label :professor_id, 'Professor: ' %></td>
@@ -37,24 +27,20 @@
      </tr>
      <tr>
       <td colspan="2"><div id="nomeprof"></div></td>
-     </tr>
-     
+     </tr>     
      <tr>
         <td><%= f.label :titulo_id, 'Titulo: ' %></td>      
         <td><%= f.collection_select :titulo_id, @titulacaos, :id, :descricao, :include_blank => ' -- Selecione -- ' %>
          <%= observe_field 'titulo_professor_titulo_id',
          :frequency => 0.5,
          :with => :titulo_professor_titulo_id,
-         :url => { :action => 'guarda_valor' } %>       
-         
-           <tr><td colspan="2"><div id="valor"></div></td></tr>
-         
+         :url => { :action => 'guarda_valor' } %>                
+           <tr><td colspan="2">
+             <div id="valor"></div>
+             <div id="tipo_titulo"></div>
+           </td></tr>
          </td>
     </tr>
-     
-     
-     
-
       <div id="valores">
       </div>
     <tr>
@@ -65,8 +51,6 @@
      <tr>
         <td><%= f.label :quantidade, 'Quantidade:' %></td>
        <td><%= f.text_field(:quantidade, :size => 10)%></td>
-
-
      </tr>
      <tr>
        <td><%= f.label :dt_titulo, 'Data de Emissão:' %>
@@ -90,30 +74,23 @@
           6. SIMPOSIOS/COMUNICAÇÕES/OUTROS CURSOS DE<br/>
              CURTA DURAÇÃO CONTAR QUANTIDADE EM HORAS, <br/>
              DEMAIS CURSOS QUANTIDADE EM UNIDADE <br/>
-          
-
+          7. APRESENTAÇÃO DE COMUNICAÇÃO QUE<br/>
+             ULTRAPASSAR A CARGA HORARIA 24 HRS, LANÇAR<br/>
+             A A TITULAÇÃO COMO <b>OUTROS CURSOS</b> COM<br/>
+             PONTUAÇÃO DE 0,01 POR HORA DE PARTICIPAÇÃO.
       </div>
      </td>
     </table>
  </td>
-   
    <td width="80%">
     <fieldset>
      <legend><font size=4>Titulos Cadastrados</font></legend>
        <div id="titulos"></div>
-
     </fieldset>
    </td>
-
 </table>
   <br/>
-    
-<% end %>
-
-     
-
-
-
+    <% end %>
 </fieldset>
   | <%= link_to 'Voltar', new_titulo_professor_path %> |
 

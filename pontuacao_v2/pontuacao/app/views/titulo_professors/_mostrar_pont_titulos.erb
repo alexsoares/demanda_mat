@@ -17,7 +17,7 @@
        <th>
         Valor do Título
        </th>
-       <th>
+       <th colspan="2">
         Pontuação Obtida
        </th>
      </tr>
@@ -34,7 +34,7 @@
       <td align="center">
         <%= tp.valor %>
       </td>
-      <td align="center">
+      <td align="center" colspan="2">
         <%= tp.pontuacao_titulo %>
         <% $subtot_perm = $subtot_perm + (tp.pontuacao_titulo).to_f %>
       </td>
@@ -70,9 +70,16 @@
        <th align="center">
         Pontuação Obtida
        </th>
+       <th>
+        Tipo
+       </th>
+
      </tr>
 <% if !((@tp1.nil?) or (@tp1.empty?)) %>
+
 <%for tp1 in @tp1%>
+  <%teste = Time.current.strftime("%Y")%>
+<% if (tp1.ano_letivo).to_s == Time.current.strftime("%Y") %>
      <tr>
       <td  align="center">
 
@@ -90,9 +97,17 @@
         <%= tp1.pontuacao_titulo %>
         <% $subtot_um = $subtot_um + (tp1.pontuacao_titulo).to_f %>
       </td>
-
+      <!--true = a distancia e false = presencial!-->
+      <td align="center">
+      <% if tp1.tipo_curso == true%>
+        <%= "PRESENCIAL" %>
+      <%else%>
+        <%= "Á DISTANCIA" %>        
+      <%end%>
+      </td>
 
    </tr>
+  <%end%>
   <%end%>
 <% end %>
 <tr>

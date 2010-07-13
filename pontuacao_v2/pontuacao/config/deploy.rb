@@ -1,5 +1,5 @@
 set :application, "192.168.0.247"
-set :repository,  "ssh://alexandre@192.168.0.99/~/repositories/pontuacao.git"
+set :repository,  "ssh://alexandre@192.168.0.99:~/repos/pontuacao.git"
 
 set :user, "administrador"
 set :use_sudo, false

@@ -35,7 +35,7 @@ belongs_to :professor;
       @trab_ant = Trabalhado.find_by_professor_id(self.professor_id, :conditions => 'ano = ' + (((self.ano).to_i) + 1).to_s + ' and ano_letivo = ' + (self.ano_letivo).to_s)
       if !(@trab_ant.nil?)
         verificando = ((self.f_abonada) + (self.atestado) + (self.lic_saude))
-        if ((self.f_abonada + @trab_ant.f_abonada) + (self.atestado + @trab_ant.atestado) + (self.lic_saude + @trab_ant.lic_saude))  <= 15
+        if ((self.f_abonada + @trab_ant.f_abonada) + (self.atestado + @trab_ant.atestado) + (self.lic_saude + @trab_ant.lic_saude))  <= 10
           self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
           @trab_ant.dias_efetivos = @trab_ant.dias - (@trab_ant.f_justif + @trab_ant.f_injustif + @trab_ant.afastamento)
           @trab_ant.save
@@ -45,7 +45,7 @@ belongs_to :professor;
           @trab_ant.save
         end
       else
-        if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 15
+        if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 10
           self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
         else
           self.dias_efetivos = self.dias - (self.f_abonada + self.atestado + self.lic_saude + self.f_justif + self.f_injustif + self.afastamento)
@@ -55,7 +55,7 @@ belongs_to :professor;
       if self.ano == ((((Date.today).strftime("%Y")).to_i))
         @trab_atual = Trabalhado.find_by_professor_id(self.professor_id, :conditions => 'ano = ' + (((self.ano).to_i) - 1).to_s + ' and ano_letivo = ' + (self.ano_letivo).to_s)
         if !(@trab_atual.nil?)
-          if ((self.f_abonada + @trab_atual.f_abonada) + (self.atestado + @trab_atual.atestado) + (self.lic_saude + @trab_atual.lic_saude))  <= 15
+          if ((self.f_abonada + @trab_atual.f_abonada) + (self.atestado + @trab_atual.atestado) + (self.lic_saude + @trab_atual.lic_saude))  <= 10
             self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
             @trab_atual.dias_efetivos = @trab_atual.dias - ( @trab_atual.f_justif + @trab_atual.f_injustif+ @trab_atual.afastamento)
             @trab_atual.save
@@ -65,7 +65,7 @@ belongs_to :professor;
             @trab_atual.save
           end
         else
-          if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 15
+          if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 10
             self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
           else
             self.dias_efetivos = self.dias - (self.f_abonada + self.atestado + self.lic_saude + self.f_justif + self.f_injustif + self.afastamento)
@@ -88,7 +88,7 @@ belongs_to :professor;
     if self.ano == ((((Date.today).strftime("%Y")).to_i) - 1)
       @trab_ant = Trabalhado.find_by_professor_id(self.professor_id, :conditions => 'ano = ' + (((self.ano).to_i) + 1).to_s + ' and ano_letivo = ' + (self.ano_letivo).to_s)
       if !(@trab_ant.nil?)
-        if ((self.f_abonada + @trab_ant.f_abonada) + (self.atestado + @trab_ant.atestado) + (self.lic_saude + @trab_ant.lic_saude))  <= 15
+        if ((self.f_abonada + @trab_ant.f_abonada) + (self.atestado + @trab_ant.atestado) + (self.lic_saude + @trab_ant.lic_saude))  <= 10
           self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
           
           @trab_ant.dias_efetivos = @trab_ant.dias - (@trab_ant.f_justif + @trab_ant.f_injustif + @trab_ant.afastamento)
@@ -101,7 +101,7 @@ belongs_to :professor;
           @trab_ant.save
         end
       else
-        if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 15
+        if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 10
           self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
         else
           self.dias_efetivos = self.dias - (self.f_abonada + self.atestado + self.lic_saude + self.f_justif + self.f_injustif + self.afastamento)
@@ -111,8 +111,8 @@ belongs_to :professor;
       if self.ano == ((((Date.today).strftime("%Y")).to_i))
         @trab_atual = Trabalhado.find_by_professor_id(self.professor_id, :conditions => 'ano = ' + (((self.ano).to_i) - 1).to_s + ' and ano_letivo = ' + (self.ano_letivo).to_s)
         if !(@trab_atual.nil?)
-          verificando = ((self.f_abonada + @trab_atual.f_abonada) + (self.atestado + @trab_atual.atestado) + (self.lic_saude + @trab_atual.lic_saude))  <= 15
-          if ((self.f_abonada + @trab_atual.f_abonada) + (self.atestado + @trab_atual.atestado) + (self.lic_saude + @trab_atual.lic_saude))  <= 15
+          verificando = ((self.f_abonada + @trab_atual.f_abonada) + (self.atestado + @trab_atual.atestado) + (self.lic_saude + @trab_atual.lic_saude))  <= 10
+          if ((self.f_abonada + @trab_atual.f_abonada) + (self.atestado + @trab_atual.atestado) + (self.lic_saude + @trab_atual.lic_saude))  <= 10
             self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
             @trab_atual.dias_efetivos = @trab_atual.dias - (@trab_atual.f_justif + @trab_atual.f_injustif + @trab_atual.afastamento)
             @trab_atual.call_back = 1
@@ -124,7 +124,7 @@ belongs_to :professor;
             @trab_atual.save
           end
         else
-          if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 15
+          if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 10
             self.dias_efetivos = self.dias - (self.f_justif + self.f_injustif + self.afastamento)
           else
             self.dias_efetivos = self.dias - (self.f_abonada + self.atestado + self.lic_saude + self.f_justif + self.f_injustif + self.afastamento)
@@ -139,7 +139,7 @@ belongs_to :professor;
     if self.ano == ((((Date.today).strftime("%Y")).to_i) - 1)
       @trab_ant = Trabalhado.find_by_professor_id(self.professor_id, :conditions => 'ano = ' + (((self.ano).to_i) + 1).to_s + ' and ano_letivo = ' + (self.ano_letivo).to_s)
       if !(@trab_ant.nil?)
-        if ((@trab_ant.f_abonada) + (@trab_ant.atestado) + (@trab_ant.lic_saude))  <= 15
+        if ((@trab_ant.f_abonada) + (@trab_ant.atestado) + (@trab_ant.lic_saude))  <= 10
           @trab_ant.dias_efetivos = @trab_ant.dias - (@trab_ant.f_justif + @trab_ant.f_injustif + @trab_ant.afastamento)
           @trab_ant.call_back = 1
           @trab_ant.save
@@ -153,7 +153,7 @@ belongs_to :professor;
       if self.ano == ((((Date.today).strftime("%Y")).to_i))
         @trab_atual = Trabalhado.find_by_professor_id(self.professor_id, :conditions => 'ano = ' + (((self.ano).to_i) - 1).to_s + ' and ano_letivo = ' + (self.ano_letivo).to_s)
         if !(@trab_atual.nil?)
-          if ((@trab_atual.f_abonada) + (@trab_atual.atestado) + (@trab_atual.lic_saude))  <= 15
+          if ((@trab_atual.f_abonada) + (@trab_atual.atestado) + (@trab_atual.lic_saude))  <= 10
             @trab_atual.dias_efetivos = @trab_atual.dias - (@trab_atual.f_justif + @trab_atual.f_injustif + @trab_atual.afastamento)
             @trab_atual.call_back = 1
             @trab_atual.save

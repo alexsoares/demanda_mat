@@ -1,5 +1,6 @@
 class CalculosController < ApplicationController
   before_filter :load_professors
+  require_role "admin"
 
   def load_professors
     @professors = Professor.find(:all, :order => "matricula")
@@ -37,21 +38,22 @@ class CalculosController < ApplicationController
   end
 
   def iniciar_ano
-     render :update do |page|
-     page.replace_html 'conteudo', :partial =>  'novo_ano'
-   end
-
   end
+
 
   def arrumar_titulos
     @id_professor = Professor.all
+  end
+
+  def efetiva_arrumar_titulos
+    
     for professor in @id_professor
       titulos_anuais = TituloProfessor.sum('pontuacao_titulo', :conditions => ["professor_id = " +(professor.id).to_s + " and (titulo_id = 6 or titulo_id = 7 or titulo_id = 8)"])
       @professor = Professor.find(professor.id)
       @professor.total_titulacao= @professor.total_titulacao - titulos_anuais
       @professor.save
     end
-    render :nothing => true
+    render :action => 'arrumar_titulos'
   end
 
 end

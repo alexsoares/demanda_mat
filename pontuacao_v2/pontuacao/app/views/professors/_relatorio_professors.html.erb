@@ -32,7 +32,9 @@ display: none;
 
 
     </tr>
+
 <% for professor in @professors %>
+
   <tr>
     <td><center><%=h professor.nome.upcase %></center></td>
     <td><center><%=h professor.matricula %></center></td>
@@ -49,7 +51,9 @@ display: none;
   </tr>
 <% end %>
 
+
     </table>
+
   </fieldset>
  <br />
-
+   <b><%=  @professors.count %> registros encontrados</b>

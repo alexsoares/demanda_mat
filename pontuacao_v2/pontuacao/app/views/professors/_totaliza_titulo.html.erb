@@ -38,13 +38,14 @@ display: none;
        </th>
      </tr>
 <%for tp1 in @tp1%>
+  <% if (tp1.dt_titulo.strftime("%Y")) == Time.current.strftime("%Y") %>
      <tr>
       <td width="25%" align="left">
         <%= $numero %> -
         <%= Titulacao.find_by_id(tp1.titulo_id).descricao %>
       </td>
       <td width="30%" align="center">
-        <%= tp1.obs %>
+        <%= truncate(tp1.obs,20,"...") %>
      </td>
      <td width="10%" align="center">
         <%= tp1.valor %>
@@ -60,7 +61,7 @@ display: none;
       </td>
       <td width="10%" align="center">
         <!--<%= tp1.status %>!-->
-
+       
         <%if tp1.status == true then %>
           <%= 'Válido' %>
           <% $subtot_um = $subtot_um + (tp1.pontuacao_titulo).to_f %>
@@ -68,11 +69,12 @@ display: none;
           <%=  'Não Valido' %>
           <% $subtot_um = $subtot_um + 0 %>
         <%end%>
-
+       
       </td>
 
    </tr>
 <%$numero= $numero +1%>
+<%end%>
   <%end%>
 <tr>
   <th width="80%" colspan="5" align="left">SUB-TOTAL  (Titulação Anual)</th>
@@ -118,7 +120,7 @@ display: none;
          <%= Titulacao.find_by_id(tp.titulo_id).descricao %>
       </td>
       <td width="30%" align="center">
-        <%= tp.obs%>
+        <%= truncate(tp.obs,30,"...")%>
       </td>
 
       <td width="10%" align="center">
