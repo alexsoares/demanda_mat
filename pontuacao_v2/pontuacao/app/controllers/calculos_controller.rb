@@ -41,12 +41,11 @@ class CalculosController < ApplicationController
   end
 
 
-  def arrumar_titulos
-    @id_professor = Professor.all
+  def arrumar_titulos    
   end
 
   def efetiva_arrumar_titulos
-    
+    @id_professor = Professor.all
     for professor in @id_professor
       titulos_anuais = TituloProfessor.sum('pontuacao_titulo', :conditions => ["professor_id = " +(professor.id).to_s + " and (titulo_id = 6 or titulo_id = 7 or titulo_id = 8)"])
       @professor = Professor.find(professor.id)

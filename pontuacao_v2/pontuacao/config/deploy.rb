@@ -1,5 +1,6 @@
 set :application, "192.168.0.247"
-set :repository,  "alexandre@192.168.0.99:/home/alexandre/repos/pontuacao.git"
+set :repository, "alexandre@192.168.0.99:~/repos/pontuacao.git"
+
 
 set :user, "administrador"
 set :use_sudo, false
@@ -10,7 +11,7 @@ set :scm, :git
 
 server application, :app, :web, :db, :primary => true
 
-after "deploy:update_code", "deploy:custom_symlinks"
+
 
 
 
@@ -26,4 +27,3 @@ after "deploy:update_code", "deploy:custom_symlinks"
      run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
    end
  end 
-
