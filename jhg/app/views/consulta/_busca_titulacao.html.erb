@@ -1,0 +1,20 @@
+<div id="conteudo">
+<br/>
+<br/>
+<fieldset>
+<p>
+  <tr><font style="font-size: 12pt">Selecione o Tituloss:  </font></tr><br/>
+  <%= collection_select :tit, :titulo_id, @titulos, :id, :descricao, :include_blank => ' -- Selecione -- ' %>
+</p>
+          <%= observe_field 'tit_titulo_id',
+         :frequency => 0.5,
+         :with => :tit_titulo_id,
+         #:update => "consultas",
+         :url => { :action => 'consulta_titulo' } %>
+</fieldset>
+</div>
+<h1><center><div id="nome_consulta"></div></center></h1>
+ <div id="consultas"></div>
+ <div id="tempo"></div>
+
+

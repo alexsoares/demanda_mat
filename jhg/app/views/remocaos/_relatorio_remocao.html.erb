@@ -1,0 +1,31 @@
+<div id="conteudo">
+<h1 align="center">Listagem de Professores com Remocao solicitada</h1>
+| <%= link_to 'Voltar', root_path %> |
+<br/>
+<br/>
+<br/>
+
+<table border="1">
+  <tr>
+    <th bgcolor="#cccccc">Matrícula</th>
+    <th bgcolor="#cccccc">Nome</th>
+    <th bgcolor="#cccccc">Pontuacao Obtida</th>
+    <th bgcolor="#cccccc">Ano Letivo</th>
+
+  </tr>
+<% @remocaos_sim = Remocao.find(:all, :conditions => ["status = 1"]) %>
+<% for remocao in @remocaos_sim %>
+  <tr>
+    <td><%= Professor.find(remocao.professor_id).matricula %> </td>
+    <td><%= Professor.find(remocao.professor_id).nome %> </td>
+    <td><%= Professor.find(remocao.professor_id).pontuacao_final %> </td>
+    <td><%= remocao.ano_letivo %> </td>
+  </tr>
+  <tr>
+  </tr>
+<td colspan="3" align="left"><%= link_to 'Atualizar', edit_remocao_path(remocao) %></td>
+<% end %>
+
+</table>
+<br />
+</div>

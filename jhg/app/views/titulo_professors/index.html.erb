@@ -1,0 +1,17 @@
+    <% $subtot_perm = 0 %>
+
+<div id ="conteudo">
+
+    <h2 align="right">  Alteração de Títulos</h2>
+<br/>
+
+ <fieldset>
+   <b>SELECIONE O PROFESSOR NOVAMENTE </b>
+        <%= collection_select :altera, :professor_id, @professor_sede, :id, :matricula, :include_blank => ' -- Selecione -- ' %>
+        <%= observe_field 'altera_professor_id',
+          :with => :altera_professor_id,
+          :url => { :action => 'titulos_busca' } %>
+   </fieldset>
+  <div id="alteracao"></div>
+  | <td><%= link_to 'Voltar', new_titulo_professor_path  %></td> |
+</div>
