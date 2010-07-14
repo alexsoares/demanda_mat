@@ -1,0 +1,27 @@
+<h1>New acum_trab</h1>
+
+<% form_for(@acum_trab) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field(:professor_id, :value => $professor) %>
+  <%= f.label :tot_acum_trab, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :tot_acum_trab %>
+  <%= f.label :tot_acum_efet, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :tot_acum_efet %>
+  <%= f.label :tot_acum_rede, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :tot_acum_rede %>
+  <%= f.label :tot_acum_unid, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :tot_acum_unid %>
+  <%= f.label :pont_base_trab, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :pont_base_trab %>
+  <%= f.label :pont_base_efet, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :pont_base_efet %>
+  <%= f.label :pont_base_rede, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :pont_base_rede %>
+  <%= f.label :pont_base_unid, 'Pontuação de dias trabalhados Acumulados' %>
+  <%= f.text_field :pont_base_unid %>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', acum_trabs_path %>

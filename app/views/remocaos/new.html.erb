@@ -1,0 +1,56 @@
+<br/>
+
+<div id="conteudo">
+<h1>Remoção de professores</h1>
+<br/>
+<br/>
+<br/>
+<div id="loginn">
+ <div id="mensagem">
+        <br/>
+          SELECIONE A MATRÍCULA DO PROFESSOR
+          <br/><br/>
+ </div>
+
+<% form_for(@remocao) do |f| %>
+  <%= f.error_messages %>
+<table border="1" align="left">
+      <tr>
+            <b>Nome: </b>        <font color="green"><div id="nome"></div></font><br/><font color="green"><div id="aviso"></div></font>
+            <td><%= f.label :professor_id, 'Professor: ' %></td>
+            <td><%= f.collection_select :professor_id, @professors, :id, :matricula, :include_blank => ' -- Selecione -- ' %></td><br/>
+            <%= observe_field :remocao_professor_id,
+               :with => :remocao_professor_id,
+               :url => { :action => 'nome_professor' } %>
+       </tr>
+
+        <tr>          
+            <td><%= f.label :remocao, 'Gravar remocao?' %></td>
+            <td><%= f.check_box  :remocao %></td>
+            <%= f.hidden_field :status, :value => 1 %>
+              
+          
+        </tr>
+        
+  <tr>
+    <td>
+      <p>
+        <div id="rem"><%= f.submit "Salvar" %></div>
+      </p>
+    </td>
+    <td>
+      <p>
+        <div id="voltar"></div>
+      </p>        
+    </td>
+  </tr>
+</table>
+<% end %>
+
+<br/><br/><br/><br/><br/><br/><br/>
+  
+    <div id="desapear">| <%= link_to 'Voltar', remocaos_path %> |</div>
+ 
+
+</div>
+</div>
