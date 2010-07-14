@@ -1,0 +1,59 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<div class="botao">
+   <input type="Button" Value="Imprimir" onclick="Imprimir()">
+   <br/>
+  <br/>
+</div>
+  <fieldset>
+    <legend><font size=5>Professor</font></legend>
+   <table border ="1" cellpadding="5" cellspacing="1" width="100%" frame="box" rules="all" >
+      <tr>
+        <td colspan="8">
+          <h1 align="center">Relatório de Professores</h1>
+        </td>
+      </tr>
+    <tr>
+      <th bgcolor="#cccccc">Nome</th>
+      <th bgcolor="#cccccc">Matrícula</th>
+      <th bgcolor="#cccccc">Data Ingresso</th>
+      <th bgcolor="#cccccc">Sede</th>
+      <th bgcolor="#cccccc">Função</th>
+      <th colspan="3" bgcolor="#cccccc"></th>
+
+
+    </tr>
+
+<% for professor in @professors %>
+
+  <tr>
+    <td><center><%=h professor.nome.upcase %></center></td>
+    <td><center><%=h professor.matricula %></center></td>
+    <%if professor.dt_ingresso.nil? then %>
+      <td><center><%=h professor.dt_ingresso %></center></td>
+    <%else%>
+      <td><center><%=h professor.dt_ingresso.strftime("%d/%m/%y") %></center></td>
+    <%end%>
+    <td><center><%=h Unidade.find(professor.sede_id).nome %></center></td>
+    <td><center><%=h professor.funcao %></center></td>
+    <td><%= link_to 'Exibir', professor %></td>
+    <td><%= link_to 'Alterar', edit_professor_path(professor) %></td>
+    <td><%= link_to 'Apagar', professor, :confirm => 'Tem certeza?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+
+    </table>
+
+  </fieldset>
+ <br />
+   <b><%=  @professors.count %> registros encontrados</b>

@@ -1,0 +1,41 @@
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<div id="conteudo">
+
+
+    <h2 align="right">   FICHA DE PONTUAÇÃO DE PROFESSOR</h2>
+    <h4 align="right"> <font size="2"> Americana <%= Time.now.strftime("%d de %B de %Y - %H:%M ") %>horas</font></h4>
+   <br/>
+
+
+<div class="botao">
+<%= link_to_remote('Voltar', :update => "conteudo", :url => {:controller => 'professors', :action => 'relatorio'}) %>
+
+     <fieldset>
+    <legend><font size=4>Matrícula: <%= text_field :professor, :professor_id, :size => 5 %></font></legend>
+    </fieldset>
+ </div>
+       <%= observe_field 'professor_professor_id',
+         :frequency => 0.5,
+         #:update => 'dados_professor',
+         :with => :professor_professor_id,
+         :url => { :action => 'dados_professor' } %>
+    
+    <div id="dados_professor"></div>
+
+    <div id="dados_tempo_serviço"></div>
+
+    <div id="titulação"></div>
+
+ 
+<br/>
+<div class="botao">
+  <div id="conteudo">
+      <%= link_to_remote('Voltar', :update => "conteudo", :url => {:controller => 'professors', :action => 'relatorio'}) %>
+   </div>
+</div>
+</div>

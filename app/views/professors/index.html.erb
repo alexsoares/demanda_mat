@@ -1,0 +1,25 @@
+<div id="conteudo">
+  <div class="botao">
+    <table width="100%">
+      <tr>
+          <% form_tag professors_path, :method => 'get' do %>
+           <p>
+            <tr>
+                <td align="right"> Nome do Professor:
+                 <%= text_field_tag :search, params[:search] %>
+                 <%= submit_tag "Filtrar", :name => nil %></td>
+              </tr>
+           </p>
+          <% end %>
+        
+      </tr>
+    </table>
+  </div>
+  <%= render :partial => "relatorio_professors" %>
+  <div class="botao">
+    <br/>
+    <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  </div>
+  <br/>
+  <br/>
+</div>

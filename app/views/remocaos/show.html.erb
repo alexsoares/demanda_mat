@@ -1,0 +1,38 @@
+
+<br/>
+<div id="remocao">
+<fieldset>
+  <legend>Detalhes Remoção do professor - Status do professor</legend>
+<b>Matricula: </b>
+<%= Professor.find(@remocao.professor_id).matricula%><br/>
+<b>Nome: </b>
+<%= Professor.find(@remocao.professor_id).nome %><br/>
+<%  if @remocao.status == 0 and @remocao.unidade_id.nil? then %>
+  <b>SOLICITAÇÂO DE REMOÇÃO CANCELADA EM :  </b>
+  <%= @remocao.updated_at.strftime("%d de %B de %Y - %H:%M ")%><br/>
+<%else%>
+<%  if @remocao.status == 1 and !@remocao.unidade_id.nil? and @remocao.remocao_efetivada == 1 then %>
+  <b>Professor alocado em: </b>
+    <%= Unidade.find(@remocao.unidade_id).nome %><br/>
+    <%= @remocao.updated_at.strftime("%d de %B de %Y - %H:%M ")%><br/>
+<%end%>
+<%end%>
+
+  
+<%  if @remocao.status == 0 then %>
+  <% if @remocao.remocao_efetivada == true then %>
+    <td>Nova sede : </td>
+    <%= Unidade.find(@remocao.unidade_id).nome %>
+  <%end%>
+<%else%>
+  <b>Status professor: </b>
+  PROFESSOR AGUARDANDO REMOÇÃO
+<%end%>
+
+<br/>
+<br/>
+
+| <%= link_to 'Alterar', edit_remocao_path(@remocao) %>
+| <%= link_to 'Voltar', remocaos_path %> |
+</fieldset>
+</div>

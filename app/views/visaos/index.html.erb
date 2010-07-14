@@ -1,0 +1,71 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+    <h2 align="center">   Sistema de Pontuação de Professores - Secretaria de Educação</h2>
+
+<br/>
+<div class="botao">
+<table width="100%">
+    <tr>      
+      <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+    </tr>
+  </table>
+</div>
+<br/>
+<h1 align = "center">RELATORIO GERAL DE PONTUACAO </h1>
+<h5 align = "left" color = "red">Obs.: Listagem sujeita a alterações </h5>
+<br/>
+<br/>
+<table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+  <tr>
+    <th bgcolor="#cccccc"  width = "5%">Clas.</th>
+    <center><th bgcolor="#cccccc" width = "4%">Matrícula</th></center>
+    <th bgcolor="#cccccc" width = "38%">Nome</th>
+    <th bgcolor="#cccccc" width = "25%">Sede</th>
+    <th bgcolor="#cccccc" width = "5%">Pontuação</th>
+    <th bgcolor="#cccccc"  width = "20%">Função</th>
+
+
+  </tr>
+<%$contador = 1%>
+<% for professor in @professor_rel_geral %>
+  <tr>
+	<td width = "5%" align = "center"><%= $contador%></td>
+    <p><td width = "4%"><center><%=h professor.matricula %></center></td>
+    <td width = "38%"><center><%=h professor.nome %></center></td>
+    <td width = "25%"><center><%=h Unidade.find(professor.sede_id).nome%></center></td>
+        <% if professor.pontuacao_final.nil? then %>
+		<td width="5%"><%=h 0.000 %></td>
+	<%else%>
+	    <td width = "5%"><center><%=h format("%.3f",professor.pontuacao_final)%></center></td>
+	<%end%>
+    <td width = "20%"><center><%=h professor.funcao%></center></td>
+ <tr/>
+     <% $contador= $contador+1 %>
+<% end %>
+
+</table>
+
+<div class="botao">
+<table width="100%">
+    <tr>
+      
+      <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+    </tr>
+  </table>
+</div>
+
+<br />
+
+
+<br/>
+
+

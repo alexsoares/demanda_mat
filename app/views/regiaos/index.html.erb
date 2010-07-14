@@ -1,0 +1,66 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<br/>
+<div id="conteudo">
+
+  <div class="botao">
+    <table width="100%">
+      <tr>
+        <% form_tag regiaos_path, :method => 'get' do %>
+            <p>
+             <tr>
+                <td align="right"> Região:
+                 <%= text_field_tag :search, params[:search] %>
+                 <%= submit_tag "Filtrar", :name => nil %></td>
+             </tr>
+           </p>
+        <% end %>
+       </tr>
+    </table>
+  </div>
+
+
+<br/>
+<div class="botao">
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+   <br/>
+  <br/>
+  </div>
+  <fieldset>
+   <legend><font size=4>Regiões</font></legend>
+    <table border ="1" cellpadding="5" cellspacing="1" width="100%" >
+      <tr>
+        <td colspan="5">
+          <h1 align="center">Relatório de Regiões</h1>
+        </td>
+      </tr>
+      <tr>
+        <th bgcolor="#cccccc" colspan="5">Nome</th>
+      </tr>
+
+      <% for regiao in @regiaos %>
+       <tr>
+        <td colspan="2" width="85%"><%=h regiao.nome %></td>
+        <div class="botao">
+          <td bgcolor="#cccccc" width="5%"><%= link_to 'Exibir', regiao %></td>
+          <td bgcolor="#cccccc"width="5%"><%= link_to 'Alterar', edit_regiao_path(regiao) %></td>
+          <td bgcolor="#cccccc"width="5%"><%= link_to 'Apagar', regiao, :confirm => 'Tem certeza?', :method => :delete %></td>
+        </div>
+       </tr>
+      <% end %>
+    </table>
+   </fieldset>
+  
+<div class="botao">
+<input type="Button" Value="Imprimir" onclick="Imprimir()">
+</div>
+</div>
