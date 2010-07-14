@@ -151,7 +151,7 @@ class TrabalhadosController < ApplicationController
     @trabalhado.call_back = false
     @trabalhado.destroy
     @log = Log.new
-    @log.trabalhado(current_user, @trabalhado.professor_id, "Excluído um tempo de serviço. Ano :#{@trabalhado.ano} - Ano letivo: #{@trabalhado.ano_letivo}")
+    @log.log(current_user, @trabalhado.professor_id, "Excluído um tempo de serviço. Ano :#{@trabalhado.ano} - Ano letivo: #{@trabalhado.ano_letivo}")
 
     respond_to do |format|
       format.html { redirect_to(trabalhados_url) }
