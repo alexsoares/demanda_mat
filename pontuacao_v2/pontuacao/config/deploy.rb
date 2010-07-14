@@ -1,9 +1,9 @@
 set :application, "192.168.0.247"
-set :repository,  "ssh://alexandre@192.168.0.99:~/repos/pontuacao.git"
+set :repository,  "alexandre@192.168.0.99:/home/alexandre/repos/pontuacao.git"
 
 set :user, "administrador"
 set :use_sudo, false
-set :deploy_to, "/home/#{user}/pontuacao_new_version"
+set :deploy_to, "/home/#{user}/pon"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
