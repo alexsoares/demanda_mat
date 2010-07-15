@@ -63,6 +63,7 @@ belongs_to :professor;
             self.dias_efetivos = self.dias - (self.f_abonada + self.atestado + self.lic_saude + self.f_justif + self.f_injustif + self.afastamento)
             @trab_atual.dias_efetivos = @trab_atual.dias - (@trab_atual.f_abonada + @trab_atual.atestado + @trab_atual.lic_saude + @trab_atual.f_justif + @trab_atual.f_injustif + @trab_atual.afastamento)
             @trab_atual.save
+            teste = 0
           end
         else
           if ((self.f_abonada) + (self.atestado) + (self.lic_saude))  <= 10

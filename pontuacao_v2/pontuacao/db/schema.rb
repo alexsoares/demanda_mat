@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100713103143) do
+ActiveRecord::Schema.define(:version => 20100715111636) do
 
   create_table "acum_trabs", :force => true do |t|
     t.integer  "professor_id"
@@ -39,12 +39,6 @@ ActiveRecord::Schema.define(:version => 20100713103143) do
     t.datetime "updated_at"
   end
 
-  create_table "busca_professor", :id => false, :force => true do |t|
-    t.integer "matricula", :null => false
-    t.string  "nome",      :null => false
-    t.string  "funcao",    :null => false
-  end
-
   create_table "logs", :force => true do |t|
     t.integer  "user_id"
     t.string   "obs"
@@ -58,6 +52,26 @@ ActiveRecord::Schema.define(:version => 20100713103143) do
     t.integer  "trabalhado_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "nao_possuem_superior", :id => false, :force => true do |t|
+    t.integer "Matricula", :null => false
+    t.string  "Nome",      :null => false
+    t.string  "Função",  :null => false
+  end
+
+  create_table "possuem_superior", :id => false, :force => true do |t|
+    t.integer "Matricula",   :null => false
+    t.string  "Nome",        :null => false
+    t.string  "Função",    :null => false
+    t.string  "Graduação", :null => false
+  end
+
+  create_table "professor_funcao_adi_pc_e_pcreche", :id => false, :force => true do |t|
+    t.integer "Matricula",                                                   :null => false
+    t.string  "Nome",                                                        :null => false
+    t.decimal "Pontuação", :precision => 10, :scale => 3, :default => 0.0
+    t.string  "Cargo",                                                       :null => false
   end
 
   create_table "professors", :force => true do |t|
@@ -98,19 +112,19 @@ ActiveRecord::Schema.define(:version => 20100713103143) do
   end
 
   create_table "remocaos", :force => true do |t|
-    t.integer  "professor_id",                                                         :default => 0,   :null => false
-    t.integer  "ano_letivo",                                                           :default => 0,   :null => false
-    t.integer  "remocao",                 :limit => 1,                                 :default => 0,   :null => false
-    t.decimal  "valor_unid",                            :precision => 10, :scale => 3, :default => 0.0, :null => false
-    t.integer  "unidade_ant",                                                          :default => 0
-    t.integer  "unidade_atual",                                                        :default => 0
-    t.integer  "status",                                                                                :null => false
+    t.integer  "professor_id",                                                        :default => 0,   :null => false
+    t.integer  "ano_letivo",                                                          :default => 0,   :null => false
+    t.integer  "remocao",                 :limit => 1,                                :default => 0,   :null => false
+    t.decimal  "valor_unid",                           :precision => 10, :scale => 3, :default => 0.0, :null => false
+    t.integer  "unidade_ant",                                                         :default => 0,   :null => false
+    t.integer  "unidade_atual",                                                       :default => 0,   :null => false
+    t.integer  "status",                                                                               :null => false
     t.integer  "unidade_id"
     t.integer  "remocao_efetivada",       :limit => 1
-    t.integer  "tot_acum_unid",           :limit => 13, :precision => 13, :scale => 0, :default => 0,   :null => false
-    t.decimal  "tot_geral_unid",                        :precision => 10, :scale => 3, :default => 0.0, :null => false
-    t.decimal  "total",                                 :precision => 10, :scale => 3, :default => 0.0
-    t.integer  "flag_remocao_finalizada",                                              :default => 0
+    t.decimal  "tot_acum_unid",                        :precision => 10, :scale => 3, :default => 0.0, :null => false
+    t.decimal  "tot_geral_unid",                       :precision => 10, :scale => 3, :default => 0.0, :null => false
+    t.decimal  "total",                                :precision => 10, :scale => 3, :default => 0.0, :null => false
+    t.integer  "flag_remocao_finalizada",                                             :default => 0,   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -164,27 +178,27 @@ ActiveRecord::Schema.define(:version => 20100713103143) do
   end
 
   create_table "trabalhados", :force => true do |t|
-    t.integer  "professor_id",                                  :null => false
-    t.integer  "ano",                                           :null => false
-    t.integer  "dias",                       :default => 0
-    t.integer  "unidade",                    :default => 0
-    t.integer  "outro_trab",                 :default => 0
-    t.integer  "f_abonada",                  :default => 0
-    t.integer  "atestado",                   :default => 0
-    t.integer  "f_justif",                   :default => 0
-    t.integer  "f_injustif",                 :default => 0
-    t.integer  "lic_saude",                  :default => 0
-    t.integer  "afastamento",                :default => 0
-    t.integer  "dias_trab",                  :default => 0
-    t.integer  "dias_efetivos",              :default => 0
-    t.integer  "dias_rede",                  :default => 0
-    t.integer  "dias_unidade",               :default => 0
-    t.boolean  "flag",                       :default => false
+    t.integer  "professor_id",                     :null => false
+    t.integer  "ano",                              :null => false
+    t.integer  "dias",          :default => 0
+    t.integer  "unidade",       :default => 0
+    t.integer  "outro_trab",    :default => 0
+    t.integer  "f_abonada",     :default => 0
+    t.integer  "atestado",      :default => 0
+    t.integer  "f_justif",      :default => 0
+    t.integer  "f_injustif",    :default => 0
+    t.integer  "lic_saude",     :default => 0
+    t.integer  "afastamento",   :default => 0
+    t.integer  "dias_trab",     :default => 0
+    t.integer  "dias_efetivos", :default => 0
+    t.integer  "dias_rede",     :default => 0
+    t.integer  "dias_unidade",  :default => 0
+    t.boolean  "flag",          :default => false
     t.integer  "ano_letivo"
     t.boolean  "remocao"
-    t.integer  "call_back",     :limit => 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "call_back"
   end
 
   create_table "unidades", :force => true do |t|
