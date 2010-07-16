@@ -9,7 +9,7 @@ class TituloProfessor < ActiveRecord::Base
   DTA = Date.today
 
 
-  before_save :verifica_valor_titulos
+  before_save :verifica_valor_titulos, :verify_qtd?
   before_destroy :atualiza_valor_total_apos_delecao
 
 
@@ -19,7 +19,7 @@ protected
   def verify_qtd?
     if !(self.tipo_curso == true) and self.titulo_id == 7
       if self.quantidade < 30
-        return false
+        errors.add(:tipo_curso, 'Curso à distancia somente acima de 30 hrs de duração')
       end
     end
   end
