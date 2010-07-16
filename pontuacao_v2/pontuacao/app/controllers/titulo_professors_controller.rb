@@ -223,7 +223,7 @@ class TituloProfessorsController < ApplicationController
     if $id_titulo.to_i == 7
       render :update do |page|
         page.replace_html 'valor', :text => 'O valor do Titulo é: ' + ($valor).to_s
-        page.replace_html 'tipo_titulo', :partial => 'tipo'
+        #page.replace_html 'tipo_titulo', :partial => 'tipo'
       end
     else
       render :update do |page|

@@ -37,7 +37,7 @@
          :url => { :action => 'guarda_valor' } %>                
            <tr><td colspan="2">
              <div id="valor"></div>
-             <div id="tipo_titulo"></div>
+             <div id="tipo_titulo"><%= f.check_box(:tipo_curso, :disabled => false, :checked => true)  %> Presencial?</div>
            </td></tr>
          </td>
     </tr>
@@ -77,7 +77,7 @@
           7. APRESENTAÇÃO DE COMUNICAÇÃO QUE<br/>
              ULTRAPASSAR A CARGA HORARIA 24 HRS, LANÇAR<br/>
              A A TITULAÇÃO COMO <b>OUTROS CURSOS</b> COM<br/>
-             PONTUAÇÃO DE 0,01 POR HORA DE PARTICIPAÇÃO.
+             PONTUAÇÃO DE 0,001 POR HORA DE PARTICIPAÇÃO.
       </div>
      </td>
     </table>
