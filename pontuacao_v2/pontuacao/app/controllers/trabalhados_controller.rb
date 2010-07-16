@@ -123,8 +123,8 @@ class TrabalhadosController < ApplicationController
   # PUT /trabalhados/1.xml
   def update
     @trabalhado = Trabalhado.find(params[:id])
-    @trabalhado.flag = false
-    @trabalhado.call_back = false
+    @trabalhado.flag = 0
+    @trabalhado.call_back = 0
     @log = Log.new
     @log.log(current_user, @trabalhado.professor_id, "Atualizado tempo de serviço. Ano :#{@trabalhado.ano} - Ano letivo: #{@trabalhado.ano_letivo}")
     respond_to do |format|

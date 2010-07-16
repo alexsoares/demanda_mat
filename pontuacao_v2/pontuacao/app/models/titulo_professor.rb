@@ -2,8 +2,8 @@
 class TituloProfessor < ActiveRecord::Base 
   validates_presence_of :professor_id, :message => ' -  PROFESSOR - PREENCHIMENTO OBRIGATÓRIO'
   validates_presence_of :titulo_id, :message => ' -  TITULO - PREENCHIMENTO OBRIGATÓRIO'
-  validates_numericality_of :quantidade
-
+  validates_numericality_of :quantidade,:if => :verify_qtd?, :message => ' - Acima de 30 hrs'
+  
   belongs_to :professor
   belongs_to :titulacao
   DTA = Date.today
@@ -17,9 +17,9 @@ protected
 
 
   def verify_qtd?
-    if self.tipo_curso == false and self.titulo_id == 7
+    if !(self.tipo_curso == true) and self.titulo_id == 7
       if self.quantidade < 30
-        false
+        return false
       end
     end
   end
@@ -44,8 +44,8 @@ protected
           self.status = 0
         else
           if (self.titulo_id == 6) or (self.titulo_id == 7) or (self.titulo_id == 8)
-            #self.dt_titulo = (DTA.strftime("%Y").to_i).to_s + "-06-30"
-
+            self.dt_titulo = (DTA.strftime("%Y").to_i).to_s + "-06-30"
+            self.status = 1
           if self.dt_titulo.to_s > "30/06/2010"
             self.status = 0
           end
@@ -53,7 +53,7 @@ protected
             #self.dt_validade = "2010"
             self.pontuacao_titulo = self.quantidade * self.valor
             teste = DTA.strftime("%Y-%m-%d").to_date
-            if teste < self.dt_validade
+            if teste > self.dt_validade
               @atualiza_professor.total_titulacao = @atualiza_professor.total_titulacao + self.pontuacao_titulo
               @atualiza_professor.save
               self.status = 1

@@ -56,7 +56,7 @@ class TituloProfessorsController < ApplicationController
   def search_by_professor_titulos_anuais
    
    if (params[:titulos_anuais][:professor_id]).present?
-     @relatorio_tit_prof = TituloProfessor.all(:conditions => ["professor_id = ? and (titulo_id = 6 or titulo_id = 7 or titulo_id = 8)",params[:titulos_anuais][:professor_id]])
+     @relatorio_tit_prof = TituloProfessor.all(:conditions => ["professor_id = ? and (titulo_id = 6 or titulo_id = 7 or titulo_id = 8) and ano_letivo <> ?",params[:titulos_anuais][:professor_id], Time.current.strftime("%Y")])
    else
      @relatorio_tit_prof = "Selecione o professor"
    end
