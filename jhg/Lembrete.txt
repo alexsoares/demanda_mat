@@ -1,3 +1,0 @@
-Para iniciar a contagem de 2010, deve-se executar o comando:
-
-update acum_trabs set status = 0;

@@ -9,7 +9,8 @@ class TituloProfessor < ActiveRecord::Base
   DTA = Date.today
 
 
-  before_save :verifica_valor_titulos, :verify_qtd?
+  before_save :verifica_valor_titulos
+  validate :verify_qtd?
   before_destroy :atualiza_valor_total_apos_delecao
 
 
@@ -44,22 +45,19 @@ protected
           self.status = 0
         else
           if (self.titulo_id == 6) or (self.titulo_id == 7) or (self.titulo_id == 8)
-            self.dt_titulo = (DTA.strftime("%Y").to_i).to_s + "-06-30"
-            self.status = 1
-          if self.dt_titulo.to_s > "30/06/2010"
-            self.status = 0
-          end
-            self.dt_validade = ((DTA.strftime("%Y").to_i)).to_s + "-06-30"
-            #self.dt_validade = "2010"
-            self.pontuacao_titulo = self.quantidade * self.valor
-            teste = DTA.strftime("%Y-%m-%d").to_date
-            if teste > self.dt_validade
-              @atualiza_professor.total_titulacao = @atualiza_professor.total_titulacao + self.pontuacao_titulo
-              @atualiza_professor.save
-              self.status = 1
-            else
-              self.status = 0
-            end
+           #self.dt_titulo = (DTA.strftime("%Y").to_i).to_s + "-06-30"
+           self.dt_validade = ((DTA.strftime("%Y").to_i)).to_s + "-06-30"
+           #self.dt_validade = "2010"
+           self.pontuacao_titulo = self.quantidade * self.valor
+           teste = DTA.strftime("%Y-%m-%d").to_date
+
+           if (self.dt_titulo.to_s > "2010-06-30") or (self.dt_titulo.to_s < "2009-11-01")
+             self.status = 0
+           else
+             @atualiza_professor.total_titulacao = @atualiza_professor.total_titulacao + self.pontuacao_titulo
+             @atualiza_professor.save
+             self.status = 1
+           end
           end
         end
       end

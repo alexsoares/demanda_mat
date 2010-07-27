@@ -81,7 +81,7 @@ class RolesUsersController < ApplicationController
     @role_user.ativar_usuario(@role_user.user_id)
     respond_to do |format|
       if @role_user.update_attributes(params[:role_user])
-        flash[:notice] = 'RoleUser was successfully updated.'
+        flash[:notice] = 'Papel do usuário atualizado com sucesso.'
         format.html { redirect_to(@role_user) }
         format.xml  { head :ok }
       else

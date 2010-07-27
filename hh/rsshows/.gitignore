@@ -1,8 +1,0 @@
-*~
-config/database.yml
-db/*.sqlite3
-doc
-log/*
-tmp/
-.DS_Store
-

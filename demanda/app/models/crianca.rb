@@ -2,6 +2,7 @@ class Crianca < ActiveRecord::Base
   belongs_to :unidade
   belongs_to :grupo
   belongs_to :regiao
+  has_many :logs
 
   validates_presence_of :regiao_id, :message => ' - ESCOLHA UMA REGIÃO'
   validates_presence_of :grupo_id, :message => ' - ESCOLHA UMA CLASSIFICAÇÃO'
