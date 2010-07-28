@@ -64,12 +64,10 @@ display: none;
       <%else%>
         NUNCA FOI TRANSFERIDO.
       <%end%>
- 
-   </font>
+ <%  if $flag_imp == 0 then %>
+ </font>
   </fieldset>
-
-  <%  if $flag_imp == 0 then %>
-   <fieldset>
+  <fieldset>
     <legend><font size=4>Acompanhante</font></legend>
     <font size=3>
     <b>Responsável:   </b>
@@ -132,8 +130,8 @@ Ciente:
 <td align="center"> Assinatura do responsável               </td>
 <td align="center"> Assinatura diretor(a)              </td>
 </tr>
+
 </table>
-<%end%>
  <div class="botao">
     <table width="100%">
     <tr>
@@ -142,17 +140,26 @@ Ciente:
   <%end%>
     |  <%= link_to 'Cadastrar', new_crianca_path %>
 
-    |<%$flag_imp =1%> <%$flag_btimp = 1%><%= link_to 'Impressão Dados', @crianca %> |
-    <%= link_to 'Voltar', root_path %>|
-       <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+    |<%$flag_imp =1%><%= link_to 'Impressão Dados', @crianca %> |
+    
 
      
     </tr>
   </table>
 
  </div>
+<%end%>
 
-
-
+ <div class="botao">
+    <table width="100%">
+     <tr>
+       <br />
+       <br />
+       <td align="left">|<%= link_to 'Voltar', root_path %>|</td>
+       <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+     </tr>
+    </table>
+ </div>
+</div>
 
 

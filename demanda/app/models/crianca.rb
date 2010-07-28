@@ -2,17 +2,16 @@ class Crianca < ActiveRecord::Base
   belongs_to :unidade
   belongs_to :grupo
   belongs_to :regiao
-  has_many :logs
-
+  has_many :matriculas
   validates_presence_of :regiao_id, :message => ' - ESCOLHA UMA REGIÃO'
   validates_presence_of :grupo_id, :message => ' - ESCOLHA UMA CLASSIFICAÇÃO'
   validates_presence_of :nome, :message => ' -  NOME DA CRIANÇA É OBRIGATÓRIO'
   validates_presence_of :responsavel, :message => ' - NOME DO RESPONSÁVEL É OBRIGATÓRIO'
   validates_presence_of :celular, :if => :check_tel1, :message => ' - É NECESSÁRIO UM TELEFONE FIXO OU CELULAR'
-
+  validates_numericality_of :celular, :if => :check_tel1 , :only_integer => true, :message =>  ' - NÃO É UM NÚMERO'
   validates_presence_of :option1, :message => ' - ESCOLHA PELO MENOS UMA OPÇÃO'
-
-
+  validates_numericality_of :tel1, :only_integer => true, :message =>  ' - NÃO É NÚMERO'
+  validates_numericality_of :numero, :only_integer => true, :message =>  ' - NÃO É NÚMERO'
   
 
   named_scope :by_nome, lambda {|nome| { :conditions => { :nome => nome }}}
@@ -22,7 +21,16 @@ class Crianca < ActiveRecord::Base
     self.tel1.empty?
   end
 
-  
+
+  def tem_matricula(crianca_id)
+    existe_matricula = Matricula.find_by_crianca_id(crianca_id)
+    if existe_matricula.present?
+      return existe_matricula
+    else
+      return 0
+    end
+  end
+
   def self.nome_unidade(unidade)
     Unidade.find(unidade).nome
   end

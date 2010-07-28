@@ -6,31 +6,15 @@ display: none;
 </style>
 <div class="botao">
 <input type="Button" Value="Imprimir" onclick="Imprimir()">
-
-<!--   <table width="100%">
-      <tr>
-        <td width="50%"></td>
-        <td width="50%" align="right">
-          <% form_tag relatorio_crianca_path, {:method => 'get', :action => 'search'} do %>
-           <p>
-              <%= hinted_text_field_tag(:search, params[:search], "Entre nome da criança", :size => 30) %>
-              <%= submit_tag "Filtrar", :name => nil %>
-           </p>
-          <% end %> 
-        </td>
-      </tr>
-    </table> -->
-
-  <%= form_tag({ :method => 'get', :action => 'search' }, :id => 'graph-unit-form')%>
+  <%= form_tag({ :method => 'get', :action => 'search' })%>
     <%= error_messages_for 'contact' %>
    <table width="100%">
     <div class="botao">
       <tr>
         <td width="100%" align="right">
            <p>
-              Nome da criança:
-              <%= hinted_text_field_tag(:search, params[:search],"",:size => 30) %>
-              <%= submit_tag 'Filtrar' %>
+              <%= hinted_text_field_tag(:search, params[:search], "Entre nome da criança", :size => 30) %>
+              <%= submit_tag 'Filtrar!' %>
            </p>
         </td>
       </tr>
@@ -43,13 +27,14 @@ display: none;
 
 </div>
 
-<%$teste=0%>
+<%contador=0%>
 <div id="contador"></div>
-<table border ="1" cellpadding="1" cellspacing="1" width="100%" frame="box" rules="all">
+<table border ="1" cellpadding="1" cellspacing="1" width="100%" frame="box" rules="rows">
     <tr style="font-size:12px">
      <br/>
         
         <th bgcolor="gray">Nome</th>
+        <th bgcolor="gray"></th>
         <th bgcolor="gray"></th>
         <th bgcolor="gray"></th>
     </tr>
@@ -59,19 +44,27 @@ display: none;
     <%else%>
       <% for crianca in @crianca %>
         <tr>
-          
+          <%contador = contador + 1%>
           <td><center><%=h crianca.nome %></center></td>
         </tr>
         <tr>
           
-          <%   $flag_imp = 0%>
-
+             
             <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
               <div id="negrito">
                 <div class="botao">
-                  <td bgcolor="white" align="center"><%= link_to 'Exibir', crianca %></td>
-                  <td bgcolor="white" align="center"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
-                  <td bgcolor="white" align="center"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
+                  <td bgcolor="white" align="center" width="25%"><%= link_to 'Exibir', crianca %></td>
+                  <td bgcolor="white" align="center" width="25%"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+                  <td bgcolor="white" align="center" width="25%"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
+                  <% if (crianca.matricula != 1) %>
+                    <td bgcolor="white" align="center" width="25%"><%=  link_to "Matricular", :controller => "criancas", :action => "update_matricular", :id => crianca.id %></td>
+                  <%else%>                  
+                    <%if  crianca.tem_matricula(crianca.id) == 0 %>
+                      <td bgcolor="white" align="center" width="25%"><%= link_to "Gerar Ficha (Possue matricula)", new_crianca_matricula_path(crianca.id) %></td>
+                    <%else%>
+                      <td bgcolor="white" align="center" width="25%"><%= link_to "Editar ficha de matricula", edit_crianca_matricula_path(crianca.id,crianca.tem_matricula(crianca.id)) %></td>
+                    <%end%>
+                  <%end%>
                 </div>                  
               </div>
             <%else%>
@@ -93,6 +86,7 @@ display: none;
 
         </tr>
     <% end %>
+    
   <%end%>
 
 </table>
@@ -102,7 +96,7 @@ display: none;
 <tr>
 <p><font size=3>
 
- EXISTE(M) <%=h $teste %>
+ EXISTE(M) <%=h contador %>
 <br /><br /><br />
 </font></p>
 </tr>

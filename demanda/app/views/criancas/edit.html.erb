@@ -17,7 +17,49 @@
       <tr>
          <td><b>Unidade</b></td>
          <td><%= f.collection_select :unidade_id, @unidades, :id, :nome %></td>
+      </tr>  <fieldset>
+    <legend><font size=4>Dados da Inscrição</font></legend>
+    <table>
+      <tr>
+        <td><b>Matriculado</b></td>
+        <td><%= f.check_box :matricula %>SIM</td>
       </tr>
+      <tr>
+         <td><b>Unidade Matriculada</b></td>
+         <td><%= f.collection_select :unidade_matricula, @unidade_matricula, :id, :nome, :include_blank => '' %> </td>
+         <td> <div id="unidade"></div></td>
+         <%= observe_field("crianca_unidade_matricula",
+           :url => {:action => 'autentica_matricula'},
+           :with =>"crianca_unidade_matricula",
+            :on => "blur")%>
+       </tr>
+       <tr>
+         <td><b>Observação</b></td>
+         <td><%= f.text_field :obs %></td>
+       </tr>
+    </table>
+  </fieldset><br/>
+
+  <fieldset>
+    <table>
+      <tr>
+        <td><b><%= f.label :n_especial, 'Possui necessidade especial?' %></b></td>
+        <td><%= f.check_box :n_especial %>SIM</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td><b><%= f.label :necessidade, 'Descricao Necessidade' %></b><br/>
+        <%= f.text_area :necessidade %></td>
+      </tr>
+      <tr>
+        <td><b><%= f.label :historico_contato, 'Históricos de Contatos' %></b><br/>
+        <%= f.text_area :historico_contato %></td>
+      </tr>
+
+    </table>
+  </fieldset>
+
       <tr>
          <td><b>Região</b></td>
          <td><%= f.collection_select :regiao_id, @regiaos, :id, :nome %></td>
@@ -179,48 +221,6 @@
    </fieldset>
   </div><br/>
 
-  <fieldset>
-    <legend><font size=4>Dados da Inscrição</font></legend>
-    <table>
-      <tr>
-        <td><b>Matriculado</b></td>
-        <td><%= f.check_box :matricula %>SIM</td>
-      </tr>
-      <tr>
-         <td><b>Unidade Matriculada</b></td>
-         <td><%= f.collection_select :unidade_matricula, @unidade_matricula, :id, :nome, :include_blank => '' %> </td>
-         <td> <div id="unidade"></div></td>
-         <%= observe_field("crianca_unidade_matricula",
-           :url => {:action => 'autentica_matricula'},
-           :with =>"crianca_unidade_matricula",
-            :on => "blur")%>
-       </tr>
-       <tr>
-         <td><b>Observação</b></td>
-         <td><%= f.text_field :obs %></td>
-       </tr>
-    </table>
-  </fieldset><br/>
-
-  <fieldset>
-    <table>
-      <tr>
-        <td><b><%= f.label :n_especial, 'Possui necessidade especial?' %></b></td>
-        <td><%= f.check_box :n_especial %>SIM</td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td><b><%= f.label :necessidade, 'Descricao Necessidade' %></b><br/>
-        <%= f.text_area :necessidade %></td>
-      </tr>
-      <tr>
-        <td><b><%= f.label :historico_contato, 'Históricos de Contatos' %></b><br/>
-        <%= f.text_area :historico_contato %></td>
-      </tr>
-
-    </table>
-  </fieldset>
   <br/>
 
 
@@ -234,7 +234,6 @@
   </fieldset>
 
   </p><br/>
-
   | <%= link_to 'Exibir', @crianca %> 
   | <%= link_to 'Voltar', root_path %> |
 

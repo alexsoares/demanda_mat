@@ -1,6 +1,11 @@
 class HomeController < ApplicationController
+
   
   before_filter :login_required
+  def listar
+    @listar = Matricula.all
+  end
+
   def index
 
   end

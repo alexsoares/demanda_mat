@@ -54,5 +54,5 @@
     <%= f.text_field :option4 %><br />
 </p>
 
-|<%= link_to 'Voltar', criancas_path %>|
+<%= link_to 'Voltar', criancas_path %>
 <% end %>

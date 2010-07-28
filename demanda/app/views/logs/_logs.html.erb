@@ -26,14 +26,11 @@ display: none;
           <%  if log.crianca_id == 0 then %>
             <td width="50%"><center>TODAS AS CRIANCAS</center></td>
           <%else%>
-          <% @crianca_existe = Crianca.find_by_id(log.crianca_id) %>
-          <%if !(@crianca_existe.nil?) %>
-          <% if log.obs == "Apagado" %>
+            <% if log.obs == "Apagado" %>
               <td width="50%"><center><%=  log.crianca_id %> - Com a exclusão da criança, impossível exibir seu nome.</center></td>
             <%else%>
               <td width="50%"><center><%=  log.crianca_id %> - <%=h log.crianca.nome %></center></td>
             <%end%>
-          <%end%>
           <%end%>
         </tr>
         <tr>

@@ -9,6 +9,9 @@ class CriancasController < ApplicationController
   require_role ["seduc"], :for => [:atualiza_grupo,:matric,:config,:confirma] #
 
 
+  def crianca_anterior
+    @crianca_anterior = Crianca.find(:all, :conditions => ["matricula = 1 and id not in (select crianca_id from matriculas)"], :include => ['matriculas'])
+  end
 
 # GET /criancas
   # GET /criancas.xml
@@ -20,7 +23,7 @@ class CriancasController < ApplicationController
       format.xml  { render :xml => @criancas }
     end
   end
-  
+
   def relatorio_crianca
     @crianca = "Filtre pela criança desejada"
   end
@@ -35,7 +38,7 @@ class CriancasController < ApplicationController
   # GET /criancas/1.xml
   def show
      @crianca = Crianca.find(params[:id])
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @crianca }
@@ -206,7 +209,7 @@ class CriancasController < ApplicationController
             end
           end
         end
-      end    
+      end
    render :partial => 'listar_criancas_impressao'
   end
 
@@ -256,7 +259,7 @@ class CriancasController < ApplicationController
      @teste = Unidade.find(:all)
      render :nothing => true
   end
-  
+
   def classif
     $unidade = params[:unidade_unidade_class_id]
     $consulta = 4
@@ -276,7 +279,7 @@ class CriancasController < ApplicationController
     contador4 = 0
     contador5 = 0
     contador6 = 0
-    contador7 = 0    
+    contador7 = 0
     for at_grupo in @atualiza_grupo
       dias = Date.today - at_grupo.nascimento
       if (((0 >= dias) and (dias < 366)) and at_grupo.grupo_id != 1) then
@@ -305,7 +308,7 @@ class CriancasController < ApplicationController
             end
           end
         end
-      end   
+      end
     end
     @reclassifica = Log.new
     @reclassifica.user_id = current_user.id
@@ -318,7 +321,7 @@ class CriancasController < ApplicationController
     <br/>
     <h3>Contabilidade Grupos após esta ação</h3>
     <br/>
-    
+
     Para grupo BI serão realocado(s) <strong><font color="red">#{contador.to_s}</font></strong> criança(s).
     Para grupo BII serão realocado(s) <strong><font color="red">#{contador2.to_s}</font></strong> criança(s).
     Para grupo BIII serão realocado(s) <strong><font color="red">#{contador3.to_s}</font></strong> criança(s).
@@ -326,9 +329,9 @@ class CriancasController < ApplicationController
     Para grupo MII serão realocado(s)  <strong><font color="red">#{contador5.to_s}</font></strong> criança(s).
     Para grupo NI serão realocado(s)  <strong><font color="red">#{contador6.to_s}</font></strong> criança(s).
     Para grupo NII serão realocado(s)  <strong><font color="red">#{contador7.to_s}</font></strong> criança(s).
-    
+
 HEREDOC
-    
+
 
    render :update do |page|
       page.replace_html 'reordenar', :text => mystring
@@ -351,7 +354,7 @@ HEREDOC
   end
 
   def sobresis
-    
+
     render :partial => 'sobre'
   end
 
@@ -365,14 +368,14 @@ HEREDOC
     #@criancas = Crianca.un_din
     $consulta = 1
     $unidade_op1_id = params[:unidade_unidade_op1_id]
-       
+
     @crianca = Crianca.find(:all, :conditions => ["option1 = "+ $unidade_op1_id + " and matricula != 1"], :order =>("servidor_publico desc, transferencia desc, created_at"))
     if @crianca.nil? or @crianca.empty? then
       render :text => 'Nenhum registro encontrado'
-    else      
+    else
       render :partial => 'listar_criancas'
     end
-    
+
   end
 
 
@@ -391,10 +394,10 @@ HEREDOC
     $consulta = 6
     $crianca = params[:crianca_crianca_id]
     @crianca = Crianca.find(:all, :conditions => ['id=' + $crianca ])
-    render :partial => 'listar_todas_criancas'
+    render :partial => 'listar_para_matricula'
   end
 
- 
+
   def regiao_unidade
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:cr_id]}
     render :update do |page|
@@ -402,7 +405,7 @@ HEREDOC
     end
   end
 
-  def grupo_crianca      
+  def grupo_crianca
       @zero = Grupo.find_by_id(params[:crianca_grupo_id])
       @unidades = Unidade.find :all, :conditions => {:tipo => params[:crianca_grupo_id]}
       if @zero.nil? then
@@ -436,7 +439,7 @@ HEREDOC
   end
 
   def rg
-    
+
     @unidades = Unidade.find :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
     @u = Unidade.count :all, :conditions => {:regiao_id => params[:crianca_regiao_id]}
     if @u == 2 then
@@ -464,7 +467,7 @@ HEREDOC
         page.replace_html 'nome_aviso', :text => ''
         page.replace_html 'aviso_mae', :text => ''
       end
- 
+
     end
   end
 
@@ -488,7 +491,7 @@ HEREDOC
   end
 
 
-   
+
   def same_birthday
     data_nasc = params[:ano].to_s + '-' + params[:mes].to_s + '-' + params[:dia].to_s
     if !Crianca.by_nome(params[:nome]).by_nascimento(data_nasc).empty? then
@@ -508,13 +511,36 @@ HEREDOC
    if not params[:crianca_nascimento_2i].nil? then
      mes = params[:crianca_nascimento_2i].to_s
    end
-   data = dia.to_s + " " + mes.to_s + " " + ano.to_s  
-   render :text => data.to_s 
+   data = dia.to_s + " " + mes.to_s + " " + ano.to_s
+   render :text => data.to_s
 
  end
 
 
 
+ def update_matricular
+ @matricula = Crianca.find(params[:id])
+ @unidade_matricula = Unidade.find_by_sql("select u.id, u.nome from unidades u right join criancas c on u.id in (c.option1, c.option2, c.option3, c.option4) where c.id = " + (@matricula.id).to_s)
+  respond_to do |format|
+     format.html
+     format.xml { render :xml => @matricula.to_xml }
+   end
+ end
+ 
+def matricular
+ matricula = Crianca.find(params[:id])
+    respond_to do |format|
+      if matricula.update_attributes(params[:crianca])
+        flash[:notice] = 'Matricula efetuada com sucesso.'
+        format.html { redirect_to(new_crianca_matricula_path(matricula)) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "update_matricular" }
+        format.xml  { render :xml => matricula.errors, :status => :unprocessable_entity }
+      end
+    end
+  
+end
  protected
     #Inicialização variavel / combobox grupo
 
@@ -537,10 +563,12 @@ HEREDOC
 
   def load_criancas_mat
     @criancasmat = Crianca.find(:all, :conditions => ["matricula = 0" ], :order => "nome ASC")
+    
   end
+
 
 
 
 end
 
-  
+

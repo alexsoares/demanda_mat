@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :logs
 
   map.resources :roles_users
@@ -9,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :unidades
 
-  map.resources :criancas
+  map.resources :criancas, :has_many =>:matriculas, :collection => {:search => :get}
 
   map.resources :grupos
 
@@ -56,6 +57,9 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
+  map.crianca_anterior '/crianca_anterior', :controller => 'criancas', :action => 'crianca_anterior'
+  map.matricular '/criancas/:id/matricular', :controller => 'criancas', :action => 'matricular'
+  map.lista '/lista', :controller => 'home', :action => 'listar'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
   map.root :controller => "home"
@@ -66,5 +70,6 @@ ActionController::Routing::Routes.draw do |map|
   map.grafico '/grafico', :controller => 'grafico'
   map.grafico_geral '/grafico/grafico_demanda_geral', :controller => 'grafico', :action => 'grafico_geral_demanda'
   map.grafico_por_unidade '/grafico/crianca_por_unidade', :controller => 'grafico', :action => 'crianca_por_unidade'
-  map.relatorio_crianca '/crianca/relatorio_crianca', :controller => 'criancas', :action => 'relatorio_crianca'
+  map.relatorio_crianca '/relatorio_crianca', :controller => 'criancas', :action => 'relatorio_crianca'
+  
 end

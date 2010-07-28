@@ -89,6 +89,7 @@ display: none;
           <li><%= link_to "Unidades", new_unidade_path %></li>
           <li><%= link_to "Regiões", new_regiao_path %></li>
           <li><%= link_to "Grupos", new_grupo_path %></li>
+          <li><%= link_to "Editar matricula", edit_crianca_matricula_path(2,1) %></li>
       </ul>
     </li>
     <%end%>
@@ -99,6 +100,7 @@ display: none;
         <%end%>
         <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') or current_user.has_role?('escola') or current_user.has_role?('escriturario') then%>
           <li><%= link_to "Controlar demanda", criancas_path %></li>
+          <li><%= link_to "Gerar ficha matricula", crianca_anterior_path %></li>
         <%else%>
           <% if current_user.has_role?('externo') then%>
             <li><%= link_to "Consultar demanda", criancas_path %></li>
