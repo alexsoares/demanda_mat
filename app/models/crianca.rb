@@ -2,7 +2,7 @@ class Crianca < ActiveRecord::Base
   belongs_to :unidade
   belongs_to :grupo
   belongs_to :regiao
-
+  has_many :matriculas
   validates_presence_of :regiao_id, :message => ' - ESCOLHA UMA REGIÃO'
   validates_presence_of :grupo_id, :message => ' - ESCOLHA UMA CLASSIFICAÇÃO'
   validates_presence_of :nome, :message => ' -  NOME DA CRIANÇA É OBRIGATÓRIO'
@@ -21,7 +21,16 @@ class Crianca < ActiveRecord::Base
     self.tel1.empty?
   end
 
-  
+
+  def tem_matricula(crianca_id)
+    existe_matricula = Matricula.find_by_crianca_id(crianca_id)
+    if existe_matricula.present?
+      return existe_matricula
+    else
+      return 0
+    end
+  end
+
   def self.nome_unidade(unidade)
     Unidade.find(unidade).nome
   end

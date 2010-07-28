@@ -14,6 +14,7 @@ display: none;
     <legend>
       <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
         <td><%= link_to_remote('Matricular', :update => "consul", :url => { :action => "matric"}) %></td>
+        
       <%end%>
       <td><%= link_to_remote('Consultar', :update => "consul", :url => { :action => "consulta"}) %></td>
       <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
