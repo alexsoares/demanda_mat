@@ -1,0 +1,70 @@
+class CreateUnidades < ActiveRecord::Migration
+  def self.up
+    create_table :unidades do |t|
+      t.string :nome
+      t.integer :tipo
+      t.references :regiao
+
+      t.timestamps
+    end
+# Tipos:
+    # 1 - Creche
+    # 2 - EMEI
+    # 3 - Casas da Criança
+    # 4 - EMEF
+    # 5 - CIEP
+
+# São Jerônimo
+    Unidade.create :name => "Arapiranga", :tipo => 3 , :regiao_id => 1
+    Unidade.create :name => "Bitu", :tipo => 3, :regiao_id => 1
+    Unidade.create :name => "Maíra", :tipo => 3, :regiao_id  => 1
+    Unidade.create :name => "Juriti", :tipo => 3, :regiao_id => 1
+    Unidade.create :name => "Jacy", :tipo => 2, :regiao_id => 1
+    Unidade.create :name => "Aracy", :tipo => 2, :regiao_id => 1
+    Unidade.create :name => "CAIC", :tipo => 1, :regiao_id => 1
+# Cidade Jardim
+    Unidade.create :name => "Graúna", :tipo => 3, :regiao_id => 2
+    Unidade.create :name => "Araúna", :tipo => 3, :regiao_id => 2
+    Unidade.create :name => "Carandá", :tipo => 2, :regiao_id => 2
+    Unidade.create :name => "Manaí", :tipo => 2, :regiao_id => 2
+    Unidade.create :name => "Aracati", :tipo => 2, :regiao_id => 2
+    Unidade.create :name => "Cunhataí", :tipo => 2, :regiao_id => 2
+    Unidade.create :name => "Manacá", :tipo => 1, :regiao_id => 2
+    Unidade.create :name => "Anajá", :tipo => 1, :regiao_id => 2
+    Unidade.create :name => "Chuí", :tipo => 1, :regiao_id => 2
+# São Vito
+    Unidade.create :name => "Manacá", :tipo => 3, :regiao_id => 3
+    Unidade.create :name => "Potira", :tipo => 2, :regiao_id => 3
+    Unidade.create :name => "Paturi", :tipo => 2, :regiao_id => 3
+    Unidade.create :name => "Indaiá", :tipo => 2, :regiao_id => 3
+    Unidade.create :name => "Batuíra", :tipo => 2, :regiao_id => 3
+    Unidade.create :name => "Jacina", :tipo => 2, :regiao_id => 3
+    Unidade.create :name => "Curimã", :tipo => 1, :regiao_id => 3
+    Unidade.create :name => "Majoí", :tipo => 1, :regiao_id => 3
+    Unidade.create :name => "Taperá", :tipo => 1, :regiao_id => 3
+# Zanaga
+    Unidade.create :name => "Curió", :tipo => 3, :regiao_id => 4
+    Unidade.create :name => "Taraguá", :tipo => 3, :regiao_id => 4
+    Unidade.create :name => "Urupê", :tipo => 3, :regiao_id => 4
+    Unidade.create :name => "Patativa", :tipo => 2, :regiao_id => 4
+    Unidade.create :name => "Araçari", :tipo => 2, :regiao_id => 4
+    Unidade.create :name => "Curumim", :tipo => 2, :regiao_id => 4
+# Jardim Ipiranga
+    Unidade.create :name => "Tahíra", :tipo => 3, :regiao_id => 5
+    Unidade.create :name => "Boré", :tipo => 2, :regiao_id => 5
+    Unidade.create :name => "Ceci", :tipo => 2, :regiao_id => 5
+    Unidade.create :name => "Corimbó", :tipo => 2, :regiao_id => 5
+    Unidade.create :name => "Tangará", :tipo => 2, :regiao_id => 5
+# Centro
+    Unidade.create :name => "Bacuri", :tipo => 2, :regiao_id => 6
+    Unidade.create :name => "Sabiá", :tipo => 2, :regiao_id => 6
+# Praia Azul
+    Unidade.create :name => "Pitanga", :tipo => 3, :regiao_id => 7
+    Unidade.create :name => "Panamby", :tipo => 3, :regiao_id => 7
+
+  end
+
+  def self.down
+    drop_table :unidades
+  end
+end

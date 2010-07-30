@@ -1,0 +1,8 @@
+drop trigger if exists apaga_user
+delimiter $$
+ CREATE TRIGGER apaga_user
+     BEFORE DELETE ON users
+     FOR EACH ROW
+     BEGIN
+	DELETE FROM roles_users where user_id = old.id;
+     END$$

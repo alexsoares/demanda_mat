@@ -1,0 +1,666 @@
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-21 13:57:31) [GET]
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-21 13:57:31) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-21 13:57:39) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "login"=>"administrador", "password"=>"s3inf09"}
+Redirected to /
+Completed in 12ms (DB: 4) | 302 Found [http://localhost/session]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-21 13:57:39) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 27ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2010-06-21 13:57:47) [GET]
+Rendering template within layouts/application
+Rendering criancas/index
+Completed in 1000ms (View: 319, DB: 255) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#consulta (for 127.0.0.1 at 2010-06-21 13:57:50) [POST]
+  Parameters: {"authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9"}
+Completed in 1013ms (View: 693, DB: 86) | 200 OK [http://localhost/criancas/consulta]
+
+
+Processing CriancasController#relatorio (for 127.0.0.1 at 2010-06-21 13:57:56) [POST]
+  Parameters: {"authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9"}
+Completed in 4560ms (View: 550, DB: 3625) | 200 OK [http://localhost/criancas/relatorio]
+
+
+Processing CriancasController#sobresis (for 127.0.0.1 at 2010-06-21 13:58:16) [POST]
+  Parameters: {"authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9"}
+Completed in 392ms (View: 1, DB: 8) | 200 OK [http://localhost/criancas/sobresis]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-21 13:58:18) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing GruposController#new (for 127.0.0.1 at 2010-06-21 13:58:40) [GET]
+Rendering template within layouts/application
+Rendering grupos/new
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/grupos/new]
+
+
+Processing GruposController#index (for 127.0.0.1 at 2010-06-21 13:58:43) [GET]
+Rendering template within layouts/application
+Rendering grupos/index
+Completed in 25ms (View: 18, DB: 2) | 200 OK [http://localhost/grupos]
+
+
+Processing UnidadesController#index (for 127.0.0.1 at 2010-06-21 13:58:49) [GET]
+Rendering template within layouts/application
+Rendering unidades/index
+Completed in 84ms (View: 66, DB: 5) | 200 OK [http://localhost/unidades]
+
+
+Processing UnidadesController#index (for 127.0.0.1 at 2010-06-21 13:58:55) [GET]
+  Parameters: {"search"=>"ARAPIRANGA"}
+Rendering template within layouts/application
+Rendering unidades/index
+Completed in 19ms (View: 11, DB: 2) | 200 OK [http://localhost/unidades?search=ARAPIRANGA]
+
+
+Processing UnidadesController#index (for 127.0.0.1 at 2010-06-21 13:59:16) [GET]
+  Parameters: {"search"=>"ARAPIANGA II"}
+Rendering template within layouts/application
+Rendering unidades/index
+Completed in 17ms (View: 8, DB: 2) | 200 OK [http://localhost/unidades?search=ARAPIANGA+II]
+
+
+Processing CriancasController#sobresis (for 127.0.0.1 at 2010-06-21 13:59:19) [POST]
+  Parameters: {"authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9"}
+Completed in 403ms (View: 1, DB: 11) | 200 OK [http://localhost/criancas/sobresis]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-21 14:02:08) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 47ms (View: 36, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-22 09:07:19) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 40ms (View: 29, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#relatorio_crianca (for 127.0.0.1 at 2010-06-22 09:07:22) [GET]
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 339ms (View: 10, DB: 15) | 200 OK [http://localhost/crianca/relatorio_crianca]
+
+
+Processing CriancasController#relatorio_crianca (for 127.0.0.1 at 2010-06-22 09:11:26) [GET]
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 250ms (View: 9, DB: 16) | 200 OK [http://localhost/crianca/relatorio_crianca]
+
+
+Processing CriancasController#relatorio_crianca (for 127.0.0.1 at 2010-06-22 09:11:29) [GET]
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 382ms (View: 9, DB: 12) | 200 OK [http://localhost/crianca/relatorio_crianca]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-22 09:11:42) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 43ms (View: 23, DB: 14) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#relatorio_crianca (for 127.0.0.1 at 2010-06-22 09:11:45) [GET]
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 292ms (View: 11, DB: 18) | 200 OK [http://localhost/crianca/relatorio_crianca]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-22 09:12:12) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 41ms (View: 31, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#relatorio_crianca (for 127.0.0.1 at 2010-06-22 09:12:14) [GET]
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 200ms (View: 10, DB: 11) | 200 OK [http://localhost/crianca/relatorio_crianca]
+
+
+Processing CriancasController#search (for 127.0.0.1 at 2010-06-22 09:12:22) [POST]
+  Parameters: {"commit"=>"Filtrar!", "method"=>"get", "authenticity_token"=>"7f65a382b9fd9d65cb659501ec273d210e5510d9", "search"=>"MARIA"}
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 640ms (View: 239, DB: 46) | 200 OK [http://localhost/criancas/search?method=get]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-22 10:06:08) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 57ms (View: 43, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-22 14:18:44) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 44ms (View: 32, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-22 14:18:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 15ms (View: 11, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-29 09:17:00) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 52ms (View: 36, DB: 7) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-13 10:10:34) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 66ms (View: 49, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-13 10:10:35) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2010-07-13 10:10:39) [GET]
+Rendering template within layouts/application
+Rendering criancas/new
+Completed in 838ms (View: 196, DB: 161) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2010-07-13 10:10:41) [GET]
+Rendering template within layouts/application
+Rendering criancas/new
+Completed in 573ms (View: 68, DB: 15) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#rg (for 127.0.0.1 at 2010-07-13 10:10:45) [POST]
+  Parameters: {"authenticity_token"=>"5f32fcc3134fa57b074c833ad8b415b030969828", "crianca_regiao_id"=>"6"}
+Completed in 659ms (View: 6, DB: 14) | 200 OK [http://localhost/criancas/rg]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-27 10:56:15) [GET]
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 3ms (DB: 22) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-07-27 10:56:15) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 29ms (View: 21, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-07-27 10:56:25) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "login"=>"administrador", "password"=>"s3inf09"}
+Redirected to /
+Completed in 182ms (DB: 169) | 302 Found [http://localhost/session]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-27 10:56:26) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 76ms (View: 67, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-27 10:56:27) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 24ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#gen_user (for 127.0.0.1 at 2010-07-27 10:56:30) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514"}
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/home/gen_user]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2010-07-27 10:56:37) [GET]
+Rendering template within layouts/application
+Rendering criancas/index
+Completed in 1464ms (View: 452, DB: 340) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2010-07-27 10:56:40) [GET]
+Rendering template within layouts/application
+Rendering criancas/index
+Completed in 1240ms (View: 450, DB: 24) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#config (for 127.0.0.1 at 2010-07-27 10:56:42) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514"}
+Completed in 549ms (View: 4, DB: 11) | 200 OK [http://localhost/criancas/config]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 11:22:51) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 140ms (View: 28, DB: 34) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 11:22:52) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 90ms (View: 23, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2010-07-27 12:59:58) [GET]
+Rendering template within layouts/application
+Rendering criancas/new
+Completed in 785ms (View: 120, DB: 16) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#new (for 127.0.0.1 at 2010-07-27 13:00:01) [GET]
+Rendering template within layouts/application
+Rendering criancas/new
+Completed in 598ms (View: 103, DB: 18) | 200 OK [http://localhost/criancas/new]
+
+
+Processing CriancasController#relatorio_crianca (for 127.0.0.1 at 2010-07-27 13:00:04) [GET]
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 680ms (View: 19, DB: 25) | 200 OK [http://localhost/crianca/relatorio_crianca]
+
+
+Processing CriancasController#relatorio_crianca (for 127.0.0.1 at 2010-07-27 13:00:05) [GET]
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 558ms (View: 15, DB: 8) | 200 OK [http://localhost/crianca/relatorio_crianca]
+
+
+Processing CriancasController#search (for 127.0.0.1 at 2010-07-27 13:00:12) [POST]
+  Parameters: {"commit"=>"Filtrar", "method"=>"get", "authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "search"=>"otavio"}
+Rendering template within layouts/application
+Rendering criancas/relatorio_crianca
+Completed in 746ms (View: 34, DB: 45) | 200 OK [http://localhost/criancas/search?method=get]
+
+
+Processing CriancasController#show (for 127.0.0.1 at 2010-07-27 13:00:13) [GET]
+  Parameters: {"method"=>"get", "id"=>"search"}
+
+
+ActiveRecord::RecordNotFound (Couldn't find Crianca with ID=search):
+    /vendor/rails/activerecord/lib/active_record/base.rb:1528:in `find_one'
+    /vendor/rails/activerecord/lib/active_record/base.rb:1511:in `find_from_ids'
+    /vendor/rails/activerecord/lib/active_record/base.rb:590:in `find'
+    /app/controllers/criancas_controller.rb:37:in `show'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1253:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /home/alexandre/.gem/ruby/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `main'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/bin/rdebug-ide:76
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendering /home/alexandre/demanda/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing CriancasController#show (for 127.0.0.1 at 2010-07-27 13:00:20) [GET]
+  Parameters: {"id"=>"288"}
+Rendering template within layouts/application
+Rendering criancas/show
+Completed in 711ms (View: 25, DB: 29) | 200 OK [http://localhost/criancas/288]
+
+
+Processing CriancasController#show (for 127.0.0.1 at 2010-07-27 13:00:21) [GET]
+  Parameters: {"id"=>"288"}
+Rendering template within layouts/application
+Rendering criancas/show
+Completed in 473ms (View: 17, DB: 12) | 200 OK [http://localhost/criancas/288]
+
+
+Processing CriancasController#destroy (for 127.0.0.1 at 2010-07-27 13:01:39) [DELETE]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "id"=>"288"}
+Redirected to http://localhost:3001/criancas
+Completed in 705ms (DB: 69) | 302 Found [http://localhost/criancas/288]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2010-07-27 13:01:40) [GET]
+Rendering template within layouts/application
+Rendering criancas/index
+Completed in 1937ms (View: 570, DB: 190) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2010-07-27 13:01:43) [GET]
+Rendering template within layouts/application
+Rendering criancas/index
+Completed in 1472ms (View: 510, DB: 23) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#config (for 127.0.0.1 at 2010-07-27 13:01:52) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514"}
+Completed in 654ms (View: 2, DB: 17) | 200 OK [http://localhost/criancas/config]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:01:54) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 101ms (View: 22, DB: 7) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:01:55) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 92ms (View: 17, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:01:57) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 19ms (View: 13, DB: 3) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:06:14) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 95ms (View: 24, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:06:15) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 101ms (View: 25, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:06:17) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 21591ms (View: 21585, DB: 2) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:06:41) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 99ms (View: 23, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:06:42) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 91ms (View: 22, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:06:46) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 24433ms (View: 24428, DB: 1) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:07:14) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 96ms (View: 24, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:07:15) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 94ms (View: 25, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:07:16) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 37788ms (View: 37783, DB: 1) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:07:58) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 210ms (View: 23, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:07:59) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 96ms (View: 24, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:08:00) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 18471ms (View: 18465, DB: 2) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:11:13) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 93ms (View: 24, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:11:14) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 86ms (View: 22, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:11:16) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 85468ms (View: 85463, DB: 1) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:12:57) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 89ms (View: 22, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:12:58) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 60ms (View: 15, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:12:59) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 114910ms (View: 114905, DB: 1) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:16:17) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 90ms (View: 23, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:16:18) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 61ms (View: 16, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:16:20) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 18408ms (View: 18404, DB: 1) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:17:01) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 91ms (View: 25, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:17:02) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 100ms (View: 22, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:17:04) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 68013ms (View: 68008, DB: 1) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:18:38) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 84ms (View: 22, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:18:39) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 90ms (View: 22, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:18:41) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 60284ms (View: 60279, DB: 1) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:19:44) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 90ms (View: 24, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:19:45) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 64ms (View: 16, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-27 13:20:09) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 69ms (View: 52, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-27 13:20:10) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 21ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2010-07-27 13:20:14) [GET]
+Rendering template within layouts/application
+Rendering criancas/index
+Completed in 1175ms (View: 455, DB: 24) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#index (for 127.0.0.1 at 2010-07-27 13:20:16) [GET]
+Rendering template within layouts/application
+Rendering criancas/index
+Completed in 1419ms (View: 490, DB: 31) | 200 OK [http://localhost/criancas]
+
+
+Processing CriancasController#config (for 127.0.0.1 at 2010-07-27 13:20:18) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514"}
+Completed in 591ms (View: 4, DB: 15) | 200 OK [http://localhost/criancas/config]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:20:20) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 108ms (View: 29, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:20:21) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 69ms (View: 21, DB: 3) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:20:24) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 57112ms (View: 57095, DB: 13) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:21:47) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 98ms (View: 22, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:21:48) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 69ms (View: 20, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#log_user (for 127.0.0.1 at 2010-07-27 13:21:49) [POST]
+  Parameters: {"authenticity_token"=>"5d0ecba75900973a13722621fc08af31a1631514", "log_user_id"=>"1"}
+Completed in 19439ms (View: 19428, DB: 7) | 200 OK [http://localhost/logs/log_user]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:22:41) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 89ms (View: 22, DB: 2) | 200 OK [http://localhost/logs]
+
+
+Processing LogsController#index (for 127.0.0.1 at 2010-07-27 13:22:42) [GET]
+Rendering template within layouts/application
+Rendering logs/index
+Completed in 96ms (View: 26, DB: 3) | 200 OK [http://localhost/logs]

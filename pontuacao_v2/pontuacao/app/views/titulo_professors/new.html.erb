@@ -1,0 +1,97 @@
+<div id="conteudo">
+  <br/>
+  <h1 align="center">Cadastro dos Títulos dos Professores</h1>
+<br/>
+<br/>
+<div id="menu">
+<div id="menu_principal">
+<legend>
+| <%= link_to ' Início' , root_path %>
+| <%= link_to_remote('Incluir Títulos',:update => "prof_pontua", :url => { :action => "pontua_prof", :controller => "professors"}) %>
+| <%= link_to 'Voltar', professors_path%> | </legend>
+<hr align="left" width="17%" color=#9C9C9C size="3">
+</div>
+</div>
+<fieldset><legend><font size=5>Cadastro Titulação</font></legend>
+<% form_for(@titulo_professor) do |f| %>
+  <%= f.error_messages %>
+<table border="1">
+  <td valign="top">  
+    <table border="1">
+      <tr>
+        <td><%= f.label :professor_id, 'Professor: ' %></td>
+        <td><%= f.collection_select :professor_id, @professor_sede, :id, :matricula, :include_blank => ' -- Selecione -- ' %>
+         <%= observe_field 'titulo_professor_professor_id',
+         :with => :titulo_professor_professor_id,
+         :url => { :action => 'sel_prof' } %>      
+     </tr>
+     <tr>
+      <td colspan="2"><div id="nomeprof"></div></td>
+     </tr>     
+     <tr>
+        <td><%= f.label :titulo_id, 'Titulo: ' %></td>      
+        <td><%= f.collection_select :titulo_id, @titulacaos, :id, :descricao, :include_blank => ' -- Selecione -- ' %>
+         <%= observe_field 'titulo_professor_titulo_id',
+         :frequency => 0.5,
+         :with => :titulo_professor_titulo_id,
+         :url => { :action => 'guarda_valor' } %>                
+           <tr><td colspan="2">
+             <div id="valor"></div>
+             <div id="tipo_titulo"><%= f.check_box(:tipo_curso, :disabled => false, :checked => true)  %> Presencial?</div>
+           </td></tr>
+         </td>
+    </tr>
+      <div id="valores">
+      </div>
+    <tr>
+       <td><%= f.label :obs, 'Descrição do Título:' %>
+       <td><%= f.text_field :obs, :size => 50 %></td>
+    </tr>
+
+     <tr>
+        <td><%= f.label :quantidade, 'Quantidade:' %></td>
+       <td><%= f.text_field(:quantidade, :size => 10)%></td>
+     </tr>
+     <tr>
+       <td><%= f.label :dt_titulo, 'Data de Emissão:' %>
+       <td><%= f.date_select(:dt_titulo, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 50)) %></td>
+    </tr>
+    
+    <td>
+    <%= f.submit "Salvar"%>
+     </td>
+  </table>
+<table>
+     <td VALIGN=TOP>
+      <div id="mensagem">
+        <br/>
+        <u>OBSERVAÇÕES:</u> <br /> <br />
+          1. UTILIZAR  SOMENTE LETRAS MAIÚSCULAS<br />
+          2. DIGITAR SEMPRE DADOS COMPLETOS <br/>
+          3. NÃO UTILIZAR ACENTUAÇÃO, TIL E CEDILHA<br />
+          4. NÃO UTILIZAR ABREVIAÇÕES<br />
+          5. PROFA E PROEPRE QUANTIDADE EM UNIDADE<br>
+          6. SIMPOSIOS/COMUNICAÇÕES/OUTROS CURSOS DE<br/>
+             CURTA DURAÇÃO CONTAR QUANTIDADE EM HORAS, <br/>
+             DEMAIS CURSOS QUANTIDADE EM UNIDADE <br/>
+          7. APRESENTAÇÃO DE COMUNICAÇÃO QUE<br/>
+             ULTRAPASSAR A CARGA HORARIA 24 HRS, LANÇAR<br/>
+             A A TITULAÇÃO COMO <b>OUTROS CURSOS</b> COM<br/>
+             PONTUAÇÃO DE 0,001 POR HORA DE PARTICIPAÇÃO.
+      </div>
+     </td>
+    </table>
+ </td>
+   <td width="80%">
+    <fieldset>
+     <legend><font size=4>Titulos Cadastrados</font></legend>
+       <div id="titulos"></div>
+    </fieldset>
+   </td>
+</table>
+  <br/>
+    <% end %>
+</fieldset>
+  | <%= link_to 'Voltar', new_titulo_professor_path %> |
+
+</div>

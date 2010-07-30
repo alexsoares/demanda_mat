@@ -1,0 +1,53 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<div id="conteudo">
+
+<%$voltar=0%>
+<%= render :partial => 'lista_prof_relatorio' %>
+<%$s_r = 0%>
+<%@trab = Trabalhado.find_by_sql("SELECT * FROM remocaos WHERE professor_id = " + $professor.to_s + " and ano_letivo = " + $data.to_s + " and remocao_efetivada = null")%>
+          <% for teste in @trab %>
+                <% $s_r = teste.remocao %>
+              <%end%>
+              <%if $s_r  ==  true then %>
+                <center><font color="red">PROFESSORA SOLICITOU REMOÇÃO DE UNIDADE - VALORES DE DIA DE UNIDADE SERÃO DESCONSIDERADOS</font></center>
+              <%end%>
+
+<%= render :partial => 'relatorio_tps'%>
+<%= render :partial => 'totaliza_titulo' %>
+<%= render :partial => 'total_geral' %>
+
+<% $anoA = Time.current-1.years %>
+<br/>
+ <table  width="100%">
+   <tr>
+    <td width="35%">Data Base: 01/11/<%= $anoA.strftime("%Y")%>           à 30/06/<%= Time.current.strftime("%Y") %><br/><br/></td>
+    <td width="35%">Professor:_______________<br/><br/></td>
+    <td width="50%">Diretor Unidade:____________<br/><br/></td>
+   </tr>
+   <tr>
+    <td width="35%">Data Assinatura: ___/___/___<br/><br/></td>
+    <td width="35%">Visto da Comissão:_____________<br/><br/></td>
+    <td width="50%">Responsável Digitação:________________<br/><br/></td>
+    </tr>
+  </table>
+
+<div class="botao">
+    <table width="100%">
+    <tr>
+      <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+    </tr>
+  </table>
+
+</div>
+
+</div>

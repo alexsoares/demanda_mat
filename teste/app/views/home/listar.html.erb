@@ -1,0 +1,23 @@
+<div id="conteudo">
+<h1>Matrículas efetuadas</h1>
+
+<table>
+  <tr>
+    <th>Crianca</th>
+    <th>Ra</th>
+  </tr>
+
+<% for lista_matricula in @listar %>
+  <tr>
+    <td><%=h lista_matricula.crianca.nome %></td>
+    <td><%=h lista_matricula.ra %></td>
+
+    <td><%= link_to 'Imprimir ficha de matricula', [lista_matricula] %></td>
+    <td><%= link_to 'Edit', edit_crianca_matricula_path(lista_matricula) %></td>
+    <td><%= link_to 'Destroy', [lista_matricula], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+</div>

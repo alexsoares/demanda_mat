@@ -1,0 +1,26 @@
+<div id="conteudo">
+<div id="topo">
+<center>
+<br/><h1>Relatório de Grupos</h1>
+</center>
+</div>
+<fieldset>
+<table border=1>
+  <tr>
+     <th>Nome</th>
+     <th>Descricão</th>
+  </tr>	
+<% for grupo in @grupos %>
+  <tr>
+    <td><%=h grupo.nome %></td>
+    <td><%=h grupo.descricao %></td>
+    <td><%= link_to 'Exibir', grupo %></td>
+    <td><%= link_to 'Alterar', edit_grupo_path(grupo) %></td>
+    <td><%= link_to 'Apagar', grupo, :confirm => 'Tem certeza?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</fieldset>
+<br />
+</div>
+<%= link_to 'Cadastrar Grupo', new_grupo_path %>

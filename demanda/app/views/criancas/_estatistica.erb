@@ -1,0 +1,36 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+<div class="botao">
+<div id="estatistica" title="Estatistica">
+<div id="boxes">
+<div class="fixo">
+	<div class="titulo">
+	  <h6><b>Estatísticas</b></h6>
+	</div>
+    <div class="conteudo">
+		<p><font size=3>Crianças Cadastradas</font>
+		<font size=3><%= Crianca.c.length %></font></p>
+
+   		<p><font size=3>Crianças Matriculadas</font>
+		<font size=3><%= Crianca.b_u.length %></font></p>
+
+		<p><font size=3>Crianças Não Matriculadas</font>
+		<font size=3><%= Crianca.b_dm.length %></font></p>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+

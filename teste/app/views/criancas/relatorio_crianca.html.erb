@@ -1,0 +1,106 @@
+<div id="conteudo">
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+<div class="botao">
+<input type="Button" Value="Imprimir" onclick="Imprimir()">
+  <%= form_tag({ :method => 'get', :action => 'search' })%>
+    <%= error_messages_for 'contact' %>
+   <table width="100%">
+    <div class="botao">
+      <tr>
+        <td width="100%" align="right">
+           <p>
+              <%= hinted_text_field_tag(:search, params[:search], "Entre nome da criança", :size => 30) %>
+              <%= submit_tag 'Filtrar!' %>
+           </p>
+        </td>
+      </tr>
+    </div>
+    </table>
+  <br/>
+  <br/>
+  <br/>
+
+
+</div>
+
+<%contador=0%>
+<div id="contador"></div>
+<table border ="1" cellpadding="1" cellspacing="1" width="100%" frame="box" rules="rows">
+    <tr style="font-size:12px">
+     <br/>
+        
+        <th bgcolor="gray">Nome</th>
+        <th bgcolor="gray"></th>
+        <th bgcolor="gray"></th>
+        <th bgcolor="gray"></th>
+    </tr>
+    <%if @crianca == "Filtre pela criança desejada" %>
+      <center><b><%= @crianca %></b></center>
+      <br/>
+    <%else%>
+      <% for crianca in @crianca %>
+        <tr>
+          <%contador = contador + 1%>
+          <td><center><%=h crianca.nome %></center></td>
+        </tr>
+        <tr>
+          
+             
+            <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
+              <div id="negrito">
+                <div class="botao">
+                  <td bgcolor="white" align="center" width="25%"><%= link_to 'Exibir', crianca %></td>
+                  <td bgcolor="white" align="center" width="25%"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+                  <td bgcolor="white" align="center" width="25%"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
+                  <% if (crianca.matricula != 1) %>
+                    <td bgcolor="white" align="center" width="25%"><%=  link_to "Matricular", :controller => "criancas", :action => "update_matricular", :id => crianca.id %></td>
+                  <%else%>                  
+                    <%if  crianca.tem_matricula(crianca.id) == 0 %>
+                      <td bgcolor="white" align="center" width="25%"><%= link_to "Gerar Ficha (Possue matricula)", new_crianca_matricula_path(crianca.id) %></td>
+                    <%else%>
+                      <td bgcolor="white" align="center" width="25%"><%= link_to "Editar ficha de matricula", edit_crianca_matricula_path(crianca.id,crianca.tem_matricula(crianca.id)) %></td>
+                    <%end%>
+                  <%end%>
+                </div>                  
+              </div>
+            <%else%>
+              <%  if current_user.has_role?('escola') then%>
+                <div id="negrito">
+                  <td bgcolor="white" align="center"><%= link_to 'Exibir', crianca %></td>
+                  <td bgcolor="white" align="center"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+                </div>
+              <%else%>
+
+                <div id="negrito">
+                  <td bgcolor="white" align="center"><%= link_to 'Exibir', crianca %></td>
+                </div>
+
+              <%end%>
+
+            <%end%>
+
+
+        </tr>
+    <% end %>
+    
+  <%end%>
+
+</table>
+<br/>
+
+
+<tr>
+<p><font size=3>
+
+ EXISTE(M) <%=h contador %>
+<br /><br /><br />
+</font></p>
+</tr>
+<div class="botao">
+  |<a href="javascript:window.print();">Imprimir</a>
+</div>
+</div>

@@ -1,0 +1,68 @@
+<br/>
+<br/>
+  <div id="conteudo">
+<div class="sub-menu-hv">
+  <ul>
+    <li><%= link_to 'Associar', new_roles_user_path %></li>
+    <li><%= link_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %></li>
+  </ul>
+</div>
+<br/>
+<br/>
+<table border="1" width="100%" frame="box" rules="all">
+  <tr>
+        <td width="100%" colspan="4" align="center"><h1>Listagem Usuários Associados</h1></td>
+  </tr>
+</table>
+<table border="1" width="80%" frame="box" rules="all" align="center">
+  <tr>
+    <th>Login</th>
+    <th>Acesso de</th>
+    <th>Descricao</th>
+  </tr>
+<% for role_user in @role_users %>
+  <tr>
+    <td align="center" width="25%"><%= User.find(role_user.user_id).login %></td>
+    <td align="center"><%= Role.find(role_user.role_id).name %></td>
+    <%if Role.find(role_user.role_id).name == 'admin' then%>
+      <td align="center">Usuário administrador do sistema. Acesso total.</td>
+    <%else%>
+      <%if Role.find(role_user.role_id).name == 'supervisao' then%>
+        <td align="center">Usuário pertencente a Supervisão. Direito de manipulação dos dados do sistema.</td>
+      <%else%>
+        <%if Role.find(role_user.role_id).name == 'direcao' then%>
+          <td align="center">Usuário pertencente ao grupo dos(as) Diretores(as). Direito de inserçao,alteraçao e execução dos calculos.</td>
+        <%else%>
+          <td align="center">Usuário pertencente ao grupo dos(as) Secretários(as). Direito apenas de cadastrar dados.</td>
+        <%end%>
+      <%end%>
+    <%end%>
+  </tr>
+  <tr>
+    <td>| <%= link_to 'Exibir', role_user %>
+    | <%= link_to 'Alterar', edit_roles_user_path(role_user) %>
+    | <%= link_to 'Apagar', role_user, :confirm => 'Confirma?', :method => :delete %> |</td>
+  </tr>
+<% end %>
+
+</table>
+<table border="1" width="100%" frame="box" rules="all">
+  <tr>
+    <td>
+      <br/>
+      <br/>
+      <br/>
+    </td>
+  </tr>
+</table>
+
+<br/>
+<br/>
+
+<div class="sub-menu-hv">
+  <ul>
+    <li><%= link_to 'Associar', new_roles_user_path %></li>
+    <li><%= link_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %></li>
+  </ul>
+</div>
+</div>

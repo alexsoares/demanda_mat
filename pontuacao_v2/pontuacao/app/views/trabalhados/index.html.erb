@@ -1,0 +1,15 @@
+<div id ="conteudo">
+ <br/>
+      <fieldset><legend>Alteração de Tempo de Serviço</legend>
+        <b>SELECIONE O PROFESSOR NOVAMENTE </b>
+         <td><%= collection_select :altera, :professor_id, @professor_sede, :id, :matricula, :include_blank => ' -- Selecione -- ' %></td>
+</fieldset>
+<%= observe_field 'altera_professor_id',
+         :with => :altera_professor_id,
+         :url => { :action => 'busca_trab' } %>
+
+<div id="index"></div>
+    | <td><%= link_to 'Voltar', new_trabalhado_path  %></td> |
+</div>
+
+

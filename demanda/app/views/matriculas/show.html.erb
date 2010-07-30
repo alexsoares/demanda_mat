@@ -1,0 +1,452 @@
+<div id="conteudo">
+<table border="1" width="90%" frame="box" rules="all">
+  <tr>
+    <td colspan="6" align="center">
+        <b>Ra:</b>
+        <%=h @matricula.ra %>
+    </td>
+  </tr>
+  <tr>
+    <td width="1%" colspan="6">
+  <b>unidade:</b>
+  <%=h @matricula.unidade.nome %>
+    </td>
+  </tr>
+  <tr>
+    <td width="1%">
+      <b>Ano:</b>
+      <%=h @matricula.ano_1 %>
+    </td>
+    <td width="2%">
+      <b>Grupo:</b>
+      <%=h Grupo.find(@matricula.grupo_1).nome %>
+
+    </td>
+    <td width="4%">
+      <b>PC manhã:</b>
+      <%=h @matricula.pc_manha_1 %>
+    </td>
+    <td width="4%">
+      <b>PC tarde:</b>
+      <%=h @matricula.pc_tarde_1 %>
+    </td>
+  </tr>
+  <tr>
+    <td width="1%">
+      <b>Ano:</b>
+      <%=h @matricula.ano_2 %>
+    </td>
+    <td width="2%">
+      <b>Grupo:</b>
+      <%=h Grupo.find(@matricula.grupo_2).nome %>
+    </td>
+    <td width="4%">
+      <b>Pc manhã:</b>
+      <%=h @matricula.pc_manha_2 %>
+    </td>
+    <td width="4%">
+      <b>Pc tarde :</b>
+      <%=h @matricula.pc_tarde_2 %>
+    </td>
+  </tr>
+  <tr>
+    <td width="1%">
+      <b>Ano:</b>
+      <%=h @matricula.ano_3 %>
+    </td>
+    <td width="2%">
+      <b>Grupo:</b>
+      <%=h Grupo.find(@matricula.grupo_3).nome %>
+    </td>
+    <td width="4%">
+      <b>PC manhã:</b>
+      <%=h @matricula.pc_manha_3 %>
+    </td>
+    <td width="4%">
+      <b>PC tarde:</b>
+      <%=h @matricula.pc_tarde_3 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="1%">
+      <b>Ano:</b>
+      <%=h @matricula.ano_4 %>
+    </td>
+    <td width="2%">
+      <b>Grupo:</b>
+      <%=h Grupo.find(@matricula.grupo_4).nome %>
+    </td>
+    <td width="4%">
+      <b>PC manhã:</b>
+      <%=h @matricula.pc_manha_4 %>
+    </td>
+    <td width="4%">
+      <b>PC tarde:</b>
+      <%=h @matricula.pc_tarde_4 %>
+    </td>
+  </tr>
+  </table>
+  <h2 align="center">FICHA DE MATRICULA / CRECHE</h2>
+  <legend><strong>1 - Identificação da Criança</strong></legend>
+    <table border="1" width="90%" frame="box" rules="all">
+      <tr>
+        <td colspan="5">
+          <h4>1.1 Nome: <%= @crianca.nome%></h4>
+          <hr width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="25%">
+          <b>1.2 Nasc.</b> <u><%= @crianca.nascimento.strftime("%d/%m/%y")%></u>
+        </td>
+        <td width="35%">
+          <b>Local:</b>
+          <%=h @matricula.local_nascimento %>
+        </td>
+        <td width="20%">
+          <b>Estado:</b>
+          <%=h @matricula.uf %>
+        </td>
+        <td width="20%">
+          <b>Registro:</b>
+          <%=h @matricula.num_registro %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Folhas:</b>
+          <%=h @matricula.folhas_reg %>
+        </td>
+        <td>
+          <b>Livro:</b>
+          <%=h @matricula.livro_reg %>
+        </td>
+        <td>
+          <b>Cor / raça:</b>
+          <%=h @matricula.cor_raca %>
+        </td>
+        <td>
+          <b>PNE:</b>
+          <%=h @matricula.PNE %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <b>1.3 End: </b>
+          <%= @crianca.endereco %>
+        </td>
+        <td>
+          <b>N°: </b>
+          <%= @crianca.numero %>
+        </td>
+        <td>
+          <b>Bairro: </b>
+          <%= @crianca.bairro %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Cidade:</b> AMERICANA
+        </td>
+        <td>
+          Telefone1: <%= @crianca.tel1 %>
+          Telefone2: <%= @crianca.tel2 %>
+        </td>
+        <td colspan="2">
+          <b>Religião:</b>
+          <%=h @matricula.religiao %>
+        </td>
+      </tr>
+    </table>
+ 
+ 
+  <legend><strong>2 - Identificação Familiar</strong></legend>
+  <table width="90%" border="1" frame="box" rules="all">
+    <tr>
+      <td colspan="4" align="center">
+        <strong>2.1 Pai</strong>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">
+        <b>Nome: </b>
+        <%=h @matricula.nome_pai %>
+      </td>
+      <td colspan="4">
+        <b>Idade:</b>
+        <%=h @matricula.idade_pai %> anos
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Data Nasc:</b>
+        <%=h @matricula.dt_nasc_pai %>
+      </td>
+      <td width="15%" colspan="2">
+        <b>Estado civil:</b>
+        <%=h @matricula.estado_civil %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <b>Escolaridade:</b>
+        <%=h @matricula.escolaridade_pai %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <b>Profissão:</b>
+        <%=h @matricula.profissao_pai %>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">
+        <b>Loc.trabalho:</b>
+        <%=h @matricula.local_trabalho_pai%>
+      </td>
+      <td>
+        <b>End. trabalho:</b>
+        <%=h @matricula.end_trab_pai %>
+      </td>
+      <td>
+        <b>Hor. Trabalho:</b>
+        <%=h @matricula.horario_trab_pai %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Telefone:
+        <b>Residencial:</b>
+        <%=h @matricula.fone_res_pai %>
+      </td>
+      <td>
+        <b>Comercial:</b>
+        <%=h @matricula.fone_com_pai %>
+      </td>
+      <td>
+        <b>Celular:</b>
+        <%=h @matricula.fone_celular_pai %>
+      </td>
+    </tr>
+  </table>
+
+  <table width="90%" border="1" frame="box" rules="all">
+  <tr>
+    <td colspan="4" align="center">
+      <strong>2.1 Mãe</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%">
+      <strong>Nome: </strong>
+      <%= @crianca.mae %>
+    </td>
+    <td colspan="4">
+      <b>Idade:</b>
+      <%=h @matricula.idade_mae %> anos
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Data nasc:</b>
+      <%=h @matricula.dt_nasc_mae %>
+    </td>
+    <td width="15%" colspan="2">
+      <b>Estado civil:</b>
+      <%=h @matricula.estado_civil_mae %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <b>Escolaridade:</b>
+      <%=h @matricula.escolaridade_mae %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <b>Profissão:</b>
+      <%=h @matricula.profissao_mae %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Loc. trabalho:</b>
+      <%if (@crianca.local_trabalho).present? %>
+        <%=  @crianca.local_trabalho%>
+      <%end%>
+    </td>
+    <td>
+      <b>End. trabalho:</b>
+      <%=h @matricula.end_trab_mae %>
+    </td>
+    <td>
+      <b>Hor. trabalho:</b>
+      <%=h @matricula.horario_trab_mae %>
+    </td>
+  </tr>
+  <tr>
+
+    <td>
+      Telefone:
+      <b>Residencial:</b>
+      <%=h @matricula.fone_res_mae %>
+    </td>
+    <td>
+      <b>Comercial:</b>
+      <%=h @matricula.fone_com_mae %>
+    </td>
+    <td>
+      <b>Celular:</b>
+      <%=h @matricula.fone_celular_mae %>
+    </td>
+  </tr>
+ </table>
+
+  <table width="90%" border="1" frame="box" rules="all">
+  <tr>
+    <td colspan="4" align="center">
+      <strong>2.3 Responsável</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%">
+      <strong>Nome: </strong>
+      <%=h @matricula.nome_resp %>
+    </td>
+    <td colspan="4">
+      <b>Idade:</b>
+      <%=h @matricula.idade_resp %>anos
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Data Nasc:</b>
+      <%=h @matricula.dt_nasc_resp %>
+    </td>
+    <td width="15%" colspan="2">
+      <b>Estado civil:</b>
+      <%=h @matricula.estado_civil_resp %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <b>Escolaridade:</b>
+      <%=h @matricula.escolaridade_resp %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <b>Profissão:</b>
+      <%=h @matricula.profissao_resp %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Loc. trabalho:</b>
+      <%=h @matricula.local_trabalho_resp %>
+    </td>
+    <td>
+      <b>End. trabalho:</b>
+      <%=h @matricula.end_trab_resp %>
+    </td>
+    <td>
+      <b>Hor. trabalho:</b>
+      <%=h @matricula.horario_trab_resp %>
+    </td>
+  </tr>
+  <tr>
+
+    <td>
+      Telefone:
+      <b>Residencial:</b>
+      <%=h @matricula.fone_res_resp %>
+    </td>
+    <td>
+      <b>Comercial:</b>
+      <%=h @matricula.fone_com_resp %>
+    </td>
+    <td>
+      <b>Celular:</b>
+      <%=h @matricula.fone_celular_resp %>
+    </td>
+  </tr>
+ </table>
+
+ 
+<legend><strong>3 - Estrutura Familiar</strong></legend>
+<table width="90%" border="1" frame="box" rules="all">
+
+  <tr>
+    <td width="25%">
+      <b>Numero de filhos:</b>
+      <%=h @matricula.num_filhos %>
+    </td>
+    <td colspan="5">
+      <b>Pais vivem juntos:</b>
+      <%=h @matricula.pais_vivem_juntos %>
+    </td>
+
+  </tr>
+  <tr>
+    <td colspan="8">
+      <b>Tipo de relacionamento:</b>
+      <%=h @matricula.tipo_relacionamento %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="8">
+      <b>Moradia:</b>
+      <%=h @matricula.moradia %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="8" align="center">
+      <legend align="center"><strong>Termo de Serviço</strong></legend>
+    </td>
+  </tr>
+  <tr>
+    <tr>
+      <td colspan="6">
+            <strong>1 - Autorizo a unidade à:</strong>
+      </td>
+    </tr>
+    <tr>
+    <td colspan="6">
+      <b> --> Ministrar os primeiros socorros: </b>
+      <%=h @matricula.ministrar_p_s %>
+    </td>
+    </tr>
+    <tr>
+      <td colspan="6">
+        <b> --> Tratamento médico/odontológico: </b>
+        <%=h @matricula.tratamento %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="6">
+        <b> --> Realizar aplicação de fluor e verniz: </b>
+        <%=h @matricula.ap_fluor %>
+      </td>
+    </tr>
+  </tr>
+  <tr>
+    <td colspan="6">
+      <strong>2 - Autoriza a participar de atividades extra-classe: </strong>
+      <%=h @matricula.atividades_extra_classe %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="6">
+      <strong>3 - Declaro ter recebido o regimento interno da Unidade para ciência e cumprimentodas normas nele estabelecidos.</strong>
+    </td>
+  </tr>
+  </table>
+
+<div class="botao">
+  <br/>
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  <br/>
+  <td><%= link_to 'Alterar', edit_crianca_matricula_path(@crianca,@matricula) %></td> |
+</div>
+</div>

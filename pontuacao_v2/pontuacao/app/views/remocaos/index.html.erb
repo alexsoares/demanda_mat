@@ -1,0 +1,25 @@
+  <br/>
+<div class="botao">
+  <div id="conteudo">
+    <h1 align="center">Marcar / Desmarcar professores para remoção</h1>
+    <hr>
+  <br/>
+
+  <table>
+   <tr>
+    <%  if current_user.has_role?('admin') or current_user.has_role?('supervisao')then%>
+   <td>| <%= link_to_remote('Professores Aguardando Remocao',:update => "remocao", :url => { :action => "remocao_sim"}) %></td>
+    <%end%>
+    <td>| <%= link_to_remote('Professores que Solicitaram  Remocao',:update => "remocao", :url => { :action => "lista_remocao"}) %></td>
+    <td>| <%= link_to 'Solicitação de Remoção', new_remocao_path, {:title => 'Antes de Cadastrar a remocao de um professor, verifique na listagem ao lado se a mesma ja não esta criada'} %></td>
+<%  if current_user.has_role?('admin') or current_user.has_role?('supervisao') or current_user.has_role?('direcao') then%>
+    <td>| <%= link_to_remote('Ficha Remoção', :url => { :action => "relato_remocao"}) %></td>
+<%end%>
+    <td>| <%= link_to 'Voltar', root_path %> |</td>
+   </tr>
+  </table>
+   </div>
+
+ </div>
+      <div id="remocao"></div>
+

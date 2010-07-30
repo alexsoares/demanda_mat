@@ -1,0 +1,64 @@
+<div id="conteudo">
+ <table width="100%" >
+    <%if logged_in? then%>
+
+      <td width="55%">
+                    Usuário: <font size="4" color="green"><%= current_user.login %> - </font>
+            <% if current_user.has_role?('admin') %>
+              Acesso de Administrador do Sistema
+            <%else%>
+              <% if current_user.has_role?('secretaria') %>
+               Acesso de Secretário(a)
+              <%else%>
+                <% if current_user.has_role?('direcao') %>
+                  Acesso de Diretor(a)
+                <%else%>
+                  <% if current_user.has_role?('supervisao') %>
+                    Acesso de Supervisao
+                  <%end%>
+                <%end%>
+              <%end%>
+            <%end%>
+
+      </td>
+
+            <td width="45%" align="right">
+              <%= link_to '|Sair|', logout_path %>
+              <%= link_to h(current_user.login.capitalize), user_path(current_user) %><font color="blue">|</font><br/>
+</td>
+    <%else%>
+      <td><%= link_to '|Entrar|', login_path %></td>
+    <%end%>
+
+</table>
+
+<br/>
+
+<fieldset>
+
+<% form_for(@role_user) do |f| %>
+  <%@user = User.find(:all,:conditions => ['id = ' + @role_user.user_id.to_s])%>
+  <%= f.error_messages %>
+<p>
+<td><%= f.label :user_id,'Selecione o Usuário' %></td>
+<td><%= f.collection_select  :user_id,@user, :id, :login, :include_blank => ' -- Selecione -- ' %>
+</p>
+
+<p>
+<td><%= f.label :role_id,'Selecione o nível de acesso :' %></td>
+<td><%= f.collection_select  :role_id,@roles, :id, :name, :include_blank => ' -- Selecione -- ' %>
+             <%= observe_field :roles_user_role_id,
+             :with => :roles_user_role_id,
+             :url => { :action => 'role_id' } %>
+             <div id="aviso"></div>
+
+</p>
+
+  <p>
+    <%= f.submit "Salvar" %>
+  </p>
+<% end %>
+</fieldset>
+<br/>
+|<%= link_to 'Voltar', roles_users_path %>|
+</div>

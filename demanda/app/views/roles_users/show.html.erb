@@ -1,0 +1,38 @@
+<div id="conteudo">
+<p>
+<br/>
+ <fieldset>
+    <legend><font size=5> Acesso </font></legend>
+        <br/>
+        <b>Login:</b>
+        <%= User.find(@role_user.user_id).login %><br/><br/>
+        <b>Nome do Professor:</b>
+        <%= Role.find(@role_user.role_id).name %><br/><br/>
+        <b>Nível de acesso:</b>
+            <%if Role.find(@role_user.role_id).name == 'admin' then%>
+      <td align="center">Usuário administrador do sistema. Acesso total.</td>
+    <%else%>
+      <%if Role.find(@role_user.role_id).name == 'seduc' then%>
+        <td align="center">Usuário pertencente ao grupo da secretaria de educação.Acesso total.</td>
+      <%else%>
+        <%if Role.find(@role_user.role_id).name == 'externo' then%>
+          <td align="center">Usuário pertencente ao grupo externo. Acesso Visitante.</td>
+        <%else%>
+          <%if Role.find(@role_user.role_id).name == 'escola' then%>
+            <td align="center">Usuário pertencente ao grupo de diretores(escola). Acesso Diretor.</td>
+          <%else%>
+            <%if Role.find(@role_user.role_id).name == 'escriturario' then%>
+              <td align="center">Usuário pertencente ao grupo escriturario. Acesso Secretaria de escola.</td>
+            <%end%>
+          <%end%>
+        <%end%>
+      <%end%>
+    <%end%>
+
+  </fieldset>
+
+
+
+|<%= link_to 'Alterar', edit_roles_user_path(@role_user) %>
+|<%= link_to 'Voltar', roles_users_path %>|
+</div>

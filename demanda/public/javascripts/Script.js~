@@ -1,0 +1,97 @@
+/*****************************************************************************************************
+Created By: Long Zhou, Sr. Software Engineer
+This is the FREE code ,if someone make it more effectable,please send me a copy
+E_mail: dragon2934@hotmail.com
+Created On: 08 December 2006
+Last Modified: 09 December 2006
+******************************************************************************************************/
+
+//if you change the margin and the page display unexpect result,please change this var to try
+var MaxLineEachPagePortrait=38;
+var MaxLineEachLandscape=27;
+//Generating Pop-up Print Preview page
+function getPrint(print_area , MaxRecord,PageSize)
+{	
+	//Creating new page
+	var pp = window.open();
+//	var pp = showModalDialog("","Print Preview","dialogHeight:520px;dialogWidth:760px; center:yes;");
+	//Adding HTML opening tag with <HEAD> … </HEAD> portion 
+	pp.document.writeln('<HTML><HEAD><title>Print Preview</title><LINK href=Styles.css  type="text/css" rel="stylesheet">')
+	pp.document.writeln('<base target="_self"><style TYPE="text/css" media="print">');
+	pp.document.writeln('.PrintTable{visibility:hidden;} .LandscapeDiv{ PAGE-BREAK-BEFORE: always;width="100%";height="100%";filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=3);}</style> </HEAD>');
+	//Adding Body Tag
+	pp.document.writeln('<body MS_POSITIONING="GridLayout" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0" >');
+	//Adding form Tag
+	pp.document.writeln('<form  method="post">');
+	//Creating two buttons Print and Close within a table
+	pp.document.writeln('<TABLE class="PrintTable" width=100%><TR><TD></TD></TR><TR><TD align=right><INPUT ID="PRINT" type="button" value="Print" onclick="javascript:location.reload(true);window.print();"><INPUT ID="CLOSE" type="button" value="Close" onclick="window.close();"></TD></TR><TR><TD></TD></TR></TABLE>');
+	//Writing print area of the calling page
+//	pp.document.writeln(document.getElementById(print_area).innerHTML);
+	PageSeperate(pp,print_area , MaxRecord,PageSize);
+//    Convert  innerHTML to each page
+	//Ending Tag of </form>, </body> and </HTML>
+	pp.document.writeln('</form></body></HTML>');			
+	
+}		
+
+//must fill all the thinks in <table> </table> and only accept on table
+function PageSeperate(pWinhandle,print_area, MaxRecord,PageSize)
+{
+	var iLeft,iRight,strLeft,strRight,strTable,strTemp,MaxLength;
+	//<TABLE
+	var bIsDone=0;
+	var iCurrent=0;
+	
+	strTemp=document.getElementById(print_area).innerHTML;
+	//alert(strTemp);
+	//Found First <>
+	iLeft=strTemp.indexOf('<');
+	iRight=strTemp.indexOf('>');
+	strTable=strTemp.substr(iLeft-1,iRight - iLeft);
+	if(PageSize==2){//Landscape 
+		strTable='<div class="LandscapeDiv">'+strTable+">";
+	}else{
+		strTable='<div>'+strTable+">";
+	}
+	iLeft=strTemp.length;
+	strTemp=strTemp.substr(iRight+1,iLeft - iRight -1);
+	
+	MaxLength=PageSize==2?MaxLineEachLandscape:MaxLineEachPagePortrait;
+	var TotalPage=Math.ceil(MaxRecord/MaxLength);
+	pWinhandle.document.writeln(strTable);
+	
+	for(var i=0;i<MaxRecord;i++){
+		//Found First <>
+		iRight=strTemp.indexOf('/tr');
+		if(iRight<0){
+			iRight=strTemp.indexOf('/TR');
+		}
+		if(iRight<0){
+			iRight=strTemp.indexOf('/tR');
+		}
+		if(iRight<0){
+			iRight=strTemp.indexOf('/Tr');
+		}
+		
+		//Write it and count lines
+		strLeft=strTemp.substr(0,iRight+4);
+		pWinhandle.document.writeln(strLeft);
+		
+		iLeft=strTemp.length;
+		
+		strTemp=strTemp.substr(iRight+4,iLeft - iRight -4);
+		
+		iCurrent++;
+		if(iCurrent==MaxLength){
+			//separate this page
+			iCurrent=0;
+			pWinhandle.document.writeln('</table>Page '+ Math.ceil(i/MaxLength)+'/'+TotalPage);//Print Page x/Y
+			pWinhandle.document.writeln('</div>');
+			pWinhandle.document.writeln(strTable);
+		}
+
+	}
+	pWinhandle.document.writeln('</table> Page '+ TotalPage+'/'+TotalPage); //last page
+	pWinhandle.document.writeln('</div>');
+
+}

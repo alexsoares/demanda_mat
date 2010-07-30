@@ -1,0 +1,35 @@
+<div id="conteudo">
+<br/>
+<br/>
+<h2 align="center">Gráfico Demanda</h2>
+<hr>
+<br/>
+<br/>
+<table width="100%">
+  <tr>
+    <td align="center"><div class="botao"><%= @graph %></div></td>
+    <% if @static_graph.present?%>
+      
+      <td><div class="tela"><%= @static_graph%></div></td>
+    <%end%>
+
+  </tr>
+  <tr>
+    <td width="100%" align="center">
+      <div class="botao">
+        <%= link_to "Voltar", grafico_path %><br>
+        <input type="Button" Value="Imprimir" onclick="Imprimir()">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>

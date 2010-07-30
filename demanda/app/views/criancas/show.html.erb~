@@ -1,0 +1,143 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<div id="conteudo">
+  <div id="topo">
+    <h2 align="right">Cadastro de Crianças</h2>
+    <h4 align="right" > <font   color="#ff0000"> S I S D E M A N  --  Ver.1.5       . </font></h4>
+  </div>
+  <div id="show2a">
+    <fieldset>
+    <legend><font size=4>Dados da Criança</font></legend>
+
+    <b>Nome:</b>
+      <%=h @crianca.nome %><br />
+    <b>Nascimento:   </b>
+      <%=h @crianca.nascimento.strftime("%d/%m/%y")%> <br />
+    <b>Possui irmão Gêmeo</b>
+    <%=h @crianca.gemeos.upcase! %><br />
+    <b>Nome da mãe:</b>
+      <%=h @crianca.mae %><br />
+    <b>Classificação:</b>
+      <%=h @crianca.grupo.nome + ' - ' %>
+      <%=h @crianca.grupo.descricao	%> <br />
+    <b>Endereço:      </b>
+      <%=h @crianca.endereco%> 
+      <%=h @crianca.numero%>  - 
+      <%=h @crianca.complemento%> <br />
+    <b>Bairro:        </b>
+      <%=h @crianca.bairro%> <br />
+    <b>Telefone Residencial:    </b>
+      <%=h @crianca.tel1%> <br />
+    <b>Telefone Recado:    </b>
+      <%=h @crianca.tel2%> <br />
+    <b>Nome (recado):    </b>
+      <%=h @crianca.nomerecado%> <br />
+    <b>Celular:       </b>
+      <%=h @crianca.celular%> <br/>
+    <b>Filho de servidor: </b>
+      <% if @crianca.servidor_publico == false then %>
+        NÃO
+      <%else%>
+        SIM
+      <%end%>
+      <br/>
+    <b>Possui necessidade especial?</b>
+      <%if @crianca.n_especial == true then%>
+        <%=h "SIM" %><br/>
+         <b>Descricao Necessidade</b>
+        <%=h @crianca.necessidade %>
+      <%else%>
+        NÃO POSSUI
+      <%end%>
+      <BR/>
+
+    <b>Foi transferido?: </b>
+      <%if @crianca.transferencia == true then%>
+        <%=h "SIM" %><br/>
+       <b>Observações</b>
+        <%=h @crianca.obs_transf %>
+      <%else%>
+        NUNCA FOI TRANSFERIDO.
+      <%end%>
+
+  </fieldset>
+  <fieldset>
+    <legend><font size=4>Acompanhante</font></legend>
+    <b>Responsável:   </b>
+      <%=h @crianca.nome_responsavel%> <br />
+    <b>Parentesco:   </b>
+      <%=h @crianca.parentesco %><br/>
+    <b>Trabalha:      </b>
+      <%=h @crianca.verifica_trabalha%>  <br />
+    <b>Local Trabalho:</b>
+      <%=h @crianca.local_trabalho%> <br/>
+    <b>Fone Trabalho:</b>
+      <%=h @crianca.fonetrabalho%>
+  </fieldset>
+  <fieldset>
+    <legend><font size=4>Dados da Inscrição</font></legend>
+    <b>Unidade onde fez a inscrição:      </b>
+      <%=h @crianca.unidade_id %>
+      <%= ' - ' + Unidade.find_by_id(@crianca.unidade_id).nome %><br />
+    <b>Data da Inscrição:       </b>
+      <%=h @crianca.created_at.strftime("%e/%m/%Y - %H:%M horas")%> <br />
+    <b>Região de preferência: </b>
+      <%=h @crianca.regiao_id %>
+      <%= ' - ' + Regiao.find_by_id(@crianca.regiao_id).nome %><br />
+    <b>Matrícula - Opção 1:       </b>
+      <%= @crianca.opcao1 %><br />
+    <b>Matrícula - Opção 2:       </b>
+      <%= @crianca.opcao2 %><br />
+<div class="botao">
+    <b>Matrícula - Opção 3:       </b>
+      <%= @crianca.opcao3 %><br />
+    <b>Matrícula - Opção 4:       </b>
+      <%= @crianca.opcao4 %><br />
+</div>
+    <b>Status: </b>
+      <%=h @crianca.conf_status	%> <br />
+    <b>Matriculado :     </b>
+      <%=h @crianca.verifica_matricula%> <br />
+    <b>Unidade Matriculada:</b>
+      <%=h @crianca.onde_matricula %><br/>
+     <b>Observação:</b>
+      <%=h @crianca.obs %>
+   </fieldset><br/>
+
+
+
+<table width="100%">
+<tr>
+<td align="center">___________________________________</td>
+<td align="center">___________________________________</td>
+</tr>
+<tr>
+<td align="center"> Assinatura do responsável               </td>
+<td align="center"> Assinatura Escola               </td>
+</tr>
+</table>
+ <div class="botao">
+    <table width="100%">
+    <tr>
+    | <%= link_to 'Alterar', edit_crianca_path(@crianca) %> |
+      <%= link_to 'Voltar', criancas_path %>  
+    |  <%= link_to 'Cadastrar', new_crianca_path %>
+   
+      <td align="right"><input type="Button" Value="Imprimir" onclick="Imprimir()"></td>
+    </tr>
+  </table>
+
+ </div>
+
+</div>
+
+</div>

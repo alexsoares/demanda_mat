@@ -1,0 +1,132 @@
+<br/>
+<div id="conteudo">
+
+<legend>
+| <%= link_to('Incluir Tempo de Serviço', new_trabalhado_path)%>| </legend>
+<hr align="left" width="23%" color=#9C9C9C size="3">
+
+
+
+<fieldset>
+  <legend><font size=5> Cadastro de Tempo de Serviço </font></legend>
+<div id="pont_initial"></div>
+
+<% form_for(@trabalhado) do |f| %>
+
+<%= f.error_messages %>
+<div id="total">
+       <div id="mensagem">
+        <br/>
+          SELECIONAR A MATRÍCULA DO PROFESSOR.
+          <br/><br/>
+      </div>
+<div id="nomeprof"></div>
+<table border="1" width="100%">
+  <td width="20%">
+    <div id="existe">
+    <table width="100%" border="1">
+          <tr>
+            <td valign="top">
+              <%= f.label :professor_id, 'Professor' %></td>
+              <td><%= f.collection_select :professor_id, @professor_sede, :id, :matricula, :include_blank => ' -- Selecione -- ' %>
+                <%= observe_field 'trabalhado_professor_id',
+                  :frequency => 0.5,
+                  #:update => "professor_id",
+                  :with => :trabalhado_professor_id,
+                  :url => { :action => 'sel_prof' } %>
+
+            </td>
+          </tr>
+        <tr>
+    
+     <tr>
+        <td><%= f.label :ano, 'Ano:' %> </td>
+        <td>    <%= f.select :ano, (ANO), :include_blank => '' %>
+                <%= observe_field 'trabalhado_ano',
+                  :frequency => 0.5,
+                  #:update => "professor_id",
+                  :with => :trabalhado_ano,
+                  :url => { :action => 'verifica_ano' } %>
+
+     
+
+        </td>
+<!--                    <%= observe_field 'trabalhado_ano',
+               :frequency => 0.5,
+               :with => :trabalhado_ano,
+               :url => { :action => 'verifica_ano' } %>!-->
+
+     </tr>
+     <tr>
+       <td colspan="2">
+          <div id="remocao"></div>
+        </td>
+     </tr>
+     <tr>
+        <td><%= f.label :dias, 'Dias' %> </td>
+        <td><%= f.text_field :dias, :size => 3 %></td>
+     </tr>
+     <tr>
+       <td><%= f.label :dias, 'Unidade' %></td>
+       <td><%= f.text_field :unidade, :size => 3 %></td>
+     </tr>
+     <tr>
+       <td> <%= f.label :outro_trab, 'Outro Emp.' %></td>
+       <td>   <%= f.text_field :outro_trab, :size => 3 %></td>
+     </tr>
+     <tr>
+       <td><%= f.label :f_abonada, 'Faltas Abonadas' %></td/>
+       <td> <%= f.text_field :f_abonada, :size => 3 %></td>
+     </tr>
+     <tr>
+       <td><%= f.label :atestado, 'Atestado Médico' %></td>
+       <td>  <%= f.text_field :atestado,:size => 3, :id => 'teste' %></td>
+     </tr>
+     <tr>
+       <td><%= f.label :f_justif, 'Faltas Justif.' %></td>
+       <td><%= f.text_field :f_justif, :size => 3 %></td>
+     </tr>
+     <tr>
+       <td><%= f.label :f_injustif, 'Faltas Injustif.' %></td>
+       <td><%= f.text_field :f_injustif, :size => 3 %></td>
+     </tr>
+     <tr>
+       <td><%= f.label :lic_saude, 'Licenças Saúdes' %></td>
+       <td><%= f.text_field :lic_saude, :size => 3 %></td>
+     </tr>
+     <tr>
+       <td><%= f.label :afastamento, 'Afast. não Renum' %>
+       <td><%= f.text_field :afastamento, :size => 3 %></td>
+     </tr>
+   
+ </table>
+ <%= f.submit "Cadastrar" %>
+ </div>
+
+   </td>
+  
+  
+   <td width="50%">     
+    <fieldset>
+     <legend><font size=4>Dados cadastrados</font></legend>
+       <div id="teste11"></div>
+
+ 
+    </fieldset>
+   </td>
+
+    </table>
+   </div>
+<tr>
+  <td>
+    <div id="initial"></div>
+  </td>
+</tr>
+
+<% end %>
+</fieldset>
+</div>
+<div id="voltar">
+
+</div>
+
