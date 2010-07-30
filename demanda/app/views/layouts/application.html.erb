@@ -25,6 +25,11 @@ display: none;
 } 
 </style>
 
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
 
 </head>
 <body>
@@ -89,7 +94,7 @@ display: none;
           <li><%= link_to "Unidades", new_unidade_path %></li>
           <li><%= link_to "Regiões", new_regiao_path %></li>
           <li><%= link_to "Grupos", new_grupo_path %></li>
-          <li><%= link_to "Editar matricula", edit_crianca_matricula_path(2,1) %></li>
+          <li><%= link_to "Vagas", new_vaga_path %></li>
       </ul>
     </li>
     <%end%>

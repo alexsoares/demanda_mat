@@ -45,7 +45,6 @@ class MatriculasController < ApplicationController
   # POST /matriculas.xml
   def create
     @matricula = @crianca.matriculas.build(params[:matricula])
-
     respond_to do |format|
       if @matricula.save
         flash[:notice] = 'Matricula was successfully created.'

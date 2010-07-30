@@ -1,5 +1,5 @@
 <div id="conteudo">
-<h1>Gerar Ficha de Matricula para a criança - <%=  Crianca.find(params[:crianca_id]).nome%></h1>
+<h1>Gerar Ficha de Matricula para a criança - <%=  @crianca.nome%></h1>
 
 <% form_for([@crianca,@matricula]) do |f| %>
   <%= f.error_messages %>

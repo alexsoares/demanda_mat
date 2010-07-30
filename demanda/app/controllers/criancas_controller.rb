@@ -529,7 +529,8 @@ HEREDOC
  
 def matricular
  matricula = Crianca.find(params[:id])
-    respond_to do |format|
+ matricula.vaga_num = matricula.vaga_numero(params[:crianca][:unidade_matricula])
+     respond_to do |format|
       if matricula.update_attributes(params[:crianca])
         flash[:notice] = 'Matricula efetuada com sucesso.'
         format.html { redirect_to(new_crianca_matricula_path(matricula)) }
@@ -539,8 +540,28 @@ def matricular
         format.xml  { render :xml => matricula.errors, :status => :unprocessable_entity }
       end
     end
-  
 end
+
+def verifica_vagas
+  unidade = params[:crianca_unidade_matricula]
+  existe_vaga = Crianca.existe_vaga(unidade,$ano_letivo)
+  if (existe_vaga != "Não existe vaga nesta unidade") and (existe_vaga != "Vagas não cadastradas para esta unidade")
+    render :update do |page|
+      page.replace_html 'unidade', :text => "Para esta unidade existe(m) #{existe_vaga} vagas, Sendo #{existe_vaga - Crianca.preenchidas(unidade)} livres."
+    end
+  else
+    render :update do |page|
+      page.replace_html 'unidade', :text => existe_vaga
+      page.replace_html 'Certeza', :text => "Impossível matricular"
+    end
+  end
+end
+
+def guarda_anoletivo
+  $ano_letivo = params[:crianca_ano_letivo]
+  render :nothing => true
+end
+
  protected
     #Inicialização variavel / combobox grupo
 

@@ -2,9 +2,9 @@ class Unidade < ActiveRecord::Base
   belongs_to :regiao
   has_many :criancas
   has_many :matriculas
+  has_many :vagas
   
   def nome_tipo
-
     if tipo == 1 then
        @teste =  'CRECHE'
     else

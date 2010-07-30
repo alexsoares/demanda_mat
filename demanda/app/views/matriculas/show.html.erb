@@ -443,10 +443,10 @@
   </tr>
   </table>
 
-
-
-
-
-<td><%= link_to 'Edit', edit_crianca_matricula_path(@crianca,@matricula) %></td> |
-<%= link_to 'Back', crianca_matriculas_path(@crianca) %>
+<div class="botao">
+  <br/>
+  <input type="Button" Value="Imprimir" onclick="Imprimir()">
+  <br/>
+  <td><%= link_to 'Alterar', edit_crianca_matricula_path(@crianca,@matricula) %></td> |
+</div>
 </div>

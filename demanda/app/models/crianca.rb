@@ -17,6 +17,52 @@ class Crianca < ActiveRecord::Base
   named_scope :by_nome, lambda {|nome| { :conditions => { :nome => nome }}}
   named_scope :by_nascimento, lambda {|datanascimento| { :conditions => { :nascimento => datanascimento }}}
 
+  
+  def self.preenchidas(unidade)
+    vagas_usadas = Vaga.find_by_unidade_id(unidade)
+    return vagas_usadas.vagas_preenchidas
+  end
+
+  def vaga_numero(unidade)
+    vaga = Vaga.find_by_unidade_id(unidade)
+    if !(vaga.nil?)
+      vagas_preenchidas = Vaga.find_by_unidade_id(unidade).vagas_preenchidas + 1
+      vagas_totais = Vaga.find_by_unidade_id(unidade).qtde_vagas
+      vaga_alocada = "#{vagas_preenchidas}/#{vagas_totais}"
+      return vaga_alocada
+  
+    else
+
+    end
+  end
+
+
+  def subtrai_vaga    
+    unless matricula == 0
+      vaga = Vaga.find_by_unidade_id(self.unidade_matricula)
+      if vaga.qtde_vagas > vaga.vagas_preenchidas
+        vaga.vagas_preenchidas = vaga.vagas_preenchidas + 1       
+        vaga.save
+      end
+    end
+    
+  end
+
+def self.existe_vaga(unidade,ano_letivo)
+  #vaga = Vaga.find_by_sql("select * from vagas where unidade_id =" + unidade + " and ano_letivo = " + ano_letivo + " LIMIT 1")
+  vaga = Vaga.find(:first, :conditions => ["unidade_id = ? and ano_letivo = ?", unidade,ano_letivo])
+
+  if !(vaga.nil?)
+    if vaga.qtde_vagas > vaga.vagas_preenchidas
+      return vaga.qtde_vagas
+    else
+      return "Não existe vaga nesta unidade"
+    end
+  else
+      return "Vagas não cadastradas para esta unidade"
+  end
+end
+
   def check_tel1
     self.tel1.empty?
   end

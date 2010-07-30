@@ -63,14 +63,22 @@
     <%  if current_user.has_role?('admin') or current_user.has_role?('seduc') then%>
     <div id="negrito">
        <td bgcolor="white"><%= link_to 'Exibir', crianca %></td>
+       <% @matricula = Matricula.find_by_crianca_id(crianca.id) %>
+       <%if @matricula.present? %>
+         <td bgcolor="white" colspan="2"><%= link_to 'Ficha de matricula', crianca_matricula_path(crianca,@matricula) %></td>
+       <%end%>
        <td bgcolor="white"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
        <td bgcolor="white"><%= link_to 'Apagar', crianca, :confirm =>	 'Confirma a deleção?', :method => :delete %></td>
     </div>
     <%else%>
       <%  if current_user.has_role?('escola') then%>
         <div id="negrito">
-          <td bgcolor="white"><%= link_to 'Exibir', crianca %></td>
-          <td bgcolor="white"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
+       <% @matricula = Matricula.find_by_crianca_id(crianca.id) %>
+       <%if @matricula.present? %>
+         <td bgcolor="white" colspan="2"><%= link_to 'Ficha de msdsdsdatricula', crianca_matricula_path([crianca.id,1]) %></td>
+       <%end%>
+         <td bgcolor="white"><%= link_to 'Exibir', crianca %></td>
+         <td bgcolor="white"><%= link_to 'Alterar', edit_crianca_path(crianca) %></td>
         </div>
       <%end%>
     <%end%>

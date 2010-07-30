@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100517111255) do
+ActiveRecord::Schema.define(:version => 20100602130954) do
 
   create_table "criancas", :force => true do |t|
     t.string   "nome",              :limit => 50
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20100517111255) do
     t.integer  "user_id",                          :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "vaga_num"
+    t.integer  "ano_letivo"
   end
 
   create_table "documents", :force => true do |t|
@@ -111,9 +113,9 @@ ActiveRecord::Schema.define(:version => 20100517111255) do
     t.string   "pc_tarde_4"
     t.string   "nome_pai"
     t.integer  "idade_pai"
-    t.integer  "estado_civil"
+    t.string   "estado_civil"
     t.date     "dt_nasc_pai"
-    t.integer  "escolaridade_pai"
+    t.string   "escolaridade_pai"
     t.string   "profissao_pai"
     t.string   "local_trabalho_pai"
     t.string   "end_trab_pai"
@@ -123,9 +125,9 @@ ActiveRecord::Schema.define(:version => 20100517111255) do
     t.string   "fone_celular_pai"
     t.string   "nome_mae"
     t.integer  "idade_mae"
-    t.integer  "estado_civil_mae"
+    t.string   "estado_civil_mae"
     t.date     "dt_nasc_mae"
-    t.integer  "escolaridade_mae"
+    t.string   "escolaridade_mae"
     t.string   "profissao_mae"
     t.string   "local_trabalho_mae"
     t.string   "end_trab_mae"
@@ -135,9 +137,9 @@ ActiveRecord::Schema.define(:version => 20100517111255) do
     t.string   "fone_celular_mae"
     t.string   "nome_resp"
     t.integer  "idade_resp"
-    t.integer  "estado_civil_resp"
+    t.string   "estado_civil_resp"
     t.date     "dt_nasc_resp"
-    t.integer  "escolaridade_resp"
+    t.string   "escolaridade_resp"
     t.string   "profissao_resp"
     t.string   "local_trabalho_resp"
     t.string   "end_trab_resp"
@@ -169,6 +171,8 @@ ActiveRecord::Schema.define(:version => 20100517111255) do
     t.string   "rua_emergencia"
     t.string   "num_emergencia"
     t.string   "bairro_emergencia"
+    t.string   "vaga_num"
+    t.integer  "ano_letivo"
   end
 
   create_table "regiaos", :force => true do |t|
@@ -208,6 +212,15 @@ ActiveRecord::Schema.define(:version => 20100517111255) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
+  end
+
+  create_table "vagas", :force => true do |t|
+    t.integer  "unidade_id"
+    t.integer  "qtde_vagas"
+    t.integer  "vagas_preenchidas", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "ano_letivo"
   end
 
 end
