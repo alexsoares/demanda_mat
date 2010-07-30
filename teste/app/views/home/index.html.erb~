@@ -1,0 +1,17 @@
+<table border=1>
+<p>
+ <div id="topo">
+  <center>
+    <h1>
+      Sistema de Demanda
+    </h1>
+   </center>
+ </div>
+ </p>
+<br /><br /><br /><br /><br /><br /><br /><br />
+</table>
+<center><%= link_to "Crianças", criancas_path %></center><br />
+<center><%= link_to "Unidades", unidades_path %></center><br />
+<center><%= link_to "Regiões", regiaos_path %></center><br />
+<center><%= link_to "Grupos", grupos_path %></center><br />
+

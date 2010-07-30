@@ -1,0 +1,30 @@
+<div id="conteudo">
+  <br/>
+    <h1 align="center">Cadastro de Grupo</h1>
+  
+  <br/>
+  <fieldset>
+   <legend><font size=4>Grupo</font></legend>
+    <% form_for(@grupo) do |f| %>
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :nome, 'Nome' %><br />
+        <%= f.text_field :nome %>
+      </p>
+
+      <p>
+        <%= f.label :descricao, 'Descricao' %><br />
+        <%= f.text_area :descricao %>
+      </p>
+  </fieldset><br/>
+ <fieldset>
+      <p>
+        <%= f.submit "Cadastrar" %>
+      </p>
+ </fieldset>
+    <% end %>
+
+
+<br/>
+| <%= link_to 'Voltar', root_path %> |
+</div>

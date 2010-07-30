@@ -1,0 +1,272 @@
+<script Language="JavaScript">
+function Imprimir(){
+window.print();
+}
+</script>
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+<div id="impressao">
+  <br/>
+ <div class="botao">
+ | <a href="javascript:window.print();">Imprimir</a>
+ | <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |<br/><br/>
+</div>
+  <fieldset>
+      <legend><font size=4>RELATÓRIO GERAL DE DEMANDA ESCOLAR</font></legend>
+      <table  border="0" width="100%" cellspacing="1">
+        <th><font style="font-size: 8pt"> DEMANDA GERAL NA REDE: <%= Crianca.demanda_total.length %> crianças</font></th>
+        <th><font style="font-size: 8pt"> GERAL DE MATRICULAS NA REDE: <%= Crianca.matricula_total.length %> alunos</font></th>
+      </table>
+
+  <fieldset>
+      <legend><font size=3>DEMANDA POR REGIÃO</font></legend>
+
+    <table border="0" width="100%" cellpadding="5" cellspacing="1" >
+    <tr>
+        <th align="left" style= "font-size: 7pt"> > SÃO JERÔNIMO   : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 1"]).length %></th>
+        <th align="left" style= "font-size: 7pt"> > CIDADE JARDIM  : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 2"]).length %></th>
+        <th align="left" style= "font-size: 7pt"> > SÃO VITO       : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 3"]).length %></th>
+        <th align="left" style= "font-size: 7pt"> > ZANAGA         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 4"]).length %></th>
+    <tr/>
+    <tr>
+        <th align="left" style= "font-size: 7pt"> > JARDIM IPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 5"]).length %></th>
+        <th align="left" style= "font-size: 7pt"> > CENTRO         : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 6"]).length %></th>
+        <th align="left" style= "font-size: 7pt"> > PRAIA AZUL     : <%= Crianca.find(:all, :conditions => ["matricula != 1 and regiao_id = 7"]).length %></th>
+     </tr>
+ </table>
+</fieldset>
+<br/>
+<fieldset>
+   <legend><font size=3>DEMANDA GERAL POR UNIDADE</font></legend>
+    <table border="0" width="120%" cellpadding="1" cellspacing="1">
+      <tr>
+       <th align="left" style= "font-size: 7pt"> > ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 15"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARACARI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 30"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARACATI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 12"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 6"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARAPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 1"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > ARAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 9"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BACURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 37"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BATUIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 21"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BITU: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 2"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BORE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 33"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > CAIC: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 7"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CARANDA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 10"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CECI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 34"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CHUI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 16"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CORIMBO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 35"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > CUNHATAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 13"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURIMA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 23"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURUMIM: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 31"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURIO: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 26"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > GRAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 8"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > INDAIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 20"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > JACINA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 22"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > JACY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 5"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > JURITI:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 4"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > MAIRA:<%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 3"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > MAJOI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 24"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > MANACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 41"]).length %><br/>
+       <th align="left" style= "font-size: 7pt"> > MANAI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 11"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > MARACA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 17"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > PANAMBY: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 40"]).length %><br/>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > PATATIVA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 29"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > PATURI: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 19"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > PITANGA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 39"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > POTIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 18"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > SABIA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 38"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > TANGARA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 36"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > TAPERA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 25"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > TARAGUA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 27"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > TAHIRA: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 32"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > URUPE: <%= Crianca.find(:all, :conditions => ["matricula != 1 and option1 = 28"]).length %></th>
+      </tr>
+  </table>
+  </fieldset>
+<br/>
+<fieldset>
+  <legend><font size=3>DEMANDA CRECHE POR UNIDADE</font></legend>
+   <table border="0" width="120%" cellpadding="1" cellspacing="1">
+      <tr>
+       <th align="left" style= "font-size: 7pt"> > ANAJA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.option1=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select criancas.option1 from criancas inner join unidades on criancas.option1=unidades.id where unidades.nome = 'ANAJA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > ARAPIRANGA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'ARAPIRANGA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II')  and matricula <> 1").length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARAUNA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'ARANUNA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+       <th align="left" style= "font-size: 7pt"> > BITU: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'BITU') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > CAIC: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CAIC') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+       <th align="left" style= "font-size: 7pt"> > CHUI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CHUI') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURIMA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CURIMA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURIO: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CUIRO') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+    </tr>
+    <tr>
+      <th align="left" style= "font-size: 7pt"> > GRAUNA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'GRAUNA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+      <th align="left" style= "font-size: 7pt"> > JURITI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'JURITI') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length %></th>
+      <th align="left" style= "font-size: 7pt"> > MAIRA:<%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MAIRA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+      <th align="left" style= "font-size: 7pt"> > MAJOI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MAJOI') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+      <th align="left" style= "font-size: 7pt"> > MANACA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MANACA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+      <th align="left" style= "font-size: 7pt"> > MARACA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MARACA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+      <th align="left" style= "font-size: 7pt"> > PANAMBY: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'PANABY') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+      <th align="left" style= "font-size: 7pt"> > PITANGA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'PITANGA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+      <th align="left" style= "font-size: 7pt"> > TAPERA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'TAPERA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+      <th align="left" style= "font-size: 7pt"> > TARAGUA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'TANGARA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+      <th align="left" style= "font-size: 7pt"> > TAHIRA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'TAHIRA') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+      <th align="left" style= "font-size: 7pt"> > URUPE: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'URUPE') and (grupos.nome = 'BERCARIO I' or grupos.nome = 'BERCARIO II' OR grupos.nome = 'BERCARIO III' OR grupos.nome = 'MATERNAL I' OR grupos.nome = 'MATERNAL II') and matricula <> 1").length%></th>
+     </tr>
+  </table>
+  </fieldset>
+<br/>
+<fieldset>
+   <legend><font size=3>DEMANDA EMEI POR UNIDADE</font></legend>
+    <table border="0" width="120%" cellpadding="1" cellspacing="1">
+      <tr>
+       <th align="left" style= "font-size: 7pt"> > ARACARI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'ARACARI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > ARACATI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'ARACATI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > ARACY: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'ARACY') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > ARAPIRANGA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'ARAPIRANGA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > ARAUNA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'ARAUNA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > BACURI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'BACURI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > BATUIRA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'BATUIRA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > BITU: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'BUTI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > BORE: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'BORE') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > CARANDA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CARANDA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > CECI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CECI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > CORIMBO: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CURIMBO') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > CUNHATAI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CUNHATAI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > CURUMIM: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CURUMIM') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > CURIO: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'CURIO') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > GRAUNA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'GRAUNA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > INDAIA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'INDAIA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > JACINA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'JACINA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > JACY: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'JACY') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > JURITI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'JURITI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > MAIRA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MAIRA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > MANACA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MANACA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > MANAI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MANAI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > MARACA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'MARACA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > PANAMBY: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'PANAMBY') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > PATATIVA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'PARATIVA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > PATURI: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'PATURI') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > PITANGA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'PITANGA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > POTIRA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'POTIRA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > SABIA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'SABIA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > TANGARA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'TANGARA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > TAPERA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'TAPERA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > TARAGUA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'TANGARA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > TAHIRA: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'TAHIRA') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+       <th align="left" style= "font-size: 7pt"> > URUPE: <%= Crianca.find_by_sql("select * from (criancas inner join unidades on criancas.unidade_id=unidades.id) inner join grupos on criancas.grupo_id=grupos.id where criancas.unidade_id in (select unidades.id from criancas inner join unidades on criancas.unidade_id=unidades.id where unidades.nome = 'URUPE') and (grupos.nome = 'NIVEL I' or grupos.nome = 'NIVEL II') and matricula <> 1").length%></th>
+      </tr>
+  </table>
+  </fieldset>
+<br/>
+<fieldset>
+   <legend><font size=3>MATRICULA POR UNIDADE</font></legend>
+
+    <table border="0" width="120%" cellpadding="1" cellspacing="1">
+      <tr>
+       <th align="left" style= "font-size: 7pt"> > ANAJA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 15"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARACARI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 30"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARACATI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 12"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARACY: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 6"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > ARAPIRANGA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 1"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > ARAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 9"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BACURI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 37"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BATUIRA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 21"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BITU: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 2"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > BORE: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 33"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > CAIC: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 7"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CARANDA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 10"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CECI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 34"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CHUI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 16"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CORIMBO: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 35"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > CUNHATAI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 13"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURIMA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 23"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURUMIM: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 31"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > CURIO: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 26"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > GRAUNA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 8"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > INDAIA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 20"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > JACINA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 22"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > JACY: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 5"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > JURITI:<%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 4"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > MAIRA:<%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 3"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > MAJOI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 24"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > MANACA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 41"]).length %><br/>
+       <th align="left" style= "font-size: 7pt"> > MANAI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 11"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > MARACA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 17"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > PANAMBY: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 40"]).length %><br/>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > PATATIVA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 29"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > PATURI: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 19"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > PITANGA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 39"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > POTIRA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 18"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > SABIA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 38"]).length %></th>
+    </tr>
+    <tr>
+       <th align="left" style= "font-size: 7pt"> > TANGARA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 36"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > TARAGUA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 27"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > TAHIRA: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 32"]).length %></th>
+       <th align="left" style= "font-size: 7pt"> > URUPE: <%= Crianca.find(:all, :conditions => ["matricula != 0 and unidade_matricula = 28"]).length %></th>
+      </tr>
+  </table>
+  </fieldset>
+
+
+
+
+
+ </fieldset>
+<br/><br/>
+</div>
+ <div class="botao">
+| <a href="javascript:window.print();">Imprimir</a> |
+<%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
+</div>

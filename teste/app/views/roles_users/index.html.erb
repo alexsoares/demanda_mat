@@ -1,0 +1,57 @@
+<div id="conteudo">
+  <h1 align="center">Gerenciamento de Usuários</h1>
+  <br/>
+ |<%= link_to 'Associar', new_roles_user_path %>
+
+<br/>
+<div id="conteudo1">
+<table border="1" width="80%" frame="box" rules="all">
+  
+  <tr>
+        <td width="100%" colspan="4" align="center"><h1>Listagem Usuários Associados</h1></td>
+  </tr>
+  <tr>
+    <th bgcolor="gray">Login</th>
+    <th bgcolor="gray">Acesso de</th>
+    <th bgcolor="gray">Descricao</th>
+  </tr>
+<% for role_user in @role_users %>
+  <tr>
+    <%teste = role_user.id%>
+    <td align="center" width="25%"><%= User.find(role_user.user_id).login %></td>
+    <td align="center"><%= Role.find(role_user.role_id).name %></td>
+    <%if Role.find(role_user.role_id).name == 'admin' then%>
+      <td align="center">Usuário administrador do sistema. Acesso total.</td>
+    <%else%>
+      <%if Role.find(role_user.role_id).name == 'seduc' then%>
+        <td align="center">Usuário pertencente ao grupo da secretaria de educação.Acesso total.</td>
+      <%else%>
+        <%if Role.find(role_user.role_id).name == 'externo' then%>
+          <td align="center">Usuário pertencente ao grupo externo. Acesso Visitante.</td>
+        <%else%>
+          <%if Role.find(role_user.role_id).name == 'escola' then%>
+            <td align="center">Usuário pertencente ao grupo de diretores(escola). Acesso Diretor.</td>
+          <%else%>
+            <%if Role.find(role_user.role_id).name == 'escriturario' then%>
+              <td align="center">Usuário pertencente ao grupo escriturario. Acesso Secretaria de escola.</td>
+            <%end%>
+          <%end%>
+        <%end%>
+      <%end%>
+    <%end%>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="white">| <%= link_to 'Exibir', role_user %></td>
+    <td>| <%= link_to 'Alterar', edit_roles_user_path(role_user) %></td>
+    <td>| <%= link_to 'Apagar', role_user, :confirm => 'Confirma?', :method => :delete %> |</td>
+  </tr>
+<% end %>
+
+</table>
+</div>
+
+
+|<%= link_to 'Associar', new_roles_user_path %>
+| <%= link_to_remote('Voltar', :url => { :action => "gen_user", :controller =>'home'}) %> |
+
+</div>

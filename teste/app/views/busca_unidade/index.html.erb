@@ -1,0 +1,23 @@
+<div id="conteudo">
+  <div id="topo">
+    <br/>
+    <h1>Busca por unidades</h1>
+  </div>
+  <p>
+    <fieldset>
+    <div id="unidade">
+
+    <p>Selecione uma unidade para consultar: </p>
+<%= collection_select :unidade, :unidade_id, @unidades, :id, :nome, :include_blank => ' -- Selecione -- ' %>
+<%= observe_field  '"unidade_unidade_id',
+    :update => 'listagem',
+    :with   => 'unidade_unidade_id',
+    :url    => { :action => 'lista_unidade' }
+     %>
+    </div>
+<div id="listagem">
+    <% render :text => 'resultado' %>
+</div>
+    </fieldset>
+  </p>
+</div>

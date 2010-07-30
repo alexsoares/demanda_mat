@@ -1,0 +1,52 @@
+<div id="caixausuario">
+<div id="posicaousuario">
+<p>
+<br/><br/><br/><br/>
+
+
+  <h2 align="center"> <u>Criação de Senha de Acesso</u></h2>
+
+   <%= error_messages_for :user %>
+      <center>
+       <% form_for :user, :url => users_path do |f| -%>
+       <label for="login">Usuário:</label><br/>
+       <%= f.text_field :login %><br/>
+
+       <label for="password">Senha:</label><br/>
+       <%= f.password_field :password %><br/>
+
+       <label for="password_confirmation">Confirmação Senha:</label><br/>
+       <%= f.password_field :password_confirmation %><br/>
+
+       <label for="email">Email:</label><br/>
+       <%= f.text_field :email %><br/>
+
+      <div id="aviso"></div>
+      <br/>
+      <%= submit_tag 'Increver-se' %>
+      <% end -%>
+
+     </center>
+
+    <table width="100%">
+     <tr>
+       <td align="right">|<%= link_to 'Voltar', root_path %>|</td>
+     </tr>
+    </table>
+
+
+</div>
+</div>
+<fieldset>
+  <legend><font size=5>Observações:</font></legend>
+   <div id="mensagem">
+     1. Ao criar um usuário utilize o padrão <b> unidade.nome </b>- <i>ex: SEDUC.fulano</i><br/>
+     2. Crie uma senha com no mínimo seis dígidos.<br/>
+     3. A senha é responsabilidade do usuário. <br/>
+     4. Todo usuário necessita de validação.<br>
+     5. Para alterar direito do acesso entre em contato com a Supervisão/SEDUC.<br/>
+  </div>
+</fieldset>
+
+
+

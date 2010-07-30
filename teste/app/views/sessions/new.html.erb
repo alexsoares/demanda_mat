@@ -1,0 +1,33 @@
+<div id="conteudo">
+  <div id="position">
+  <%if logged_in? then%>
+      <font color="white"><td><%= link_to '|Sair|', logout_path %></td></font>
+      <td>Está logado como: <%= current_user.name %></td>
+    <%else%>
+      <font color="white"><td><%= link_to '|Incluir usuário|', signup_path %></td></font>
+
+    <%end%>
+
+  </div>
+    <div id="img-login">
+	<div class="conteudo">
+     <center>
+
+     <% form_tag session_path do -%>
+
+           <label for="login"> Usuário:</label><br/>
+           <%= text_field_tag 'login',nil%><br/>
+	     <div id="conteudologin">
+          <label for="password">Senha:</label><br/>
+          <%= password_field_tag 'password' %>
+        </div>
+           <p class="button"><%= submit_tag 'Entrar' %></p>
+
+     <% end%>
+
+
+
+    </center>
+	</div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+
+
+<div id="impressao">
+
+|<a href="javascript:window.print();">Imprimir</a>
+| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
+
+<%$teste=0%>
+<div id="contador"></div>
+<br/><br/>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" >
+    <tr>
+     <br/>
+    
+    <hr align="left" width="100%" color=#CDC9A5 size="1">
+    <center><th>Nome</th></center>
+    <th>Data Nascimento</th>
+    <th>Nome Mãe</th>
+    <th>Cadastrado em</th>
+     <th>Bairro</th>
+    <th>Fone1</th>
+    <th>Resp</th>
+    <th>Trabalha</th>
+    <th>Opção 1</th>
+    <th>Opção 2</th>
+    <th>Classificação</th>
+    <th>Status</th>
+    <th>Unidade Matricula</th>
+    <th>Filho Servidor Publico</th>
+    <th>Possui Irmão(s)</th>
+    <th>Transferido</th>
+    <th>Histórico Contatos</th>
+
+    </tr>
+
+<% for crianca in @crianca %>
+  <tr>
+    <br/>
+
+    <p><td><center><%=h crianca.nome.upcase %></center></td>
+    <td><center><%=h crianca.nascimento.strftime("%d/%m/%y") %></center></td>
+    <td><center><%=h crianca.mae.upcase %></center></td>
+    <td><center><%=h crianca.created_at.strftime("%d/%m/%y %H:%M") %></center></td>
+    <td><center><%=h crianca.bairro.upcase %></center></td>
+    <td><center><%=h crianca.tel1 %></center></td>
+    <td><center><%=h crianca.parentesco %></center></td>
+    <td><center><%=h crianca.verifica_trabalha %></center></td>
+    <td><center><%=h crianca.opcao1.upcase %></center></td>
+    <td><center><%=h crianca.opcao2.upcase %></center></td>
+    <td><center><%=h crianca.onde_classifica.upcase %></center></td>
+    <td><center><%=h crianca.conf_status %></center></td>
+    <td><center><%=h crianca.onde_matricula.upcase %></center></td>
+    <td><center><%=h crianca.s_p.upcase %></center></td>
+    <td><center><%=h crianca.gemeos%></center></td>
+    <td><center><%=h crianca.transferido.upcase %></center></td>
+    <td><center><%=h crianca.historico_contato %></center></td></p>
+
+
+  </tr>
+  <tr>
+    <%  $teste = $teste + 1%>
+  </tr>
+
+
+<% end %>
+
+</table>
+<br/>
+
+
+<tr>
+<p><font size=3>
+
+ EXISTE(M) <%=h $teste %><%=h " " + crianca.tipo_consulta %>
+<br /><br /><br />
+</font></p>
+</tr>
+</div>
+<div class="botao">
+| <a href="javascript:window.print();">Imprimir</a>
+| <%= link_to_remote('Voltar', :update => "consul", :url => { :action => "consulta"}) %> |
+</div>
