@@ -14,6 +14,8 @@ display: none;
   <fieldset>
     <legend><font size=4>Dados da Criança</font></legend>
     <font size=3>
+    <b>Id:</b>
+      <%=h @crianca.id %><br />
     <b>Nome:</b>
       <%=h @crianca.nome %><br />
     <b>Nascimento:   </b>
@@ -146,6 +148,35 @@ Ciente:
      
     </tr>
   </table>
+<br/>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br/>
+    <b>Id:</b>
+      <%=h @crianca.id %> - <%=h @crianca.nome %><br /><br />
+
+    <font size="3"><u><b>IMPORTANTE</b></u></font><br/>
+<font size="2">1) O responsável pela criança deve informar qualquer alteração de endereço ou telefone para contato. <br/></font>
+<font size="2">2) Após TRÊS tentativas sem exito de contato com o responsável pela criança, a vaga será passada ao próximo da lista da demanda escolar interessado e a solicitação cancelada.<br/></font>
+<font size="2">3) Caso uma solicitação seja cancelada o responsável deverá realizar novo cadastro.<br/></font>
+<font size="2">4) Fica o responsável sabendo que a criança, ao completar a idade para passar para outro grupo,<br/></font>
+<font size="2">   podendo assim ter alteração na classificação.</font>
+
+<br/>
+Ciente:
+<br/>
+<br/>
+<table width="100%">
+<tr>
+<td align="center">___________________________________</td>
+<td align="center">___________________________________</td>
+</tr>
+<tr>
+<td align="center"> Assinatura do responsável               </td>
+<td align="center"> Assinatura diretor(a)              </td>
+</tr>
+</table>
+<br/>
+<br/>
 
  </div>
 <%end%>

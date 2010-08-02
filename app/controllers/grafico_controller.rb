@@ -19,9 +19,10 @@ class GraficoController < ApplicationController
   end
 
   def search
+      $uni=0
+      $menu=1
       input = params[:contact][:grafico_id]
-      @graph = open_flash_chart_object(600,300,"/grafico/graph_por_unidade?unidade=#{input}",false,'/')
-      
+      @graph = open_flash_chart_object(600,300,"/grafico/graph_por_unidade?unidade=#{input}",false,'/')     
           
     @static_graph = Gchart.pie_3d(
         :data => [(Crianca.matriculas_crianca_por_unidade(input)).length,(Crianca.nao_matriculas_crianca_por_unidade(input)).length], 
@@ -79,5 +80,7 @@ protected
 
   def load_unidades
     @unidades = Unidade.all
+    $uni=1
+    $menu=0
   end
 end

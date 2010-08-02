@@ -1,2 +1,0 @@
-select id,nome,grupo_id,nascimento,(datediff(current_date(),nascimento)) as "Dias" from criancas where (datediff(current_date(),nascimento)) not between 0 and 365 and grupo_id = 1
-
